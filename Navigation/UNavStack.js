@@ -8,7 +8,7 @@ const Unav = createNativeStackNavigator();
 const UnavigationStack = () => {
     return(
         <Unav.Navigator initialRouteName="UserHomeScreen">
-            <Unav.Screen name = 'UserHomeScreen' component={UserHomeScreen}/>
+            <Unav.Screen options={{headerShown: false}} name = 'UserHomeScreen' component={UserHomeScreen}/>
         </Unav.Navigator>
     )
 }

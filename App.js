@@ -16,7 +16,7 @@ export default function App() {
     <NavigationContainer>
       <UTab.Navigator>
         <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
+        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
       </UTab.Navigator>
     </NavigationContainer>
   );

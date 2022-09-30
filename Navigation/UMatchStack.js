@@ -12,8 +12,8 @@ const UMatchnav = createNativeStackNavigator();
 const UmatchNavigationStack = () => {
     return(
         
-            <UMatchnav.Navigator initialRouteName="UserMatchMain">
-                <UMatchnav.Screen name = 'UserMatchMain' component={UserMatchScreen}/>
+            <UMatchnav.Navigator initialRouteName="UserMatchMain" >
+                <UMatchnav.Screen options={{headerShown: false}} name = 'UserMatchMain' component={UserMatchScreen}/>
             </UMatchnav.Navigator>
         
     );
