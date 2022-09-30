@@ -7,6 +7,7 @@ import UnavigationStack from './Navigation/UNavStack';
 import UmatchNavigationStack from './Navigation/UMatchStack';
 import UserMatchScreen from './Screens/UserMatchHomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import CategoryOneScreen from './Screens/CategoryOneScreen';
 
 
 const UTab = createBottomTabNavigator();
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
 <NavigationContainer>
       <UTab.Navigator>
         <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
+        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
       </UTab.Navigator>
     </NavigationContainer>
   */

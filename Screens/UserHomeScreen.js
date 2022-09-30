@@ -1,9 +1,26 @@
 import React from "react";
-import {Text} from 'react-native'
+import {Text, Button} from 'react-native'
+import { SafeAreaView } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const UserHomeScreen = () => {
+
+
+const UserHomeScreen = () => { 
+    
+    const Unavigation = useNavigation();
+
+    const AddKeyWordsScreen = () =>{
+       
+        Unavigation.navigate("AddKeyWordsScreen")
+
+   
+}
     return(
-        <Text>Hello World</Text>
+        <SafeAreaView>
+        <Text>User Homescreen</Text>
+        <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen}/>
+        </SafeAreaView>
+
     )
 }
 
