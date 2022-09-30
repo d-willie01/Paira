@@ -1,6 +1,5 @@
 import React from "react";
-import {Text, Button} from 'react-native'
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, StyleSheet, Text, Image, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -16,7 +15,7 @@ const UserHomeScreen = () => {
    
 }
     return(
-        <SafeAreaView>
+        <SafeAreaView >
         <Text>User Homescreen</Text>
         <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen}/>
         </SafeAreaView>
@@ -24,4 +23,13 @@ const UserHomeScreen = () => {
     )
 }
 
-export default UserHomeScreen;
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "space-between",
+      backgroundColor: "orange",
+      padding: 20,
+      margin: 10,
+    }});
+
+    export default UserHomeScreen;

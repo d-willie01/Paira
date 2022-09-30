@@ -1,9 +1,10 @@
 import React from "react";
 import {Text} from 'react-native'
 
-export const UserMatchMainScreen = () => {
+const UserSearchMainScreen = () => {
     return(
         <Text>Hello World</Text>
     );
 };
 
+export default UserSearchMainScreen;
