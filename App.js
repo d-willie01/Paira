@@ -5,20 +5,24 @@ import {NavigationContainer} from '@react-navigation/native';
 import UserHomeScreen from './Screens/UserHomeScreen';
 import UnavigationStack from './Navigation/UNavStack';
 import UmatchNavigationStack from './Navigation/UMatchStack';
-import UserMatchScreen from './Screens/UserMatchHomeScreen';
+import UserMatchScreen from './Screens/UserMatchScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
 
 
 const UTab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <ChoiceRegistration/>
+      
+    
+    /*<NavigationContainer>
       <UTab.Navigator>
         <UTab.Screen name = "Home" component={UnavigationStack}/>
         <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
       </UTab.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>*/
   );
 };
 

@@ -3,7 +3,7 @@ import {Text} from 'react-native'
 
 const UserMatchScreen = () => {
     return(
-        <Text>Hello World</Text>
+        <Text>User Match Screen</Text>
     );
 };
 

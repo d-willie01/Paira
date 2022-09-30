@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserHomeScreen from "../Screens/UserHomeScreen";
 import UTabNavigation from "./UTabNav";
 //import UserMatchScreen from "../Screens/UserMatchMainScreen";
-import UserMatchScreen from "../Screens/UserMatchHomeScreen";
+import UserMatchScreen from "../Screens/UserMatchScreen";
 
 const UMatchnav = createNativeStackNavigator();
 
