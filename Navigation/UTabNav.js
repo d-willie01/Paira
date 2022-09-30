@@ -1,17 +1,19 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import UnavigationStack from "./UNavStack";
-import UserHomeScreen from "../Screens/UserHomeScreen";
+import UmatchNavigationStack from "./UMatchStack";
 
 const UTab = createBottomTabNavigator();
 
-const UTabNavigation = () =>{
-    return(
-        <UTab.Navigator>
-            <UTab.Screen name = "UserHome" component={UnavigationStack}/>
-        </UTab.Navigator>
-    )
+const UTabNav = () => {
+  return (
     
-}
+      <UTab.Navigator>
+        <UTab.Screen name = "Home" component={UnavigationStack}/>
+        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
+      </UTab.Navigator>
+   
+  );
+};
 
-export default UTabNavigation
+export default UTabNav;

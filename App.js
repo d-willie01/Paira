@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-//import UTabNavigation from './Navigation/UTabNav';
+import UTabNav from './Navigation/UTabNav';
 import UserHomeScreen from './Screens/UserHomeScreen';
 import UnavigationStack from './Navigation/UNavStack';
 import UmatchNavigationStack from './Navigation/UMatchStack';
@@ -15,22 +15,12 @@ const UTab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <UTab.Navigator>
-        <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
-      </UTab.Navigator>
+      <UTabNav/>
     </NavigationContainer>
   );
+
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 /*
 <NavigationContainer>
