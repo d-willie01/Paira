@@ -38,5 +38,5 @@ const styles = StyleSheet.create({
         <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
       </UTab.Navigator>
     </NavigationContainer>
-  */
+*/
 
