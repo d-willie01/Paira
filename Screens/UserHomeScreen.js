@@ -1,7 +1,7 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, Image, Button } from "react-native";
+import { SafeAreaView, View, StyleSheet, Text, Image, Button, TouchableOpacity} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import styles from "../Styles/styles";
 
 
 const UserHomeScreen = () => { 
@@ -15,21 +15,20 @@ const UserHomeScreen = () => {
    
 }
     return(
+        <SafeAreaView>
+        <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen} style={styles.button}/>
         <SafeAreaView >
-        <Text>User Homescreen</Text>
-        <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen}/>
+       <Text>User Homescreen</Text>
+       </SafeAreaView>
+       <SafeAreaView>
+        <TouchableOpacity style={styles.button}/>
+       </SafeAreaView>
         </SafeAreaView>
+
 
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "space-between",
-      backgroundColor: "orange",
-      padding: 20,
-      margin: 10,
-    }});
+
 
     export default UserHomeScreen;

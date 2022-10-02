@@ -4,6 +4,8 @@ import UnavigationStack from "./UNavStack";
 import UmatchNavigationStack from "./UMatchStack";
 import { SafeareaView, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import USearchNavigationStack from "./SearchNavigationStack"
+import UserHomeScreen from "../Screens/UserHomeScreen";
+import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 
 const UTab = createBottomTabNavigator();
 
@@ -33,7 +35,10 @@ const CustomPairaBottomTab = ({children, onPress}) => (
 const UTabNav = () => {
   return (
     
-      <UTab.Navigator 
+      <UTab.Navigator
+       tabBarOptions={{
+        showLabel: false,
+       }}
       screenOptions={{
         tabBarStyle: { 
             position: 'absolute',
@@ -44,12 +49,25 @@ const UTabNav = () => {
             backgroundColor: "#ffffff",
             borderRadius: 15,
             height: 90,
-
-     },
+            showLabel: false,
+          },
       }}
     >
       
-        <UTab.Screen name = "Home" component= {UnavigationStack}/>
+        <UTab.Screen name = "Home" component= {UnavigationStack}
+          options = {{
+            tabBarIcon : () => 
+            {
+              return (
+                <FontAwesome5 name = "home" size= {24} color = "orange"/>
+              )
+            }
+
+
+          }}
+       
+        
+        />
         <UTab.Screen name = "Matching" component = {UmatchNavigationStack}
         options={{
           tabBarIcon: () => {
@@ -58,19 +76,31 @@ const UTabNav = () => {
                   source={require('../assets/Icons/PairaLogo.png')}
                   resizeMode= "contain"
                   style={{
-                    width: 30,
-                    height: 30, 
+                    width: 100,
+                    height: 100,
+                    top: -18,
+                    }}
                     
-                  }}
-                
-
-                />
+                   />
+                    
             )}
+          
          
         }}
         
         />
-        <UTab.Screen name = "Search" component = {USearchNavigationStack}/>
+        <UTab.Screen name = "Search" component = {USearchNavigationStack}
+        options = {{
+          tabBarIcon : () => 
+          {
+            return (
+              <FontAwesome name = "search" size= {24} color = "orange"/>
+            )
+          }
+
+
+        }}
+        />
       </UTab.Navigator>
    
   );
