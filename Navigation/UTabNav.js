@@ -14,4 +14,4 @@ const UTabNavigation = () =>{
     
 }
 
-export default UTabNavigation
+export default UTabNavigation;
