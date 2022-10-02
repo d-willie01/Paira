@@ -1,46 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-//import UTabNavigation from './Navigation/UTabNav';
+import UTabNav from './Navigation/UTabNav';
 import UserHomeScreen from './Screens/UserHomeScreen';
 import UnavigationStack from './Navigation/UNavStack';
 import UmatchNavigationStack from './Navigation/UMatchStack';
-import UserMatchScreen from './Screens/UserMatchScreen';
+import UserMatchScreen from './Screens/UserMatchHomeScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
+import CategoryOneScreen from './Screens/CategoryOneScreen';
 
 
 const UTab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <ChoiceRegistration/>
-      
-    
-    /*<NavigationContainer>
-      <UTab.Navigator>
-        <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
-      </UTab.Navigator>
-    </NavigationContainer>*/
+    <NavigationContainer>
+      <UTabNav/>
+    </NavigationContainer>
   );
+
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 /*
 <NavigationContainer>
       <UTab.Navigator>
         <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Match" component = {UmatchNavigationStack}/>
+        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
       </UTab.Navigator>
     </NavigationContainer>
-*/
+  */
 
