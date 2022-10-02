@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import UserMatchScreen from "../Screens/UserMatchHomeScreen";
 import MatchCategoryOneScreen from "../Screens/MatchCategoryOneScreen";
 import MatchCategoryTwoScreen from "../Screens/MatchCategoryTwoScreen";
-import MatchCategoryThreeScreen from "../Screens/MatchCategorythreeScreen";
+import MatchCategoryThreeScreen from "../Screens/MatchCategoryThreeScreen";
 import MatchCategoryFourScreen from "../Screens/MatchCategoryFourScreen";
 
 const UMatchnav = createNativeStackNavigator();
