@@ -4,7 +4,6 @@ import UnavigationStack from "./UNavStack";
 import UmatchNavigationStack from "./UMatchStack";
 import { SafeareaView, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import USearchNavigationStack from "./SearchNavigationStack"
-import UserHomeScreen from "../Screens/UserHomeScreen";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 
 const UTab = createBottomTabNavigator();
@@ -48,7 +47,7 @@ const UTabNav = () => {
             elevation: 0,
             backgroundColor: "#ffffff",
             borderRadius: 15,
-            height: 90,
+            height: 60,
             showLabel: false,
           },
       }}
@@ -59,7 +58,9 @@ const UTabNav = () => {
             tabBarIcon : () => 
             {
               return (
-                <FontAwesome5 name = "home" size= {24} color = "orange"/>
+                <FontAwesome5 name = "home" size= {24} color = '#D7D7D7' style={{
+                  bottom: -15
+                }}/>
               )
             }
 
@@ -76,9 +77,10 @@ const UTabNav = () => {
                   source={require('../assets/Icons/PairaLogo.png')}
                   resizeMode= "contain"
                   style={{
-                    width: 100,
-                    height: 100,
-                    top: -18,
+                    width: 40,
+                    height: 40,
+                    bottom: -14,
+                    
                     }}
                     
                    />
@@ -94,7 +96,9 @@ const UTabNav = () => {
           tabBarIcon : () => 
           {
             return (
-              <FontAwesome name = "search" size= {24} color = "orange"/>
+              <FontAwesome name = "search" size= {24} color = "#D7D7D7" style={{
+                bottom: -14,
+              }}/>
             )
           }
 
