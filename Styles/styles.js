@@ -53,12 +53,14 @@ import { StyleSheet } from "react-native";
             marginTop: Platform.OS === 'ios' ? 0 : -12,
             paddingLeft: 10,
             color: "#50375a",
-            margin: 8,
+            margin: 10,
+            height: 40,
             width: 300,
             borderBottomLeftRadius: 20,
             borderTopLeftRadius: 20,
             borderTopRightRadius: 20,
             borderBottomRightRadius: 20,
+            marginBottom: 70,
         },
         textInputLarge: {
             borderWidth: 1,
@@ -137,6 +139,14 @@ import { StyleSheet } from "react-native";
         alignItems: "center", 
         justifyContent: "center",
 
+    },
+    viewTest: {
+        backgroundColor: "yellow",
+        height: 150,
+        width: 170,
+        borderRadius: 20,
+        marginBottom: 70,
+       
     },
 
 

@@ -4,7 +4,7 @@ import styles from "../Styles/styles";
 import { FontAwesome } from '@expo/vector-icons'; 
 
 
-const BusinessProfileScreen = () => {
+const UserProfileRegScreen = () => {
     return(
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text style = {{alignItems: "center"}}> Add Your Card Photo</Text>
@@ -13,6 +13,7 @@ const BusinessProfileScreen = () => {
             <Image
             stlye= {{width: 170, height: 150}}/>
             <FontAwesome name="building" size={24} color="black"  />
+
             </View>
 
             <Text>Slogan</Text>
@@ -23,11 +24,11 @@ const BusinessProfileScreen = () => {
             <Text> Describe Yourself</Text>
             <TextInput 
             style = {styles.textInputLarge} 
-            placeholder = 'e.g. We are a local mom and pop shop...'/>
+            placeholder = 'e.g. I like Chinese food, reading'/>
 
 
         </View>
     );
 };
 
-export default BusinessProfileScreen;
+export default UserProfileRegScreen;
