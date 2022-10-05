@@ -10,20 +10,22 @@ const BusinessProfileScreen = () => {
         <Text style = {{alignItems: "center"}}> Add Your Card Photo</Text>
 
             <View style = {styles.viewTest}>
-            <Image
-            stlye= {{width: 170, height: 150}}/>
-            <FontAwesome name="building" size={24} color="black"  />
+                <TouchableOpacity
+                stlye= {{width: 170, height: 150, backgroundColor: 'red'}}>
+                    <FontAwesome name="building" size={120} color="black" alignItems ='center' />
+                </TouchableOpacity>
+
             </View>
 
-            <Text>Slogan</Text>
-            <TextInput 
-            style = {styles.textInput} 
-            placeholder = 'e.g. Brayben is gay'/>
+                <Text>Slogan</Text>
+                    <TextInput 
+                    style = {styles.textInput} 
+                    placeholder = 'e.g. Brayben is extremely gay'/>
 
-            <Text> Describe Yourself</Text>
-            <TextInput 
-            style = {styles.textInputLarge} 
-            placeholder = 'e.g. We are a local mom and pop shop...'/>
+                        <Text> Describe Yourself</Text>
+                     <TextInput 
+                style = {styles.textInputLarge} 
+                placeholder = 'e.g. We are a local mom and pop shop...'/>
 
 
         </View>

@@ -2,18 +2,20 @@ import React from "react";
 import { View, Text, Dimensions, StyleSheet, TouchableOpacity, Platform, Image, TextInput } from 'react-native';
 import styles from "../Styles/styles";
 import { FontAwesome } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
+
 
 
 const UserProfileRegScreen = () => {
     return(
         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text style = {{alignItems: "center"}}> Add Your Card Photo</Text>
+        <Text style = {{alignItems: "center"}}> Add Your Profile Picture</Text>
 
             <View style = {styles.viewTest}>
-            <Image
-            stlye= {{width: 170, height: 150}}/>
-            <FontAwesome name="building" size={24} color="black"  />
-
+            <TouchableOpacity
+            stlye= {{width: 170, height: 150, bakcgroundColor: 'red'}}>
+             <Ionicons name="person" size={24} color="black" />
+            </TouchableOpacity>
             </View>
 
             <Text>Slogan</Text>
