@@ -20,12 +20,12 @@ const UserProfileRegScreen = () => {
 
             <Text>Slogan</Text>
             <TextInput 
-            style = {styles.textInput} 
+            style = {styles.textInputT} 
             placeholder = 'e.g. Brayben is gay'/>
 
             <Text> Describe Yourself</Text>
             <TextInput 
-            style = {styles.textInputLarge} 
+            style = {styles.textInputLargeT} 
             placeholder = 'e.g. I like Chinese food, reading'/>
 
 

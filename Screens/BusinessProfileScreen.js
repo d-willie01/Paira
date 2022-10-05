@@ -19,12 +19,12 @@ const BusinessProfileScreen = () => {
 
                 <Text>Slogan</Text>
                     <TextInput 
-                    style = {styles.textInput} 
+                    style = {styles.textInputT} 
                     placeholder = 'e.g. Brayben is extremely gay'/>
 
                         <Text> Describe Yourself</Text>
                      <TextInput 
-                style = {styles.textInputLarge} 
+                style = {styles.textInputLargeT} 
                 placeholder = 'e.g. We are a local mom and pop shop...'/>
 
 

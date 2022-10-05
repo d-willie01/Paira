@@ -6,13 +6,13 @@ import { StyleSheet } from "react-native";
 
     const styles = StyleSheet.create({
 
-        container: {
+        containerT: {
             flex: 1,
             backgroundColor: 'white',
             
     
         },
-        header: {
+        headerT: {
             backgroundColor: 'orange',
             flex: 1,
             justifyingContent: 'center',
@@ -21,7 +21,7 @@ import { StyleSheet } from "react-native";
             paddingnBottom: 50
     
         },
-        footer: {
+        footerT: {
             flex: 3,
             backgroundColor: 'white',
             borderTopLeftRadius: 30,
@@ -30,24 +30,24 @@ import { StyleSheet } from "react-native";
             paddingVertical: 30,
             alignItems: 'center'
         },
-        text_header: {
+        text_headerT: {
             color: 'black',
             fontWeight: 'bold',
             fontSize: 20,
             paddingVertical: 25
         },
-        text_footer: {
+        text_footerT: {
             color: '#0537a',
             fontSize: 18
         },
-        action: {
+        actionT: {
             flexDirection: 'row',
             marginTop: 10,
             borderBottomWidth: 1,
             borderBottomColor: '#f2f2f2',
             paddingBottom: 5
         },
-        textInput: {
+        textInputT: {
             borderWidth: 2,
             borderColor:'#777',
             marginTop: Platform.OS === 'ios' ? 0 : -12,
@@ -62,7 +62,7 @@ import { StyleSheet } from "react-native";
             borderBottomRightRadius: 20,
             marginBottom: 70,
         },
-        textInputLarge: {
+        textInputLargeT: {
             borderWidth: 1,
             borderColor:'#777',
             marginTop: Platform.OS === 'ios' ? 0 : -12,
@@ -77,27 +77,12 @@ import { StyleSheet } from "react-native";
             borderBottomRightRadius: 20,
 
         },
-        textInputPhoto: {
-            borderWidth: 1,
-            borderColor:'#777',
-            marginTop: Platform.OS === 'ios' ? 0 : -12,
-            paddingLeft: 10,
-            color: "#50375a",
-            margin: 8,
-            width: 150,
-            height: 130,
-            borderBottomLeftRadius: 20,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
-            borderBottomRightRadius: 20,
-
-        },
-        button: {
+        buttonT: {
             alignItems: 'center',
             marginTop: 50
         },
     
-        signIn: {
+        signInT: {
             width: '100%',
             height: 50,
             justifyContent: 'center',
@@ -105,49 +90,23 @@ import { StyleSheet } from "react-native";
             borderRadius: 10
         },
     
-        textSign: {
+        textSignT: {
             fontSize: 18,
             fontWeight: 'light'
         },
     
-        title: {
+        titleT: {
             color: "white",
             marginTop: 30,
             fontSize: 35,
             fontWeight: 'bold'
         },
     
-        button_: {
+        button_T: {
             alignItems: 'center',
             backgroundColor: 'orange'
     
         },
-    
-
-    centerItemsMiddleScreen : {
-        flex: .1,
-         alignItems: "center", 
-         justifyContent: "center",
-    },
-    TopItemsMiddleScreen : {
-        flex: .3,
-        alignItems: "center", 
-        justifyContent: "center",
-    },
-    BottomItemMiddleScreen : {
-        flex: .4,
-        alignItems: "center", 
-        justifyContent: "center",
-
-    },
-    viewTest: {
-        backgroundColor: "yellow",
-        height: 150,
-        width: 170,
-        borderRadius: 20,
-        marginBottom: 70,
-       
-    },
 
 
 
