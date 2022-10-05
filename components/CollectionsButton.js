@@ -5,7 +5,7 @@ import { Entypo } from "@expo/vector-icons";
 
 const CollectionButton = ({text}) =>{
     return(
-        <TouchableOpacity style={styles.longbutton}>
+        <TouchableOpacity style={styles.longbuttonD}>
             <Text style={{
                 fontSize: 20,
                 color: '#ffffff'

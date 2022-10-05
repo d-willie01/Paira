@@ -5,7 +5,7 @@ import { Entypo } from "@expo/vector-icons";
 
 const NotificationsButton = () =>{
     return(
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.buttonD}>
             <Entypo name = "line-graph" size= {30} color = "#D7D7D7"/>
         </TouchableOpacity>
     )

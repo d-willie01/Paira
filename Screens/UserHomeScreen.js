@@ -29,25 +29,28 @@ const UserHomeScreen = () => {
 }
     return(
     
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.containerD}>
         <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen} />
-        <SafeAreaView style={styles.container2}>
+        <SafeAreaView style={styles.container2D}>
+            <ChallengesButton style={styles.customAlign}/>
             <ScreenChangeButton/>
             <ChallengesButton/>
             <NotificationsButton/>
         </SafeAreaView>
-        <SafeAreaView style={styles.container4}>
-            <Text style={styles.text}>My Collections</Text>
+        <SafeAreaView style={styles.container4D}>
+            <Text style={styles.textD}>My Collections</Text>
             <PlusButton/>
         </SafeAreaView>
-        <ScrollView horizontal= {true}  style={styles.container3}>
-            <CollectionButton text="Favorites"/>
-            <CollectionButton text="Most Popular"/>
-            <CollectionButton text="recents"/>
-            <CollectionButton text="You"/>
-
+        <ScrollView horizontal= {true}  style={styles.container3D}>
+            <View style={styles.viewTest}>
+                <CollectionButton text="Favorites"/>
+                <CollectionButton text="Popular"/>
+                <CollectionButton text="recents"/>
+                <CollectionButton text="You"/>
+            </View>
         </ScrollView>
     </SafeAreaView>
+
 
 
     )

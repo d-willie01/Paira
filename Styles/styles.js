@@ -5,20 +5,22 @@ import { StyleSheet } from "react-native";
 
 
 const styles = StyleSheet.create({
-    container: {
+    containerD: {
         flex: 1,
          
         
     },
-    container4: {
-        flex: .1,
+    container4D: {
+        
         flexDirection: 'row',
         backgroundColor: 'purple',
+        justifyContent: 'center',
+        alignItems: 'center'
         
 
     },
-    container2:{
-        flex:.3,
+    container2D:{
+        flex: .5,
         backgroundColor: 'yellow',
         justifyContent: 'flex-start',
         alignItems: 'flex-end'
@@ -28,16 +30,18 @@ const styles = StyleSheet.create({
         
         
     },
-    container3: {
-        flex: .6,
+    container3D: {
+        flex: .5,
         backgroundColor: 'blue',
-        flexDirection: 'row'
+        
+        
+        
         
         
 
     },
 
-    button:{
+    buttonD:{
         backgroundColor: 'orange',
         borderRadius: 40,
         justifyContent: 'center',
@@ -53,27 +57,35 @@ const styles = StyleSheet.create({
     
     
     },
-    text: {
+    textD: {
         marginVertical: 10,
-        backgroundColor: "red",
+        
         color: '#ffffff',
-        height: 30,
-        fontSize: 25
+        height: 45,
+        fontSize: 40
         
     
     
     },
 
-    longbutton: {
+    longbuttonD: {
         marginVertical: 25,
         backgroundColor: 'orange',
         width: 150,
         height: 300,
         borderRadius: 40,
         alignItems: 'center',
-        justifyContent: "flex-end"
+        justifyContent: "flex-end",
+        marginHorizontal: 15,
 
     },
+
+    viewTest: {
+        flexDirection: 'row',
+        justifyContent: "space-between"
+    },
+
+    customAlign: {}
 
 
 

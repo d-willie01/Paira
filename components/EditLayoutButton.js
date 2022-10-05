@@ -5,9 +5,9 @@ import { FontAwesome, EvilIcons } from "@expo/vector-icons";
 
 const ScreenChangeButton = ({text}) =>{
     return(
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.buttonD}>
             <EvilIcons name = "pencil" size= {50} color = "#D7D7D7"/>
         </TouchableOpacity>
     )
 }
-export default ScreenChangeButton
+export default ScreenChangeButton;
