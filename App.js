@@ -11,7 +11,7 @@ const UTab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <UTabNav/>
+    <UTabNav/>
     </NavigationContainer>
   );
 

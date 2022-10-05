@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import UserMatchScreen from "../Screens/UserMatchHomeScreen";
+import UserMatchScreen from "../Screens/UserMatchScreen";
 import MatchCategoryOneScreen from "../Screens/MatchCategoryOneScreen";
 import MatchCategoryTwoScreen from "../Screens/MatchCategoryTwoScreen";
 import MatchCategoryThreeScreen from "../Screens/MatchCategoryThreeScreen";
