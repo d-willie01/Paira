@@ -43,10 +43,12 @@ const UserHomeScreen = () => {
         </SafeAreaView>
         <ScrollView horizontal= {true}  style={styles.container3D}>
             <View style={styles.viewTest}>
-                <CollectionButton text="Favorites"/>
-                <CollectionButton text="Popular"/>
-                <CollectionButton text="recents"/>
-                <CollectionButton text="You"/>
+                <CollectionButton text= "Food"/>
+                <CollectionButton text= "Favorites"/>
+                <CollectionButton text= "Volunteer"/>
+                <CollectionButton text= "Nature"/>
+                <CollectionButton text= "Add New"/>
+
             </View>
         </ScrollView>
     </SafeAreaView>

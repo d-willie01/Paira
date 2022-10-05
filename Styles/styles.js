@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     container3D: {
         flex: .5,
-        backgroundColor: 'blue',
+        backgroundColor: '#D5D5D5',
         
         
         
