@@ -10,13 +10,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CategoryOneScreen from './Screens/CategoryOneScreen';
 import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
 import BusinessProfileScreen from './Screens/BusinessProfileScreen';
-
+import UserProfileRegScreen from './Screens/UserProfileRegScreen';
 
 const UTab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <BusinessProfileScreen/>
+    <UserProfileRegScreen/>
     
   );
 
