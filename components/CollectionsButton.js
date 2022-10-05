@@ -3,14 +3,14 @@ import styles from "../Styles/styles";
 import { TouchableOpacity, View, Text, Image} from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
-const CollectionButton = ({text}) =>{
+const CollectionButton = ({text, source}) =>{
     return(
 <View style={{ height: 300, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: '#dddddd', marginTop: 40, borderRadius: 25 }}>
     
         <View style={{ flex: 2.5, backgroundColor: "#ffffff", borderRadius: 25 }}>
         
-            <Image source={require('../assets/Icons/PairaLogo.png')}
-                style={{ flex: 1, width: null, height: null, resizeMode: 'cover'   }}
+            <Image source={source}
+                style={{ flex: 1, width: null, height: null, resizeMode: 'cover', borderRadius:25  }}
             />
         </View>
         <View style={{ flex: .5,  alignItems:'center', justifyContent:'center',  }}>

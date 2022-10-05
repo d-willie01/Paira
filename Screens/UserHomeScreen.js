@@ -43,7 +43,7 @@ const UserHomeScreen = () => {
         </SafeAreaView>
         <ScrollView horizontal= {true}  style={styles.container3D}>
             <View style={styles.viewTest}>
-                <CollectionButton text= "Food"/>
+                <CollectionButton text= "Food" source={{uri: 'https://www.recipestation.com/wp-content/uploads/sites/736/2016/07/dreamstime_s_20893471-680x365.jpg"' }}/>
                 <CollectionButton text= "Favorites"/>
                 <CollectionButton text= "Volunteer"/>
                 <CollectionButton text= "Nature"/>
