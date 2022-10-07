@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, SafeAreaView, Button} from 'react-native'
+import {Text, SafeAreaView, Button, TouchableOpacity} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 
 const UserMatchScreen = () => {
@@ -32,12 +32,75 @@ const UserMatchScreen = () => {
    
     return(
        
-       <SafeAreaView>
-        <Text>Hello World</Text>
-            <Button title="Match Category 1" onPress={CategoryOneScreen}/>
-            <Button title="Match Category 2" onPress={CategoryTwoScreen}/>
-            <Button title="Match Category 3"onPress={CategoryThreeScreen}/> 
-            <Button title="Match Category 4" onPress={CategoryFourScreen}/>
+       
+        <SafeAreaView style={{justifyContent:'center', alignItems: 'center'}}>
+            
+            
+            
+            <TouchableOpacity onPress={CategoryOneScreen} style={{
+                borderRadius: 25,
+                marginVertical: 25,
+                height: 100,
+                width: 100,
+                backgroundColor: "black",
+                alignItems: "center",
+                justifyContent: 'center'
+            }}>
+                <Text style={{color:"#ffffff"}}>Food</Text>
+
+            </TouchableOpacity>
+           
+           
+           
+            <TouchableOpacity onPress={CategoryTwoScreen} style={{
+                borderRadius: 25,
+                marginVertical: 25,
+                height: 100,
+                width: 100,
+                backgroundColor: "green",
+                alignItems: "center",
+                justifyContent: 'center'
+            }}>
+
+                <Text style={{color:"#ffffff"}}>Food</Text>
+
+            </TouchableOpacity>
+           
+           
+           
+            <TouchableOpacity onPress={CategoryThreeScreen} style={{
+                borderRadius: 25,
+                marginVertical: 25,
+                height: 100,
+                width: 100,
+                backgroundColor: "red",
+                alignItems: "center",
+                justifyContent: 'center'
+            }}>
+             
+             <Text style={{color:"#ffffff"}}>Food</Text>
+            
+            </TouchableOpacity> 
+            
+            
+            
+            
+            
+            <TouchableOpacity onPress={CategoryFourScreen} style={{
+                borderRadius: 25,
+                marginVertical: 25,
+                height: 100,
+                width: 100,
+                backgroundColor: "blue",
+                alignItems: "center",
+                justifyContent: 'center'
+            }}>
+            
+            <Text style={{color:"#ffffff"}}>Food</Text>
+
+            </TouchableOpacity>
+
+
         </SafeAreaView>
     );
 };

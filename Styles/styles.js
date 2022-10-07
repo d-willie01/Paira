@@ -7,6 +7,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     containerD: {
         flex: 1,
+        backgroundColor: '#D5D5D5'
          
         
     },
@@ -22,8 +23,7 @@ const styles = StyleSheet.create({
     container2D:{
         flex: .5,
         backgroundColor: 'yellow',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-end'
+        
         
         
         
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         marginHorizontal: 10,
-        marginVertical: 10
+        marginVertical: 10,
+        alignSelf: 'auto'
         
         
 

@@ -15,6 +15,7 @@ import ChallengesButton from "../components/ChallengesButton";
 import NotificationsButton from "../components/NotificationsButton";
 import PlusButton from "../components/PlusButton";
 import CollectionButton from "../components/CollectionsButton";
+import AddProfileButton from "../components/AddProfilePicButton";
 
 
 const UserHomeScreen = () => { 
@@ -32,19 +33,63 @@ const UserHomeScreen = () => {
     <SafeAreaView style={styles.containerD}>
         <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen} />
         <SafeAreaView style={styles.container2D}>
-            <ChallengesButton style={styles.customAlign}/>
-            <ScreenChangeButton/>
-            <ChallengesButton/>
-            <NotificationsButton/>
+           <View style= {{
+            backgroundColor:'purple',
+            height: 100,
+            width: 100,
+            justifyContent: 'center',
+            alignItems: 'center'
+
+           }}>
+
+                <TouchableOpacity style={{
+                    height: 25,
+                    width: 25,
+                    backgroundColor: 'black'
+                }}>
+
+                </TouchableOpacity>
+
+           </View>
+           <View style= {{
+            backgroundColor:'red',
+            height: 25,
+            width: 25
+
+           }}>
+
+
+           </View>
+            <View style= {{
+            backgroundColor:'green',
+            height: 25,
+            width: 25
+
+           }}>
+            
+
+           </View>
+            
         </SafeAreaView>
-        <SafeAreaView style={styles.container4D}>
-            <Text style={styles.textD}>My Collections</Text>
-            <PlusButton/>
-        </SafeAreaView>
+        <View style={{  height: 50,
+                        borderRadius: 25,
+                        width: 150, 
+                        
+                        alignSelf:'center', 
+                        marginTop: 25, 
+                        alignItems: 'center', 
+                        justifyContent:'center'}}>
+                <Text style={{
+                     fontSize: 25,
+                     fontStyle: 'italic',
+                     fontWeight: "bold",
+                     color: '#ffffff'
+                }}>Collections</Text>
+        </View>
         <ScrollView horizontal= {true}  style={styles.container3D}>
             <View style={styles.viewTest}>
-                <CollectionButton text= "Food" source={{uri: 'https://www.recipestation.com/wp-content/uploads/sites/736/2016/07/dreamstime_s_20893471-680x365.jpg"' }}/>
-                <CollectionButton text= "Favorites"/>
+                <CollectionButton text= "Food" source={require('../assets/Icons/FoodCollage.png')}/>
+                <CollectionButton text= "Favorites" source={require('../assets/Icons/PairaLogo.png')}/>
                 <CollectionButton text= "Volunteer"/>
                 <CollectionButton text= "Nature"/>
                 <CollectionButton text= "Add New"/>

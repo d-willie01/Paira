@@ -5,7 +5,9 @@ import { EvilIcons } from "@expo/vector-icons";
 
 const ChallengesButton = () =>{
     return(
-        <TouchableOpacity style={styles.buttonD}>
+        <TouchableOpacity style={{
+            alignSelf: 'center'
+        }}>
             <EvilIcons name = "star" size= {50} color = "#D7D7D7"/>
         </TouchableOpacity>
     )
