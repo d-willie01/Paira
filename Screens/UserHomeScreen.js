@@ -31,50 +31,153 @@ const UserHomeScreen = () => {
     return(
     
     <SafeAreaView style={styles.containerD}>
-        <Button title="AddKeyWordsScreen" onPress={AddKeyWordsScreen} />
+        
         <SafeAreaView style={styles.container2D}>
-           <View style= {{
-            backgroundColor:'purple',
-            height: 100,
-            width: 100,
-            justifyContent: 'center',
-            alignItems: 'center'
+            <View style={{flex: .5, backgroundColor: "purple", flexDirection:'row'}}>
+                <View style={{
+                    flex: 1,
+                    width: 125,
+                    backgroundColor: 'black',
+                    
 
-           }}>
-
-                <TouchableOpacity style={{
-                    height: 25,
-                    width: 25,
-                    backgroundColor: 'black'
                 }}>
+                    <View style={{
+                            flex:.7,
+                            backgroundColor:"orange",
+                            alignItems:'center',
+                            justifyContent: 'center'
 
-                </TouchableOpacity>
+                        }}>
+                            <AddProfileButton/>
+                        
+                    </View>
+                    <View style={{
+                            flex:.15,
+                            backgroundColor:"red"
+                        }}>
+                            <Text style={{
+                                fontStyle: 'italic',
+                                fontWeight: "bold",
+                                color: '#ffffff'
+                            }}>Paira Pup</Text>
 
-           </View>
-           <View style= {{
-            backgroundColor:'red',
-            height: 25,
-            width: 25
+                    </View>
+                    <View style={{
+                            flex:.15,
+                            backgroundColor:"black"
+                        }}>
+                            <Text style={{
+                                fontStyle: 'italic',
+                                fontWeight: "bold",
+                                color: '#ffffff'
+                            }}>Phoenix, Az</Text>
 
-           }}>
+                    </View>
 
 
-           </View>
-            <View style= {{
-            backgroundColor:'green',
-            height: 25,
-            width: 25
+                    
 
-           }}>
+                </View>
+                <View style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 150,
+                    backgroundColor: 'red',
+                    
+                    marginLeft: 30
+                    }}>
+                        <TouchableOpacity style={{
+                            height: 75,
+                            width: 125,
+                            borderRadius: 50,
+                            backgroundColor: "black",
+                            justifyContent:'center',
+                            alignItems:'center'
+                        }}>
+                            <Text style={{
+                                    fontSize: 25,
+                                    fontStyle: 'italic',
+                                    fontWeight: "bold",
+                                    color: '#ffffff'}}>520</Text>
+
+                        </TouchableOpacity>
+
+                </View>
+                <View style={{
+                    width: 50,
+                    backgroundColor: 'yellow',
+                    marginLeft: 35
+                    
+                    }}>
+                        <ChallengesButton/>
+                        <NotificationsButton/>
+                        
+
+                </View>
+
+            </View >
+            <View style={{flex: .5, backgroundColor: "green", flexDirection:'row'}}>
+                <View style={{
+                    width: 200,
+                    backgroundColor: "blue",
+                    alignItems:'center',
+                    justifyContent: "center"
+
+                    }}>
+                        <TouchableOpacity style={{
+                            backgroundColor: "black",
+                            height: 100,
+                            width: 175,
+                            borderRadius: 25,
+                            alignItems: 'center',
+                            justifyContent:'center'
+
+                        }}>
+                            <Text style={{
+                                    fontSize: 15,
+                                    fontStyle: 'italic',
+                                    fontWeight: "bold",
+                                    color: '#ffffff'}}>Most 100% matches happen in the morning!</Text>
+
+                        </TouchableOpacity>
+
+                </View>
+
+                <View style={{
+                    width: 150,
+                    backgroundColor: "orange",
+                    marginLeft: 40,
+                    justifyContent:'center',
+                    alignItems:"center"
+
+                }}>
+                    <TouchableOpacity onPress={AddKeyWordsScreen} style={{
+                        height: 100,
+                        width: 100,
+                        backgroundColor: "black",
+                        justifyContent: 'center',
+                        alignItems:'center'
+
+                    }}>
+                        <Text style={{
+                                    fontSize: 15,
+                                    fontStyle: 'italic',
+                                    fontWeight: "bold",
+                                    color: '#ffffff'}}>+KeyWords</Text>
+
+                    </TouchableOpacity>
+
+                </View>
+                
+
+            </View>
             
-
-           </View>
             
         </SafeAreaView>
         <View style={{  height: 50,
                         borderRadius: 25,
                         width: 150, 
-                        
+                        backgroundColor: 'red',
                         alignSelf:'center', 
                         marginTop: 25, 
                         alignItems: 'center', 

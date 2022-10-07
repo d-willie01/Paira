@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     },
     container2D:{
-        flex: .5,
+        flex: .7,
         backgroundColor: 'yellow',
         
         
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         
     },
     container3D: {
-        flex: .5,
+        flex: .4,
         backgroundColor: '#D5D5D5',
         
         

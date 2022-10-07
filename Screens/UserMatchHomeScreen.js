@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, SafeAreaView, Button, TouchableOpacity} from 'react-native'
+import {Text, SafeAreaView, Button, TouchableOpacity, View} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 
 const UserMatchScreen = () => {
@@ -33,72 +33,96 @@ const UserMatchScreen = () => {
     return(
        
        
-        <SafeAreaView style={{justifyContent:'center', alignItems: 'center'}}>
+        <SafeAreaView style={{backgroundColor:"black", flex: 1}}>
             
-            
-            
-            <TouchableOpacity onPress={CategoryOneScreen} style={{
-                borderRadius: 25,
-                marginVertical: 25,
-                height: 100,
-                width: 100,
-                backgroundColor: "black",
-                alignItems: "center",
-                justifyContent: 'center'
-            }}>
-                <Text style={{color:"#ffffff"}}>Food</Text>
+           <View style={{
+                    flex: .22,
+                    backgroundColor: "red",
+                    justifyContent:'center'
 
-            </TouchableOpacity>
-           
-           
-           
-            <TouchableOpacity onPress={CategoryTwoScreen} style={{
-                borderRadius: 25,
-                marginVertical: 25,
-                height: 100,
-                width: 100,
-                backgroundColor: "green",
-                alignItems: "center",
-                justifyContent: 'center'
-            }}>
+                }}>
+                     <TouchableOpacity onPress={CategoryOneScreen} style={{
+                            borderRadius: 75,
+                            marginVertical: 25,
+                            marginLeft: 50,
+                            height: 140,
+                            width: 140,
+                            backgroundColor: "black",
+                            alignItems: "center",
+                            justifyContent: 'center'
+                            }}>
+                            <Text style={{color:"#ffffff"}}>Food</Text>
+                    </TouchableOpacity>
+            </View> 
+            <View style={{
+                    flex:.22,
+                    backgroundColor: "green",
+                    alignItems: "flex-end",
+                    justifyContent: 'center'
+                 }}>
+                    <TouchableOpacity onPress={CategoryTwoScreen} style={{
+                            borderRadius: 75,
+                            marginVertical: 25,
+                            marginRight: 50,
+                            height: 140,
+                            width: 140,
+                            backgroundColor: "black",
+                            alignItems: "center",
+                            justifyContent: 'center'
+                            }}>
+                            <Text style={{color:"#ffffff"}}>Food</Text>
+                    </TouchableOpacity>
 
-                <Text style={{color:"#ffffff"}}>Food</Text>
+            </View>
+            <View style={{
+                    flex:.22,
+                    backgroundColor:"yellow",
+                    justifyContent:'center'
+                 }}>
+                    <TouchableOpacity onPress={CategoryThreeScreen} style={{
+                            borderRadius: 74,
+                            marginVertical: 25,
+                            marginLeft: 50,
+                            height: 140,
+                            width: 140,
+                            backgroundColor: "black",
+                            alignItems: "center",
+                            justifyContent: 'center'
+                            }}>
+                            <Text style={{color:"#ffffff"}}>Food</Text>
+                    </TouchableOpacity>
 
-            </TouchableOpacity>
-           
-           
-           
-            <TouchableOpacity onPress={CategoryThreeScreen} style={{
-                borderRadius: 25,
-                marginVertical: 25,
-                height: 100,
-                width: 100,
-                backgroundColor: "red",
-                alignItems: "center",
-                justifyContent: 'center'
-            }}>
-             
-             <Text style={{color:"#ffffff"}}>Food</Text>
-            
-            </TouchableOpacity> 
-            
-            
-            
-            
-            
-            <TouchableOpacity onPress={CategoryFourScreen} style={{
-                borderRadius: 25,
-                marginVertical: 25,
-                height: 100,
-                width: 100,
-                backgroundColor: "blue",
-                alignItems: "center",
-                justifyContent: 'center'
-            }}>
-            
-            <Text style={{color:"#ffffff"}}>Food</Text>
+            </View>
+            <View style={{
+                    flex:.22,
+                    backgroundColor:"blue",
+                    alignItems:'flex-end',
+                    justifyContent:'center'
+                    
+                 }}>
+                    <TouchableOpacity onPress={CategoryFourScreen} style={{
+                            borderRadius: 75,
+                            marginVertical: 25,
+                            marginRight: 50,
+                            height: 140,
+                            width: 140,
+                            backgroundColor: "black",
+                            alignItems: "center",
+                            justifyContent: 'center'
+                            }}>
+                            <Text style={{color:"#ffffff"}}>Food</Text>
+                    </TouchableOpacity>
 
-            </TouchableOpacity>
+            </View>
+
+            
+           
+            
+            
+            
+            
+            
+           
 
 
         </SafeAreaView>

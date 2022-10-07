@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 const AddProfileButton = () =>{
     return(
         <TouchableOpacity style={{
-            alignSelf:'auto',
+            
         }}>
             <Ionicons name = "person" size= {50} color = "#D7D7D7"/>
         </TouchableOpacity>
