@@ -33,7 +33,7 @@ const UserHomeScreen = () => {
     <SafeAreaView style={styles.containerD}>
         
         <SafeAreaView style={styles.container2D}>
-            <View style={{flex: .5, backgroundColor: "purple", flexDirection:'row'}}>
+            <View style={{flex: .6, backgroundColor: "purple", flexDirection:'row'}}>
                 <View style={{
                     flex: 1,
                     width: 125,
@@ -42,7 +42,7 @@ const UserHomeScreen = () => {
 
                 }}>
                     <View style={{
-                            flex:.7,
+                            flex:.75,
                             backgroundColor:"orange",
                             alignItems:'center',
                             justifyContent: 'center'
@@ -52,11 +52,13 @@ const UserHomeScreen = () => {
                         
                     </View>
                     <View style={{
+                            justifyContent:"center",
+                            alignItems: "center",
                             flex:.15,
                             backgroundColor:"red"
                         }}>
                             <Text style={{
-                                fontStyle: 'italic',
+                                
                                 fontWeight: "bold",
                                 color: '#ffffff'
                             }}>Paira Pup</Text>
@@ -64,10 +66,11 @@ const UserHomeScreen = () => {
                     </View>
                     <View style={{
                             flex:.15,
-                            backgroundColor:"black"
+                            backgroundColor:"black",
+                            alignItems: "center"
                         }}>
                             <Text style={{
-                                fontStyle: 'italic',
+                                
                                 fontWeight: "bold",
                                 color: '#ffffff'
                             }}>Phoenix, Az</Text>
@@ -79,24 +82,43 @@ const UserHomeScreen = () => {
 
                 </View>
                 <View style={{
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: 150,
+                    
+                    width: 185,
                     backgroundColor: 'red',
                     
-                    marginLeft: 30
+                    
                     }}>
-                        <TouchableOpacity style={{
-                            height: 75,
-                            width: 125,
-                            borderRadius: 50,
+                        <Text style={{
+                            alignSelf: "flex-start",
+                            fontWeight: "bold",
+                            fontSize: 15,
+                            color: '#ffffff',
+                            height: 25,
+                            width: 120,
                             backgroundColor: "black",
+                            marginTop:10,
+                            justifyContent: "center",
+
+                            
+                            
+                        }}>
+                                Welcome Back
+                        </Text>
+                        <TouchableOpacity style={{
+                            height: 100,
+                            width: 115,
+                            borderRadius: 50,
+                            backgroundColor: "grey",
                             justifyContent:'center',
-                            alignItems:'center'
+                            alignItems:'center',
+                            
+                            marginLeft: 38
+                            
+                        
                         }}>
                             <Text style={{
-                                    fontSize: 25,
-                                    fontStyle: 'italic',
+                                    fontSize: 45,
+                                    
                                     fontWeight: "bold",
                                     color: '#ffffff'}}>520</Text>
 
@@ -104,9 +126,9 @@ const UserHomeScreen = () => {
 
                 </View>
                 <View style={{
-                    width: 50,
+                    width: 40,
                     backgroundColor: 'yellow',
-                    marginLeft: 35
+                    
                     
                     }}>
                         <ChallengesButton/>
@@ -116,7 +138,7 @@ const UserHomeScreen = () => {
                 </View>
 
             </View >
-            <View style={{flex: .5, backgroundColor: "green", flexDirection:'row'}}>
+            <View style={{flex: .4, backgroundColor: "green", flexDirection:'row'}}>
                 <View style={{
                     width: 200,
                     backgroundColor: "blue",
@@ -174,21 +196,7 @@ const UserHomeScreen = () => {
             
             
         </SafeAreaView>
-        <View style={{  height: 50,
-                        borderRadius: 25,
-                        width: 150, 
-                        backgroundColor: 'red',
-                        alignSelf:'center', 
-                        marginTop: 25, 
-                        alignItems: 'center', 
-                        justifyContent:'center'}}>
-                <Text style={{
-                     fontSize: 25,
-                     fontStyle: 'italic',
-                     fontWeight: "bold",
-                     color: '#ffffff'
-                }}>Collections</Text>
-        </View>
+      
         <ScrollView horizontal= {true}  style={styles.container3D}>
             <View style={styles.viewTest}>
                 <CollectionButton text= "Food" source={require('../assets/Icons/FoodCollage.png')}/>

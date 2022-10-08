@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
     },
     container2D:{
-        flex: .7,
+        flex: .95,
         backgroundColor: 'yellow',
         
         
@@ -83,10 +83,15 @@ const styles = StyleSheet.create({
 
     viewTest: {
         flexDirection: 'row',
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        backgroundColor: '#D5D5D5'
+        
+
     },
 
-    customAlign: {}
+    testFont: {
+
+    }
 
 
 

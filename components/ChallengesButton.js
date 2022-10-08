@@ -7,9 +7,9 @@ const ChallengesButton = () =>{
     return(
         <TouchableOpacity style={{
             alignSelf: 'center',
-            marginTop: 10
+            marginTop: 15
         }}>
-            <AntDesign name = "setting" size= {40} color = "black"/>
+            <AntDesign name = "setting" size= {30} color = "black"/>
         </TouchableOpacity>
     )
 }

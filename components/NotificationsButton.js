@@ -10,7 +10,7 @@ const NotificationsButton = () =>{
             marginVertical: 20
             
         }}>
-            <Entypo name = "line-graph" size= {35} color = "black"/>
+            <Entypo name = "line-graph" size= {25} color = "black"/>
         </TouchableOpacity>
     )
 }
