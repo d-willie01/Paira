@@ -39,6 +39,7 @@ const UTabNav = () => {
         showLabel: false,
        }}
       screenOptions={{
+        headerShown: false,
         tabBarStyle: { 
             position: 'absolute',
             bottom: 25,

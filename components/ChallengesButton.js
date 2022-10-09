@@ -1,12 +1,15 @@
 import React from "react-native";
 import styles from "../Styles/styles";
 import { TouchableOpacity, SafeAreaView, Text} from "react-native";
-import { EvilIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 const ChallengesButton = () =>{
     return(
-        <TouchableOpacity style={styles.buttonD}>
-            <EvilIcons name = "star" size= {50} color = "#D7D7D7"/>
+        <TouchableOpacity style={{
+            alignSelf: 'center',
+            marginTop: 15
+        }}>
+            <AntDesign name = "setting" size= {30} color = "black"/>
         </TouchableOpacity>
     )
 }
