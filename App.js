@@ -11,7 +11,7 @@ import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
 import BusinessProfileScreen from './Screens/BusinessProfileScreen';
 import UserProfileRegScreen from './Screens/UserProfileRegScreen';
 import BusinessHomeScreen from './Screens/BusinessHomeScreen';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import BTabNav from './BNavigation/BTabNav';
 
 
@@ -21,7 +21,7 @@ const UTab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-     <BusinessHomeScreen/>
+     <BTabNav/>
     </NavigationContainer>
   );
 

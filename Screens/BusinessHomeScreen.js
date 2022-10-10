@@ -10,6 +10,7 @@ import {
     ScrollView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../Styles/styles";
+import CollectionButton from "../components/CollectionsButton";
 
 
 const BusinessHomeScreen = () => { 
@@ -51,110 +52,237 @@ const BusinessHomeScreen = () => {
                                     Let's get you connected
                 </Text>
             </View>
-            <View style={{ flex: .25, flexDirection:'row'}}>
-                <TouchableOpacity style={{
-                            height: 130,
-                            width: 180,
-                            borderRadius: 50,
-                            backgroundColor: "grey",
-                            justifyContent:'center',
-                            alignItems:'center',
-                            marginTop: 10,
-                            marginLeft: 10
-                            
-                        
-                        }}>
-                    <Text style={{
-                                    fontSize: 30,
+                <View style={{ flex: .3, flexDirection:'row'}}>
+                    <ScrollView horizontal={true}>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
                                     
-                                    fontWeight: "bold",
-                                    color: '#ffffff'}}>New Matches Today
-                    </Text>
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>New Matches Today
+                            </Text>
 
-                </TouchableOpacity>
-                <TouchableOpacity style={{
-                            height: 130,
-                            width: 180,
-                            borderRadius: 50,
-                            backgroundColor: "grey",
-                            justifyContent:'center',
-                            alignItems:'center',
-                            marginTop: 10,
-                            marginLeft: 10
-                            
-                        
-                        }}>
-                     <Text style={{
-                                    fontSize: 30,
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
                                     
-                                    fontWeight: "bold",
-                                    color: '#ffffff'}}>Get Go Followers
-                    </Text>
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
+                            </Text>
 
-                </TouchableOpacity>
-                </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
+                                    
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
+                            </Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
+                                    
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
+                            </Text>
+
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
+                                    
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
+                            </Text>
+
+                        </TouchableOpacity>
+                    </ScrollView>
+                    </View>
                 <View style = {{flex:.3, backgroundColor: 'yellow',}}>
-                    <Text style={{
-                                alignSelf: "flex-start",
-                                fontWeight: "bold",
-                                fontSize: 15,
-                                color: '#ffffff',
-                                height: 25,
-                                width: 180,
-                                backgroundColor: "black",
-                                marginTop:5,
-                                justifyContent: "center",
+                    
+                        <Text style={{
+                                    alignSelf: "flex-start",
+                                    fontWeight: "bold",
+                                    fontSize: 15,
+                                    color: '#ffffff',
+                                    height: 25,
+                                    width: 180,
+                                    backgroundColor: "black",
+                                    marginTop:5,
+                                    justifyContent: "center",
 
-                                
-                                
-                            }}>
-                                    Recommended for You
-                    </Text>
+                                    
+                                    
+                                }}>
+                                        Recommended for You
+                        </Text>
+                    
                     <View style={{flexDirection:'row'}}>
-                        <TouchableOpacity style={{
-                            height: 130,
-                            width: 180,
-                            borderRadius: 50,
-                            backgroundColor: "grey",
-                            justifyContent:'center',
-                            alignItems:'center',
-                            marginTop: 10,
-                            marginLeft: 10
+                        <ScrollView horizontal={true}>
+                            <TouchableOpacity style={{
+                                height: 130,
+                                width: 180,
+                                borderRadius: 50,
+                                backgroundColor: "grey",
+                                justifyContent:'center',
+                                alignItems:'center',
+                                marginTop: 10,
+                                marginLeft: 10
+                                
                             
-                        
-                        }}>
-                            <Text style={{
-                                    fontSize: 30,
+                            }}>
+                                <Text style={{
+                                        fontSize: 30,
+                                        
+                                        fontWeight: "bold",
+                                        color: '#ffffff'}}>Make Your Bio
+                                </Text>
+
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                height: 130,
+                                width: 180,
+                                borderRadius: 50,
+                                backgroundColor: "grey",
+                                justifyContent:'center',
+                                alignItems:'center',
+                                marginTop: 10,
+                                marginLeft: 10
+                                
+                            
+                            }}>
+                                <Text style={{
+                                        fontSize: 30,
+                                        
+                                        fontWeight: "bold",
+                                        color: '#ffffff'}}>Finish Profile 
+                                </Text>
+
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
                                     
-                                    fontWeight: "bold",
-                                    color: '#ffffff'}}>Make Your Bio
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
                             </Text>
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                            height: 130,
-                            width: 180,
-                            borderRadius: 50,
-                            backgroundColor: "grey",
-                            justifyContent:'center',
-                            alignItems:'center',
-                            marginTop: 10,
-                            marginLeft: 10
-                            
-                        
-                        }}>
-                            <Text style={{
-                                    fontSize: 30,
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
                                     
-                                    fontWeight: "bold",
-                                    color: '#ffffff'}}>Finish Profile 
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
                             </Text>
 
                         </TouchableOpacity>
+                        <TouchableOpacity style={{
+                                    height: 130,
+                                    width: 180,
+                                    borderRadius: 50,
+                                    backgroundColor: "grey",
+                                    justifyContent:'center',
+                                    alignItems:'center',
+                                    marginTop: 10,
+                                    marginLeft: 10
+                                    
+                                
+                                }}>
+                            <Text style={{
+                                            fontSize: 30,
+                                            
+                                            fontWeight: "bold",
+                                            color: '#ffffff'}}>Get Go Followers
+                            </Text>
+
+                        </TouchableOpacity>
+                        </ScrollView>
 
                     </View>
+                    
                 </View>
-                <View style = {{flex: .3, backgroundColor: 'red'}}>
+                <View style = {{flex: .4, backgroundColor: 'red'}}>
                     <Text style={{
                             alignSelf: "flex-start",
                             fontWeight: "bold",
@@ -171,6 +299,8 @@ const BusinessHomeScreen = () => {
                         }}>
                                 Tip of the day
                     </Text>
+                
+                    <View style = {{ flexDirection: 'row'}}>
                     <TouchableOpacity style={{
                         height: 130,
                         width: 370,
@@ -193,8 +323,9 @@ const BusinessHomeScreen = () => {
                         </Text>
 
                     </TouchableOpacity>
-
                     </View>
+                </View>
+
                
         </SafeAreaView>
      </SafeAreaView>
@@ -204,3 +335,28 @@ const BusinessHomeScreen = () => {
 
 
 export default BusinessHomeScreen;
+/*
+<TouchableOpacity style={{
+                        height: 130,
+                        width: 370,
+                        borderRadius: 40,
+                        backgroundColor: "grey",
+                        justifyContent:'top',
+                        alignItems:'center',
+                        marginTop: 15,
+                        marginLeft: 10
+                        
+                    
+                    }}>
+                        <Text style={{
+                                fontSize: 18,
+                                height: 130,
+                                width: 370,
+                                marginLeft: 40,
+                                fontWeight: "italic",
+                                color: '#ffffff'}}>Tips descirption to businesses either motivational or factual 
+                        </Text>
+
+                    </TouchableOpacity>
+
+                    */
