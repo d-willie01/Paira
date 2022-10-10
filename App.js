@@ -11,12 +11,13 @@ import CategoryOneScreen from './Screens/CategoryOneScreen';
 import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
 import BusinessProfileScreen from './Screens/BusinessProfileScreen';
 import UserProfileRegScreen from './Screens/UserProfileRegScreen';
+import BusinessHomeScreen from './Screens/BusinessHomeScreen';
 
 const UTab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <UserProfileRegScreen/>
+    <BusinessHomeScreen/>
     
   );
 
