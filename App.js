@@ -17,8 +17,9 @@ const UTab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <BusinessHomeScreen/>
-    
+    <NavigationContainer>
+     <BusinessHomeScreen/>
+    </NavigationContainer>
   );
 
 };

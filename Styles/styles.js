@@ -12,6 +12,12 @@ import { StyleSheet } from "react-native";
             
     
         },
+        container2T: {
+            flex: 1,
+            backgroundColor: '#D5D5D5',
+            
+    
+        },
         headerT: {
             backgroundColor: 'orange',
             flex: 1,
