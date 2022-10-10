@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
 import {NavigationContainer} from '@react-navigation/native';
 import UTabNav from './Navigation/UTabNav';
 import UserHomeScreen from './Screens/UserHomeScreen';
@@ -12,6 +11,10 @@ import ChoiceRegistration from './Screens/ChoiceRegistrationScreen';
 import BusinessProfileScreen from './Screens/BusinessProfileScreen';
 import UserProfileRegScreen from './Screens/UserProfileRegScreen';
 import BusinessHomeScreen from './Screens/BusinessHomeScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BTabNav from './BNavigation/BTabNav';
+
+
 
 const UTab = createBottomTabNavigator();
 
@@ -25,12 +28,5 @@ export default function App() {
 };
 
 
-/*
-<NavigationContainer>
-      <UTab.Navigator>
-        <UTab.Screen name = "Home" component={UnavigationStack}/>
-        <UTab.Screen name = "Matching" component = {UmatchNavigationStack}/>
-      </UTab.Navigator>
-    </NavigationContainer>
-  */
+
 
