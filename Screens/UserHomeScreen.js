@@ -88,18 +88,19 @@ const UserHomeScreen = () => {
                     
                     width: 185,
                     backgroundColor: '#D5D5D5'
-                    
-                    }}>
-                        <Text style={{
+                  
+                  
+                  }}>
+                    <Text style={{
                             alignSelf: "flex-start",
                             fontWeight: "bold",
                             fontSize: 23,
                             color: '#ffffff',
                             height: 30,
-                            width: 250,
+                            width: 185,
                             backgroundColor: "#D5D5D5",
-                            marginTop:16,
-                            marginLeft:-180
+                            marginTop:15,
+                            marginLeft:-185 
                             
 
                             
@@ -108,15 +109,15 @@ const UserHomeScreen = () => {
                                 Welcome Back,
                         </Text>
                         <TouchableOpacity style={{
-                            height: 100,
-                            width: 130,
+                            height: 80,
+                            width: 120,
                             borderRadius: 25,
                             backgroundColor: "grey",
                             justifyContent:'center',
                             alignItems:'center',
                             
                             marginLeft: 35,
-                            marginTop: 9
+                            marginTop: 20
 
                             
                         
