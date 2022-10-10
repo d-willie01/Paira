@@ -6,22 +6,13 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     containerD: {
-        flex: 1,
-         
-        
-    },
-    container4D: {
-        
-        flexDirection: 'row',
-        backgroundColor: 'purple',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1
         
 
     },
     container2D:{
-        flex: .5,
-        backgroundColor: 'yellow',
+        flex: .8,
+        backgroundColor: '#D5D5D5',
         justifyContent: 'flex-start',
         alignItems: 'flex-end'
         
@@ -31,8 +22,8 @@ const styles = StyleSheet.create({
         
     },
     container3D: {
-        flex: .5,
-        backgroundColor: 'blue',
+        flex: 1,
+        backgroundColor: '#D5D5D5',
         
         
         
@@ -42,14 +33,14 @@ const styles = StyleSheet.create({
     },
 
     buttonD:{
-        backgroundColor: 'orange',
-        borderRadius: 40,
+        backgroundColor: 'white',
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
         width: 50,
         marginHorizontal: 10,
-        marginVertical: 10
+        marginVertical: 10,
         
         
 
@@ -194,5 +185,6 @@ const styles = StyleSheet.create({
 
 
 });
+
 
 export default styles;
