@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar, Platform } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 
 
@@ -179,6 +181,30 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'orange'
 
+    },
+    picture:{
+        height:75,
+        width:75
+    },
+    container: {
+        flex:1,
+        backgroundColor:'#D5D5D5',
+        paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+        
+    },
+    interestbuttongrad:{
+        height:170,
+        width:190,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,   
+
+    },
+    interestbuttonParent:{
+        height:170,
+        width:190,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
     },
 
 
