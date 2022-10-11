@@ -1,6 +1,6 @@
 import React from "react";
 import {Text, Button} from 'react-native'
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const AddKeyWordsScreen = () => {
@@ -27,13 +27,18 @@ const CategoryFourScreen = () =>{
 }
     
     return(
-    <SafeAreaView>
-        <Text>Hello World</Text>
-        <Button title="Category 1" onPress={CategoryOneScreen} />
-        <Button title="Category 2" onPress={CategoryTwoScreen}/>
-        <Button title="Category 3" onPress={CategoryThreeScreen}/>
-        <Button title="Category 4" onPress={CategoryFourScreen}/>
-        </SafeAreaView>
+    <SafeAreaView style={{
+        flex: 1
+    }}>
+        <View style={{
+            flex: .25,
+            
+        }}>
+
+        </View>
+        
+        
+    </SafeAreaView>
         );
 };
 
