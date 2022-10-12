@@ -11,10 +11,10 @@ const OnNav = createNativeStackNavigator();
 const OnBoardStack = () => {
     return(
         
-            <OnNav.Navigator initialRouteName="SplashScreen">
-                <OnNav.Screen name = "SplashScreen" component= {StartScreen}/>
+            <OnNav.Navigator initialRouteName="Start">
+                <OnNav.Screen name = "Start" component ={StartScreen}/>
                 <OnNav.Screen name = 'Registration' component={RegistrationScreen}/>
-                <OnNav.Screen name = "Login Screen" component = {LoginScreen}/>
+                <OnNav.Screen name = "Login" component = {LoginScreen}/>
 
             </OnNav.Navigator>
         
