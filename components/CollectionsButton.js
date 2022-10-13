@@ -6,7 +6,7 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const CollectionButton = ({text, source}) =>{
     return(
-<View style={{ height: 300, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: '#dddddd', marginTop: 25, borderRadius: 25}}>
+<View style={{ height: 300, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: 'transparent', marginTop: 85, borderRadius: 25}}>
     
         <View style={{ flex: 2.5, backgroundColor: "#ffffff", borderRadius: 25 }}>
         
@@ -19,8 +19,7 @@ const CollectionButton = ({text, source}) =>{
                 fontSize: 25,
                 fontStyle: 'italic',
                 fontWeight: "bold",
-                color: '#ffffff'
-                
+                backgroundColor:'background'
                 
             }}>{text}</Text>
         </View>

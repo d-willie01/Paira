@@ -6,8 +6,8 @@ import { Ionicons } from "@expo/vector-icons";
 const AddProfileButton = () =>{
     return(
         <TouchableOpacity style={{
-            height: 130,
-            width: 130,
+            height: 120,
+            width: 120,
             backgroundColor: '#ffffff',
             borderRadius: 75
         }}>

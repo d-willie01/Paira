@@ -18,6 +18,7 @@ import CollectionButton from "../components/CollectionsButton";
 import AddProfileButton from "../components/AddProfilePicButton";
 
 
+
 const UserHomeScreen = () => { 
     
     const Unavigation = useNavigation();
@@ -33,19 +34,19 @@ const UserHomeScreen = () => {
     <SafeAreaView style={styles.containerD}>
         
         <SafeAreaView style={styles.container2D}>
-            <View style={{flex: .6, backgroundColor: "purple", flexDirection:'row'}}>
+            <View style={{flex: .7, backgroundColor: "white", flexDirection:'row'}}>
                 <View style={{
                     flex: 1,
                     width: 125,
-                    backgroundColor: 'black',
+                    backgroundColor: '#D5D5D5',
                     
 
                 }}>
                     <View style={{
-                            flex:.75,
-                            backgroundColor:"orange",
-                            alignItems:'center',
-                            justifyContent: 'center'
+                            flex:.8,
+                            backgroundColor:"#D5D5D5",
+                            marginTop:47,
+                            marginLeft:41
 
                         }}>
                             <AddProfileButton/>
@@ -54,26 +55,28 @@ const UserHomeScreen = () => {
                     <View style={{
                             justifyContent:"center",
                             alignItems: "center",
-                            flex:.15,
-                            backgroundColor:"red"
+                            flex:.17,
+                            backgroundColor:"#D5D5D5"
                         }}>
                             <Text style={{
                                 
                                 fontWeight: "bold",
-                                color: '#ffffff'
-                            }}>Paira Pup</Text>
+                                color: '#ffffff',
+                                fontSize:17
+                            }}>Breaben Bolton</Text>
 
                     </View>
                     <View style={{
-                            flex:.15,
-                            backgroundColor:"black",
+                            flex:.18,
+                            backgroundColor:"#D5D5D5",
                             alignItems: "center"
                         }}>
                             <Text style={{
                                 
                                 fontWeight: "bold",
                                 color: '#ffffff'
-                            }}>Phoenix, Az</Text>
+                            }}>Phoenix, AZ</Text>
+                            
 
                     </View>
 
@@ -84,35 +87,38 @@ const UserHomeScreen = () => {
                 <View style={{
                     
                     width: 185,
-                    backgroundColor: 'red',
-                    
-                    
-                    }}>
-                        <Text style={{
+                    backgroundColor: '#D5D5D5'
+                  
+                  
+                  }}>
+                    <Text style={{
                             alignSelf: "flex-start",
                             fontWeight: "bold",
-                            fontSize: 15,
+                            fontSize: 23,
                             color: '#ffffff',
-                            height: 25,
-                            width: 120,
-                            backgroundColor: "black",
-                            marginTop:10,
-                            justifyContent: "center",
+                            height: 30,
+                            width: 185,
+                            backgroundColor: "#D5D5D5",
+                            marginTop:15,
+                            marginLeft:-185 
+                            
 
                             
                             
                         }}>
-                                Welcome Back
+                                Welcome Back,
                         </Text>
                         <TouchableOpacity style={{
-                            height: 100,
-                            width: 115,
-                            borderRadius: 50,
+                            height: 80,
+                            width: 120,
+                            borderRadius: 25,
                             backgroundColor: "grey",
                             justifyContent:'center',
                             alignItems:'center',
                             
-                            marginLeft: 38
+                            marginLeft: 35,
+                            marginTop: 20
+
                             
                         
                         }}>
@@ -122,12 +128,15 @@ const UserHomeScreen = () => {
                                     fontWeight: "bold",
                                     color: '#ffffff'}}>520</Text>
 
+                            
+
+
                         </TouchableOpacity>
 
                 </View>
                 <View style={{
                     width: 40,
-                    backgroundColor: 'yellow',
+                    backgroundColor: '#D5D5D5',
                     
                     
                     }}>
@@ -138,54 +147,74 @@ const UserHomeScreen = () => {
                 </View>
 
             </View >
-            <View style={{flex: .4, backgroundColor: "green", flexDirection:'row'}}>
+            <View style={{flex: .5, backgroundColor: "#D5D5D5", flexDirection:'row'}}>
                 <View style={{
-                    width: 200,
-                    backgroundColor: "blue",
-                    alignItems:'center',
-                    justifyContent: "center"
+                    width: 250,
+                    backgroundColor: "#D5D5D5",
+                    marginTop:38
+                    
 
                     }}>
                         <TouchableOpacity style={{
-                            backgroundColor: "black",
+                            backgroundColor: "grey",
                             height: 100,
                             width: 175,
                             borderRadius: 25,
                             alignItems: 'center',
-                            justifyContent:'center'
+                            justifyContent:'center',
+                            marginLeft:30,
+
 
                         }}>
                             <Text style={{
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontStyle: 'italic',
                                     fontWeight: "bold",
-                                    color: '#ffffff'}}>Most 100% matches happen in the morning!</Text>
+                                    color: '#ffffff'}}>Tip of the Day!</Text>
+
+
+                            <Text style={{
+                                    fontSize: 14,
+                                    fontStyle: 'italic',
+                                    fontWeight: "bold",
+                                    color: '#ffffff'}}>Did you know you can earn points for inviting friends!</Text>
+                            
+                            
+
+                        
 
                         </TouchableOpacity>
+
+                    
+
 
                 </View>
 
                 <View style={{
                     width: 150,
-                    backgroundColor: "orange",
-                    marginLeft: 40,
-                    justifyContent:'center',
-                    alignItems:"center"
+                    height:150,
+                    backgroundColor: "#D5D5D5",
+                    marginBottom:50,
+                    borderRadius:20,
+                    marginRight:30
+
 
                 }}>
                     <TouchableOpacity onPress={AddKeyWordsScreen} style={{
                         height: 100,
                         width: 100,
-                        backgroundColor: "black",
+                        backgroundColor: "orange",
                         justifyContent: 'center',
-                        alignItems:'center'
+                        alignItems:'center',
+                        borderRadius:300,
+                        height:150,
+                        width:150
 
                     }}>
                         <Text style={{
-                                    fontSize: 15,
-                                    fontStyle: 'italic',
+                                    fontSize: 25,
                                     fontWeight: "bold",
-                                    color: '#ffffff'}}>+KeyWords</Text>
+                                    color: '#ffffff'}}>Interests</Text>
 
                     </TouchableOpacity>
 
@@ -199,7 +228,6 @@ const UserHomeScreen = () => {
       
         <ScrollView horizontal= {true}  style={styles.container3D}>
             <View style={styles.viewTest}>
-                <CollectionButton text= "Food" source={require('../assets/Icons/FoodCollage.png')}/>
                 <CollectionButton text= "Favorites" source={require('../assets/Icons/PairaLogo.png')}/>
                 <CollectionButton text= "Volunteer"/>
                 <CollectionButton text= "Nature"/>

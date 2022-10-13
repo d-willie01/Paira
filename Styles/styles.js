@@ -1,10 +1,85 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar, Platform } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 
 
-    const styles = StyleSheet.create({
+
+
+const styles = StyleSheet.create({
+    containerD: {
+        flex: 1
+        
+
+    },
+    container2D:{
+        flex: .8,
+        backgroundColor: '#D5D5D5',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-end'
+        
+        
+        
+        
+        
+    },
+    container3D: {
+        flex: 1,
+        backgroundColor: '#D5D5D5',
+        
+        
+        
+        
+        
+
+    },
+
+    buttonD:{
+        backgroundColor: 'white',
+        borderRadius: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 50,
+        width: 50,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        
+        
+
+
+    
+    
+    },
+    textD: {
+        marginVertical: 10,
+        
+        color: '#ffffff',
+        height: 45,
+        fontSize: 40
+        
+    
+    
+    },
+
+    longbuttonD: {
+        marginVertical: 25,
+        backgroundColor: 'orange',
+        width: 150,
+        height: 300,
+        borderRadius: 40,
+        alignItems: 'center',
+        justifyContent: "flex-end",
+        marginHorizontal: 15,
+
+    },
+
+    viewTest: {
+        flexDirection: 'row',
+        justifyContent: "space-between"
+    },
+
+    customAlign: {},
 
         containerT: {
             flex: 1,
@@ -113,25 +188,17 @@ import { StyleSheet } from "react-native";
             backgroundColor: 'orange'
     
         },
+
     containerD: {
-        flex: 1,
-        backgroundColor: '#D5D5D5'
-         
-        
-    },
-    container4D: {
-        
-        flexDirection: 'row',
-        backgroundColor: 'purple',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1
         
 
     },
     container2D:{
-        flex: .95,
-        backgroundColor: 'yellow',
-        
+        flex: .8,
+        backgroundColor: '#D5D5D5',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-end'
         
         
         
@@ -139,7 +206,7 @@ import { StyleSheet } from "react-native";
         
     },
     container3D: {
-        flex: .4,
+        flex: 1,
         backgroundColor: '#D5D5D5',
         
         
@@ -150,15 +217,14 @@ import { StyleSheet } from "react-native";
     },
 
     buttonD:{
-        backgroundColor: 'orange',
-        borderRadius: 40,
+        backgroundColor: 'white',
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
         width: 50,
         marginHorizontal: 10,
         marginVertical: 10,
-        alignSelf: 'auto'
         
         
 
@@ -191,22 +257,74 @@ import { StyleSheet } from "react-native";
 
     viewTest: {
         flexDirection: 'row',
-        justifyContent: "space-between",
-        backgroundColor: '#D5D5D5'
-        
-
+        justifyContent: "space-between"
     },
 
-    testFont: {
-
-    }
+    customAlign: {},
 
 
+    picture:{
+        height:75,
+        width:75
+    },
+    container: {
+        flex:1,
+        backgroundColor:'#D5D5D5',
+        paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+        
+    },
+    interestbuttongrad:{
+        position:'absolute',
+        height:190,
+        width:150,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,   
 
+    },
+    interestbuttonParent:{
+        position:'absolute',
+        height:190,
+        width:150,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
+    },
+    profileinfograd:{
+        bottom:5, 
+        height:150,
+        width:170,
+        borderRadius:15,  
+
+    },
+    profileinfoParent:{
+        height:150,
+        width:170,
+        borderRadius:15,
+        backgroundColor:'#F39C12',
+    },
+    TOPofileBackgroundgrad:{
+        position:'absolute',
+        height:225,
+        width:400,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,   
+
+    },
+    TOProfileBackgroundParent:{
+        position:'absolute',
+        marginTop:80,
+        marginLeft:13,
+        height:225,
+        width:403,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
+    },
 
 
 
 
 });
+
 
 export default styles;
