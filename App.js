@@ -13,7 +13,8 @@ import UserProfileRegScreen from './Screens/UserProfileRegScreen';
 import BusinessHomeScreen from './Screens/BusinessHomeScreen';
 
 import BTabNav from './BNavigation/BTabNav';
-
+import WhatAreYouLookingForScreen from './Screens/WhatAreYouLookingForScreen';
+import ChallengesButton from './components/ChallengesButton';
 
 
 const UTab = createBottomTabNavigator();
@@ -21,8 +22,10 @@ const UTab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
+      
      <BTabNav/>
     </NavigationContainer>
+    
   );
 
 };

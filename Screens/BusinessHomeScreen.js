@@ -11,6 +11,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import styles from "../Styles/styles";
 import CollectionButton from "../components/CollectionsButton";
+import AddProfileButton from "../components/AddProfilePicButton";
 
 
 const BusinessHomeScreen = () => { 
@@ -30,9 +31,10 @@ const BusinessHomeScreen = () => {
         
         <SafeAreaView style={styles.container2T}>
             <View>
-                <Text style = {{ fontSize: 30, justifyContent: "bottom", marginTop: 25, fontWeight: 'bold', color: 'white'}}> 
+                <Text style = {{ fontSize: 30, justifyContent: "bottom", marginTop: 5, fontWeight: 'bold', color: 'white'}}> 
                 Welcome Back 
                 </Text>
+                <AddProfileButton/>
             </View>
             <View>
                 <Text style={{
@@ -55,8 +57,8 @@ const BusinessHomeScreen = () => {
                 <View style={{ flex: .27, flexDirection:'row'}}>
                     <ScrollView horizontal={true}>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -75,8 +77,8 @@ const BusinessHomeScreen = () => {
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -95,8 +97,8 @@ const BusinessHomeScreen = () => {
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -110,13 +112,13 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Plan Evants
+                                            color: '#ffffff'}}>Plan Events
                             </Text>
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -135,8 +137,8 @@ const BusinessHomeScreen = () => {
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -178,8 +180,8 @@ const BusinessHomeScreen = () => {
                     <View style={{flexDirection:'row'}}>
                         <ScrollView horizontal={true}>
                             <TouchableOpacity style={{
-                                height: 130,
-                                width: 180,
+                                height: 110,
+                                width: 160,
                                 borderRadius: 50,
                                 backgroundColor: "grey",
                                 justifyContent:'center',
@@ -198,8 +200,8 @@ const BusinessHomeScreen = () => {
 
                             </TouchableOpacity>
                             <TouchableOpacity style={{
-                                height: 130,
-                                width: 180,
+                                height: 110,
+                                width: 160,
                                 borderRadius: 50,
                                 backgroundColor: "grey",
                                 justifyContent:'center',
@@ -218,8 +220,8 @@ const BusinessHomeScreen = () => {
 
                             </TouchableOpacity>
                             <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                   height: 110,
+                                   width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -238,8 +240,8 @@ const BusinessHomeScreen = () => {
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -258,8 +260,8 @@ const BusinessHomeScreen = () => {
 
                         </TouchableOpacity>
                         <TouchableOpacity style={{
-                                    height: 130,
-                                    width: 180,
+                                    height: 110,
+                                    width: 160,
                                     borderRadius: 50,
                                     backgroundColor: "grey",
                                     justifyContent:'center',
@@ -302,13 +304,13 @@ const BusinessHomeScreen = () => {
                 
                     <View style = {{ flexDirection: 'row'}}>
                     <TouchableOpacity style={{
-                        height: 130,
+                        height: 110,
                         width: 370,
                         borderRadius: 40,
                         backgroundColor: "grey",
                         justifyContent:'top',
                         alignItems:'center',
-                        marginTop: 15,
+                        marginTop: 3,
                         marginLeft: 10
                         
                     
