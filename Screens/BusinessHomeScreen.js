@@ -34,7 +34,7 @@ const BusinessHomeScreen = () => {
                 Welcome Back 
                 </Text>
             </View>
-            <View style= {{flex: .05}}>
+            <View>
                 <Text style={{
                                 alignSelf: "flex-start",
                                 fontWeight: "bold",
@@ -42,7 +42,7 @@ const BusinessHomeScreen = () => {
                                 color: '#ffffff',
                                 height: 25,
                                 width: 180,
-                                backgroundColor: "black",
+                                //backgroundColor: "black",
                                 marginTop:5,
                                 justifyContent: "center",
 
@@ -52,7 +52,7 @@ const BusinessHomeScreen = () => {
                                     Let's get you connected
                 </Text>
             </View>
-                <View style={{ flex: .3, flexDirection:'row'}}>
+                <View style={{ flex: .27, flexDirection:'row'}}>
                     <ScrollView horizontal={true}>
                         <TouchableOpacity style={{
                                     height: 130,
@@ -110,7 +110,7 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Get Go Followers
+                                            color: '#ffffff'}}>Plan Evants
                             </Text>
 
                         </TouchableOpacity>
@@ -130,7 +130,7 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Get Go Followers
+                                            color: '#ffffff'}}>Join Groups
                             </Text>
 
                         </TouchableOpacity>
@@ -150,13 +150,13 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Get Go Followers
+                                            color: '#ffffff'}}>Connect With businesses
                             </Text>
 
                         </TouchableOpacity>
                     </ScrollView>
                     </View>
-                <View style = {{flex:.3, backgroundColor: 'yellow',}}>
+                <View style = {{flex:.33, backgroundColor: 'yellow',}}>
                     
                         <Text style={{
                                     alignSelf: "flex-start",
@@ -165,7 +165,7 @@ const BusinessHomeScreen = () => {
                                     color: '#ffffff',
                                     height: 25,
                                     width: 180,
-                                    backgroundColor: "black",
+                                    //backgroundColor: "black",
                                     marginTop:5,
                                     justifyContent: "center",
 
@@ -233,7 +233,7 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Get Go Followers
+                                            color: '#ffffff'}}>Analytics
                             </Text>
 
                         </TouchableOpacity>
@@ -273,7 +273,7 @@ const BusinessHomeScreen = () => {
                                             fontSize: 30,
                                             
                                             fontWeight: "bold",
-                                            color: '#ffffff'}}>Get Go Followers
+                                            color: '#ffffff'}}>Plan Events
                             </Text>
 
                         </TouchableOpacity>
@@ -282,7 +282,7 @@ const BusinessHomeScreen = () => {
                     </View>
                     
                 </View>
-                <View style = {{flex: .4, backgroundColor: 'red'}}>
+                <View style = {{flex: .37, backgroundColor: 'red'}}>
                     <Text style={{
                             alignSelf: "flex-start",
                             fontWeight: "bold",
@@ -290,7 +290,7 @@ const BusinessHomeScreen = () => {
                             color: '#ffffff',
                             height: 25,
                             width: 180,
-                            backgroundColor: "black",
+                            //backgroundColor: "black",
                             marginTop:5,
                             justifyContent: "center",
 
