@@ -2,6 +2,12 @@ import React from "react";
 import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, StatusBar, Platform,} from 'react-native'
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+import AddProfileButton from "../components/AddProfilePicButton";
+import LinearGradientTO from "../components/LineargradientTO";
+import CollectionButton from "../components/CollectionsButton";
+import { ScrollView } from "react-native"
+import { NavigationContainer } from "@react-navigation/native";
+
 
 
 const UHomeScreen2 = () => {
@@ -12,25 +18,22 @@ const UHomeScreen2 = () => {
       colors={['#FDFEFE','#626567']}>
         
         <SafeAreaView>
-          <Button
-          title='Click Me' 
-          color='orange'
-          onPress={()=> console.log ("clicked")}/>
+          <LinearGradientTO/>
         
           <TouchableOpacity 
 
-          //Interest Button
+      //Interest Button
           style={{
-              marginTop:400,
-              marginLeft:210,
+              marginTop:350,
+              marginLeft:260,
               position:'absolute',
             }}
 
-            //button function
+      //button function
             onPress={()=> console.log('yeee')}>
               
                 <View
-            //Button Style
+      //Button Style
                      style={styles.interestbuttonParent}>
                     <LinearGradient
                      colors={['#F5B041','#F8C471']}
@@ -49,70 +52,94 @@ const UHomeScreen2 = () => {
 
 
              <TouchableOpacity 
-             //Profile Info
+      //Profile Info
              style={{
-              marginTop:110,
-              marginLeft:210,
+              marginTop:100,
+              marginLeft:225,
               position:'absolute',
             }}
 
-            //button function
+        //button function
             onPress={()=> console.log('yeee')}>
                 <View
-            //Paira Score Style
-                     style={styles.interestbuttonParent}>
+        //Profile Info Style
+                     style={styles.profileinfoParent}>
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
-                     style={styles.interestbuttongrad}>
-                        <Text numberOfLines={3} style={{
-                        fontSize:50,
+                     style={styles.profileinfograd}>
+                        <Text
+        //Text Inside of Profile info
+                        numberOfLines={1}
+                        style={{
+                        fontSize:18,
+                        fontWeight:"bold",
+                        color:'white',
+                        textAlign:'left',
+                        position:'absolute',
+                        justifyContent:'flex-start',
+                        marginTop:20,
+                        marginLeft:5,
+                        
+                        }}>Breaben Bolton</Text>
+
+                        <Text numberOfLines={2} 
+                        style={{
+                        fontSize:18,
+                        fontWeight:"bold",
+                        color:'white',
+                        position:'absolute',
+                        textAlign:'left',
+                        marginTop:50,
+                        marginLeft:5,
+                        
+                        }}>Homebase: Phoenix,AZ </Text>
+                        <Text numberOfLines={1} 
+                        style={{
+                        fontSize:18,
                         fontWeight:"bold",
                         color:'white',
                         position:'absolute',
                         textAlign:'center',
-                        alignSelf:'center'
-                        }}>619p</Text>
+                        marginTop:120,
+                        marginLeft:43,
+                        }}> 5 Friends </Text>
                    </LinearGradient>
                 </View>
              </TouchableOpacity>
              
-              <TouchableOpacity style={{
+              <TouchableOpacity 
+      //Add Profile Button
+                style={{
                 height: 100, 
                 width: 100, 
-                marginLeft:45,
-                marginTop: 150, 
+                marginLeft:26,
+                marginTop: 93, 
                 borderRadius:80,
                 width:160,
                 height:160,
 
                 position:"absolute",
                 backgroundColor: "#F39C12"}}> 
-              
+
               </TouchableOpacity>
 
-              <View style={{
-                height: 100, 
-                width: 100, 
-                marginTop:500,
-                marginLeft:75,
-                position:'absolute',
-                backgroundColor: "#F39C12"}}> 
-              
-              </View>
-              
-              <View style={{
-                height: 100, 
-                width: 100, 
-                marginTop:500,
-                marginLeft:250,
-                position:'absolute',
-                backgroundColor: "#F39C12"}}> 
-            
-              </View>
-              
+             
+             <ScrollView  horizontal= {true} style={{
+              marginTop:435,
+
+
+             }} > 
+              <CollectionButton/>
+              <CollectionButton/>
+              <CollectionButton/>
+              </ScrollView>
+
               </SafeAreaView>
+              
         </LinearGradient>
     );
+    
 };
+
 
 export default UHomeScreen2;

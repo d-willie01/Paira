@@ -193,20 +193,52 @@ const styles = StyleSheet.create({
         
     },
     interestbuttongrad:{
-        height:170,
-        width:190,
+        position:'absolute',
+        height:190,
+        width:150,
         borderRadius:10,
         justifyContent:'center',
         bottom:5,   
 
     },
     interestbuttonParent:{
-        height:170,
-        width:190,
+        position:'absolute',
+        height:190,
+        width:150,
         borderRadius:10,
         backgroundColor:'#F39C12',
     },
+    profileinfograd:{
+        bottom:5, 
+        height:150,
+        width:170,
+        borderRadius:15,  
 
+    },
+    profileinfoParent:{
+        height:150,
+        width:170,
+        borderRadius:15,
+        backgroundColor:'#F39C12',
+    },
+    TOPofileBackgroundgrad:{
+        position:'absolute',
+        height:225,
+        width:400,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,   
+
+    },
+    TOProfileBackgroundParent:{
+        position:'absolute',
+        marginTop:80,
+        marginLeft:13,
+        height:225,
+        width:403,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
+    },
 
 
 
