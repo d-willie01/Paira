@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "../Styles/styles";
 import CollectionButton from "../components/CollectionsButton";
 import AddProfileButton from "../components/AddProfilePicButton";
+import { LinearGradient } from "expo-linear-gradient";
 
 
 const BusinessHomeScreen = () => { 
@@ -26,8 +27,11 @@ const BusinessHomeScreen = () => {
    
 }*/
     return(
+<LinearGradient // background gradient view
+        style={styles.container}
+        colors={['#FDFEFE','#626567']}>
+          
     
-    <SafeAreaView style={styles.containerT}>
         
         <SafeAreaView style={styles.container2T}>
             <View>
@@ -36,24 +40,7 @@ const BusinessHomeScreen = () => {
                 </Text>
                 <AddProfileButton/>
             </View>
-            <View>
-                <Text style={{
-                                alignSelf: "flex-start",
-                                fontWeight: "bold",
-                                fontSize: 15,
-                                color: '#ffffff',
-                                height: 25,
-                                width: 180,
-                                //backgroundColor: "black",
-                                marginTop:5,
-                                justifyContent: "center",
-
-                                
-                                
-                            }}>
-                                    Let's get you connected
-                </Text>
-            </View>
+           
                 <View style={{ flex: .27, flexDirection:'row'}}>
                     <ScrollView horizontal={true}>
                         <TouchableOpacity style={{
@@ -76,6 +63,7 @@ const BusinessHomeScreen = () => {
                             </Text>
 
                         </TouchableOpacity>
+                        
                         <TouchableOpacity style={{
                                     height: 110,
                                     width: 160,
@@ -330,7 +318,7 @@ const BusinessHomeScreen = () => {
 
                
         </SafeAreaView>
-     </SafeAreaView>
+</LinearGradient>
 
     )
 }
