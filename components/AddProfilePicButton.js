@@ -7,13 +7,11 @@ const AddProfileButton = () =>{
     return(
         <TouchableOpacity 
                   style={{
-                  height: 100, 
-                  width: 100, 
-                  marginLeft:26,
-                  marginTop: 40, 
-                  borderRadius:80,
-                  width:160,
-                  height:160,
+                  marginLeft:20,
+                  marginTop: 45, 
+                  borderRadius:70,
+                  width:140,
+                  height:140,
   
                   position:"absolute",
                   backgroundColor: "#F39C12"}}> 

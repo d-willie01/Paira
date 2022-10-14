@@ -89,7 +89,8 @@ const styles = StyleSheet.create({
         },
         container2T: {
             flex: 1,
-            backgroundColor: '#D5D5D5',
+            backgroundColor: 'transparent',
+
             
     
         },
@@ -290,7 +291,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#F39C12',
     },
     profileinfograd:{
-        bottom:5, 
+        bottom:2, 
         height:150,
         width:170,
         borderRadius:15,  
@@ -319,6 +320,13 @@ const styles = StyleSheet.create({
         width:403,
         borderRadius:10,
         backgroundColor:'#F39C12',
+    },
+    profileinfoParentT:{
+        height:150,
+        width:170,
+        borderRadius:15,
+        backgroundColor:'#F39C12',
+        alignItems: 'flex-end',
     },
 
 
