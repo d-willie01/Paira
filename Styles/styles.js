@@ -1,29 +1,23 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar, Platform } from "react-native";
+import { LinearGradient } from 'expo-linear-gradient';
+
+
 
 
 
 
 const styles = StyleSheet.create({
     containerD: {
-        flex: 1,
-        backgroundColor: '#D5D5D5'
-         
-        
-    },
-    container4D: {
-        
-        flexDirection: 'row',
-        backgroundColor: 'purple',
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 1
         
 
     },
     container2D:{
-        flex: .95,
-        backgroundColor: 'yellow',
-        
+        flex: .8,
+        backgroundColor: '#D5D5D5',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-end'
         
         
         
@@ -31,7 +25,7 @@ const styles = StyleSheet.create({
         
     },
     container3D: {
-        flex: .4,
+        flex: 1,
         backgroundColor: '#D5D5D5',
         
         
@@ -42,15 +36,14 @@ const styles = StyleSheet.create({
     },
 
     buttonD:{
-        backgroundColor: 'orange',
-        borderRadius: 40,
+        backgroundColor: 'white',
+        borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
         height: 50,
         width: 50,
         marginHorizontal: 10,
         marginVertical: 10,
-        alignSelf: 'auto'
         
         
 
@@ -83,21 +76,187 @@ const styles = StyleSheet.create({
 
     viewTest: {
         flexDirection: 'row',
-        justifyContent: "space-between",
-        backgroundColor: '#D5D5D5'
+        justifyContent: "space-between"
+    },
+
+    customAlign: {},
+
+    containerT: {
+        flex: 1,
+        backgroundColor: 'white',
         
 
     },
+    headerT: {
+        backgroundColor: 'orange',
+        flex: 1,
+        justifyingContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+        paddingnBottom: 50
 
-    testFont: {
+    },
+    footerT: {
+        flex: 3,
+        backgroundColor: 'white',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 30,
+        alignItems: 'center'
+    },
+    text_headerT: {
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 20,
+        paddingVertical: 25
+    },
+    text_footerT: {
+        color: '#0537a',
+        fontSize: 18
+    },
+    actionT: {
+        flexDirection: 'row',
+        marginTop: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#f2f2f2',
+        paddingBottom: 5
+    },
+    textInputT: {
+        borderWidth: 2,
+        borderColor:'#777',
+        marginTop: Platform.OS === 'ios' ? 0 : -12,
+        paddingLeft: 10,
+        color: "#50375a",
+        margin: 10,
+        height: 40,
+        width: 300,
+        borderBottomLeftRadius: 20,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
+        marginBottom: 70,
+    },
+    textInputLargeT: {
+        borderWidth: 1,
+        borderColor:'#777',
+        marginTop: Platform.OS === 'ios' ? 0 : -12,
+        paddingLeft: 10,
+        color: "#50375a",
+        margin: 8,
+        width: 350,
+        height: 200,
+        borderBottomLeftRadius: 20,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
 
-    }
+    },
+    buttonT: {
+        alignItems: 'center',
+        marginTop: 50
+    },
 
+    signInT: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
 
+    textSignT: {
+        fontSize: 18,
+        fontWeight: 'light'
+    },
 
+    titleT: {
+        color: "white",
+        marginTop: 30,
+        fontSize: 35,
+        fontWeight: 'bold'
+    },
 
+    button_T: {
+        alignItems: 'center',
+        backgroundColor: 'orange'
 
+    },
+    picture:{
+        height:75,
+        width:75
+    },
+    container: {
+        flex:1,
+        backgroundColor:'#D5D5D5',
+        paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+        
+    },
+    interestbuttongrad:{
+        position:'absolute',
+        height:190,
+        width:150,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,
 
+    },
+    interestbuttonParent:{
+        position:'absolute',
+        height:190,
+        width:150,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
+    },
+    profileinfograd:{
+        bottom:5, 
+        height:150,
+        width:170,
+        borderRadius:15,  
+
+    },
+    profileinfoParent:{
+        height:150,
+        width:170,
+        borderRadius:15,
+        backgroundColor:'#F39C12',
+    },
+    TipoftheDaygrad:{
+        bottom:5, 
+        height:192,
+        width:200,
+        justifyContent:'center',
+        borderRadius:15,  
+
+    },
+    TipoftheDayParent:{
+        height:192,
+        width:200,
+        borderRadius:15,
+        justifyContent:'center',
+        backgroundColor:'#F39C12',
+    },
+    TOPofileBackgroundgrad:{
+        position:'absolute',
+        height:225,
+        width:400,
+        borderRadius:10,
+        justifyContent:'center',
+        bottom:5,   
+
+    },
+    TOProfileBackgroundParent:{
+        position:'absolute',
+        marginTop:80,
+        marginLeft:13,
+        height:225,
+        width:403,
+        borderRadius:10,
+        backgroundColor:'#F39C12',
+    },
+
+    
 });
+
 
 export default styles;
