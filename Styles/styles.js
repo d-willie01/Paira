@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
         width:150,
         borderRadius:10,
         justifyContent:'center',
-        bottom:5,   
+        bottom:5,
 
     },
     interestbuttonParent:{
@@ -221,6 +221,21 @@ const styles = StyleSheet.create({
         borderRadius:15,
         backgroundColor:'#F39C12',
     },
+    TipoftheDaygrad:{
+        bottom:5, 
+        height:192,
+        width:200,
+        justifyContent:'center',
+        borderRadius:15,  
+
+    },
+    TipoftheDayParent:{
+        height:192,
+        width:200,
+        borderRadius:15,
+        justifyContent:'center',
+        backgroundColor:'#F39C12',
+    },
     TOPofileBackgroundgrad:{
         position:'absolute',
         height:225,
@@ -240,9 +255,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#F39C12',
     },
 
-
-
-
+    
 });
 
 
