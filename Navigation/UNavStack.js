@@ -7,6 +7,7 @@ import CategoryOneScreen from "../Screens/CategoryOneScreen";
 import CategoryTwoScreen from "../Screens/CategoryTwoScreen";
 import CategoryThreeScreen from "../Screens/CategoryThreeScreen";
 import CategoryFourScreen from "../Screens/CategoryFourScreen";
+import UHomeScreen2 from "../Screens/UHomeScreen2"
 
 
 const Unav = createNativeStackNavigator();
@@ -14,7 +15,7 @@ const Unav = createNativeStackNavigator();
 const UnavigationStack = () => {
     return(
         <Unav.Navigator initialRouteName="UserHomeScreen">
-            <Unav.Screen options={{headerShown: false}} name = 'UserHomeScreen' component={UserHomeScreen}/>
+            <Unav.Screen options={{headerShown: false}} name = 'UserHomeScreen' component={UHomeScreen2}/>
             <Unav.Screen name = "AddKeyWordsScreen" component = {AddKeyWordsScreen}/>
             <Unav.Screen name = "CategoryOneScreen" component = {CategoryOneScreen}/>
             <Unav.Screen name = "CategoryTwoScreen" component = {CategoryTwoScreen}/>
