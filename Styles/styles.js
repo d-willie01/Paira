@@ -194,45 +194,49 @@ const styles = StyleSheet.create({
     },
     interestbuttongrad:{
         position:'absolute',
-        height:190,
+        height:165,
         width:150,
-        borderRadius:10,
+        borderRadius:20,
         justifyContent:'center',
         bottom:5,
 
     },
     interestbuttonParent:{
         position:'absolute',
-        height:190,
-        width:150,
-        borderRadius:10,
+        height:165,
+        width:152,
+        borderRadius:20,
         backgroundColor:'#F39C12',
     },
     profileinfograd:{
         bottom:5, 
         height:150,
         width:170,
-        borderRadius:15,  
+        borderRadius:50,
+        alignItems:'center'
+          
 
     },
     profileinfoParent:{
         height:150,
         width:170,
-        borderRadius:15,
+        borderRadius:50,
         backgroundColor:'#F39C12',
+        alignItems:'center'
+        
     },
     TipoftheDaygrad:{
         bottom:5, 
-        height:192,
-        width:200,
+        height:160,
+        width:210,
         justifyContent:'center',
-        borderRadius:15,  
+        borderRadius:60,  
 
     },
     TipoftheDayParent:{
-        height:192,
-        width:200,
-        borderRadius:15,
+        height:160,
+        width:210,
+        borderRadius:60,
         justifyContent:'center',
         backgroundColor:'#F39C12',
     },
@@ -240,21 +244,35 @@ const styles = StyleSheet.create({
         position:'absolute',
         height:225,
         width:400,
-        borderRadius:10,
+        borderRadius:60,
         justifyContent:'center',
         bottom:5,   
 
     },
     TOProfileBackgroundParent:{
         position:'absolute',
-        marginTop:80,
+        marginTop:95,
         marginLeft:13,
         height:225,
         width:403,
-        borderRadius:10,
+        borderRadius:60,
         backgroundColor:'#F39C12',
     },
+    MatchCategorygrad:{
+        bottom:4, 
+        marginLeft:-2,
+        height:150,
+        width:170,
+        borderRadius:75,  
+        justifyContent:'center',
 
+    },
+    MatchCategoryParent:{
+        height:150,
+        width:170,
+        borderRadius:75,
+        backgroundColor:'#F39C12',
+    },
     
 });
 

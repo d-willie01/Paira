@@ -46,7 +46,7 @@ const UTabNav = () => {
             left: 20,
             right: 20,
             elevation: 0,
-            backgroundColor: "#ffffff",
+            backgroundColor: "transparent",
             borderRadius: 15,
             height: 60,
             showLabel: false,
@@ -59,7 +59,7 @@ const UTabNav = () => {
             tabBarIcon : () => 
             {
               return (
-                <FontAwesome5 name = "home" size= {24} color = '#D7D7D7' style={{
+                <FontAwesome5 name = "home" size= {24} color = 'white' style={{
                   bottom: -15
                 }}/>
               )
@@ -97,7 +97,7 @@ const UTabNav = () => {
           tabBarIcon : () => 
           {
             return (
-              <FontAwesome name = "search" size= {24} color = "#D7D7D7" style={{
+              <FontAwesome name = "search" size= {24} color = "white" style={{
                 bottom: -14,
               }}/>
             )
