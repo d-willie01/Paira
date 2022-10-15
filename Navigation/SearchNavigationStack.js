@@ -9,7 +9,7 @@ const USearchNavigationStack = () => {
     return(
         
             <USearchnav.Navigator initialRouteName="UserSearchMain" >
-                <USearchnav.Screen options={{headerShown: false}} name = 'UserSearchMain' component={UserSearchMainScreen}/>
+                <USearchnav.Screen options={{headerShown: true}} name = 'UserSearchMain' component={UserSearchMainScreen}/>
             </USearchnav.Navigator>
         
     );
