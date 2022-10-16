@@ -44,7 +44,7 @@ const BusinessHomeScreenTest = () => {
                     }}
                     colors={['#F5B041','#F8C471' ]}>
                 
-                        <Text style = {{ fontSize: 25, fontWeight: 900, justifyContent: 'flex-start', marginTop: 5, marginLeft: 10, fontWeight: 'bold', color: 'white'}}> 
+                        <Text style = {{ fontSize: 25, fontWeight: '900', justifyContent: 'flex-start', marginTop: 5, marginLeft: 10, color: 'white'}}> 
                         Welcome Back 
             
                         </Text>
@@ -70,8 +70,7 @@ const BusinessHomeScreenTest = () => {
                                         numberOfLines={1}
                                         style={{
                                         fontSize:18,
-                                        fontWeight:900,
-                                        fontWeight:"bold",
+                                        fontWeight:'bold',
                                         color:'white',
                                         textAlign:'left',
                                         position:'absolute',
@@ -86,7 +85,7 @@ const BusinessHomeScreenTest = () => {
                                         numberOfLines={2} 
                                         style={{
                                         fontSize:18,
-                                        fontWeight:"bold",
+                                        fontWeight:'bold',
                                         color:'white',
                                         position:'absolute',
                                         textAlign:'left',
@@ -113,7 +112,7 @@ const BusinessHomeScreenTest = () => {
                         </TouchableOpacity>
                 </LinearGradient>
                 </LinearGradient>
-            <Text style= {{color: 'white', fontWeight: 'bold', marginTop: 15, fontSize: 20}}> Let's get you connected</Text>
+            <Text style= {{color: 'white', fontWeight: '900', marginTop: 15, fontSize: 20}}> Let's get you connected</Text>
 
                 
             
@@ -147,9 +146,9 @@ const BusinessHomeScreenTest = () => {
                                 }}
                                 colors={['#F8C471','#F5B041' ]}>
                                     <Text style={{
-                                                    fontSize: 30,
+                                                    fontSize: 25,
                                                     
-                                                    fontWeight: "bold",
+                                                    fontWeight: "900",
                                                     color: '#ffffff'}}>New Matches 
                                     </Text>
                                 </LinearGradient>
@@ -184,9 +183,9 @@ const BusinessHomeScreenTest = () => {
                                 }}
                                 colors={['#F8C471','#F5B041']}>
                                     <Text style={{
-                                                    fontSize: 30,
+                                                    fontSize: 25,
                                                     
-                                                    fontWeight: "bold",
+                                                    fontWeight: "900",
                                                     color: '#ffffff'}}>Total Matches
                                     </Text>
                                 </LinearGradient>
@@ -201,7 +200,7 @@ const BusinessHomeScreenTest = () => {
                     
                         <Text style={{
                                     alignSelf: "flex-start",
-                                    fontWeight: "bold",
+                                    fontWeight: "900",
                                     fontSize: 20,
                                     color: '#ffffff',
                                     marginLeft: 5,
@@ -246,9 +245,9 @@ const BusinessHomeScreenTest = () => {
                                         }}
                                         colors={['#F8C471','#F5B041' ]}>
                                             <Text style={{
-                                                    fontSize: 30,
+                                                    fontSize: 25,
                                                     
-                                                    fontWeight: "bold",
+                                                    fontWeight: "900",
                                                     color: '#ffffff'}}>Make Your Bio
                                             </Text>
                                         </LinearGradient>
@@ -282,9 +281,9 @@ const BusinessHomeScreenTest = () => {
                                     }}
                                     colors={['#F8C471','#F5B041' ]}>
                                         <Text style={{
-                                                fontSize: 30,
+                                                fontSize: 25,
                                                 
-                                                fontWeight: "bold",
+                                                fontWeight: "900",
                                                 color: '#ffffff'}}>Join Groups
                                         </Text>
                                     </LinearGradient>
@@ -318,9 +317,9 @@ const BusinessHomeScreenTest = () => {
                                     }}
                                     colors={['#F8C471','#F5B041' ]}>
                                         <Text style={{
-                                                fontSize: 30,
+                                                fontSize: 25,
                                                 
-                                                fontWeight: "bold",
+                                                fontWeight: "900",
                                                 color: '#ffffff'}}>Get connected
                                         </Text>
                                     </LinearGradient>
@@ -353,9 +352,9 @@ const BusinessHomeScreenTest = () => {
                                     }}
                                     colors={['#F8C471','#F5B041' ]}>
                                         <Text style={{
-                                                fontSize: 30,
+                                                fontSize: 25,
                                                 
-                                                fontWeight: "bold",
+                                                fontWeight: "900",
                                                 color: '#ffffff'}}>Finish Profile 
                                         </Text>
                                     </LinearGradient>
@@ -389,9 +388,9 @@ const BusinessHomeScreenTest = () => {
                                         }}
                                         colors={['#F8C471','#F5B041' ]}>
                                             <Text style={{
-                                                    fontSize: 30,
+                                                    fontSize: 25,
                                                     
-                                                    fontWeight: "bold",
+                                                    fontWeight: "900",
                                                     color: '#ffffff'}}>Plan Events 
                                             </Text>
                                         </LinearGradient>
@@ -405,7 +404,7 @@ const BusinessHomeScreenTest = () => {
                 <View style = {{flex: .3, }}>
                     <Text style={{
                             alignSelf: "flex-start",
-                            fontWeight: "bold",
+                            fontWeight: "900",
                             fontSize: 20,
                             color: '#ffffff',
                             height: 25,
