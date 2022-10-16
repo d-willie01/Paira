@@ -411,7 +411,7 @@ const BusinessHomeScreenTest = () => {
                             height: 25,
                             width: 180,
                             //backgroundColor: "black",
-                            marginTop: 40,
+                            marginTop: 30,
                             marginLeft: 10,
                             justifyContent: "center",
 
