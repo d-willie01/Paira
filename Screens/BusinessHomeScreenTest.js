@@ -44,7 +44,7 @@ const BusinessHomeScreenTest = () => {
                     }}
                     colors={['#F5B041','#F8C471' ]}>
                 
-                        <Text style = {{ fontSize: 25, justifyContent: 'flex-start', marginTop: 5, marginLeft: 10, fontWeight: 'bold', color: 'white'}}> 
+                        <Text style = {{ fontSize: 25, fontWeight: 900, justifyContent: 'flex-start', marginTop: 5, marginLeft: 10, fontWeight: 'bold', color: 'white'}}> 
                         Welcome Back 
             
                         </Text>
@@ -70,6 +70,7 @@ const BusinessHomeScreenTest = () => {
                                         numberOfLines={1}
                                         style={{
                                         fontSize:18,
+                                        fontWeight:900,
                                         fontWeight:"bold",
                                         color:'white',
                                         textAlign:'left',
@@ -159,7 +160,7 @@ const BusinessHomeScreenTest = () => {
                         <TouchableOpacity>
                             <LinearGradient
                                 style={{
-                                    height: 115,
+                                    height: 120,
                                     width: 162,
                                     borderRadius: 50,
                                     justifyContent:'center',
@@ -410,7 +411,8 @@ const BusinessHomeScreenTest = () => {
                             height: 25,
                             width: 180,
                             //backgroundColor: "black",
-                            marginTop:20,
+                            marginTop: 40,
+                            marginLeft: 10,
                             justifyContent: "center",
 
                             
@@ -423,7 +425,7 @@ const BusinessHomeScreenTest = () => {
                         height: 110,
                         width: 370,
                         borderRadius: 40,
-                        backgroundColor: "light-grey",
+                        backgroundColor: "red",
                         justifyContent:'top',
                         alignItems:'center',
                         marginTop: 3,
