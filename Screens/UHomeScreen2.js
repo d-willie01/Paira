@@ -31,12 +31,12 @@ const UHomeScreen2 = () => {
             fontWeight:'900',
             fontSize:25,
             color:'white',
-            
-          
+
           }}>
             
             Tips
           </Text>
+          
           <Text 
       // Tips Text 
           numberOfLines={1} style= {{
@@ -284,10 +284,8 @@ const UHomeScreen2 = () => {
             marginLeft:25,
             fontWeight:'900',
             fontSize:25,
-            color:'white',
-          
-          }}>
-            
+            color:'white',        
+          }}>  
              
           </Text>
 
