@@ -3,10 +3,11 @@ export default [
         id: 0,
         image:"https://picsum.photos/200",
         founded: "Founded in 1997",
-        title: "Big O Tacos",
-        bio:"the best Tacos in Phoenix eat em up eat em up eat em up before it's too late yall!",
-        address: "1000 E Ven Aston St",
-        link: "www.eatmytaco.com"
+        title: "5th Street Burger and Fries",
+        bio:"5th street burgers are Rich in taste with good quality ingredients. 5th street burgers offer a variety of burgers with fast delivery.",
+        address: "5 min away", 
+        link: "www.eatmytaco.com",
+        
     },
     {
         id: 1,

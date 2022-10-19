@@ -9,20 +9,19 @@ const Card = (props) =>{
     const card = props.card;
 
     return(
-        <View style ={styles.container}>
+        <View style ={styles.cardcontainer}>
             {/*Image up to three */}
             <Image
             style={styles.image}
             source={{uri: card.image}} />
-
-            {/* Year created */ }
-            <Text style={styles.founded}>{card.founded}</Text> 
-
-            
+ 
             
             {/*title/name */}
 
             <Text style= {styles.title}>{card.title}</Text>
+
+             {/* Year created */ }
+             <Text style={styles.founded}>{card.founded}</Text> 
 
 
            
