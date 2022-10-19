@@ -265,6 +265,9 @@ const styles = StyleSheet.create({
         width:170,
         borderRadius:75,  
         justifyContent:'center',
+        alignItems: 'center',
+    
+        
 
     },
     MatchCategoryParent:{
