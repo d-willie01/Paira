@@ -1,5 +1,5 @@
-import React from "react";
-import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button, StatusBar, Platform,} from 'react-native'
+import React, {useState, useEffect} from "react";
+import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button,  Platform,} from 'react-native'
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import AddProfileButton from "../components/AddProfilePicButton";
@@ -11,11 +11,40 @@ import { Entypo } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from "expo-image-picker";
 
 
 
 const UHomeScreen2 = () => {
-    return(
+  
+  const [image, setImage] = useState(null);
+  
+
+
+  useEffect(  () =>{
+    if (Platform.OS != "web"){
+      const { status }  = ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status != "granted"){
+        console.log("Permission denied!");
+      }
+      
+    }
+  }, [])
+  
+  const PickProfilePic = async () =>{
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect : [4,3],
+      quality: 1
+    })
+    console.log(result)
+    if (!result.cancelled){
+      setImage(result.uri)
+    }
+  }
+  
+  return(
 
 <LinearGradient // background gradient view
       style={styles.container}
@@ -182,9 +211,19 @@ const UHomeScreen2 = () => {
                 borderRadius:80,
                 width:160,
                 height:160,
+                justifyContent: "center",
+                alignItems: "center",
 
                 position:"absolute",
-                backgroundColor: "#F39C12"}}> 
+                backgroundColor: "#F39C12"}}
+                onPress={PickProfilePic}>
+
+                  {image && <Image source ={{uri:image}} style={{
+                    height : 100,
+                    width : 100,
+                    
+
+                  }} />}
 
               </TouchableOpacity>
 
