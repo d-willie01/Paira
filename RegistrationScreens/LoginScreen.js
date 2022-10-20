@@ -3,7 +3,13 @@ import {Text, View} from 'react-native'
 
 const LoginScreen = () => {
     return(
-        <Text>Business Create Card Screen</Text>
+        <View style = {{
+            flex:1,
+            justifyContent:"center",
+            alignItems:"center"
+        }}>
+        <Text>Welcome Back! Mind Logging In??</Text>
+        </View>
     );
 };
 
