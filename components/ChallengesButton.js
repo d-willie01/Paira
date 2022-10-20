@@ -3,6 +3,7 @@ import styles from "../Styles/styles";
 import { TouchableOpacity, SafeAreaView, Text} from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
+
 const ChallengesButton = () =>{
     return(
         <TouchableOpacity style={{
