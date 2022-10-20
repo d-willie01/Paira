@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
     viewTest: {
         flexDirection: 'row',
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
 
     customAlign: {},
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         borderBottomRightRadius: 20,
-        marginBottom: 70,
+        marginBottom: 20,
     },
     textInputLargeT: {
         borderWidth: 1,
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         color: "#50375a",
         margin: 8,
-        width: 350,
+        width: 300,
         height: 200,
         borderBottomLeftRadius: 20,
         borderTopLeftRadius: 20,
