@@ -5,6 +5,7 @@ import UTabNav from './Navigation/UTabNav';
 import BTabNav from './BNavigation/BTabNav';
 import OnBoardStack from "./OnboardProcess/OnBoardStack"
 import { StateContext } from "./StateManagement/StateProvider";
+import UHomeScreen2 from "./Screens/UHomeScreen2";
 
 
 const AppNavigator = () => {

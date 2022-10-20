@@ -6,6 +6,7 @@ import OnBoardStack from "./OnboardProcess/OnBoardStack"
 import Card from "./components/CardPost/Card";
 import StateProvider from "./StateManagement/StateProvider";
 import AppNavigator from "./Index";
+import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
 
 
 
