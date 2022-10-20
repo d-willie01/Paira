@@ -12,7 +12,7 @@ const BusinessProfileScreen = () => {
    <LinearGradient // background gradient view
         style={styles.container}
         colors={['#B1B1B3','#CACACC',]}>
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", color: 'red' }}>
+        <View style={{ flex: 1, alignItems: "center"}}>
                 <Text style = {{alignItems: "center", fontWeight: '900', fontSize: 28, color: 'white', marginTop: 80, marginBottom: 30}}> Edit Your Card</Text>
             <View>
                 <TouchableOpacity>
@@ -39,12 +39,7 @@ const BusinessProfileScreen = () => {
                         
                         }}
                         colors={['#F8C471','#F5B041' ]}>
-                            <View>
-                                <TouchableOpacity  stlye= {{width: 170, height: 150, backgroundColor: 'red'}}>
-                                    <FontAwesome name="building" size={120} color="white" alignItems ='center'style = {{marginTop: 30}} />
-                                </TouchableOpacity>
-                            </View>
-                            <View style = {{marginLeft:220, marginBottom: 26}}>
+                            <View style = {{marginLeft:220, marginTop: 110}}>
                                 <TouchableOpacity>
                                     <AntDesign name="pluscircle" size={24} color="white" />
                                 </TouchableOpacity>
