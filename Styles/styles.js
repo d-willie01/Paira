@@ -407,11 +407,13 @@ const styles = StyleSheet.create({
         width:170,
         borderRadius:75,  
         justifyContent:'center',
+        alignItems: 'center',
 
     },
     MatchCategoryParent:{
         height:150,
         width:170,
+        
         borderRadius:75,
         backgroundColor:'#F39C12',
     },
