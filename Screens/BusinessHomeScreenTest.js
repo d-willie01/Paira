@@ -44,8 +44,7 @@ const BusinessHomeScreenTest = () => {
                     height: 235,
                     width: 395,
                     borderRadius: 25,
-                    
-                    marginTop: 3,
+                    bottom: 5
                     }}
                     colors={['#F5B041','#F8C471' ]}>
                         
@@ -72,6 +71,7 @@ const BusinessHomeScreenTest = () => {
                                     borderRadius:50,
                                     marginTop: 30,
                                     marginRight: 10,
+                                    bottom: 5,
                                     alignItems: 'center',}}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
@@ -237,7 +237,9 @@ const BusinessHomeScreenTest = () => {
                              width:250,
                              borderRadius:60,
                              marginRight: 10,
+                             marginTop: 15,
                              alignItems: 'center',
+                             bottom: 5,
                              backgroundColor:'#F39C12',}}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
