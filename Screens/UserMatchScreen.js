@@ -26,7 +26,7 @@ const UserMatchScreen = () => {
     
     const CategoryTwoScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryTwoScreen")
+        UMatchnavigation.navigate("CategoryTwoWords")
     }
     
     const CategoryThreeScreen = () =>{

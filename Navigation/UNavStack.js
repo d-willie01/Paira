@@ -16,7 +16,6 @@ const UnavigationStack = () => {
     return(
         <Unav.Navigator initialRouteName="UserHomeScreen">
             <Unav.Screen options={{headerShown: false}} name = 'UserHomeScreen' component={UHomeScreen2}/>
-            <Unav.Screen name = "AddKeyWordsScreen" component = {AddKeyWordsScreen}/>
             <Unav.Screen name = "CategoryOneScreen" component = {CategoryOneScreen}/>
             <Unav.Screen name = "CategoryTwoScreen" component = {CategoryTwoScreen}/>
             <Unav.Screen name = "CategoryThreeScreen" component = {CategoryThreeScreen}/>
