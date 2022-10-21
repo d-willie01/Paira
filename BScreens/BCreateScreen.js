@@ -7,8 +7,11 @@ const BCreateScreen = () => {
     return(
         <SafeAreaView style={styles.container}>
             <View>
-                <CategoryButton/>
-                <CategoryButton />
+                <CategoryButton text = "Food"/>
+                <CategoryButton text = "Places" />
+                <CategoryButton text = "Entertainment"/>
+                <CategoryButton text = "Art & Music"/>
+                <CategoryButton text = "Sports & Fitness"/>
             </View>
         </SafeAreaView>
     );
