@@ -1,9 +1,16 @@
 import React from "react";
-import {Text} from 'react-native'
+import {Text, View, TouchableOpacity, SafeAreaView} from 'react-native'
+import styles from "./BScreenStyles/BCreateScreenStyles";
+import CategoryButton from "../components/CategoryButton/CategoryButton";
 
 const BCreateScreen = () => {
     return(
-        <Text>Business Create Card Screen</Text>
+        <SafeAreaView style={styles.container}>
+            <View>
+                <CategoryButton/>
+                <CategoryButton />
+            </View>
+        </SafeAreaView>
     );
 };
 

@@ -6,9 +6,9 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const CollectionButton = ({text, source}) =>{
     return(
-<View style={{ height: 300, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: 'transparent', marginTop: 85, borderRadius: 25}}>
+<TouchableOpacity style={{ height: 225, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: 'white', marginTop: 85, borderRadius: 25}}>
     
-        <View style={{ flex: 2.5, backgroundColor: "#ffffff", borderRadius: 25 }}>
+        <View style={{ flex: 2.5, backgroundColor: "transparent", borderRadius: 25 }}>
         
             <Image source={source}
                 style={{ flex: 1, width: null, height: null, resizeMode: 'cover', borderRadius:25  }}
@@ -24,7 +24,7 @@ const CollectionButton = ({text, source}) =>{
             }}>{text}</Text>
         </View>
     
-</View>
+</TouchableOpacity>
     )
 }
 export default CollectionButton;

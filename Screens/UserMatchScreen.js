@@ -1,6 +1,11 @@
 import React from "react";
 import {Text, SafeAreaView, Button, TouchableOpacity, View} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
+import { LinearGradient } from "expo-linear-gradient";
+import styles from "../Styles/styles";
+import { ScrollView } from "react-native";
+import MatchCategoryFiveScreen from "./MatchCategoryFiveScreen";
+import CategoryFiveScreen from "./CategoryFiveScreen";
 
 const UserMatchScreen = () => {
 
@@ -25,107 +30,240 @@ const UserMatchScreen = () => {
            
         UMatchnavigation.navigate("MatchCategoryFourScreen")
     }
+    
+    const CategoryFiveScreen = () =>{
+           
+        UMatchnavigation.navigate("MatchCategoryFiveScreen")
+    }
    
    
    
    
    
     return(
+
+<LinearGradient // background gradient view
+        style={styles.container}
+        colors={['#B1B1B3','#CACACC',]}>
        
-       
-        <SafeAreaView style={{backgroundColor:"black", flex: 1}}>
+        <SafeAreaView>
+
+<ScrollView style={{
+        backgroundColor:'transparent',
+        flexDirection:'column',
+        height:2000,
+}}
+
+
+> 
+
+        <TouchableOpacity
+//Food Button Location - Category 1
+          style={{
+              marginTop:30,
+              marginLeft:181,
+              position:'absolute',
+            }}
+//button function
+            onPress={CategoryOneScreen}>
+        
+                <View
+//Button Style
+                     style={styles.MatchCategoryParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.MatchCategorygrad}>
+                        <Text numberOfLines={1} style={{
+                        fontSize:17,
+                        fontWeight:'900',
+                        color:'white',
+                        textAlign:'center',
+                        alignSelf:'center',
+                        fontStyle:'italic'
+                        }}>Food</Text>
+                   </LinearGradient>
+                </View>
+             </TouchableOpacity>
             
-           <View style={{
-                    flex: .22,
-                    backgroundColor: "red",
-                    justifyContent:'center'
+         <TouchableOpacity 
+//Entertainment Button Location - Category 2
+          style={{
+              marginTop:170,
+              marginLeft:75,
+              position:'absolute',}}
+//button function
+            onPress={CategoryTwoScreen}>
+                <View
+//Button Style
+                     style={styles.MatchCategoryParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.MatchCategorygrad}>
+                        <Text numberOfLines={1} style={{
+                        fontSize:17,
+                        fontWeight:'900',
+                        color:'white',
+                        textAlign:'center',
+                        alignSelf:'center',
+                        fontStyle:'italic'
+                        }}>Entertainment</Text>
+                   </LinearGradient>
+                </View>
+        </TouchableOpacity>
+        <TouchableOpacity 
+//Activities Button Location - Category 3
+          style={{
+              marginTop:310,
+              marginLeft:175,
+              position:'absolute',}}
+//button function
+            onPress={CategoryThreeScreen}>
+                <View
+//Button Style
+                     style={styles.MatchCategoryParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.MatchCategorygrad}>
+                        <Text numberOfLines={1} style={{
+                        fontSize:17,
+                        fontWeight:'900',
+                        color:'white',
+                        textAlign:'center',
+                        alignSelf:'center',
+                        fontStyle:'italic'
+                        }}>Places</Text>
+                   </LinearGradient>
+                </View>
+        </TouchableOpacity>
+       
+        <TouchableOpacity 
+//Arts and Music Button Location - Category 4
+          style={{
+              marginTop:450,
+              marginLeft:75,
+              position:'absolute',}}
+//button function
+            onPress={CategoryFourScreen}>
+                <View
+//Button Style
+                     style={styles.MatchCategoryParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.MatchCategorygrad}>
+                        <Text numberOfLines={1} style={{
+                        fontSize:17,
+                        fontWeight:'900',
+                        color:'white',
+                        textAlign:'center',
+                        alignSelf:'center',
+                        fontStyle:'italic'
+                        }}>Art & Music </Text>
+                   </LinearGradient>
+                </View>
+
+                
+        </TouchableOpacity>
+        
+        <TouchableOpacity 
+//Sports & Fitness Location - Category 5
+          style={{
+              marginTop:590,
+              marginLeft:175,
+              position:'absolute',}}
+//button function
+            onPress={CategoryFiveScreen}>
+                <View
+//Button Style
+                     style={styles.MatchCategoryParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.MatchCategorygrad}>
+                        <Text numberOfLines={1} style={{
+                        fontSize:17,
+                        fontWeight:'900',
+                        color:'white',
+                        textAlign:'center',
+                        alignSelf:'center',
+                        fontStyle:'italic'
+                        }}>Sports & Fitness</Text>
+                   </LinearGradient>
+                </View>             
+        </TouchableOpacity>
+
+
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:24,
+                fontWeight:'900',
+                color:'white',
+                marginTop:4,
+                marginLeft:20,
+                width:195,
 
                 }}>
-                     <TouchableOpacity onPress={CategoryOneScreen} style={{
-                            borderRadius: 75,
-                            marginVertical: 25,
-                            marginLeft: 50,
-                            height: 140,
-                            width: 140,
-                            backgroundColor: "black",
-                            alignItems: "center",
-                            justifyContent: 'center'
-                            }}>
-                            <Text style={{color:"#ffffff"}}>Food</Text>
-                    </TouchableOpacity>
-            </View> 
-            <View style={{
-                    flex:.22,
-                    backgroundColor: "green",
-                    alignItems: "flex-end",
-                    justifyContent: 'center'
-                 }}>
-                    <TouchableOpacity onPress={CategoryTwoScreen} style={{
-                            borderRadius: 75,
-                            marginVertical: 25,
-                            marginRight: 50,
-                            height: 140,
-                            width: 140,
-                            backgroundColor: "black",
-                            alignItems: "center",
-                            justifyContent: 'center'
-                            }}>
-                            <Text style={{color:"#ffffff"}}>Food</Text>
-                    </TouchableOpacity>
+                What are you lookin for?</Text>
+               
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:22,
+                fontWeight:'900',
+                color:'grey',
+                marginTop:85,
+                marginLeft:53,
+                width:300,
 
-            </View>
-            <View style={{
-                    flex:.22,
-                    backgroundColor:"yellow",
-                    justifyContent:'center'
-                 }}>
-                    <TouchableOpacity onPress={CategoryThreeScreen} style={{
-                            borderRadius: 74,
-                            marginVertical: 25,
-                            marginLeft: 50,
-                            height: 140,
-                            width: 140,
-                            backgroundColor: "black",
-                            alignItems: "center",
-                            justifyContent: 'center'
-                            }}>
-                            <Text style={{color:"#ffffff"}}>Food</Text>
-                    </TouchableOpacity>
+                }}>
+                Hungry?</Text>
+                
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:20,
+                fontWeight:'900',
+                color:'grey',
+                marginTop:220,
+                marginLeft:260,
+                width:160,
 
-            </View>
-            <View style={{
-                    flex:.22,
-                    backgroundColor:"blue",
-                    alignItems:'flex-end',
-                    justifyContent:'center'
-                    
-                 }}>
-                    <TouchableOpacity onPress={CategoryFourScreen} style={{
-                            borderRadius: 75,
-                            marginVertical: 25,
-                            marginRight: 50,
-                            height: 140,
-                            width: 140,
-                            backgroundColor: "black",
-                            alignItems: "center",
-                            justifyContent: 'center'
-                            }}>
-                            <Text style={{color:"#ffffff"}}>Food</Text>
-                    </TouchableOpacity>
+                }}>
+                Old town... again? </Text>
+                
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:20,
+                fontWeight:'900',
+                color:'grey',
+                marginTop:360,
+                marginLeft:40,
+                width:160,
 
-            </View>
+                }}>
+                Looking for adventure? </Text>
 
-            
-           
-            
-            
-            
-            
-            
-           
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:20,
+                fontWeight:'900',
+                color:'grey',
+                marginTop:500,
+                marginLeft:260,
+                width:160,
 
+                }}>
+                Creativity is key. </Text>
+                <Text numberOfLines={2} style={{
+                position:'absolute',
+                fontSize:20,
+                fontWeight:'900',
+                color:'grey',
+                marginTop:650,
+                marginLeft:25,
+                width:160,
 
-        </SafeAreaView>
+                }}>
+                Yeah let's get right. </Text>
+</ScrollView>
+                </SafeAreaView>
+        </LinearGradient>
     );
 };
 
