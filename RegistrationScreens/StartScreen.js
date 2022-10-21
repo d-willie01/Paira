@@ -1,8 +1,9 @@
 import React from "react";
-import {Text, View, Button} from 'react-native'
+import {Text, View, Button, TouchableOpacity, Image} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+
 
 
 const StartScreen = () => {
@@ -28,12 +29,74 @@ const StartScreen = () => {
 
         <View style ={{flex: 1}}>
         <LinearGradient // background gradient view
-        style={{flex: 1, alignContent: 'center', justifyContent: 'center'}}
+        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
         
         colors={['#B1B1B3','#CACACC',]}>
-        <Text>Welcome to Paira!</Text>
-        <Button title ="Login" onPress={LoginScreen}/>
-        <Button title = "register" onPress={RegistrationScreen}/>
+        <Image 
+            style = {{ width: 150, height: 320}}
+            source= {require('../assets/Icons/PairaLogo.png')}/>
+        <View style={{alignItems: 'center', marginTop: 150}}>
+            <TouchableOpacity title ="Login" onPress={LoginScreen}>
+                <LinearGradient
+                    style={{
+                        height: 60,
+                        width: 250,
+                        borderRadius: 75,
+                        alignItems:'center',
+                        marginBottom: 20,
+                        marginLeft: 10,
+                    }}
+                    colors={['#F8C471','#FF8900' ]}>
+                        
+                    <LinearGradient
+                        style={{
+                            height: 55,
+                            width: 300,
+                            borderRadius: 75,
+                            justifyContent:'center',
+                            alignItems:'center',
+                            }}
+                        colors={['#F8C471','#F5B041' ]}>
+                            <Text style={{
+                                            fontSize: 25,
+                                            
+                                            fontWeight: "900",
+                                            color: '#ffffff'}}>Login
+                            </Text>
+                        </LinearGradient>
+                </LinearGradient>
+                </TouchableOpacity>
+                <TouchableOpacity title = "register" onPress={RegistrationScreen}>
+                <LinearGradient
+                    style={{
+                        height: 60,
+                        width: 250,
+                        borderRadius: 75,
+                        alignItems:'center',
+                        marginBottom: 20,
+                        marginLeft: 10,
+                    }}
+                    colors={['#F8C471','#FF8900' ]}>
+                        
+                    <LinearGradient
+                        style={{
+                            height: 55,
+                            width: 300,
+                            borderRadius: 75,
+                            justifyContent:'center',
+                            alignItems:'center',
+                            }}
+                        colors={['#F8C471','#F5B041' ]}>
+                            <Text style={{
+                                            fontSize: 25,
+                                            
+                                            fontWeight: "900",
+                                            color: '#ffffff'}}>Register
+                            </Text>
+                        </LinearGradient>
+                </LinearGradient>
+            </TouchableOpacity>
+        </View>
         </LinearGradient>
 
         </View>
