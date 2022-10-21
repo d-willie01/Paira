@@ -20,6 +20,7 @@ import Card from "./components/CardPost/Card";
 import { SafeAreaView } from "react-native";
 import RestaurantData from "./assets/Data/RestaurantData";
 import BusinessAddKeyWordsScreen from "./Screens/BusinessAddKeywordScreen";
+import StartScreen from "./RegistrationScreens/StartScreen";
 
 
 
@@ -35,7 +36,7 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <BusinessProfileScreen/>
+      <StartScreen/>
     </NavigationContainer>
 
   
