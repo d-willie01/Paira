@@ -3,7 +3,7 @@ export default [
         id: 0,
         image:"https://picsum.photos/200",
         founded: "Founded in 1997",
-        title: "5th Street Burger and Fries",
+        title: "5th Street Burger",
         bio:"5th street burgers are Rich in taste with good quality ingredients. 5th street burgers offer a variety of burgers with fast delivery.",
         address: "5 min away", 
         link: "www.eatmytaco.com",

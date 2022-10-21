@@ -194,35 +194,35 @@ const styles = StyleSheet.create({
     },
     interestbuttongrad:{
         position:'absolute',
-        height:165,
-        width:150,
+        height:70,
+        width:400,
         borderRadius:20,
-        justifyContent:'center',
+        
         bottom:5,
 
     },
     interestbuttonParent:{
         position:'absolute',
-        height:165,
-        width:152,
+        height:70,
+        width:400,
         borderRadius:20,
         backgroundColor:'#F39C12',
     },
     profileinfograd:{
         bottom:5, 
-        height:150,
+        height:50,
         width:170,
         borderRadius:50,
-        alignItems:'center'
+        
           
 
     },
     profileinfoParent:{
-        height:150,
+        height:50,
         width:170,
         borderRadius:50,
         backgroundColor:'#F39C12',
-        alignItems:'center'
+        
         
     },
     TipoftheDaygrad:{
@@ -273,7 +273,36 @@ const styles = StyleSheet.create({
         borderRadius:75,
         backgroundColor:'#F39C12',
     },
-    
+    PairaScoregrad:{
+        position:'absolute',
+        height:55,
+        width:150,
+        borderRadius:60,
+        bottom:5,   
+
+    },
+    PairaScoreParent:{
+        position:'absolute',
+        height:55,
+        width:150,
+        borderRadius:60,
+        backgroundColor:'#F39C12',
+    },
+    UserLocationgrad:{
+        position:'absolute',
+        height:55,
+        width:150,
+        borderRadius:60,
+        bottom:5,   
+
+    },
+    UserLocationParent:{
+        position:'absolute',
+        height:55,
+        width:150,
+        borderRadius:60,
+        backgroundColor:'#F39C12',
+    },
 });
 
 
