@@ -152,7 +152,6 @@ const BusinessHomeScreenTest = () => {
                                     height: 80,
                                     width: 200,
                                     borderRadius: 50,
-                                    justifyContent:'center',
                                     alignItems:'center',
                                     marginTop: 13,
                                     marginLeft: 10
@@ -189,7 +188,6 @@ const BusinessHomeScreenTest = () => {
                                     height: 80,
                                     width: 200,
                                     borderRadius: 50,
-                                    justifyContent:'center',
                                     marginTop: 13,
                                     marginLeft: 10
                                     
@@ -239,7 +237,6 @@ const BusinessHomeScreenTest = () => {
                              width:250,
                              borderRadius:60,
                              marginRight: 10,
-                             justifyContent:'center',
                              alignItems: 'center',
                              backgroundColor:'#F39C12',}}>
                             <LinearGradient
