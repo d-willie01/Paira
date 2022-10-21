@@ -22,6 +22,7 @@ import RestaurantData from "./assets/Data/RestaurantData";
 import BusinessAddKeyWordsScreen from "./Screens/BusinessAddKeywordScreen";
 import StartScreen from "./RegistrationScreens/StartScreen";
 import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
+import LoginScreen from "./RegistrationScreens/LoginScreen";
 
 
 
@@ -37,7 +38,7 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <UserRegistrationScreen/>
+      <LoginScreen/>
     </NavigationContainer>
 
   
