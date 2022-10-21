@@ -6,15 +6,13 @@ const StartScreen = () => {
    
     const Startnavigation = useNavigation();
 
-    const RegistrationScreen = () =>{
-       
-        Startnavigation.navigate("Registration")
-
+    const UserRegister1 = () => {
+        Startnavigation.navigate("UserRegister");
     }
 
     const LoginScreen = () =>{
        
-        Startnavigation.navigate("Login")
+        Startnavigation.navigate("Login");
 
     }
     
@@ -26,7 +24,7 @@ const StartScreen = () => {
         <View style ={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
         <Text>Welcome to Paira!</Text>
         <Button title ="Login" onPress={LoginScreen}/>
-        <Button title = "register" onPress={RegistrationScreen}/>
+        <Button title ="Register" onPress={UserRegister1}/>
 
         </View>
     );
