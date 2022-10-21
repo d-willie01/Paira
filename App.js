@@ -21,6 +21,7 @@ import { SafeAreaView } from "react-native";
 import RestaurantData from "./assets/Data/RestaurantData";
 import BusinessAddKeyWordsScreen from "./Screens/BusinessAddKeywordScreen";
 import StartScreen from "./RegistrationScreens/StartScreen";
+import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
 
 
 
@@ -36,7 +37,7 @@ export default function App() {
   
   return (
     <NavigationContainer>
-      <StartScreen/>
+      <UserRegistrationScreen/>
     </NavigationContainer>
 
   
