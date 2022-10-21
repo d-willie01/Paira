@@ -5,7 +5,12 @@ import { StyleSheet, Text, View, Dimensions } from 'react-native';
 const UserSearchMainScreen = () => {
     return(
         <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView style={styles.map} initialRegion={{
+        latitude: 33.4484,
+        longitude: -112.0740,
+        latitudeDelta: 1,
+        longitudeDelta: 1
+      }}/>
     </View>
     );
 };
