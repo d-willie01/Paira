@@ -12,6 +12,12 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from "expo-image-picker";
+import CategoryButton from "../components/CategoryButton/CategoryButton";
+import { Feather } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { AntDesign } from '@expo/vector-icons'; 
+
+
 
 
 
@@ -35,7 +41,7 @@ const UHomeScreen2 = () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
-      aspect : [4,3],
+      aspect : [2,2],
       quality: 1
     })
     console.log(result)
@@ -51,20 +57,6 @@ const UHomeScreen2 = () => {
       colors={['#B1B1B3','#CACACC',]}>
         
         <SafeAreaView>
-          <Text 
-      // Tips Title Text 
-          numberOfLines={1} style= {{
-            position:'absolute',
-            marginTop:325,
-            marginLeft:277,
-            fontWeight:'900',
-            fontSize:25,
-            color:'white',
-
-          }}>
-            
-            Tips
-          </Text>
           
           <Text 
       // Tips Text 
@@ -81,13 +73,13 @@ const UHomeScreen2 = () => {
             
             My collection
           </Text>
+         
 
-          <LinearGradientTO/>
-          <TouchableOpacity 
+         <TouchableOpacity 
       //TIPS Button 
           style={{
-              marginTop:360,
-              marginLeft:260,
+              marginTop:475,
+              marginLeft:15,
               position:'absolute',
             }}
 
@@ -101,54 +93,49 @@ const UHomeScreen2 = () => {
                      colors={['#F5B041','#F8C471']}
                      style={styles.interestbuttongrad}>
                         <Text numberOfLines={3} style={{
-                        fontSize:16,
+                        fontSize:14,
                         fontWeight:'800',
                         color:'white',
                         fontStyle:'italic',
                         position:'absolute',
                         textAlign:'center',
-                        alignSelf:'center',
-                        }}>You can receive Paira crowns for inviting friends!</Text>
+                        marginTop:23,
+                        marginLeft:10
+                        }}>You can receive Paira crowns for inviting friends and matching with organizations!</Text>
+
+            
+                        
                    </LinearGradient>
+
+                   <Text numberOfLines={3} style={{
+                        fontSize:13.5,
+                        fontWeight:'800',
+                        color:'grey',
+                        fontStyle:'italic',
+                        position:'absolute',
+                        marginLeft:155,
+                        textDecorationLine:'underline'
+                        
+
+                        
+                        }}>Tip of the Day</Text>
+                        <Entypo name="light-bulb" size={14} color="grey" 
+               style={{
+             position:'absolute',
+             marginTop:1,
+             marginLeft:140, }} 
+             />
                 </View>
              </TouchableOpacity>
 
-             <TouchableOpacity 
 
-      //INTEREST BUTTON
-          style={{
-              marginTop:360,
-              marginLeft:15,
-              position:'absolute',
-            }}
-
-      //button function
-            onPress={()=> console.log('yeee')}>
-              
-                <View
-      //Button Style // Mix Matched the styles here to not mess anyones code up
-                     style={styles.TipoftheDayParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.TipoftheDaygrad}>
-                        <Text numberOfLines={3} style={{
-                        fontSize:25,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Add your Interests</Text>
-                   </LinearGradient>
-                </View>
-             </TouchableOpacity>
 
 
              <TouchableOpacity 
       //Profile Info
              style={{
-              marginTop:115,
-              marginLeft:225,
+              marginTop:325,
+              marginLeft:130,
               position:'absolute',
             }}
 
@@ -162,7 +149,7 @@ const UHomeScreen2 = () => {
                      style={styles.profileinfograd}>
                         <Text
         //Text Inside of Profile info
-                        numberOfLines={1}
+                        numberOfLines={2}
                         style={{
                         fontSize:18,
                         fontWeight:"900",
@@ -170,57 +157,133 @@ const UHomeScreen2 = () => {
                         textAlign:'center',
                         position:'absolute',
                         alignContent:'center',
-                        marginTop:20,
-                        marginLeft:15,
+                        marginTop:13,
+                        marginLeft:10,
                         
-                        }}>Breaben Bolton</Text>
-
-                        <Text numberOfLines={2} 
+                        }}>Breaben Bolton </Text>
+                        <Text
+        //Text Inside of Profile info
+                        numberOfLines={2}
                         style={{
-                        fontSize:18,
-                        fontWeight:"bold",
+                        fontSize:10,
+                        fontWeight:"700",
                         color:'white',
-                        position:'absolute',
                         textAlign:'center',
-                        alignContent:'center',
-                        marginTop:50,
-                        marginLeft:30,
+                        position:'absolute',
+                        marginTop:35,
+                        marginLeft:50,
                         
-                        }}>Homebase: Phoenix,AZ </Text>
-                        <Text numberOfLines={1} 
-                        style={{
-                        fontSize:18,
-                        fontWeight:"900",
-                        color:'white',
-                        position:'absolute',
-                        textAlign:'center',
-                        marginTop:120,
-                        marginLeft:43,
-                        }}> 97 Friends </Text>
+                        }}>Phoenix, AZ </Text>
+                        
                    </LinearGradient>
                 </View>
              </TouchableOpacity>
              
+             <TouchableOpacity 
+      //Profile Info
+             style={{
+              marginTop:400,
+              marginLeft:60,
+              position:'absolute',
+            }}
+
+        //button function
+            onPress={()=> console.log('yeee')}>
+                <View
+        //Profile Info Style
+                     style={styles.PairaScoreParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.PairaScoregrad}>
+                        <Text
+        //Text Inside of Profile info
+                        numberOfLines={1}
+                        style={{
+                        fontSize:33,
+                        fontWeight:"900",
+                        color:'white',
+                        textAlign:'center',
+                        position:'absolute',
+                        marginTop:8,
+                        marginLeft:20,
+                        fontStyle:'italic',
+                        
+                        }}>619</Text>
+
+              <MaterialCommunityIcons name="crown" size={37} color="white" style={{
+                position:'absolute',
+                marginTop:8,
+                marginLeft:94,}}>
+              </MaterialCommunityIcons>
+
+
+
+                    </LinearGradient>
+                </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+      //UserLocation TO
+             style={{
+              marginTop:400,
+              marginLeft:220,
+              position:'absolute',
+            }}
+
+        //button function
+            onPress={()=> console.log('yeee')}>
+                <View
+        //Profile Info Style
+                     style={styles.UserLocationParent}>
+                    <LinearGradient
+                     colors={['#F8C471','#F5B041']}
+                     style={styles.UserLocationgrad}>
+                        <Text
+        //Text Inside of Profile info
+                        numberOfLines={1}
+                        style={{
+                        fontSize:33,
+                        fontWeight:"900",
+                        color:'white',
+                        textAlign:'center',
+                        position:'absolute',
+                        marginTop:8, 
+                        marginLeft:26,
+                        
+                        }}>23 </Text>
+
+                    <FontAwesome5 name="user-friends" size={29} color="white" style={{
+                      position:'absolute',
+                      marginLeft: 85,
+                      marginTop:12,
+                    }} />
+
+
+
+                    </LinearGradient>
+                </View>
+            </TouchableOpacity>
+
+
               <TouchableOpacity 
       //Add Profile Button
                 style={{
-                height: 100, 
-                width: 100, 
-                marginLeft:28,
-                marginTop: 108, 
-                borderRadius:80,
-                width:160,
-                height:160,
-                justifyContent: "center",
-                alignItems: "center",
-
+                height: 205, 
+                width: 205,
+                marginLeft:112,
+                marginTop: 105, 
+                borderRadius:100,
                 position:"absolute",
+                justifyContent:'center',
                 backgroundColor: "#F39C12"}}
+
                 onPress={PickProfilePic}>
 
                   {image && <Image source ={{uri:image}} style={{
-                    height : 100,
-                    width : 100,
+                    height : 200,
+                    width : 200,
+                    borderRadius:100,
+                    alignSelf:'center',
                     
 
                   }} />}
@@ -228,24 +291,36 @@ const UHomeScreen2 = () => {
               </TouchableOpacity>
 
              
-             <ScrollView  horizontal= {true} style={{
+             <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={false} style={{
               marginTop:460,
+              
 
 
              }} > 
               <CollectionButton/>
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:81,
+              }}/> 
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:250,
+              }}/> 
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:425,
+              }}/> 
+
               <CollectionButton/>
               <CollectionButton/>
               </ScrollView>
             
               </SafeAreaView>
             
-          <Entypo name="light-bulb" size={17} color="white" 
-          style={{
-            position:'absolute',
-            marginTop:332,
-            marginLeft:333,
-          }} />
+          
           <MaterialIcons name="collections-bookmark" size={24} color="white" 
           style={{
             position:'absolute',
@@ -269,35 +344,16 @@ const UHomeScreen2 = () => {
             marginLeft:122,
           }}
           />
-          <MaterialCommunityIcons name="crown" size={28} color="white" style={{
-            position:'absolute',
-            marginTop:275,
-            marginLeft:130,
-          }} 
-          />
-       
-        <View 
-    // Paira Score View
-        style= {{
-          position:'absolute',
-          marginTop:265,
-          marginLeft:30,
-          height:50,
-          width:100,
-          backgroundColor:'transparent',
-          justifyContent:'center',
+          <Feather name="info" size={18} color="white" style={{
+            position:"absolute",
+            marginTop:375,
+            marginLeft:80,
+          }} />
 
-        }}> 
-          <Text style={{
-          fontSize: 34,
-          fontStyle:'italic',
-          fontWeight:'900',
-          textAlign:'right',
-          color:'white'
 
-        }}> 619 </Text> 
-        
-        </View>
+
+
+
        
         <Text 
       // Welcome Text 

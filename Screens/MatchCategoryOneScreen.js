@@ -4,6 +4,7 @@ import Card from "../components/CardPost/Card";
 import RestaurantData from "../assets/Data/RestaurantData";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../components/CardPost/CardStyles";
+import { TouchableOpacity } from "react-native";
 
 
 const MatchCategoryOneScreen = () => {
@@ -12,11 +13,33 @@ const MatchCategoryOneScreen = () => {
 <LinearGradient // background gradient view
       style={styles.container}
       colors={['#B1B1B3','#CACACC',]}>
+        <TouchableOpacity 
+      //TIPS Button 
+          style={{
+              marginTop:115,
+              marginLeft:15,
+              position:'absolute',
+            }}
+
+      //button function
+            onPress={()=> console.log('yeee')}>
+              
+                <View
+      //Button Style
+                     style={styles.BCardBackgroundParent}>
+                    <LinearGradient
+                     colors={['#CACACC','#B1B1B3']}
+                     style={styles.BCardBackgroundgrad}>
+                   </LinearGradient>
+
+                
+                </View>
+             </TouchableOpacity>
 
        <View>
         <Text numberOfLines={3} style={{
-            fontSize:20,
-            marginTop:55,
+            fontSize:15,
+            marginTop:70,
             marginLeft:35,
             width:350,
             textAlign:'center',
@@ -25,7 +48,7 @@ const MatchCategoryOneScreen = () => {
             position:'absolute',
         }}
         >
-         Showing you local food results based on YOUR interests
+         Here are some local food matches based on YOUR interests
 
         </Text>
         <FlatList
@@ -34,6 +57,9 @@ const MatchCategoryOneScreen = () => {
         data={RestaurantData}
         renderItem={({item}) => <Card card={item}/>}
         />
+
+
+
        </View>
 
 </LinearGradient>

@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     title:{
         fontWeight: "800",
         fontSize: 34,
-        marginTop: 1,
+        marginTop: 20,
         marginLeft: 0,
         textAlign:'center',
     },
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     },
     bio:{
         textAlign:'center',
-        fontSize: 14,
+        fontSize: 18,
         fontWeight:'600',
         lineHeight: 20, 
         marginTop:10,
@@ -60,18 +60,35 @@ const styles = StyleSheet.create({
         alignSelf:'left',
         fontWeight:"600",
         marginLeft:30,
-        marginVertical:5
+        marginVertical:40
         
 
     },
     link:{
         alignSelf:'center',
-        color: "blue"
+        color: "dodgerblue",
+        textDecorationLine:'underline',
     },
     container: {
         flex:1,
         backgroundColor:'#D5D5D5',
         paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+    },
+
+    BCardBackgroundgrad:{
+        position:'absolute',
+        height:700,
+        width:400,
+        borderRadius:20,
+        bottom:5,
+
+    },
+    BCardBackgroundParent:{
+        position:'absolute',
+        height:700,
+        width:400,
+        borderRadius:20,
+        backgroundColor:'#CACACC',
     },
 
 })
