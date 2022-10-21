@@ -7,8 +7,9 @@ import Card from "./components/CardPost/Card";
 import StateProvider from "./StateManagement/StateProvider";
 import AppNavigator from "./Index";
 import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
-
-
+import ChoiceRegistration from "./Screens/ChoiceRegistrationScreen";
+import UHomeScreen2 from "./Screens/UHomeScreen2";
+import BusinessHomeScreenTest from "./Screens/BusinessHomeScreenTest";
 
 
 
@@ -20,14 +21,21 @@ export default function App() {
   return (
     
     <StateProvider>
-      <AppNavigator/>
+      <BusinessHomeScreenTest/>
     </StateProvider>
     
 
   
     )
   
-  
+  /*
+
+
+    <StateProvider>
+      <AppNavigator/>
+    </StateProvider>
+
+    */
   
  
 
