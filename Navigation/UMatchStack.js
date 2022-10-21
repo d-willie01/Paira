@@ -6,6 +6,10 @@ import MatchCategoryTwoScreen from "../Screens/MatchCategoryTwoScreen";
 import MatchCategoryThreeScreen from "../Screens/MatchCategoryThreeScreen";
 import MatchCategoryFourScreen from "../Screens/MatchCategoryFourScreen";
 import MatchCategoryFiveScreen from "../Screens/MatchCategoryFiveScreen";
+import CategoryOneScreen from "../Screens/CategoryOneScreen";
+import CategoryTwoScreen from "../Screens/CategoryTwoScreen";
+import CategoryThreeScreen from "../Screens/CategoryThreeScreen";
+import CategoryFourScreen from "../Screens/CategoryFourScreen";
 
 const UMatchnav = createNativeStackNavigator();
 
@@ -19,6 +23,7 @@ const UmatchNavigationStack = () => {
                 <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryThreeScreen' component={MatchCategoryThreeScreen}/>
                 <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryFourScreen' component={MatchCategoryFourScreen}/>
                 <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryFiveScreen' component={MatchCategoryFiveScreen}/>
+                <UMatchnav.Screen name = "CategoryTwoWords" component={CategoryTwoScreen}/>
 
 
             </UMatchnav.Navigator>

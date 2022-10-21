@@ -3,7 +3,7 @@ import {Text} from 'react-native'
 
 const CategoryOneScreen = () => {
     return(
-        <Text>CategoryOneScreen</Text>
+        <Text>CategoryOneScreen </Text>
     );
 };
 

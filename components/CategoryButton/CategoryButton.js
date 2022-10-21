@@ -3,7 +3,7 @@ import {Text, SafeAreaView, Button, TouchableOpacity, View} from 'react-native'
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./CategoryButtonStyles";
 
-const CategoryButton = () => {
+const CategoryButton = ({text}) => {
     return (
         <View >
             <TouchableOpacity style={styles.MatchCategoryParent}>
@@ -17,7 +17,7 @@ const CategoryButton = () => {
                         textAlign:'center',
                         alignSelf:'center',
                         fontStyle:'italic'
-                        }}>Sports & Fitness</Text>
+                        }}>{text}</Text>
                    </LinearGradient>
             </TouchableOpacity>
         </View>
