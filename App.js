@@ -21,7 +21,7 @@ export default function App() {
   return (
     
     <StateProvider>
-      <BusinessHomeScreenTest/>
+      <AppNavigator/>
     </StateProvider>
     
 
