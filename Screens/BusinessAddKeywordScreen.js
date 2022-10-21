@@ -28,7 +28,7 @@ const BusinessCategoryFourScreen = () =>{
     
     return(
     <SafeAreaView>
-        <Text>Hello World</Text>
+        <Text>Choose you Category For Key Words</Text>
         <Button title="Category 1" onPress={BusinessCategoryOneScreen} />
         <Button title="Category 2" onPress={BusinessCategoryTwoScreen}/>
         <Button title="Category 3" onPress={BusinessCategoryThreeScreen}/>

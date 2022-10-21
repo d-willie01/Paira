@@ -6,6 +6,14 @@ import styles from "../Styles/styles";
 import { ScrollView } from "react-native";
 import MatchCategoryFiveScreen from "./MatchCategoryFiveScreen";
 import CategoryFiveScreen from "./CategoryFiveScreen";
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
+
+
+
+
 
 const UserMatchScreen = () => {
 
@@ -73,14 +81,8 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <Text numberOfLines={1} style={{
-                        fontSize:17,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Food</Text>
+                        <MaterialCommunityIcons name="food-fork-drink" size={40} color="white" />
+                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Food </Text>
                    </LinearGradient>
                 </View>
              </TouchableOpacity>
@@ -99,14 +101,9 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <Text numberOfLines={1} style={{
-                        fontSize:17,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Entertainment</Text>
+                        <FontAwesome name="play-circle-o" size={40} color="white" />
+                        <Text style = {{ color: "white", fontSize: 18, fontWeight: '900', fontStyle: "italic"}}> Entertainment </Text>
+
                    </LinearGradient>
                 </View>
         </TouchableOpacity>
@@ -124,14 +121,9 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <Text numberOfLines={1} style={{
-                        fontSize:17,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Places</Text>
+                        <FontAwesome5 name="mountain" size={34} color="white" />
+                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Places </Text>
+
                    </LinearGradient>
                 </View>
         </TouchableOpacity>
@@ -150,14 +142,19 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <Text numberOfLines={1} style={{
-                        fontSize:17,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Art & Music </Text>
+                        <View style = {{marginRight: 37, marginBottom: -37,}}>
+                            <FontAwesome5 name="guitar" size={42} color="white" />
+                            
+
+                        </View>
+                        <View style = {{marginLeft: 30, marginBottom: -1, }}>
+
+                            <Ionicons name="color-palette" size={37} color="white"  />
+
+                        </View>
+                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Art & Music</Text>
+
+
                    </LinearGradient>
                 </View>
 
@@ -178,14 +175,15 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <Text numberOfLines={1} style={{
-                        fontSize:17,
-                        fontWeight:'900',
-                        color:'white',
-                        textAlign:'center',
-                        alignSelf:'center',
-                        fontStyle:'italic'
-                        }}>Sports & Fitness</Text>
+                         <View style = {{marginRight: 40, marginBottom: -40}}>
+                            <MaterialCommunityIcons name="yoga" size={44} color="white" />                        
+                        </View>
+                        <View style = {{marginLeft: 40}}>
+
+                            <Ionicons name="american-football" size={39} color="white" />
+                        </View>
+                        <Text style = {{ color: "white", fontSize: 17, fontWeight: '900', fontStyle: "italic",}}> Sports & Fitness</Text>
+
                    </LinearGradient>
                 </View>             
         </TouchableOpacity>
