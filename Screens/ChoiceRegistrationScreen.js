@@ -14,17 +14,17 @@ const ChoiceRegistration = () => {
         </View>
         */
         
-    <SafeAreaView style={styles.container}>
-        <SafeAreaView style={styles.header}>
-            <Text style={styles.title}>Welcome To Paira </Text>
+    <SafeAreaView style={styles.containerT}>
+        <SafeAreaView style={styles.headerT}>
+            <Text style={styles.titleT}>Welcome To Paira </Text>
         </SafeAreaView>
-            <SafeAreaView style={styles.footer}>
+            <SafeAreaView style={styles.footerT}>
                 <SafeAreaView> 
                     <Text> Start exploring </Text>
                 </SafeAreaView>
                 <SafeAreaView style= {styles.TopItemsMiddleScreen} >
-                    <TouchableOpacity style={styles.button_} onPress={alert}>
-                         <Text style = {styles.textSign}> Business </Text>
+                    <TouchableOpacity style={styles.button_T} onPress={alert}>
+                         <Text style = {styles.textSignT}> Business </Text>
                     </TouchableOpacity>
                 </SafeAreaView>
                 
@@ -32,8 +32,8 @@ const ChoiceRegistration = () => {
                                     <Text > or </Text>
                                 </SafeAreaView>
                                         <SafeAreaView style= {styles.BottomItemMiddleScreen}>
-                                            <TouchableOpacity style={styles.button_} onPress={alert}>
-                                                <Text style = {styles.textSign}> User </Text>
+                                            <TouchableOpacity style={styles.button_T} onPress={alert}>
+                                                <Text style = {styles.textSignT}> User </Text>
                                             </TouchableOpacity>
                                         </SafeAreaView>
                                 <SafeAreaView>
