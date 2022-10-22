@@ -31,7 +31,7 @@ const StartScreen = () => {
         <LinearGradient // background gradient view
         style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
         
-        colors={['#B1B1B3','#CACACC',]}>
+        colors={['#FDFEFE','#626567']}>
         <Image 
             style = {{ width: 150, height: 320}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
