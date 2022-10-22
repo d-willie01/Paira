@@ -14,6 +14,9 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { AntDesign } from '@expo/vector-icons';
 import BackgroundColor from "../components/Theme/BackgroundColor";
 import TipsButton from "../components/TipsButton/TipsButton";
+import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
+import SocialButton from "../components/ProfileInfoButtons/Social/SocialButton";
+import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2";
 
 
 
@@ -72,7 +75,7 @@ const UHomeScreen2 = () => {
          
           <View style = {{
             position: "absolute",
-            marginTop: 500
+            marginTop: 450
           }}>
          <TipsButton/>
          </View>
@@ -80,138 +83,25 @@ const UHomeScreen2 = () => {
 
 
 
-             <TouchableOpacity 
-      //Profile Info
-             style={{
+             <View style={{
+              position:"absolute",
               marginTop:325,
-              marginLeft:130,
-              position:'absolute',
-            }}
-
-        //button function
-            onPress={()=> console.log('yeee')}>
-                <View
-        //Profile Info Style
-                     style={styles.profileinfoParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.profileinfograd}>
-                        <Text
-        //Text Inside of Profile info
-                        numberOfLines={2}
-                        style={{
-                        fontSize:18,
-                        fontWeight:"900",
-                        color:'white',
-                        textAlign:'center',
-                        position:'absolute',
-                        alignContent:'center',
-                        marginTop:13,
-                        marginLeft:10,
-                        
-                        }}>Breaben Bolton </Text>
-                        <Text
-        //Text Inside of Profile info
-                        numberOfLines={2}
-                        style={{
-                        fontSize:10,
-                        fontWeight:"700",
-                        color:'white',
-                        textAlign:'center',
-                        position:'absolute',
-                        marginTop:35,
-                        marginLeft:50,
-                        
-                        }}>Phoenix, AZ </Text>
-                        
-                   </LinearGradient>
-                </View>
-             </TouchableOpacity>
+              marginLeft: 100
+             }}>
+              <NameTagButton/>
+             </View>
              
-             <TouchableOpacity 
-      //Profile Info
-             style={{
-              marginTop:400,
-              marginLeft:60,
-              position:'absolute',
-            }}
+             <View>
+              <SocialButton/>
+             </View>
 
-        //button function
-            onPress={()=> console.log('yeee')}>
-                <View
-        //Profile Info Style
-                     style={styles.PairaScoreParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.PairaScoregrad}>
-                        <Text
-        //Text Inside of Profile info
-                        numberOfLines={1}
-                        style={{
-                        fontSize:33,
-                        fontWeight:"900",
-                        color:'white',
-                        textAlign:'center',
-                        position:'absolute',
-                        marginTop:8,
-                        marginLeft:20,
-                        fontStyle:'italic',
-                        
-                        }}>619</Text>
-
-              <MaterialCommunityIcons name="crown" size={37} color="white" style={{
-                position:'absolute',
-                marginTop:8,
-                marginLeft:94,}}>
-              </MaterialCommunityIcons>
-
-
-
-                    </LinearGradient>
-                </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity 
-      //UserLocation TO
-             style={{
-              marginTop:400,
-              marginLeft:220,
-              position:'absolute',
-            }}
-
-        //button function
-            onPress={()=> console.log('yeee')}>
-                <View
-        //Profile Info Style
-                     style={styles.UserLocationParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.UserLocationgrad}>
-                        <Text
-        //Text Inside of Profile info
-                        numberOfLines={1}
-                        style={{
-                        fontSize:33,
-                        fontWeight:"900",
-                        color:'white',
-                        textAlign:'center',
-                        position:'absolute',
-                        marginTop:8, 
-                        marginLeft:26,
-                        
-                        }}>23 </Text>
-
-                    <FontAwesome5 name="user-friends" size={29} color="white" style={{
-                      position:'absolute',
-                      marginLeft: 85,
-                      marginTop:12,
-                    }} />
-
-
-
-                    </LinearGradient>
-                </View>
-            </TouchableOpacity>
+            <View style={{
+              position:"absolute",
+              marginTop:425,
+              marginLeft: 100
+            }}>
+              <SocialButton2/>
+            </View>
 
 
               <TouchableOpacity 
