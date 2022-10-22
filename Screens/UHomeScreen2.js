@@ -1,21 +1,19 @@
 import React, {useState, useEffect} from "react";
-import {StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity, Button,  Platform,} from 'react-native'
+import {Text, View, Image, SafeAreaView, TouchableOpacity, Platform,} from 'react-native'
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
-import AddProfileButton from "../components/AddProfilePicButton";
-import LinearGradientTO from "../components/LineargradientTO";
 import CollectionButton from "../components/CollectionsButton";
 import { ScrollView } from "react-native"
-import { NavigationContainer } from "@react-navigation/native";
 import { Entypo } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from "expo-image-picker";
-import CategoryButton from "../components/CategoryButton/CategoryButton";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons';
+import BackgroundColor from "../components/Theme/BackgroundColor";
+import TipsButton from "../components/TipsButton/TipsButton";
 
 
 
@@ -52,9 +50,7 @@ const UHomeScreen2 = () => {
   
   return(
 
-<LinearGradient // background gradient view
-      style={styles.container}
-      colors={['#B1B1B3','#CACACC',]}>
+<BackgroundColor>
         
         <SafeAreaView>
           
@@ -74,59 +70,12 @@ const UHomeScreen2 = () => {
             My collection
           </Text>
          
-
-         <TouchableOpacity 
-      //TIPS Button 
-          style={{
-              marginTop:475,
-              marginLeft:15,
-              position:'absolute',
-            }}
-
-      //button function
-            onPress={()=> console.log('yeee')}>
-              
-                <View
-      //Button Style
-                     style={styles.interestbuttonParent}>
-                    <LinearGradient
-                     colors={['#F5B041','#F8C471']}
-                     style={styles.interestbuttongrad}>
-                        <Text numberOfLines={3} style={{
-                        fontSize:14,
-                        fontWeight:'800',
-                        color:'white',
-                        fontStyle:'italic',
-                        position:'absolute',
-                        textAlign:'center',
-                        marginTop:23,
-                        marginLeft:10
-                        }}>You can receive Paira crowns for inviting friends and matching with organizations!</Text>
-
-            
-                        
-                   </LinearGradient>
-
-                   <Text numberOfLines={3} style={{
-                        fontSize:13.5,
-                        fontWeight:'800',
-                        color:'grey',
-                        fontStyle:'italic',
-                        position:'absolute',
-                        marginLeft:155,
-                        textDecorationLine:'underline'
-                        
-
-                        
-                        }}>Tip of the Day</Text>
-                        <Entypo name="light-bulb" size={14} color="grey" 
-               style={{
-             position:'absolute',
-             marginTop:1,
-             marginLeft:140, }} 
-             />
-                </View>
-             </TouchableOpacity>
+          <View style = {{
+            position: "absolute",
+            marginTop: 500
+          }}>
+         <TipsButton/>
+         </View>
 
 
 
@@ -385,7 +334,7 @@ const UHomeScreen2 = () => {
           </Text>
 
 
-        </LinearGradient>
+      </BackgroundColor>
     );
     
 };
