@@ -70,12 +70,12 @@ const UserMatchScreen = () => {
           style={{
               marginTop:30,
               marginLeft:181,
-              position:'absolute',
             }}
 //button function
             onPress={CategoryOneScreen}>
         
                 <View
+                
 //Button Style
                      style={styles.MatchCategoryParent}>
                     <LinearGradient
