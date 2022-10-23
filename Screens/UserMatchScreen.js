@@ -54,12 +54,15 @@ const UserMatchScreen = () => {
         style={styles.container}
         colors={['#B1B1B3','#CACACC',]}>
        
-        <SafeAreaView>
+        <SafeAreaView
+        style = {{marginRight: -100,}}>
 
 <ScrollView style={{
         backgroundColor:'transparent',
         flexDirection:'column',
         height:2000,
+        width: 500,
+        
 }}
 
 
@@ -70,12 +73,12 @@ const UserMatchScreen = () => {
           style={{
               marginTop:30,
               marginLeft:181,
-              position:'absolute',
             }}
 //button function
             onPress={CategoryOneScreen}>
         
                 <View
+                
 //Button Style
                      style={styles.MatchCategoryParent}>
                     <LinearGradient
@@ -133,12 +136,14 @@ const UserMatchScreen = () => {
           style={{
               marginTop:450,
               marginLeft:75,
+              
               position:'absolute',}}
 //button function
             onPress={CategoryFourScreen}>
                 <View
 //Button Style
-                     style={styles.MatchCategoryParent}>
+                     style={styles.MatchCategoryParent}
+                     >
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
