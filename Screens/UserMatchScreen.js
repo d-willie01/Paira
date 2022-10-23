@@ -60,6 +60,7 @@ const UserMatchScreen = () => {
         backgroundColor:'transparent',
         flexDirection:'column',
         height:2000,
+        width: 400,
 }}
 
 
@@ -70,7 +71,8 @@ const UserMatchScreen = () => {
           style={{
               marginTop:30,
               marginLeft:181,
-              position:'absolute',
+              position: 'absolute',
+              
             }}
 //button function
             onPress={CategoryOneScreen}>
