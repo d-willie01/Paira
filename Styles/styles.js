@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
         containerT: {
             flex: 1,
-            backgroundColor: 'white',
+            backgroundColor: 'black',
             
     
         },
@@ -96,15 +96,11 @@ const styles = StyleSheet.create({
         },
         headerT: {
             backgroundColor: 'orange',
-            flex: 1,
-            justifyingContent: 'center',
-            alignItems: 'center',
-            paddingHorizontal: 20,
-            paddingnBottom: 50
-    
+            
+            alignItems: 'center',    
         },
         footerT: {
-            flex: 3,
+            flex: 9,
             backgroundColor: 'white',
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
@@ -179,7 +175,7 @@ const styles = StyleSheet.create({
     
         titleT: {
             color: "white",
-            marginTop: 30,
+            marginTop: 20,
             fontSize: 35,
             fontWeight: 'bold'
         },
@@ -332,6 +328,7 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:'#D5D5D5',
         paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+        alignItems: 'center'
         
     },
     interestbuttongrad:{
