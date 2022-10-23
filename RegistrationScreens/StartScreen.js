@@ -64,7 +64,7 @@ const StartScreen = () => {
                         </LinearGradient>
                 </LinearGradient>
                 </TouchableOpacity>
-                <TouchableOpacity title = "register" onPress={RegistrationScreen}>
+                <TouchableOpacity title = "register" onPress={UserRegister1}>
                 <LinearGradient
                     style={{
                         height: 60,
