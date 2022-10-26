@@ -88,11 +88,11 @@ const UHomeScreen2 = () => {
               marginTop:325,
               marginLeft: 100
              }}>
-              <NameTagButton/>
+              <NameTagButton text ="soph"/>
              </View>
              
              <View>
-              <SocialButton/>
+              <SocialButton text ="245"/>
              </View>
 
             <View style={{
@@ -100,7 +100,7 @@ const UHomeScreen2 = () => {
               marginTop:425,
               marginLeft: 100
             }}>
-              <SocialButton2/>
+              <SocialButton2 text="23"/>
             </View>
 
 
