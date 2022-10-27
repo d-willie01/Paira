@@ -88,10 +88,13 @@ const UHomeScreen2 = () => {
               marginTop:325,
               marginLeft: 100
              }}>
-              <NameTagButton text ="soph"/>
+              <NameTagButton text ="Andre"/>
              </View>
              
-             <View>
+             <View style={{
+              marginTop: 300,
+              position: "absolute"
+             }}>
               <SocialButton text ="245"/>
              </View>
 
