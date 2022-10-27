@@ -50,7 +50,7 @@ const UserRegistrationScreen = () => {
                         colors={['#F8C471','#F5B041' ]}>
                             <View >
                             <TextInput style={{
-                                            fontSize: 25,
+                                            fontSize: 20,
                                             height: 55,
                                             width: 300,
                                             marginLeft: 50,
@@ -86,7 +86,7 @@ const UserRegistrationScreen = () => {
                             }}
                         colors={['#F8C471','#F5B041' ]}>
                             <TextInput style={{
-                                            fontSize: 25,
+                                            fontSize: 20,
                                             height: 55,
                                             width: 260,
                                             
@@ -137,20 +137,18 @@ const UserRegistrationScreen = () => {
                             }}
                         colors={['#F8C471','#F5B041' ]}>
                             <Text style={{
-                                            fontSize: 25,
+                                            fontSize: 23,
                                             height: 55,
-                                            width: 300,
-                                            marginLeft: 90,
-                                            marginTop: 5,
-                                            borderRadius: 75,
-                                            
+                                            marginTop: 7,
                                             fontWeight: "900",
                                             color: 'white'}}
+                                            
                                             >Get Registered
                             </Text>
                         </LinearGradient>
                 </LinearGradient>
             </TouchableOpacity>
+            
         </View>
         </LinearGradient>
         
