@@ -98,6 +98,7 @@ const StartScreen = () => {
         </LinearGradient>
 
         </View>
+        
     );
 };
 

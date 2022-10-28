@@ -21,7 +21,7 @@ const UserMatchScreen = () => {
         
     const CategoryOneScreen = () =>{
            
-            UMatchnavigation.navigate("MatchCategoryOneScreen")
+            UMatchnavigation.navigate("CategoryOneWords")
     }
     
     const CategoryTwoScreen = () =>{
@@ -31,17 +31,17 @@ const UserMatchScreen = () => {
     
     const CategoryThreeScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryThreeScreen")
+        UMatchnavigation.navigate("CategoryThreeWords")
     }
     
     const CategoryFourScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryFourScreen")
+        UMatchnavigation.navigate("CategoryFourWords")
     }
     
     const CategoryFiveScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryFiveScreen")
+        UMatchnavigation.navigate("CategoryFiveWords")
     }
    
    
@@ -54,7 +54,8 @@ const UserMatchScreen = () => {
         style={styles.container}
         colors={['#B1B1B3','#CACACC',]}>
        
-        <SafeAreaView>
+        <SafeAreaView
+        style = {{marginRight: -100,}}>
 
 <ScrollView style={{
         backgroundColor:'transparent',
@@ -78,6 +79,7 @@ const UserMatchScreen = () => {
             onPress={CategoryOneScreen}>
         
                 <View
+                
 //Button Style
                      style={styles.MatchCategoryParent}>
                     <LinearGradient
@@ -135,12 +137,14 @@ const UserMatchScreen = () => {
           style={{
               marginTop:450,
               marginLeft:75,
+              
               position:'absolute',}}
 //button function
             onPress={CategoryFourScreen}>
                 <View
 //Button Style
-                     style={styles.MatchCategoryParent}>
+                     style={styles.MatchCategoryParent}
+                     >
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>

@@ -1,8 +1,22 @@
 import React from "react";
 import {Text, Button, View, TouchableOpacity, ScrollView} from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import KeyWordButton from "../components/KeyWordButton/KeyWordButton";
+
+
+
+
+
 const CategoryTwoScreen = () => {
+    
+    const UMatchnavigation = useNavigation();
+    
+    const goMatchCategoryTwoScreen = () =>{
+           
+        UMatchnavigation.navigate("MatchCategoryTwoScreen")
+}
+    
     return(
        <View style={{
         flex: 1, 
@@ -113,7 +127,7 @@ const CategoryTwoScreen = () => {
         alignSelf:"center",
         
        }}>
-        <MatchNowButton text= "Match Now"/>
+        <MatchNowButton text= "Match Now" onPress={goMatchCategoryTwoScreen}/>
         </View>
         </View>
     );
