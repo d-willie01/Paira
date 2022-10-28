@@ -115,6 +115,47 @@ const UserRegistrationScreen = () => {
                                 <Feather name = {isSecureEntry ? 'eye-off':'eye'} size={20} color="black"/>
                 </TouchableOpacity>
             </View>
+            <TouchableOpacity >
+                <LinearGradient
+                    style={{
+                        height: 45,
+                        width: 290,
+                        borderRadius: 75,
+                        alignItems:'center',
+                        marginBottom: 20,
+                        marginLeft: 10,
+                        bottom: 5
+                    }}
+                    colors={['#F8C471','#FF8900' ]}>
+                        
+                    <LinearGradient
+                        style={{
+                            height: 40,
+                            width: 285,
+                            borderRadius: 75,
+                            
+                            }}
+                        colors={['#F8C471','#F5B041' ]}>
+                            <TextInput style={{
+                                            fontSize: 20,
+                                            height: 55,
+                                            width: 260,
+                                            
+                                            marginLeft: 20,
+                                            marginTop: -5,
+                                            borderRadius: 75,
+                                            fontWeight: "900",
+                                            color: '#ffffff'}}
+                                            placeholder = "Confirm Password"
+                                            secureTextEntry={isSecureEntry}
+                                            onChangeText={(value) => {
+                                                onChangeText({name: 'password', value});
+                                            }}
+                                            >
+                            </TextInput>
+                        </LinearGradient>
+                </LinearGradient>
+            </TouchableOpacity>
             <TouchableOpacity title = "Next screen" onPress={UserRegister}>
                 <LinearGradient
                     style={{
