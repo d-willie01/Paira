@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import { loggingMiddlewear } from "./middlewear/logging.middlewear";
+import * as mapBoxClient from "./clients/mapbox.client";
 import * as mongoClient from "./clients/mongo.client";
 import dotenv from "dotenv";
 import cors from 'cors';
@@ -36,6 +37,8 @@ app.use(function (err: any, req: Request, res: Response, next: any) {
 });
 
 mongoClient.init();
+
+mapBoxClient.init();
 
 app.listen(process.env.PORT, () =>
   console.log(`server has started at port ${process.env.PORT}`)

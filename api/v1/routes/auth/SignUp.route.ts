@@ -7,6 +7,8 @@ import jwt from 'jsonwebtoken';
 import { User } from "../../models/User.model";
 
 export interface SignupRequestBody {
+    firstName: string;
+    lastName: string;
     email: string;
     password: string;
     passwordConfirmation: string;
@@ -18,13 +20,15 @@ export interface SignupRequest extends Request {
 
 export default async function (request: SignupRequest, response: Response): Promise<Response> {
     const schema = Joi.object().keys({
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
         email: Joi.string().required(),
         password: Joi.string().required(),
         passwordConfirmation: Joi.string().required()
     });
     const validation = schema.validate(request.body);
 
-    const { email, password, passwordConfirmation } = request.body;
+    const { firstName, lastName, email, password, passwordConfirmation } = request.body;
     if (validation.error) {
         return response.status(400).json({ error: validation.error });
     }
@@ -44,27 +48,17 @@ export default async function (request: SignupRequest, response: Response): Prom
             email,
             password
         });
-    }
-    catch (err) {
-        if (err instanceof PasswordStrengthError) {
-            return response.status(400).json({ error: err.message, policy: err.policy });
-        } else if (err instanceof InvalidEmailError) {
-            return response.status(400).json({ error: err.message });
-        } else if (err instanceof BadRequestError) {
-            return response.status(400).json({ error: err.message })
-        }
-    }
-
-    try {
 
         const loginResponse = await AuthService.SignIn({
             email,
             password
         });
-        
+
         const decodedJwt: jwt.JwtPayload = jwt.decode(loginResponse.id_token, { json: true })!;
 
         const newUserPayload = new User();
+        newUserPayload.firstName = firstName;
+        newUserPayload.lastName = lastName;
         newUserPayload.authProviderId = decodedJwt.sub;
         newUserPayload.email = email;
 
@@ -74,8 +68,15 @@ export default async function (request: SignupRequest, response: Response): Prom
             token: loginResponse.id_token,
             user: newUser
         });
-    }
-    catch (err) {
-        return response.status(500).json({ error: err });
+    } catch (err) {
+        if (err instanceof PasswordStrengthError) {
+            return response.status(400).json({ error: err.message, policy: err.policy });
+        } else if (err instanceof InvalidEmailError) {
+            return response.status(400).json({ error: err.message });
+        } else if (err instanceof BadRequestError) {
+            return response.status(400).json({ error: err.message })
+        } else {
+            return response.status(500).json({ error: err });
+        }
     }
 }
