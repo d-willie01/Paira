@@ -1,6 +1,12 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import * as ImagePicker from "expo-image-picker";
+
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+import TipsButton from "../components/TipsButton/TipsButton";
+import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
+import SocialButton from "../components/ProfileInfoButtons/Social/SocialButton";
+import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2";
 import AddProfileButton from "../components/AddProfilePicButton";
 import LinearGradientTO from "../components/LineargradientTO";
 import CollectionButton from "../components/CollectionsButton";
@@ -19,6 +25,32 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 const BusinessHomeScreenTest = () => {
+    const [image, setImage] = useState(null);
+  
+
+
+  useEffect(  () =>{
+    if (Platform.OS != "web"){
+      const { status }  = ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status != "granted"){
+        console.log("Permission denied!");
+      }
+      
+    }
+  }, [])
+  
+  const PickProfilePic = async () =>{
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect : [2,2],
+      quality: 1
+    })
+    console.log(result)
+    if (!result.cancelled){
+      setImage(result.uri)
+    }
+  }
     return(
        
     <LinearGradient // background gradient view
@@ -58,8 +90,18 @@ const BusinessHomeScreenTest = () => {
                             height:160,
             
                             position:"absolute",
-                            backgroundColor: "#F39C12"}}> 
-  
+                            backgroundColor: "#F39C12"}}
+                            onPress={PickProfilePic}>
+
+                            {image && <Image source ={{uri:image}} style={{
+                            height : 200,
+                            width : 200,
+                            borderRadius:100,
+                            alignSelf:'center',
+                            
+
+                            }}/>}
+                            
                          </TouchableOpacity>
                         </View>
                         <View style= {{ alignItems: 'flex-end'}}>
