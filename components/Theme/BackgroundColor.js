@@ -6,11 +6,10 @@ const BackgroundColor = ({children}) => {
         <LinearGradient 
         style = {{
             flex:1,
-            backgroundColor:'#D5D5D5',
             paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
         }} 
         colors={[
-            '#B1B1B3','#CACACC',
+            '#5E5E5E','#8E8E8E',
             ]}>
 
             {children}

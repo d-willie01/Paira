@@ -264,7 +264,10 @@ const styles = StyleSheet.create({
         height:150,
         width:170,
         borderRadius:75,  
+        alignItems:'center',
         justifyContent:'center',
+        
+        
 
     },
     MatchCategoryParent:{
@@ -272,6 +275,8 @@ const styles = StyleSheet.create({
         width:170,
         borderRadius:75,
         backgroundColor:'#F39C12',
+       
+
     },
     PairaScoregrad:{
         position:'absolute',

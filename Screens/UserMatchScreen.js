@@ -10,6 +10,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 
@@ -54,14 +55,12 @@ const UserMatchScreen = () => {
         style={styles.container}
         colors={['#B1B1B3','#CACACC',]}>
        
-        <SafeAreaView
-        style = {{marginRight: -100,}}>
+        <SafeAreaView style ={{flex:1}}>
 
 <ScrollView style={{
         backgroundColor:'transparent',
         flexDirection:'column',
-        height:2000,
-        width: 500,
+        flex: 1
         
 }}
 
@@ -72,7 +71,7 @@ const UserMatchScreen = () => {
 //Food Button Location - Category 1
           style={{
               marginTop:30,
-              marginLeft:181,
+              marginLeft:180,
             }}
 //button function
             onPress={CategoryOneScreen}>
@@ -84,7 +83,7 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <MaterialCommunityIcons name="food-fork-drink" size={40} color="white" />
+                        <MaterialCommunityIcons name="food-fork-drink" size={38} color="white" />
                         <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Food </Text>
                    </LinearGradient>
                 </View>
@@ -104,8 +103,8 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <FontAwesome name="play-circle-o" size={40} color="white" />
-                        <Text style = {{ color: "white", fontSize: 18, fontWeight: '900', fontStyle: "italic"}}> Entertainment </Text>
+                        <MaterialCommunityIcons name="party-popper" size={35} color="white" />
+                        <Text style = {{ color: "white", fontSize: 16, fontWeight: '900', fontStyle: "italic"}}> Entertainment </Text>
 
                    </LinearGradient>
                 </View>
@@ -124,8 +123,8 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <FontAwesome5 name="mountain" size={34} color="white" />
-                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Places </Text>
+                        <MaterialCommunityIcons name="store" size={35} color="white" />
+                        <Text style = {{ color: "white", fontSize: 18, fontWeight: '900', fontStyle: "italic"}}> Retail </Text>
 
                    </LinearGradient>
                 </View>
@@ -147,17 +146,13 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                        <View style = {{marginRight: 37, marginBottom: -37,}}>
-                            <FontAwesome5 name="guitar" size={42} color="white" />
-                            
+                        
+                        <View style = {{marginLeft: 6, marginBottom: 2, }}>
+
+                        <MaterialIcons name="volunteer-activism" size={30} color="white" />
 
                         </View>
-                        <View style = {{marginLeft: 30, marginBottom: -1, }}>
-
-                            <Ionicons name="color-palette" size={37} color="white"  />
-
-                        </View>
-                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Art & Music</Text>
+                        <Text style = {{ color: "white", fontSize: 17, fontWeight: '900', fontStyle: "italic"}}> Non-Profit</Text>
 
 
                    </LinearGradient>
@@ -180,12 +175,12 @@ const UserMatchScreen = () => {
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.MatchCategorygrad}>
-                         <View style = {{marginRight: 40, marginBottom: -40}}>
-                            <MaterialCommunityIcons name="yoga" size={44} color="white" />                        
+                         <View style = {{marginRight: 30, marginBottom: -34}}>
+                            <MaterialCommunityIcons name="yoga" size={34} color="white" />                        
                         </View>
                         <View style = {{marginLeft: 40}}>
 
-                            <Ionicons name="american-football" size={39} color="white" />
+                            <Ionicons name="american-football" size={26} color="white" style={{marginLeft:-13, marginTop:4}} />
                         </View>
                         <Text style = {{ color: "white", fontSize: 17, fontWeight: '900', fontStyle: "italic",}}> Sports & Fitness</Text>
 
@@ -199,12 +194,12 @@ const UserMatchScreen = () => {
                 fontSize:24,
                 fontWeight:'900',
                 color:'white',
-                marginTop:4,
+                marginTop:7,
                 marginLeft:20,
-                width:195,
+                width:250,
 
                 }}>
-                What are you lookin for?</Text>
+                Exploring local starts here.</Text>
                
                 <Text numberOfLines={2} style={{
                 position:'absolute',
@@ -252,7 +247,7 @@ const UserMatchScreen = () => {
                 width:160,
 
                 }}>
-                Creativity is key. </Text>
+                Build up your community! </Text>
                 <Text numberOfLines={2} style={{
                 position:'absolute',
                 fontSize:20,

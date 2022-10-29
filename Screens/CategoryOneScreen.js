@@ -2,7 +2,9 @@ import React from "react";
 import {Text, TouchableOpacity, View, ScrollView} from 'react-native'
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
+import PressTest from "../components/PressTest/PressTest";
 import KeyWordButton from "../components/KeyWordButton/KeyWordButton";
+import BackgroundColor from "../components/Theme/BackgroundColor";
 
 const CategoryOneScreen = () => {
     
@@ -14,16 +16,23 @@ const CategoryOneScreen = () => {
     }
     
     return(
+
+<BackgroundColor>
+
         <View style={{
             flex: 1, 
-            backgroundColor: "#d5d5d5"
+            backgroundColor: "transparent"
             }}>
     
     
+
+    
     
     <View >
-        <ScrollView horizontal ={true} style ={{
-            marginTop: 200,
+        <ScrollView horizontal ={true} showsHorizontalScrollIndicator ={false}
+        
+        style ={{
+            marginTop: 100,
             
             flexDirection:"row"
     
@@ -43,7 +52,6 @@ const CategoryOneScreen = () => {
     
            <KeyWordButton text ="animals"/>
     
-           <KeyWordButton text = "outdoors"/>
         </View>
     
     
@@ -62,7 +70,6 @@ const CategoryOneScreen = () => {
     
            <KeyWordButton text ="Cars"/>
     
-           <KeyWordButton text = "Sports"/>
         </View>
         <View style ={{
             
@@ -79,7 +86,6 @@ const CategoryOneScreen = () => {
     
            <KeyWordButton text ="Shopping"/>
     
-           <KeyWordButton text = "Fast"/>
         </View>
         <View style ={{
             
@@ -96,7 +102,39 @@ const CategoryOneScreen = () => {
     
            <KeyWordButton text ="Arcade"/>
     
-           <KeyWordButton text = "Art"/>
+        </View>
+        <View style ={{
+            
+            justifyContent:"space-between",
+            
+            
+            
+        }}>
+           <KeyWordButton text="Food"/>
+           
+           <KeyWordButton text="Fashion"/>
+    
+           <KeyWordButton text="Games"/>
+    
+           <KeyWordButton text ="Arcade"/>
+    
+        </View>
+        <View style ={{
+            
+            justifyContent:"space-between",
+            
+            
+            
+        }}>
+           <KeyWordButton text="Food"/>
+           
+           <KeyWordButton text="Fashion"/>
+    
+           <KeyWordButton text="Games"/>
+    
+           <KeyWordButton text ="Arcade"/>
+    
+
         </View>
     
         </ScrollView>
@@ -128,7 +166,7 @@ const CategoryOneScreen = () => {
             </View>
 
         
-
+</BackgroundColor>
 
 
 

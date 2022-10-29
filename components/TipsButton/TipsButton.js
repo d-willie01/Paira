@@ -25,14 +25,15 @@ const TipsButton = ({text}) =>{
                         color="grey" 
                         style={{
                         position:'absolute',
-                        marginTop:1,
-                        marginLeft:140, }} 
+                        marginTop:3,
+                        marginLeft:139, }} 
              />   
                     <Text numberOfLines={3} style={{
                         fontSize:13.5,
                         fontWeight:'800',
                         color:'grey',
                         fontStyle:'italic',
+                        marginTop:2,
                         
                         alignSelf:"center", 
                         textDecorationLine:'underline'
@@ -47,7 +48,6 @@ const TipsButton = ({text}) =>{
                         fontWeight:'800',
                         color:'white',
                         fontStyle:'italic',
-                        
                         textAlign:'center',
                         
                         }}>{text}

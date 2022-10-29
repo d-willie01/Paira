@@ -19,16 +19,16 @@ const UmatchNavigationStack = () => {
         
             <UMatchnav.Navigator initialRouteName="UserMatchMain" >
                 <UMatchnav.Screen options={{headerShown: false}} name = 'UserMatchMain' component={UserMatchScreen}/>
-                <UMatchnav.Screen options={{headerShown:false}} name = 'MatchCategoryOneScreen' component={MatchCategoryOneScreen} />
-                <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryTwoScreen' component={MatchCategoryTwoScreen}/>
-                <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryThreeScreen' component={MatchCategoryThreeScreen}/>
-                <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryFourScreen' component={MatchCategoryFourScreen}/>
-                <UMatchnav.Screen options={{headerShown: true}} name = 'MatchCategoryFiveScreen' component={MatchCategoryFiveScreen}/>
-                <UMatchnav.Screen name = "CategoryTwoWords" component={CategoryTwoScreen}/>
-                <UMatchnav.Screen name = "CategoryThreeWords" component={CategoryThreeScreen}/>
-                <UMatchnav.Screen name = "CategoryFourWords" component={CategoryFourScreen}/>
-                <UMatchnav.Screen name = "CategoryOneWords" component={CategoryOneScreen}/>
-                <UMatchnav.Screen name = "CategoryFiveWords" component={CategoryFiveScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = 'MatchCategoryOneScreen' component={MatchCategoryOneScreen} />
+                <UMatchnav.Screen options={{headerTransparent: true}} name = 'MatchCategoryTwoScreen' component={MatchCategoryTwoScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = 'MatchCategoryThreeScreen' component={MatchCategoryThreeScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = 'MatchCategoryFourScreen' component={MatchCategoryFourScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = 'MatchCategoryFiveScreen' component={MatchCategoryFiveScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryTwoWords" component={CategoryTwoScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryThreeWords" component={CategoryThreeScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryFourWords" component={CategoryFourScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryOneWords" component={CategoryOneScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryFiveWords" component={CategoryFiveScreen}/>
 
 
             </UMatchnav.Navigator>

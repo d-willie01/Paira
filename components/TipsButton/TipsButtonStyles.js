@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
         width:400,
         borderRadius:20,
         backgroundColor:'#F39C12',
+        marginLeft:15,
     },
     
     interestbuttongrad:{

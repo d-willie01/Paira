@@ -58,7 +58,7 @@ const UHomeScreen2 = () => {
         <SafeAreaView>
           
           <Text 
-      // Tips Text 
+      // My collection Text 
           numberOfLines={1} style= {{
             position:'absolute',
             marginTop:555,
@@ -77,7 +77,9 @@ const UHomeScreen2 = () => {
             position: "absolute",
             marginTop: 450
           }}>
+
          <TipsButton/>
+         
          </View>
 
 
@@ -85,14 +87,15 @@ const UHomeScreen2 = () => {
 
              <View style={{
               position:"absolute",
-              marginTop:325,
-              marginLeft: 100
+              marginTop:315,
+              marginLeft: 125,
              }}>
               <NameTagButton text ="Andre"/>
              </View>
              
              <View style={{
-              marginTop: 300,
+              marginTop: 380,
+              marginLeft:50,
               position: "absolute"
              }}>
               <SocialButton text ="245"/>
@@ -100,8 +103,8 @@ const UHomeScreen2 = () => {
 
             <View style={{
               position:"absolute",
-              marginTop:425,
-              marginLeft: 100
+              marginTop:380,
+              marginLeft: 225
             }}>
               <SocialButton2 text="23"/>
             </View>
@@ -112,8 +115,8 @@ const UHomeScreen2 = () => {
                 style={{
                 height: 205, 
                 width: 205,
-                marginLeft:112,
-                marginTop: 105, 
+                marginLeft:110,
+                marginTop: 95, 
                 borderRadius:100,
                 position:"absolute",
                 justifyContent:'center',
@@ -188,7 +191,7 @@ const UHomeScreen2 = () => {
           />
           <Feather name="info" size={18} color="white" style={{
             position:"absolute",
-            marginTop:375,
+            marginTop:355,
             marginLeft:80,
           }} />
 

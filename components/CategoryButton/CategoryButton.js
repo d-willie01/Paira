@@ -15,7 +15,7 @@ const CategoryButton = ({text}) => {
                         fontWeight:'900',
                         color:'white',
                         textAlign:'center',
-                        alignSelf:'center',
+                        justifyContent:'center',
                         fontStyle:'italic'
                         }}>{text}</Text>
                    </LinearGradient>

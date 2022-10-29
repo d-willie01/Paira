@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         width:170,
         borderRadius:75,
         backgroundColor:'#F39C12',
+        
     },
     
     MatchCategorygrad:{
@@ -20,8 +21,7 @@ const styles = StyleSheet.create({
         marginLeft:-2,
         height:150,
         width:170,
-        borderRadius:75,  
-        justifyContent:'center',
+        borderRadius:75, 
 
     }
 })
