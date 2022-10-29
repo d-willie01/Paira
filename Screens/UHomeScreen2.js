@@ -141,7 +141,7 @@ const UHomeScreen2 = () => {
               
 
 
-             }} > 
+             }}> 
               <CollectionButton/>
               <AntDesign name="pluscircleo" size={24} color="grey" style={{
                 position:'absolute',

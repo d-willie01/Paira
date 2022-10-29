@@ -2,10 +2,13 @@ import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import styles from "./SocialButtonStyles";
+import styles from "./BusinessButtonStyles";
 
-const SocialButton = ({text}) => {
+const BusinessButton = ({text}) => {
     return(
+        <View style = {{
+            margin: 10
+        }}>
         <TouchableOpacity 
             onPress={()=> console.log('yeee')}>
                 <View
@@ -20,24 +23,18 @@ const SocialButton = ({text}) => {
                         fontWeight:"900",
                         color:'white',
                         textAlign:'center',
-                        position:'absolute',
-                        marginTop:8,
-                        marginLeft:20,
                         fontStyle:'italic',
                         
                         }}>{text}</Text>
 
-              <MaterialCommunityIcons name="crown" size={37} color="white" style={{
-                position:'absolute',
-                marginTop:8,
-                marginLeft:94,}}>
-              </MaterialCommunityIcons>
+              
 
 
 
                     </LinearGradient>
                 </View>
             </TouchableOpacity>
+            </View>
     )
 }
-export default SocialButton;
+export default BusinessButton;

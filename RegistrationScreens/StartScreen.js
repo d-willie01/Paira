@@ -3,6 +3,7 @@ import {Text, View, Button, TouchableOpacity, Image} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+import PressButton from "../components/PressTest/PressButton";
 
 
 
@@ -25,11 +26,18 @@ const StartScreen = () => {
    
     return(
 
+ 
         <View style ={{flex: 1}}>
+           
         <LinearGradient // background gradient view
         style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
         
         colors={['#FDFEFE','#626567']}>
+
+        <View>
+            <PressButton/>
+        </View>
+
         <Image 
             style = {{ width: 150, height: 320}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
