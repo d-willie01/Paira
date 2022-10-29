@@ -10,7 +10,7 @@ const BCreateStack = () => {
     return(
         
             <BNav.Navigator initialRouteName="BCreateScreen" >
-                <BNav.Screen name = 'BCardCreation' component={BCreateScreen}/>
+                <BNav.Screen options={{headerShown:false}} name = 'BCardCreation' component={BCreateScreen}/>
             </BNav.Navigator>
         
     );
