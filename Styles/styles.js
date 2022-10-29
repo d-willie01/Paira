@@ -373,7 +373,6 @@ const styles = StyleSheet.create({
         borderRadius:100,
         marginLeft: 10,
         position:"absolute",
-        justifyContent:'center',
         backgroundColor: "#F39C12"
     },
     businessHSHeaderText:{ 
@@ -389,6 +388,13 @@ const styles = StyleSheet.create({
         marginTop: 15, 
         marginLeft: 10, 
         fontSize: 20
+    },
+    businessHeaderText:{
+        fontSize: 25, 
+        fontWeight: '900', 
+        marginTop: 5, 
+        color: 'white'
+
     },
     businessHSwidgetstext:{fontSize: 25,
         fontWeight: "900",

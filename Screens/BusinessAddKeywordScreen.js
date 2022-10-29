@@ -6,33 +6,38 @@ import { useNavigation } from "@react-navigation/native";
 const BusinessAddKeyWordsScreen = () => {
     const Unavigation = useNavigation();
     
-const BusinessCategoryOneScreen = () =>{
+const BusinessEntertainmentKeywords = () =>{
        
-        Unavigation.navigate("BusinessArtandMusic")
+        Unavigation.navigate("BusinessEntertainment")
 }
 
-const BusinessCategoryTwoScreen = () =>{
+const BusinessFoodandDiningKeywords = () =>{
        
-    Unavigation.navigate("BusinessEntertainment")
+    Unavigation.navigate("BusinessFoodandDining")
 }
 
-const BusinessCategoryThreeScreen = () =>{
+const BusinessNonProfitKeyWords = () =>{
        
-    Unavigation.navigate("BusinessFitness")
+    Unavigation.navigate("BusinessNonProfit")
 }
 
-const BusinessCategoryFourScreen = () =>{
+const BusinessRetailKeywords = () =>{
        
-    Unavigation.navigate("BusinessPlaces")
+    Unavigation.navigate("BusinessRetail")
+}
+const BusinessSportsandFitnessKeywords = () =>{
+       
+    Unavigation.navigate("BusinessSportsandFitness")
 }
     
     return(
     <SafeAreaView>
         <Text>Choose you Category For Key Words</Text>
-        <Button title="Business Category 1" onPress={BusinessCategoryOneScreen} />
-        <Button title="Business Category 2" onPress={BusinessCategoryTwoScreen}/>
-        <Button title="Business Category 3" onPress={BusinessCategoryThreeScreen}/>
-        <Button title="Business Category 4" onPress={BusinessCategoryFourScreen}/>
+        <Button title="Entertainment" onPress={BusinessEntertainmentKeywords} />
+        <Button title="Food" onPress={BusinessFoodandDiningKeywords}/>
+        <Button title="Non-Profit" onPress={BusinessNonProfitKeyWords}/>
+        <Button title="Retail" onPress={BusinessRetailKeywords}/>
+        <Button title="Sports and Fitness" onPress={BusinessSportsandFitnessKeywords}/>
     </SafeAreaView>
         );
 };

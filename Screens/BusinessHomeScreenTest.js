@@ -62,10 +62,6 @@ const BusinessHomeScreenTest = () => {
     <LinearGradient // background gradient view
     style={styles.container}
     colors={['#B1B1B3','#CACACC']}> 
-    <TouchableOpacity style={styles.businessProfileButton}
-                                onPress={PickProfilePic}>
-
-                            </TouchableOpacity>
         <SafeAreaView style={styles.container2T}>
             <Text style = {styles.businessHSHeaderText}> 
                         Welcome Back 

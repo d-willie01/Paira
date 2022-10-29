@@ -5,10 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import KeyWordButton from "../components/KeyWordButton/KeyWordButton";
 import styles from "../Styles/styles";
 
-
-
-const BusinessEntertainmentKeywords = () => {
-
+const BusinessFoodandDiningKeywords = () => {
+   
     const UMatchnavigation = useNavigation();
     
     const MatchCategoryOne = () =>{
@@ -35,50 +33,50 @@ const BusinessEntertainmentKeywords = () => {
     
         }}>
             <View>
-           <KeyWordButton  text="Dance"/>
+           <KeyWordButton  text="Tacos"/>
             
-           <KeyWordButton text="Drinks"/>
+           <KeyWordButton text="Fries"/>
     
-           <KeyWordButton text="Adult"/>
+           <KeyWordButton text="Burgers"/>
     
-           <KeyWordButton text ="Pets"/>
+           <KeyWordButton text ="Pasta"/>
     
-           <KeyWordButton text = "Outdoors"/>
+           <KeyWordButton text = "Mediterranien"/>
         </View>
     
     
         <View >
-           <KeyWordButton text="Movies"/>
+           <KeyWordButton text="Candy"/>
            
-           <KeyWordButton text="Music"/>
+           <KeyWordButton text="Ice Cream"/>
     
-           <KeyWordButton text="Concerts"/>
+           <KeyWordButton text="Pastries"/>
     
-           <KeyWordButton text ="Cars"/>
+           <KeyWordButton text ="Baking"/>
     
-           <KeyWordButton text = "Sports"/>
+           <KeyWordButton text = "Snacks"/>
         </View>
         <View >
-           <KeyWordButton text="Kids"/>
+           <KeyWordButton text="Upscale"/>
            
-           <KeyWordButton text="Women"/>
+           <KeyWordButton text="Casual"/>
     
-           <KeyWordButton text="Men"/>
+           <KeyWordButton text="Pick-up"/>
     
-           <KeyWordButton text ="Shopping"/>
+           <KeyWordButton text ="Relax"/>
     
            <KeyWordButton text = "Fast"/>
         </View>
         <View>
-           <KeyWordButton text="Food"/>
+           <KeyWordButton text="Unique"/>
            
-           <KeyWordButton text="Fashion"/>
+           <KeyWordButton text="Greek"/>
     
-           <KeyWordButton text="Games"/>
+           <KeyWordButton text="Indian"/>
     
-           <KeyWordButton text ="Arcade"/>
+           <KeyWordButton text ="Italian"/>
     
-           <KeyWordButton text = "Art"/>
+           <KeyWordButton text = "New"/>
         </View>
     
         </ScrollView>
@@ -99,4 +97,4 @@ const BusinessEntertainmentKeywords = () => {
     );
 };
 
-export default BusinessEntertainmentKeywords;
+export default BusinessFoodandDiningKeywords;
