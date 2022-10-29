@@ -33,7 +33,7 @@ const BusinessProfilePic = () => {
                 height: 205, 
                 width: 205,
                 borderRadius:100,
-                position:"absolute",
+                
                 justifyContent:'center',
                 backgroundColor: "#F39C12"}}
                 
