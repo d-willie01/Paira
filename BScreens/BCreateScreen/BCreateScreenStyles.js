@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     },
     text: {
         fontWeight:'900',
-            fontSize:25,
-            color:'white',
+        fontSize:25,
+        color:'white',
         
     }
 })

@@ -7,22 +7,13 @@ import styles from "./SocialButtonStyles";
 const SocialButton = ({text}) => {
     return(
         <TouchableOpacity 
-      //Profile Info
-             style={{
-              
-              
-            }}
-
-        //button function
             onPress={()=> console.log('yeee')}>
                 <View
-        //Profile Info Style
                      style={styles.PairaScoreParent}>
                     <LinearGradient
                      colors={['#F8C471','#F5B041']}
                      style={styles.PairaScoregrad}>
                         <Text
-        //Text Inside of Profile info
                         numberOfLines={1}
                         style={{
                         fontSize:33,
