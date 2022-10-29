@@ -106,38 +106,20 @@ const UHomeScreen2 = () => {
               <SocialButton2 text="23"/>
             </View>
 
-
+  
               <TouchableOpacity 
       //Add Profile Button
-                style={{
-                height: 205, 
-                width: 205,
-                marginLeft:112,
-                marginTop: 105, 
-                borderRadius:100,
-                position:"absolute",
-                justifyContent:'center',
-                backgroundColor: "#F39C12"}}
+                style={styles.userProfileButton}
 
                 onPress={PickProfilePic}>
 
-                  {image && <Image source ={{uri:image}} style={{
-                    height : 200,
-                    width : 200,
-                    borderRadius:100,
-                    alignSelf:'center',
-                    
-
-                  }} />}
+                  
 
               </TouchableOpacity>
 
              
              <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={false} style={{
               marginTop:460,
-              
-
-
              }} > 
               <CollectionButton/>
               <AntDesign name="pluscircleo" size={24} color="grey" style={{

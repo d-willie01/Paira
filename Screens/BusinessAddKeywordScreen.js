@@ -29,10 +29,10 @@ const BusinessCategoryFourScreen = () =>{
     return(
     <SafeAreaView>
         <Text>Choose you Category For Key Words</Text>
-        <Button title="Category 1" onPress={BusinessCategoryOneScreen} />
-        <Button title="Category 2" onPress={BusinessCategoryTwoScreen}/>
-        <Button title="Category 3" onPress={BusinessCategoryThreeScreen}/>
-        <Button title="Category 4" onPress={BusinessCategoryFourScreen}/>
+        <Button title="Business Category 1" onPress={BusinessCategoryOneScreen} />
+        <Button title="Business Category 2" onPress={BusinessCategoryTwoScreen}/>
+        <Button title="Business Category 3" onPress={BusinessCategoryThreeScreen}/>
+        <Button title="Business Category 4" onPress={BusinessCategoryFourScreen}/>
     </SafeAreaView>
         );
 };

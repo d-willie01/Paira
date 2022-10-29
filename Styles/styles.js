@@ -94,6 +94,25 @@ const styles = StyleSheet.create({
             
     
         },
+        registerText:{
+            fontSize: 25,
+            
+            fontWeight: "900",
+            color: '#ffffff'},
+        registerbuttonForground:{
+            height: 55,
+            width: 300,
+            borderRadius: 75,
+            justifyContent:'center',
+            alignItems:'center',
+            },
+        registerbuttonBackground:{
+            height: 60,
+            width: 250,
+            borderRadius: 75,
+            alignItems:'center',
+            marginBottom: 20,
+            marginLeft: 10,},
         headerT: {
             backgroundColor: 'orange',
             
@@ -328,8 +347,164 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:'#D5D5D5',
         paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
-        alignItems: 'center'
         
+    },
+    businessHeaderBackground:{
+        height: 240,
+        width: 400,
+        borderRadius: 25,
+        alignItems:'center',
+        marginTop: 3,
+        marginLeft: 10
+    },
+    userProfileButton:{
+        height: 205, 
+        width: 205,
+        marginLeft:112,
+        marginTop: 105, 
+        borderRadius:100,
+        position:"absolute",
+        backgroundColor: "#F39C12"
+    },
+    businessProfileButton:{
+        height: 160, 
+        width: 160,
+        marginTop: 40,
+        borderRadius:100,
+        marginLeft: 10,
+        position:"absolute",
+        justifyContent:'center',
+        backgroundColor: "#F39C12"
+    },
+    businessHSHeaderText:{ 
+        fontSize: 25, 
+        fontWeight: '900', 
+        justifyContent: 'flex-start', 
+        marginTop: 5, 
+        marginLeft:200, 
+        color: 'white'},
+    businessHSsubHeaderText:{
+        color: 'white', 
+        fontWeight: '900', 
+        marginTop: 15, 
+        marginLeft: 10, 
+        fontSize: 20
+    },
+    businessHSwidgetstext:{fontSize: 25,
+        fontWeight: "900",
+        color: '#ffffff'},
+    tipsTextB:{fontSize:16,
+        fontWeight:'800',
+        color:'white',
+        fontStyle:'italic'},
+    BusinessTipsForground:{height:165,
+        width:150,
+        borderRadius:20,
+        justifyContent:'center',},
+    BusinessTipsBackground:{height:170,
+        width:155,
+        borderRadius:20,
+        marginRight: 10,
+        alignItems: 'center',
+        backgroundColor:'#F39C12',},
+    addkeywordsTouchableForground:{
+        
+            height:140,
+            width:245,
+            justifyContent:'center',
+            borderRadius:60,
+    },
+    addKeywordsTextB:{
+        fontSize:25,
+                                fontWeight:'900',
+                                color:'white',
+                                textAlign:'center',
+                                alignSelf:'center',
+                                fontStyle:'italic'
+    },
+    businessHeaderForground:{
+        height: 235,
+        width: 395,
+        borderRadius: 25,
+        bottom: 5
+    },
+
+    buisnessInfoBackground: {height:175,
+        width:190,
+        borderRadius:50,
+        marginTop: 30,
+        marginRight: 10,
+        bottom: 5,
+        alignItems: 'center',},
+    buisnessInfoForeground:{height:170,
+        width:185,
+        borderRadius:50,
+        alignItems:'center'},
+    subscribersText:{fontSize:18,
+        fontWeight:"bold",
+        color:'white',
+        position:'absolute',
+        textAlign:'center',
+        marginTop:120,
+        marginLeft:35,
+    },
+    businessNameText:{
+        
+            fontSize:18,
+            fontWeight:'bold',
+            color:'white',
+            textAlign:'left',
+            position:'absolute',
+            justifyContent:'flex-start',
+            marginTop:20,
+            marginLeft:5,
+        
+            
+
+    },
+    companyAdressText:{
+        fontSize:18,
+                                        fontWeight:'bold',
+                                        color:'white',
+                                        position:'absolute',
+                                        textAlign:'left',
+                                        marginTop:50,
+                                        marginLeft:5,
+    },
+    businessTextInfo: {
+        fontSize:18,
+        fontWeight:'bold',
+        color:'white',
+        position:'absolute',
+        textAlign:'left',
+        marginTop:75,
+        marginLeft:5,
+    },
+    addkeywordsTouchable:{
+        height:145,
+        width:250,
+        borderRadius:60,
+        marginRight: 10,
+        marginTop: 15,
+        alignItems: 'center',
+        bottom: 5,
+        backgroundColor:'#F39C12'
+    },
+    linearbackgrounBbuttons:{
+        height: 80,
+        width: 200,
+        borderRadius: 50,
+        marginTop: 13,
+        marginLeft: 10
+
+    },
+    linearforgroundButtons:{
+        height: 75,
+        width: 195,
+        borderRadius: 50,
+        backgroundColor: "grey",
+        justifyContent:'center',
+        alignItems:'center',
     },
     interestbuttongrad:{
         position:'absolute',
@@ -346,6 +521,13 @@ const styles = StyleSheet.create({
         width:400,
         borderRadius:20,
         backgroundColor:'#F39C12',
+    },
+    containerCenter: {
+        flex:1,
+        backgroundColor:'#D5D5D5',
+        paddingTop: Platform.OS ==='android' ? StatusBar.currentHeight:0,
+        alignItems: 'center',
+        
     },
     profileinfograd:{
         bottom:5, 

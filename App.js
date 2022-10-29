@@ -16,6 +16,7 @@ import StartScreen from "./RegistrationScreens/StartScreen";
 import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
 import LoginScreen from "./RegistrationScreens/LoginScreen";
 import RegistrationScreen from "./RegistrationScreens/RegistrationScreen";
+import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
 
 
 
@@ -35,10 +36,11 @@ export default function App() {
     <StateProvider>
       <AppNavigator/>
     </StateProvider>
+
     
 
   
-    )
+    );
   
   /*
 

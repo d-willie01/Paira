@@ -156,7 +156,17 @@ const UserRegistrationScreen = () => {
                         </LinearGradient>
                 </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity title = "Next screen" onPress={UserRegister}>
+            <View style={{position:'absolute', marginTop: 140, right:17,}}>
+                <TouchableOpacity
+
+                    onPress={()=>{
+                        setIsSecureEntry((prev)=> !prev)
+
+                                }}>
+                                <Feather name = {isSecureEntry ? 'eye-off':'eye'} size={20} color="black"/>
+                </TouchableOpacity>
+            </View>
+            <TouchableOpacity  onPress={UserRegister}>
                 <LinearGradient
                     style={{
                         height: 45,

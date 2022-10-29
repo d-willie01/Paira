@@ -8,10 +8,10 @@ import { LinearGradient } from "expo-linear-gradient";
 
 
 
-const RegistrationScreen = () => {
+const RegistrationScreen2 = () => {
 
 
-const {BusinessState, UserState} = useContext(StateContext);
+
     
 
   
@@ -25,8 +25,10 @@ const {BusinessState, UserState} = useContext(StateContext);
         style={styles.containerCenter}
         
         colors={['#B1B1B3','#CACACC',]}>
-            <Text style ={{fontWeight:'900', color: 'white', fontSize: 20, marginTop: 320, marginBottom: 20, fontStyle: "italic"}}> Be discovered... </Text>
-            <TouchableOpacity title = "business" onPress={() =>{BusinessState()}}>
+            <View style={{alignItems:'center', justifyContent:'center'}}>
+            <Text style ={{fontWeight:'900', color: 'white', fontSize: 20, marginTop: 320, marginBottom: 20, fontStyle: "italic"}}> Would You Like To Register Your </Text>
+            </View>
+            <TouchableOpacity title = "business" onPress={() =>{}}>
               <LinearGradient
                 style={styles.registerbuttonBackground}
                 colors={['#F8C471','#FF8900' ]}>
@@ -65,4 +67,4 @@ const {BusinessState, UserState} = useContext(StateContext);
     );
 };
 
-export default RegistrationScreen;
+export default RegistrationScreen2;
