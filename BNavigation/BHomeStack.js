@@ -12,7 +12,7 @@ const BHomeNavigationStack = () => {
         
             <BNav.Navigator initialRouteName='BHomeScreen' >
                 <BNav.Screen options={{headerShown: false}} name = 'BHomeScreen' component={BusinessHomeScreenTest}/>
-                <BHNav.Screen options={{headerShown: false}} name= 'Organization Keywords' component ={BusinessAddKeyWordsScreen}/>
+                <BNav.Screen options={{headerShown: false}} name= 'Organization Keywords' component ={BusinessAddKeyWordsScreen}/>
             </BNav.Navigator>
         
     );

@@ -17,6 +17,7 @@ import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen
 import LoginScreen from "./RegistrationScreens/LoginScreen";
 import RegistrationScreen from "./RegistrationScreens/RegistrationScreen";
 import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
+import CategoryOneScreen from "./Screens/CategoryOneScreen";
 
 
 

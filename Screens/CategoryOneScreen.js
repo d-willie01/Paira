@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {Text, TouchableOpacity, View, ScrollView} from 'react-native'
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
@@ -11,7 +11,9 @@ const CategoryOneScreen = () => {
     const MatchCategoryOne = () =>{
            
         UMatchnavigation.navigate("MatchCategoryOneScreen")
-    }
+    };
+
+    
     
     return(
         <View style={{
@@ -32,11 +34,9 @@ const CategoryOneScreen = () => {
             
             justifyContent:"space-between",
             
+            }}>
+           <KeyWordButton  text="club"/>
             
-            
-        }}>
-           <KeyWordButton text="club"/>
-           
            <KeyWordButton text="alcohol"/>
     
            <KeyWordButton text="kids"/>

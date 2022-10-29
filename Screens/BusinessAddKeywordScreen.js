@@ -8,22 +8,22 @@ const BusinessAddKeyWordsScreen = () => {
     
 const BusinessCategoryOneScreen = () =>{
        
-        Unavigation.navigate("BusinessCategoryOneScreen")
+        Unavigation.navigate("BusinessArtandMusic")
 }
 
 const BusinessCategoryTwoScreen = () =>{
        
-    Unavigation.navigate("BusinessCategoryTwoScreen")
+    Unavigation.navigate("BusinessEntertainment")
 }
 
 const BusinessCategoryThreeScreen = () =>{
        
-    Unavigation.navigate("BusinessCategoryThreeScreen")
+    Unavigation.navigate("BusinessFitness")
 }
 
 const BusinessCategoryFourScreen = () =>{
        
-    Unavigation.navigate("BusinessCategoryFourScreen")
+    Unavigation.navigate("BusinessPlaces")
 }
     
     return(

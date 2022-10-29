@@ -1,10 +1,10 @@
 import React from "react";
 import {Text} from 'react-native'
 
-const BusinessCategoryTwoScreen = () => {
+const BusinessPlacesKeyWords = () => {
     return(
         <Text>BusinessCategoryTwoScreen</Text>
     );
 };
 
-export default BusinessCategoryTwoScreen;
+export default BusinessPlacesKeyWords;
