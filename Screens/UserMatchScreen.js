@@ -21,7 +21,7 @@ const UserMatchScreen = () => {
         
     const CategoryOneScreen = () =>{
            
-            UMatchnavigation.navigate("MatchCategoryOneScreen")
+            UMatchnavigation.navigate("CategoryOneWords")
     }
     
     const CategoryTwoScreen = () =>{
@@ -31,17 +31,17 @@ const UserMatchScreen = () => {
     
     const CategoryThreeScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryThreeScreen")
+        UMatchnavigation.navigate("CategoryThreeWords")
     }
     
     const CategoryFourScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryFourScreen")
+        UMatchnavigation.navigate("CategoryFourWords")
     }
     
     const CategoryFiveScreen = () =>{
            
-        UMatchnavigation.navigate("MatchCategoryFiveScreen")
+        UMatchnavigation.navigate("CategoryFiveWords")
     }
    
    

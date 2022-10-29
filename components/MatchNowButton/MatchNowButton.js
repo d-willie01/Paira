@@ -4,11 +4,11 @@ import { Text, TouchableOpacity, View} from 'react-native'
 import styles from "./MatchNowButtonStyles";
 
 
-const MatchNowButton = ({text}) =>{
+const MatchNowButton = ({text, onPress}) =>{
     return(
     
         <View >
-        <TouchableOpacity style={styles.MatchCategoryParent}>
+        <TouchableOpacity style={styles.MatchCategoryParent} onPress={onPress}>
         <LinearGradient
                  colors={['#F8C471','#F5B041']}
                  style={styles.MatchCategorygrad}>
