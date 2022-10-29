@@ -79,6 +79,9 @@ export default async function (request: CreateCompanyRequest, response: Response
             createdBy: companyCreator
         });
 
+        companyCreator.company = newCompany
+        await UserService.updateUser(companyCreator._id, companyCreator)
+
         const companyResponse = transformCompany(newCompany);
 
         return response.status(201).json(companyResponse);

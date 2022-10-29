@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import * as UserService from '../../services/User.service';
 import jwt from 'jsonwebtoken'
+import { transformUser } from "../../transformers/user.transformer";
 
 export interface GetSelfRequest extends Request {
     auth?: jwt.JwtPayload

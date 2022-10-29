@@ -19,7 +19,7 @@ export const getUserByAuthProviderId = async (authProviderId: string): Promise<U
 
 export const deleteUser = async (_id: string | mongoose.Types.ObjectId): Promise<DeleteResult> => {
     const deletedUser: DeleteResult = await UserModel.deleteOne({ _id }, { new: true });
-    if(!deletedUser) throw new Error("Error deleting user " + _id);
+    if (!deletedUser) throw new Error("Error deleting user " + _id);
     return deletedUser;
 };
 
@@ -29,7 +29,12 @@ export const userAlreadyExists = async (email: string): Promise<boolean> => {
 };
 
 export const updateUser = async (_id: string | mongoose.Types.ObjectId, updates: User): Promise<User> => {
-    const updatedUser = await UserModel.findOneAndUpdate({ _id }, updates, { new: true });
+    const updatedUser = await UserModel.findOneAndUpdate({ _id }, {
+        firstName: updates.firstName,
+        lastName: updates.lastName,
+        email: updates.email,
+        company: updates.company,
+    }, { new: true });
     if (!updatedUser) throw new Error("Error updating user " + _id);
     return updatedUser;
 };

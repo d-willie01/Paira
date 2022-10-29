@@ -5,6 +5,7 @@ import Joi from "joi";
 import { BadRequestError, InvalidEmailError, PasswordStrengthError } from "../../utils/errors.util";
 import jwt from 'jsonwebtoken';
 import { User } from "../../models/User.model";
+import { transformUser } from "../../transformers/user.transformer";
 
 export interface SignupRequestBody {
     firstName: string;
@@ -64,9 +65,11 @@ export default async function (request: SignupRequest, response: Response): Prom
 
         const newUser = await UserService.createUser(newUserPayload);
 
+        const userResponse = transformUser(newUser);
+
         return response.status(201).json({
             token: loginResponse.id_token,
-            user: newUser
+            user: userResponse
         });
     } catch (err) {
         if (err instanceof PasswordStrengthError) {
