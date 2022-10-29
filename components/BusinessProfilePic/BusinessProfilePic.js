@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import * as ImagePicker from "expo-image-picker";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Image} from "react-native";
 
 
 
@@ -33,7 +33,6 @@ const BusinessProfilePic = () => {
                 height: 205, 
                 width: 205,
                 borderRadius:100,
-                
                 justifyContent:'center',
                 backgroundColor: "#F39C12"}}
                 

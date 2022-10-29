@@ -42,7 +42,7 @@ const BUserHomeScreen = () => {
 
             <View style ={{
                 height: 200,
-                borderWidth: 1,
+                
                 flexDirection:"row",
                 justifyContent:"center",
                 alignItems:"center"
