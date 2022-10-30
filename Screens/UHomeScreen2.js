@@ -3,7 +3,7 @@ import {Text, View, Image, SafeAreaView, TouchableOpacity, Platform,} from 'reac
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import CollectionButton from "../components/CollectionsButton";
-import { ScrollView } from "react-native"
+import { ScrollView } from "react-native";
 import { Entypo } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';

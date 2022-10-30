@@ -5,9 +5,13 @@ import * as ImagePicker from "expo-image-picker";
 import UserProfilePic from "../../../components/UserProfilePic/UserProfilPic"
 import BusinessButton from "../../../components/BusinessButtons/BusinessButton";
 import { LinearGradient } from "expo-linear-gradient";
+import { ScrollView } from "react-native";
 import { SafeAreaView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
+import CollectionButton from "../../../components/CollectionsButton";
+import CollectionsButton2 from "../../../components/UserButtons/CollectionsButton2";
 import Ustyles from "./UStyles";
+import TipsButton from "../../../components/TipsButton/TipsButton";
 import UserButtonScore from "../../../components/UserButtons/UserButtonUserScore";
 import UserButtonFollowers from "../../../components/UserButtons/UserButtonFollowers";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
@@ -49,7 +53,7 @@ const UUserHomeScreen = () => {
                  marginTop:'10%',
                  justifyContent:'center',
                  alignItems:'center',
-                backgroundColor:'transparent'
+                backgroundColor:'blue'
             }}>
                 <UserProfilePic/>
             </View>
@@ -58,7 +62,7 @@ const UUserHomeScreen = () => {
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
-                backgroundColor:'transparent',
+                backgroundColor:'red',
                 justifyContent: 'center'
 
                 
@@ -76,23 +80,82 @@ const UUserHomeScreen = () => {
             
             </View>
             <View style ={{
-                height: heightPercentageToDP('20%'),
+                height: heightPercentageToDP('10%'),
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
+                backgroundColor:'white',
+                justifyContent: 'space-evenly'
+
+                
+// followers and score
+            }}>
+            <UserButtonFollowers text = '240' />  
+            <UserButtonScore text='400'/>
+            </View>
+            <View style ={{
+                height: heightPercentageToDP('10%'),
+                width: widthPercentageToDP('100%'),
+                flexDirection:"row",
+                alignItems:"center",
+                backgroundColor:'red',
+                justifyContent: 'center'
+
+                
+            // Business Nametag   
+            }}>
+              <TipsButton/>
+            </View>
+            <View style ={{
+                height: heightPercentageToDP('7%'),
+                width: widthPercentageToDP('100%'),
+                alignItems:"left",
+                backgroundColor:'yellow',
+                justifyContent: 'space-evenly'
+
+                
+// My collection text
+            }}>
+            <Text 
+      // My collection Text 
+          style= {{
+
+            marginTop:0,
+            marginLeft:35,
+            fontWeight:'900',
+            fontSize:25,
+            color:'black',
+            
+          
+          }}>
+            
+            My collection
+          </Text>
+
+
+            </View>
+            <View style ={{
+                height: heightPercentageToDP('25%'),
+                width: widthPercentageToDP('100%'),
+                alignItems:"left",
                 backgroundColor:'transparent',
                 justifyContent: 'space-evenly'
 
                 
-// Business Analytics
+// My collection text
             }}>
+            <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={true} style={{
             
-            <UserButtonFollowers/>  
-            <UserButtonScore/>
-            
-  
+             }}>
+            <CollectionsButton2/>
+            <CollectionsButton2/>
+            <CollectionsButton2/>
 
+
+            </ScrollView>
             </View>
+          
+
     </SafeAreaView>
 </BackgroundColor>
 

@@ -20,7 +20,7 @@ const UserButtonFollowers = ({text}) => {
             onPress={()=> console.log('yeee')}>
                 <View
                      style={{
-                     height:'60%',
+                     height:'100%',
                      width:'100%',
                      borderRadius:'40%',
                      backgroundColor:'#F39C12',}}>
@@ -34,17 +34,17 @@ const UserButtonFollowers = ({text}) => {
                      bottom:5,}}>
                         
                         <Text
-                        numberOfLines={1}
                         style={{
-                        fontSize:33,
+                        fontSize:37,
                         fontWeight:"900",
                         color:'white',
+                        marginTop: 15,
                         textAlign:'center',
                         fontStyle:'italic',
                         
                         }}>{text}</Text>
-                        <View style={{alignItems:'flex-end'}}>
-                        <Octicons name="people" size={24} color="black" />
+                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 20,}}>
+                        <Octicons  name="people" size={35} color="black" />
                         </View>
 
               
