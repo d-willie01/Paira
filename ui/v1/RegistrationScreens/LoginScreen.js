@@ -9,7 +9,7 @@ const LoginScreen = () => {
         <View style = {{
             flex:1,
              }}>
-            <LinearGradient // background gradient view
+            <LinearGradient //background gradient view
                 style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
                 
                 colors={['#FDFEFE','#626567']}>
