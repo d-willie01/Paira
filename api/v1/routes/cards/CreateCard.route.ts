@@ -56,8 +56,6 @@ export default async function (request: CreateCardRequest, response: Response): 
             createdBy: cardCreator._id
         })
 
-        console.log(newCard)
-
         const newCardResponse = transformCard(newCard!)
 
         return response.status(201).json(newCardResponse)

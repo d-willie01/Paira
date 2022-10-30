@@ -4,7 +4,6 @@ import { CreateCardRequestBody } from '../routes/cards/CreateCard.route';
 export const createCard = async (request: CreateCardRequestBody) => {
     const { title, description, company, createdBy } = request;
     try {
-        console.log(request)
         const newCard = await CardModel.create({
             title,
             description,
@@ -13,6 +12,6 @@ export const createCard = async (request: CreateCardRequestBody) => {
         });
         return newCard;
     } catch (err) {
-        console.log(err)
+        console.error(err)
     }
 };
