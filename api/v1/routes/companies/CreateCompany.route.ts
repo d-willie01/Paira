@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import { User } from "../../models/User.model";
 import { Coordinates, getCoordinatesByAddress, State } from "../../utils/location.util";
 import { transformCompany } from "../../transformers/company.transformer";
+import j2s from 'joi-to-swagger';
 
 export interface CreateCompanyRequestBody {
     name: string;
@@ -24,17 +25,18 @@ export interface CreateCompanyRequest extends Request {
     body: CreateCompanyRequestBody;
 }
 
+const schema = Joi.object().keys({
+    name: Joi.string().required(),
+    industry: Joi.string().required(),
+    street_1: Joi.string().required(),
+    street_2: Joi.string().optional(),
+    city: Joi.string().required(),
+    state: Joi.string().max(2).required(),
+    zipCode: Joi.string().max(5).required()
+});
+
 export default async function (request: CreateCompanyRequest, response: Response): Promise<Response> {
     try {
-        const schema = Joi.object().keys({
-            name: Joi.string().required(),
-            industry: Joi.string().required(),
-            street_1: Joi.string().required(),
-            street_2: Joi.string().optional(),
-            city: Joi.string().required(),
-            state: Joi.string().max(2).required(),
-            zipCode: Joi.string().max(5).required()
-        });
         const validation = schema.validate(request.body);
         if (validation.error) {
             return response.status(400).json({ error: validation.error });
@@ -88,5 +90,40 @@ export default async function (request: CreateCompanyRequest, response: Response
     }
     catch (err) {
         return response.status(500).json({ error: err });
+    }
+}
+
+export const swCreateCompanyRouter = {
+    "/companies": {
+        "post": {
+            "summary": "register a your company with Paira",
+            "tags": ["Company Registration"],
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            ...j2s(schema).swagger
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "success"
+                },
+                "400": {
+                    "description": "bad request or invalid credentials"
+                },
+                "404": {
+                    "description": "user not found"
+                },
+                "409": {
+                    "description": "company already exists"
+                },
+                "500": {
+                    "description": "internal server error"
+                }
+            }
+        }
     }
 }

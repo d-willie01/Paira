@@ -6,6 +6,7 @@ import { BadRequestError, InvalidEmailError, PasswordStrengthError } from "../..
 import jwt from 'jsonwebtoken';
 import { User } from "../../models/User.model";
 import { transformUser } from "../../transformers/user.transformer";
+import j2s from 'joi-to-swagger';
 
 export interface SignupRequestBody {
     firstName: string;
@@ -19,14 +20,14 @@ export interface SignupRequest extends Request {
     body: SignupRequestBody;
 }
 
+const schema = Joi.object().keys({
+    firstName: Joi.string().required(),
+    lastName: Joi.string().required(),
+    email: Joi.string().required(),
+    password: Joi.string().required(),
+    passwordConfirmation: Joi.string().required()
+});
 export default async function (request: SignupRequest, response: Response): Promise<Response> {
-    const schema = Joi.object().keys({
-        firstName: Joi.string().required(),
-        lastName: Joi.string().required(),
-        email: Joi.string().required(),
-        password: Joi.string().required(),
-        passwordConfirmation: Joi.string().required()
-    });
     const validation = schema.validate(request.body);
 
     const { firstName, lastName, email, password, passwordConfirmation } = request.body;
@@ -80,6 +81,38 @@ export default async function (request: SignupRequest, response: Response): Prom
             return response.status(400).json({ error: err.message })
         } else {
             return response.status(500).json({ error: err });
+        }
+    }
+}
+
+export const swSignUpRouter = {
+    "/auth/signup": {
+        "post": {
+            "summary": "sign up as a Paira user and retrieve a Json Web Token",
+            "tags": ["User Registration"],
+            "requestBody": {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            ...j2s(schema).swagger
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "201": {
+                    "description": "success"
+                },
+                "400": {
+                    "description": "bad or invalid request"
+                },
+                "409": {
+                    "description": "user already exists"
+                },
+                "500": {
+                    "description": "internal server error"
+                }
+            }
         }
     }
 }

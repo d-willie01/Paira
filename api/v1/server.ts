@@ -8,6 +8,8 @@ import { expressjwt } from "express-jwt";
 import authRouter from "./routes/auth";
 import companiesRouter from "./routes/companies";
 import usersRouter from "./routes/users";
+import swaggerUI from "swagger-ui-express";
+import swaggerOptions from './swagger.def';
 
 dotenv.config();
 
@@ -21,11 +23,24 @@ app.use(
 );
 app.use(cors());
 app.use(loggingMiddlewear);
-app.use(expressjwt({ secret: process.env.AUTH0_CLIENT_SECRET!, algorithms: ["HS256"] }).unless({ path: ["/auth/signup", "/auth/signin"] }));
+var myFilter = function (req) {
+  console.log(req)
+  return true;
+}
+
+app.use(expressjwt({ secret: process.env.AUTH0_CLIENT_SECRET!, algorithms: ["HS256"] })
+  .unless({
+    path: [
+      { url: "/auth/signup" },
+      { url: "/auth/signin" },
+      { url: /^\/docs\/.*/ }
+    ]
+  }));
 
 app.use("/auth", authRouter);
 app.use("/companies", companiesRouter);
-app.use("/users", usersRouter)
+app.use("/users", usersRouter);
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerOptions));
 
 app.use(function (err: any, req: Request, res: Response, next: any) {
   if (err.name === "UnauthorizedError") {
@@ -39,6 +54,7 @@ app.use(function (err: any, req: Request, res: Response, next: any) {
 mongoClient.init();
 
 mapBoxClient.init();
+
 
 app.listen(process.env.PORT, () =>
   console.log(`server has started at port ${process.env.PORT}`)

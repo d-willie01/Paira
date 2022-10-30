@@ -13,3 +13,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+3. to view Swagger documentation, visit http://localhost:8080/docs
