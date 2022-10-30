@@ -4,6 +4,7 @@ import {StateContext} from "../StateManagement/StateProvider";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "../Styles/styles";
 import { LinearGradient } from "expo-linear-gradient";
+import RegistrationStyles from "./RegistrationScreenStyles";
 
 
 
@@ -25,6 +26,7 @@ const {BusinessState, UserState} = useContext(StateContext);
         style={styles.container}
         
         colors={['#B1B1B3','#CACACC',]}>
+          <View style={{alignItems: 'center'}}>
             <Text style ={{fontWeight:'900', color: 'white', fontSize: 20, marginTop: 320, marginBottom: 20, fontStyle: "italic"}}> Be discovered... </Text>
             <TouchableOpacity title = "business" onPress={() =>{BusinessState()}}>
               <LinearGradient
@@ -90,6 +92,7 @@ const {BusinessState, UserState} = useContext(StateContext);
                 </TouchableOpacity>
               
         <Text style ={{fontWeight:'900', color: 'white', fontSize: 20, marginTop: 20, marginLeft: 10, fontStyle: "italic"}}> Start Exploring... </Text>
+        </View>
         </LinearGradient>
    </View> 
       

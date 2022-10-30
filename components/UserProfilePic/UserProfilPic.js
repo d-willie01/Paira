@@ -30,7 +30,7 @@ const UserProfilePic = () => {
             <TouchableOpacity 
       //Add Profile Button
                 style={{
-                height: '89%', 
+                height: '90%', 
                 width: '48%',
                 borderRadius:'100%',
                 justifyContent:'center',

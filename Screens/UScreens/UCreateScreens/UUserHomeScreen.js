@@ -10,6 +10,8 @@ import { SafeAreaView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import CollectionButton from "../../../components/CollectionsButton";
 import CollectionsButton2 from "../../../components/UserButtons/CollectionsButton2";
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Ustyles from "./UStyles";
 import TipsButton from "../../../components/TipsButton/TipsButton";
 import UserButtonScore from "../../../components/UserButtons/UserButtonUserScore";
@@ -47,22 +49,45 @@ const UUserHomeScreen = () => {
     width: widthPercentageToDP('100%') }}>
 
 
-            <View style ={{
-                 height: heightPercentageToDP('25%'),
-                 width: widthPercentageToDP('100%'),
-                 marginTop:'10%',
-                 justifyContent:'center',
+              <View style ={{
+                 height: '25%',
+                 width: '100%',
+                 marginLeft: '25%',
+                 backgroundColor:'transparent',
+                 marginTop:'5%',
+                 
+                
+                
+                 }}>
+                <UserProfilePic />
+                </View>
+
+                <View style ={{
+                 position:'absolute',
+                 height:'15%',
+                 width: '10%',
+                 backgroundColor:'transparent',
                  alignItems:'center',
-                backgroundColor:'blue'
+                 justifyContent:'space-between',
+                 marginLeft:'78%',
+                 marginTop:'20%',
+                 
+                 
+                 
+                
             }}>
-                <UserProfilePic/>
+            
+            <AntDesign name="setting" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
+
             </View>
             <View style ={{
                 height: heightPercentageToDP('10%'),
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
-                backgroundColor:'red',
+                backgroundColor:'transparent',
                 justifyContent: 'center'
 
                 
@@ -84,7 +109,7 @@ const UUserHomeScreen = () => {
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
-                backgroundColor:'white',
+                backgroundColor:'transparent',
                 justifyContent: 'space-evenly'
 
                 
@@ -98,7 +123,7 @@ const UUserHomeScreen = () => {
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
-                backgroundColor:'red',
+                backgroundColor:'transparent',
                 justifyContent: 'center'
 
                 
@@ -110,7 +135,7 @@ const UUserHomeScreen = () => {
                 height: heightPercentageToDP('7%'),
                 width: widthPercentageToDP('100%'),
                 alignItems:"left",
-                backgroundColor:'yellow',
+                backgroundColor:'transparent',
                 justifyContent: 'space-evenly'
 
                 
@@ -124,7 +149,7 @@ const UUserHomeScreen = () => {
             marginLeft:35,
             fontWeight:'900',
             fontSize:25,
-            color:'black',
+            color:'white',
             
           
           }}>

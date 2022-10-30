@@ -14,6 +14,7 @@ import RestaurantData from "./assets/Data/RestaurantData";
 import BUserHomeScreen from "./BScreens/BHomeScreen/BUserHomeScreen";
 import UUserHomeScreen from "./Screens/UScreens/UCreateScreens/UUserHomeScreen";
 import BCreateScreen from "./BScreens/BCreateScreen/BCreateScreen";
+import RegistrationScreen from "./RegistrationScreens/RegistrationScreen"
 
 
 
@@ -31,13 +32,12 @@ export default function App() {
   
   return (
     
-    // <StateProvider>
-    //   <AppNavigator/>
-    // </StateProvider>
-    <NavigationContainer>
-      <UUserHomeScreen/>
-
-    </NavigationContainer>
+    <StateProvider>
+      <AppNavigator/>
+    </StateProvider>
+    // <NavigationContainer>
+    //   <RegistrationScreen/>
+    // </NavigationContainer>
     
 
   
