@@ -6,9 +6,10 @@ export const StateContext = createContext();
 const StateProvider = ({children}) => {
     
     
-    const [UState, setUState] = useState(null);
+const [UState, setUState] = useState(null);
+const [step1, setStep1] = useState(null);
 
-   const BusinessState = () =>{
+const BusinessState = () =>{
         
         setUState(true);
         console.log(UState);
@@ -26,7 +27,7 @@ const StateProvider = ({children}) => {
     
     
     return (
-        <StateContext.Provider value ={{BusinessState, UserState, UState}} >
+        <StateContext.Provider value ={{BusinessState, UserState, UState, step1}} >
             {children}
         </StateContext.Provider>
     )
