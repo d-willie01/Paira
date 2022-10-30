@@ -4,10 +4,10 @@ import { Address, Coordinates } from '../utils/location.util';
 import { User } from './User.model';
 
 export enum Industry {
-  "art & music",
-  entertainment,
-  food,
-  places,
+  "entertainment",
+  "food & dining",
+  "non-profit",
+  "retail",
   "sports & fitness"
 }
 
