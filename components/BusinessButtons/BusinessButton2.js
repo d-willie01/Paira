@@ -4,8 +4,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from "./BusinessButtonStyles";
 import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
-const BusinessButton = ({text}) => {
+const BusinessButton2 = ({text}) => {
     return(
       
         <TouchableOpacity 
@@ -14,6 +15,7 @@ const BusinessButton = ({text}) => {
                 width:'45%',
                 height:'70%',
                 alignContent:'center'
+                
             }}
             onPress={()=> console.log('yeee')}>
                 <View
@@ -29,12 +31,12 @@ const BusinessButton = ({text}) => {
                      height:'100%',
                      width:'100%',
                      borderRadius:'40%',
-                     bottom:5,}}>
+                     bottom:5,
+                     }}>
                         
-                        <FontAwesome name="heart" size={'30%'} color="white" style={{
+                        <FontAwesome5 name="seedling" size={'30%'} color="white" style={{
                             alignSelf:'center',
                             marginTop:'5%'
-
                         }} />
                         <Text
                         numberOfLines={1}
@@ -44,10 +46,9 @@ const BusinessButton = ({text}) => {
                         color:'white',
                         textAlign:'center',
                         fontStyle:'italic',
-                        alignSelf:'center',
                         
-                        }}>{'25'}</Text>
-
+                        }}>{'159'}</Text>
+                        
                         <Text
                         numberOfLines={1}
                         style={{
@@ -56,11 +57,9 @@ const BusinessButton = ({text}) => {
                         color:'white',
                         textAlign:'center',
                         fontStyle:'italic',
-                        marginTop:'-2%',
-                        alignSelf:'center'
+                        marginTop:'-2%'
                         
-                        }}>{'Likes'}</Text>
-                        
+                        }}>{'Matches'}</Text>
                         
 
               
@@ -73,4 +72,4 @@ const BusinessButton = ({text}) => {
  
     )
 }
-export default BusinessButton;
+export default BusinessButton2;

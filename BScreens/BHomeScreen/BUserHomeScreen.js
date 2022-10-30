@@ -8,6 +8,13 @@ import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+import BusinessButton2 from "../../components/BusinessButtons/BusinessButton2";
+import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+
+
 const BUserHomeScreen = () => {
     
      
@@ -39,20 +46,49 @@ const BUserHomeScreen = () => {
     width: widthPercentageToDP('100%') }}>
 
 
+            
             <View style ={{
-                 height: heightPercentageToDP('25%'),
-                 width: widthPercentageToDP('100%'),
-                 marginTop:'10%',
-                 justifyContent:'center',
-                 alignItems:'center',
-                backgroundColor:'transparent'
+                 height: '25%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 marginTop:'5%'
+                 
+                
+                
             }}>
+                
                 <BusinessProfilePic/>
+
+                <View style ={{
+                 position:'absolute',
+                 height:'70%',
+                 width: '10%',
+                 backgroundColor:'transparent',
+                 alignItems:'center',
+                 justifyContent:'space-between',
+                 marginLeft:'78%',
+                 marginTop:'5%',
+                 
+                 
+                 
+                
+            }}>
+            
+            <AntDesign name="setting" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
+
+            </View>
+                
+                
             </View>
 
+           
+
+           
 
             <View style ={{
-                height: heightPercentageToDP('10%'),
+                height: heightPercentageToDP('15%'),
                 width: widthPercentageToDP('100%'),
                 flexDirection:"row",
                 alignItems:"center",
@@ -111,10 +147,9 @@ const BUserHomeScreen = () => {
                 
 // Business Analytics
             }}>
-            
+
             <BusinessButton/>  
-            <BusinessButton/>
-            
+            <BusinessButton2/>
   
 
             </View>
