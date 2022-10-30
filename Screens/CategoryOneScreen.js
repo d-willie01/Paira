@@ -32,7 +32,7 @@ const CategoryOneScreen = () => {
         <ScrollView horizontal ={true} showsHorizontalScrollIndicator ={false}
         
         style ={{
-            marginTop: 100,
+            marginTop: 150,
             
             flexDirection:"row"
     

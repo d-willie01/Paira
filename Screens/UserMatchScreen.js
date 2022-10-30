@@ -11,6 +11,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
+import BackgroundColor from "../components/Theme/BackgroundColor";
 
 
 
@@ -51,9 +52,7 @@ const UserMatchScreen = () => {
    
     return(
 
-<LinearGradient // background gradient view
-        style={styles.container}
-        colors={['#B1B1B3','#CACACC',]}>
+<BackgroundColor>
        
         <SafeAreaView style ={{flex:1}}>
 
@@ -203,10 +202,10 @@ const UserMatchScreen = () => {
                
                 <Text numberOfLines={2} style={{
                 position:'absolute',
-                fontSize:22,
+                fontSize:15,
                 fontWeight:'900',
-                color:'grey',
-                marginTop:85,
+                color:'white',
+                marginTop:90,
                 marginLeft:53,
                 width:300,
 
@@ -215,7 +214,7 @@ const UserMatchScreen = () => {
                 
                 <Text numberOfLines={2} style={{
                 position:'absolute',
-                fontSize:20,
+                fontSize:15,
                 fontWeight:'900',
                 color:'grey',
                 marginTop:220,
@@ -261,7 +260,7 @@ const UserMatchScreen = () => {
                 Yeah let's get right. </Text>
 </ScrollView>
                 </SafeAreaView>
-        </LinearGradient>
+        </BackgroundColor>
     );
 };
 

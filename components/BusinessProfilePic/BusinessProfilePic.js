@@ -30,18 +30,18 @@ const BusinessProfilePic = () => {
             <TouchableOpacity 
       //Add Profile Button
                 style={{
-                height: 205, 
-                width: 205,
-                borderRadius:100,
+                height: '89%', 
+                width: '48%',
+                borderRadius:'100%',
                 justifyContent:'center',
                 backgroundColor: "#F39C12"}}
                 
                 onPress={PickProfilePic}>
 
                   {image && <Image source ={{uri:image}} style={{
-                    height : 200,
-                    width : 200,
-                    borderRadius:100,
+                    height : '99%',
+                    width : '99%',
+                    borderRadius:'100%',
                     alignSelf:'center',
                     
 

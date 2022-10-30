@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar, Platform } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
+import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
 
 
 
@@ -308,6 +309,12 @@ const styles = StyleSheet.create({
         borderRadius:60,
         backgroundColor:'#F39C12',
     },
+    ResponsiveContainer:{
+        flex:1},
+    TextWrapper:{
+        height: heightPercentageToDP('90%'),
+        width: widthPercentageToDP('90%'),
+    }
 });
 
 

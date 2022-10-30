@@ -5,7 +5,9 @@ import * as ImagePicker from "expo-image-picker";
 import BusinessProfilePic from "../../components/BusinessProfilePic/BusinessProfilePic";
 import BusinessButton from "../../components/BusinessButtons/BusinessButton";
 import { LinearGradient } from "expo-linear-gradient";
-
+import { SafeAreaView } from "react-native";
+import { FontAwesome } from '@expo/vector-icons';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
 const BUserHomeScreen = () => {
     
      
@@ -30,60 +32,122 @@ const BUserHomeScreen = () => {
     
     
     return(
-        <BackgroundColor>
+ <BackgroundColor>
+   <SafeAreaView 
+   style={{
+    height: heightPercentageToDP('100%'),
+    width: widthPercentageToDP('100%') }}>
 
 
             <View style ={{
-                marginLeft: 100,
-                margin: 10
+                 height: heightPercentageToDP('25%'),
+                 width: widthPercentageToDP('100%'),
+                 marginTop:'10%',
+                 justifyContent:'center',
+                 alignItems:'center',
+                backgroundColor:'transparent'
             }}>
                 <BusinessProfilePic/>
             </View>
 
+
             <View style ={{
-                height: 200,
-                
+                height: heightPercentageToDP('10%'),
+                width: widthPercentageToDP('100%'),
                 flexDirection:"row",
-                justifyContent:"center",
-                alignItems:"center"
-                
-                
-            }}>
-            
-            <BusinessButton/>
-            <BusinessButton/>
+                alignItems:"center",
+                backgroundColor:'transparent',
+                justifyContent: 'center'
 
                 
+            // Business Nametag   
+            }}> 
+            
+            <TouchableOpacity style={{
+                height:'60%',
+                width:'60%',
+                borderRadius:'25%',
+                backgroundColor:'#F39C12',
+                justifyContent:'center',
+                }}>
+                <LinearGradient
+                                colors={['#F8C471','#F5B041']}
+                                style={{
+                                    height:'100%',
+                                    width:'100%',
+                                    justifyContent:'center',
+                                    bottom:5,
+                                    borderRadius:'25%',}}>
+                                    <Text numberOfLines={2} style={{
+                                        fontSize:22,
+                                        fontWeight:'900',
+                                        color:'white',
+                                        textAlign:'center',
+                                        alignSelf:'center',
+                                        fontStyle:'italic'
+                                        }}>Suns Event Co.</Text>
+                                        <Text numberOfLines={2} style={{
+                                        fontSize:10,
+                                        fontWeight:'900',
+                                        color:'white',
+                                        textAlign:'center',
+                                        alignSelf:'center',
+                                        fontStyle:'italic'
+                                        }}>Phoenix, AZ </Text>
+                </LinearGradient>
+
+            </TouchableOpacity>
+            
+            </View>
+
+            <View style ={{
+                height: heightPercentageToDP('20%'),
+                width: widthPercentageToDP('100%'),
+                flexDirection:"row",
+                alignItems:"center",
+                backgroundColor:'transparent',
+                justifyContent: 'space-evenly'
+
+                
+// Business Analytics
+            }}>
+            
+            <BusinessButton/>  
+            <BusinessButton/>
+            
+  
 
             </View>
 
             <View style = {{
-                alignSelf:"center"
+                height: heightPercentageToDP('20%'),
+                width: widthPercentageToDP('100%'),
+                backgroundColor:'transparent',
+                justifyContent:'center',
+                alignItems:'center',
             }}>
             <TouchableOpacity style ={{
-                             height:175,
-                             width:300,
-                             borderRadius:60,
-                             marginRight: 10,
-                             marginTop: 15,
+                             height:'70%',
+                             width:'70%',
+                             borderRadius:35,
                              alignItems: 'center',
-                             bottom: 5,
                              backgroundColor:'#F39C12',}}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
                                 style={{
-                                    height:175,
-                                    width:300,
+                                    height:'100%',
+                                    width:'100%',
                                     justifyContent:'center',
-                                    borderRadius:60,}}>
-                                <Text numberOfLines={3} style={{
-                                fontSize:25,
+                                    bottom:5,
+                                    borderRadius:35,}}>
+                                <Text numberOfLines={2} style={{
+                                fontSize:22,
                                 fontWeight:'900',
                                 color:'white',
                                 textAlign:'center',
                                 alignSelf:'center',
                                 fontStyle:'italic'
-                                }}>Add Keywords</Text>
+                                }}>Click here to add your keywords</Text>
                             </LinearGradient>
                             </TouchableOpacity>
             </View>
@@ -91,9 +155,9 @@ const BUserHomeScreen = () => {
             
 
 
+    </SafeAreaView>
 
-
-        </BackgroundColor>
+ </BackgroundColor>
     );
 };
 

@@ -17,6 +17,8 @@ import TipsButton from "../components/TipsButton/TipsButton";
 import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
 import SocialButton from "../components/ProfileInfoButtons/Social/SocialButton";
 import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp} from "react-native-responsive-screen";
+
 
 
 

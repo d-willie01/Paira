@@ -11,7 +11,7 @@ const KeyWordButton = ({text}) => {
         <View >
         <TouchableOpacity style={styles.MatchCategoryParent}>
         <LinearGradient
-                 colors={['#F8C471','#F5B041']}
+                 colors={['#777777','#878787']}
                  style={styles.MatchCategorygrad}>
                     <Text numberOfLines={1} style={{
                     fontSize:17,
