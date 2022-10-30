@@ -24,19 +24,18 @@ app.use(
 );
 app.use(cors());
 app.use(loggingMiddlewear);
-var myFilter = function (req) {
-  console.log(req)
-  return true;
+var jwtFilter = function (req: Request) {
+  if (req.path.includes("/auth")) {
+    return true;
+  }
+  if (req.path.includes("/docs")) {
+    return true;
+  }
+  return false
 }
 
 app.use(expressjwt({ secret: process.env.AUTH0_CLIENT_SECRET!, algorithms: ["HS256"] })
-  .unless({
-    path: [
-      { url: "/auth/signup" },
-      { url: "/auth/signin" },
-      { url: /^\/docs\/.*/ }
-    ]
-  }));
+  .unless(jwtFilter));
 
 app.use("/auth", authRouter);
 app.use("/cards", cardsRouter);
