@@ -113,7 +113,7 @@ const BUserHomeScreen = () => {
                                     width:'100%',
                                     justifyContent:'center',
                                     bottom:5,
-                                    borderRadius:'25%',}}>
+                                    borderRadius:'20%',}}>
                                     <Text numberOfLines={2} style={{
                                         fontSize:22,
                                         fontWeight:'900',

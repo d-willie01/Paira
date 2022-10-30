@@ -5,7 +5,7 @@ import { TouchableOpacity, View, Image} from "react-native";
 
 
 
-const BusinessProfilePic = () => {
+const UserProfilePic = () => {
     
     const [image, setImage] = useState(null);
     
@@ -30,9 +30,8 @@ const BusinessProfilePic = () => {
             <TouchableOpacity 
       //Add Profile Button
                 style={{
-                height: '90%', 
-                width: '45%',
-                alignSelf:'center',
+                height: '89%', 
+                width: '48%',
                 borderRadius:'100%',
                 justifyContent:'center',
                 backgroundColor: "#F39C12"}}
@@ -53,4 +52,4 @@ const BusinessProfilePic = () => {
     )
 }
 
-export default BusinessProfilePic;
+export default UserProfilePic;
