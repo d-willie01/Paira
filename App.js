@@ -11,11 +11,8 @@ import UHomeScreen2 from "./Screens/UHomeScreen2";
 import BusinessHomeScreenTest from "./Screens/BusinessHomeScreenTest";
 import { SafeAreaView } from "react-native";
 import RestaurantData from "./assets/Data/RestaurantData";
-import BusinessAddKeyWordsScreen from "./Screens/BusinessAddKeywordScreen";
-import StartScreen from "./RegistrationScreens/StartScreen";
-import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
-import LoginScreen from "./RegistrationScreens/LoginScreen";
-import RegistrationScreen from "./RegistrationScreens/RegistrationScreen";
+import BUserHomeScreen from "./BScreens/BHomeScreen/BUserHomeScreen";
+
 
 
 
@@ -32,9 +29,13 @@ export default function App() {
   
   return (
     
-    <StateProvider>
-      <AppNavigator/>
-    </StateProvider>
+    // <StateProvider>
+    //   <AppNavigator/>
+    // </StateProvider>
+    <NavigationContainer>
+      <BUserHomeScreen/>
+
+    </NavigationContainer>
     
 
   
