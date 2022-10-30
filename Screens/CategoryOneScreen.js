@@ -12,7 +12,13 @@ const CategoryOneScreen = () => {
            
         UMatchnavigation.navigate("MatchCategoryOneScreen")
     };
+    const[selectedItems, setSelectedItems ]= useState([]);
 
+    const handleOnLongPress = (KeyWordButton) =>{
+        console.log(selectedItems)
+        setSelectedItems([...selectedItems, KeyWordButton])
+
+    }
     
     
     return(
@@ -35,11 +41,12 @@ const CategoryOneScreen = () => {
             justifyContent:"space-between",
             
             }}>
-           <KeyWordButton  text="club"/>
+
+           <KeyWordButton text="club" onLongPress={() => handleOnLongPress("Club")}/>
             
-           <KeyWordButton text="alcohol"/>
+           <KeyWordButton text="alcohol" onLongPress={() => handleOnLongPress("Alcohol")}/>
     
-           <KeyWordButton text="kids"/>
+           <KeyWordButton text="kids" onLongPress={() => handleOnLongPress("Kids")}/>
     
            <KeyWordButton text ="animals"/>
     
