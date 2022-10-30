@@ -2,6 +2,11 @@ import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref } fro
 import autopopulate from 'mongoose-autopopulate';
 import { Company } from './Company.model';
 
+export enum Role {
+    "owner",
+    "contributer"
+}
+
 export interface User extends defaultClasses.Base { }
 @modelOptions({ schemaOptions: { timestamps: true, strict: "throw", collection: "users" } })
 @plugin(autopopulate)
@@ -9,7 +14,7 @@ export class User {
     @prop({ required: false })
     public authProviderId?: string;
 
-    @prop({ required: false, autopopulate: false, ref: 'Company' })
+    @prop({ required: false, autopopulate: true, maxdepth: 1, ref: 'Company' })
     public company?: Ref<Company>;
 
     @prop({ required: true })
@@ -20,6 +25,9 @@ export class User {
 
     @prop({ required: true })
     public lastName!: string;
+
+    @prop({ required: false })
+    public role?: Role;
 
     @prop({ required: true, default: Date.now })
     public createdAt!: Date;

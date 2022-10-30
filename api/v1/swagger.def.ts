@@ -1,6 +1,8 @@
 import { swSignInRouter } from "./routes/auth/SignIn.route";
 import { swSignUpRouter } from "./routes/auth/SignUp.route";
+import { swCreateCardRouter } from "./routes/cards/CreateCard.route";
 import { swCreateCompanyRouter } from "./routes/companies/CreateCompany.route";
+import { swGetSelfRouter } from "./routes/users/GetSelf.route";
 
 const swaggerOptions = {
     openapi: '3.0.0',
@@ -16,9 +18,11 @@ const swaggerOptions = {
         }
     ],
     paths: {
-        ...swCreateCompanyRouter,
         ...swSignUpRouter,
-        ...swSignInRouter
+        ...swCreateCompanyRouter,
+        ...swSignInRouter,
+        ...swGetSelfRouter,
+        ...swCreateCardRouter
     }
 }
 

@@ -89,7 +89,7 @@ export const swSignUpRouter = {
     "/auth/signup": {
         "post": {
             "summary": "sign up as a Paira user and retrieve a Json Web Token",
-            "tags": ["User Registration"],
+            "tags": ["/auth"],
             "requestBody": {
                 "content": {
                     "application/json": {

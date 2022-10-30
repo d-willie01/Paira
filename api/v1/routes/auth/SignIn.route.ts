@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import * as AuthService from "../../services/Auth.service";
+import * as UserService from "../../services/User.service";
 import Joi from "joi";
 import { InvalidCredentialsError, TooManyAttemptsError } from "../../utils/errors.util";
 import j2s from 'joi-to-swagger';
@@ -26,10 +27,18 @@ export default async function (request: SigninRequest, response: Response): Prom
     }
 
     try {
+        const user = await UserService.getUserByEmailAddress(email);
+        if (!user) {
+            return response.status(400).json({ error: "incorrect email or password" })
+        }
+
         const loginResponse = await AuthService.SignIn({
             email,
             password
         });
+        if (!loginResponse.id_token) {
+            return response.status(400).json({ error: "incorrect email or password" })
+        }
 
         return response.status(200).json({ token: loginResponse.id_token });
     }
@@ -48,7 +57,7 @@ export const swSignInRouter = {
     "/auth/signin": {
         "post": {
             "summary": "sign in and retrieve a Json Web Token",
-            "tags": ["User Log In"],
+            "tags": ["/auth"],
             "requestBody": {
                 "content": {
                     "application/json": {

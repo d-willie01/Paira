@@ -3,10 +3,11 @@ import * as CompanyService from "../../services/Company.service";
 import * as UserService from "../../services/User.service";
 import Joi from "joi";
 import jwt from 'jsonwebtoken';
-import { User } from "../../models/User.model";
+import { Role, User } from "../../models/User.model";
 import { Coordinates, getCoordinatesByAddress, State } from "../../utils/location.util";
 import { transformCompany } from "../../transformers/company.transformer";
 import j2s from 'joi-to-swagger';
+import { Industry } from "../../models/Company.model";
 
 export interface CreateCompanyRequestBody {
     name: string;
@@ -18,6 +19,8 @@ export interface CreateCompanyRequestBody {
     zipCode: string;
     coordinates: Coordinates;
     createdBy: User;
+    bio?: string;
+    founded?: string;
 }
 
 export interface CreateCompanyRequest extends Request {
@@ -31,8 +34,10 @@ const schema = Joi.object().keys({
     street_1: Joi.string().required(),
     street_2: Joi.string().optional(),
     city: Joi.string().required(),
-    state: Joi.string().max(2).required(),
-    zipCode: Joi.string().max(5).required()
+    state: Joi.string().required(),
+    zipCode: Joi.string().required(),
+    bio: Joi.string().optional(),
+    founded: Joi.string().optional()
 });
 
 export default async function (request: CreateCompanyRequest, response: Response): Promise<Response> {
@@ -42,7 +47,7 @@ export default async function (request: CreateCompanyRequest, response: Response
             return response.status(400).json({ error: validation.error });
         };
 
-        const { name, industry, street_1, street_2, city, state, zipCode } = request.body;
+        const { name, industry, street_1, street_2, city, state, zipCode, bio, founded } = request.body;
 
         const companyAlreadyExists = await CompanyService.getCompanyByNameAndAddress({
             name,
@@ -61,6 +66,14 @@ export default async function (request: CreateCompanyRequest, response: Response
             return response.status(404).json({ error: "user not found" });
         };
 
+        if (!State[state.toUpperCase()]) {
+            return response.status(400).json({ error: `please provide a valid two digit state code` });
+        }
+
+        if (!Industry[industry.toLowerCase()]) {
+            return response.status(400).json({ error: `please provide a valid industry` });
+        }
+
         const coordinates = await getCoordinatesByAddress({
             street_1,
             street_2,
@@ -78,10 +91,13 @@ export default async function (request: CreateCompanyRequest, response: Response
             state: state.toUpperCase(),
             zipCode,
             coordinates,
-            createdBy: companyCreator
+            createdBy: companyCreator,
+            bio,
+            founded
         });
 
         companyCreator.company = newCompany
+        companyCreator.role = Role["owner"];
         await UserService.updateUser(companyCreator._id, companyCreator)
 
         const companyResponse = transformCompany(newCompany);
@@ -97,7 +113,7 @@ export const swCreateCompanyRouter = {
     "/companies": {
         "post": {
             "summary": "register a your company with Paira",
-            "tags": ["Company Registration"],
+            "tags": ["/companies"],
             "requestBody": {
                 "content": {
                     "application/json": {

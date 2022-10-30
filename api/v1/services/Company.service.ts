@@ -23,7 +23,7 @@ export const getCompanyByNameAndAddress = async (request: ExistingCompanySearchP
 }
 
 export const createCompany = async (request: CreateCompanyRequestBody): Promise<Company> => {
-    const { name, industry, street_1, street_2, city, state, zipCode, createdBy, coordinates } = request;
+    const { name, industry, street_1, street_2, city, state, zipCode, createdBy, coordinates, bio, founded } = request;
     const newCompany = await CompanyModel.create({
         name,
         industry: Industry[industry],
@@ -35,7 +35,9 @@ export const createCompany = async (request: CreateCompanyRequestBody): Promise<
             zipCode
         },
         coordinates,
-        createdBy
+        createdBy,
+        bio,
+        founded
     });
     return newCompany;
 };

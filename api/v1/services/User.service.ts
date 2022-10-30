@@ -11,6 +11,11 @@ export const createUser = async (createUserPayload: CreateUserPayload): Promise<
     return newUser;
 };
 
+export const getUserByEmailAddress = async (email: string): Promise<User | null> => {
+    const user = await UserModel.findOne({ email });
+    return user;
+};
+
 export const getUserByAuthProviderId = async (authProviderId: string): Promise<User> => {
     const user = await UserModel.findOne({ authProviderId });
     if (!user) throw new NotFoundError("user not found by provider id " + authProviderId);
@@ -34,6 +39,7 @@ export const updateUser = async (_id: string | mongoose.Types.ObjectId, updates:
         lastName: updates.lastName,
         email: updates.email,
         company: updates.company,
+        role: updates.role
     }, { new: true });
     if (!updatedUser) throw new Error("Error updating user " + _id);
     return updatedUser;

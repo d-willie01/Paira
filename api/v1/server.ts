@@ -10,6 +10,7 @@ import companiesRouter from "./routes/companies";
 import usersRouter from "./routes/users";
 import swaggerUI from "swagger-ui-express";
 import swaggerOptions from './swagger.def';
+import cardsRouter from "./routes/cards";
 
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.use(expressjwt({ secret: process.env.AUTH0_CLIENT_SECRET!, algorithms: ["HS2
   }));
 
 app.use("/auth", authRouter);
+app.use("/cards", cardsRouter);
 app.use("/companies", companiesRouter);
 app.use("/users", usersRouter);
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerOptions));
