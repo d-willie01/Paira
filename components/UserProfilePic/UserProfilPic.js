@@ -5,7 +5,7 @@ import { TouchableOpacity, View, Image} from "react-native";
 
 
 
-const BusinessProfilePic = () => {
+const UserProfilePic = () => {
     
     const [image, setImage] = useState(null);
     
@@ -52,4 +52,4 @@ const BusinessProfilePic = () => {
     )
 }
 
-export default BusinessProfilePic;
+export default UserProfilePic;
