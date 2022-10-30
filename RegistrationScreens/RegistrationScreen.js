@@ -24,7 +24,7 @@ const {BusinessState, UserState} = useContext(StateContext);
     
     <View style={{flex:1, alignItems: 'center'}}>
     <LinearGradient // background gradient view
-        style={styles.container}
+        style={styles.containerCenter}
         
         colors={['#B1B1B3','#CACACC',]}>
           <View style={{alignItems: 'center'}}>

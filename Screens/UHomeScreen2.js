@@ -111,7 +111,7 @@ const UHomeScreen2 = () => {
               <SocialButton2 text="23"/>
             </View>
 
-
+  
               <TouchableOpacity 
       //Add Profile Button
                 style={{
@@ -126,14 +126,7 @@ const UHomeScreen2 = () => {
 
                 onPress={PickProfilePic}>
 
-                  {image && <Image source ={{uri:image}} style={{
-                    height : 200,
-                    width : 200,
-                    borderRadius:100,
-                    alignSelf:'center',
-                    
-
-                  }} />}
+                  
 
               </TouchableOpacity>
 

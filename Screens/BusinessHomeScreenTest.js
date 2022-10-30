@@ -1,6 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import * as ImagePicker from "expo-image-picker";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+import TipsButton from "../components/TipsButton/TipsButton";
+import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
+import SocialButton from "../components/ProfileInfoButtons/Social/SocialButton";
+import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2";
 import AddProfileButton from "../components/AddProfilePicButton";
 import LinearGradientTO from "../components/LineargradientTO";
 import CollectionButton from "../components/CollectionsButton";
@@ -16,166 +21,102 @@ import {
     ScrollView} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import BusinessHeaderOutline from "../components/BusinessRefactor/BusinessHeaderOutline";
+import BusinessAddKeyWordsScreen from "./BusinessAddKeywordScreen";
 
 
 const BusinessHomeScreenTest = () => {
+    const Startnavigation = useNavigation();
+    
+       const BusinessAddKeyWordsScreen = () => {
+            Startnavigation.navigate("Organization Keywords")
+       }
+    const [image, setImage] = useState(null);
+  
+
+
+  useEffect(  () =>{
+    if (Platform.OS != "web"){
+      const { status }  = ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status != "granted"){
+        console.log("Permission denied!");
+      }
+      
+    }
+  }, [])
+  
+  const PickProfilePic = async () =>{
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect : [2,2],
+      quality: 1
+    })
+    console.log(result)
+    if (!result.cancelled){
+      setImage(result.uri)
+    }
+  }
     return(
        
     <LinearGradient // background gradient view
     style={styles.container}
     colors={['#B1B1B3','#CACACC']}> 
         <SafeAreaView style={styles.container2T}>
-            <Text style = {{ fontSize: 25, fontWeight: '900', justifyContent: 'flex-start', marginTop: 5, marginLeft:200, color: 'white'}}> 
+            <Text style = {styles.businessHSHeaderText}> 
                         Welcome Back 
             </Text>
-        <LinearGradient 
-            style={{
-                height: 240,
-                width: 400,
-                borderRadius: 25,
-                alignItems:'center',
-                marginTop: 3,
-                marginLeft: 10
-                }}
-                colors={["#F39C12","#F39C12" ]}>
-            
-                <LinearGradient 
-                style={{
-                    height: 235,
-                    width: 395,
-                    borderRadius: 25,
-                    bottom: 5
-                    }}
-                    colors={['#F5B041','#F8C471' ]}>
-                        
                         <View>
-                        <TouchableOpacity 
-                            style={{
-                            marginLeft:20,
-                            marginTop: 30, 
-                            borderRadius:80,
-                            width:160,
-                            height:160,
-            
-                            position:"absolute",
-                            backgroundColor: "#F39C12"}}> 
-  
-                         </TouchableOpacity>
-                        </View>
+                        <LinearGradient 
+                        style={styles.businessHeaderBackground}
+                        colors={["#F39C12","#F39C12" ]}>
+                        <LinearGradient 
+                            style={styles.businessHeaderForground}
+                            colors={['#F5B041','#F8C471' ]}>
+                            <TouchableOpacity style={styles.businessProfileButton}
+                                onPress={PickProfilePic}>
+
+                            </TouchableOpacity>
                         <View style= {{ alignItems: 'flex-end'}}>
                             <LinearGradient
                                 colors={['#F8C471','#FF8900']}
-                                style={{ 
-                                    height:175,
-                                    width:190,
-                                    borderRadius:50,
-                                    marginTop: 30,
-                                    marginRight: 10,
-                                    bottom: 5,
-                                    alignItems: 'center',}}>
+                                style={styles.buisnessInfoBackground}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
-                                style={{height:170,
-                                    width:185,
-                                    borderRadius:50,
-                                    alignItems:'center'}}>
+                                style={styles.buisnessInfoForeground}>
                                     <Text
                     //Text Inside of Profile info
                                         numberOfLines={1}
-                                        style={{
-                                        fontSize:18,
-                                        fontWeight:'bold',
-                                        color:'white',
-                                        textAlign:'left',
-                                        position:'absolute',
-                                        justifyContent:'flex-start',
-                                        marginTop:20,
-                                        marginLeft:5,
-                                    
-                                        }}>Business Name
-                                    </Text>
-
-                                    <Text 
-                        
-                                        style={{
-                                        fontSize:18,
-                                        fontWeight:'bold',
-                                        color:'white',
-                                        position:'absolute',
-                                        textAlign:'left',
-                                        marginTop:50,
-                                        marginLeft:5,
-                                        
-                                        }}>Company Address
+                                        style={styles.businessNameText}>Business Name
                                     </Text>
                                     <Text 
-                                         
-                                        style={{
-                                        fontSize:18,
-                                        fontWeight:'bold',
-                                        color:'white',
-                                        position:'absolute',
-                                        textAlign:'left',
-                                        marginTop:75,
-                                        marginLeft:5,
-                                        
-                                        }}>Company City
+                                        style={styles.companyAdressText}>Company Address
                                     </Text>
                                     <Text 
-                                        numberOfLines={1} 
-                                        style={{
-                                        fontSize:18,
-                                        fontWeight:"bold",
-                                        color:'white',
-                                        position:'absolute',
-                                        textAlign:'center',
-                                        marginTop:120,
-                                        marginLeft:35,
-                                        }}> Subscribers
+                                        style={styles.businessTextInfo}
+                                        >Company City
+                                    </Text>
+                                    <Text 
+                                        style={styles.subscribersText}> Subscribers
                                     </Text>
                                 </LinearGradient>
                                 </LinearGradient>
                             </View>
-                        
-                </LinearGradient>
-                </LinearGradient>
-            <Text style= {{color: 'white', fontWeight: '900', marginTop: 15, marginLeft: 10, fontSize: 20}}> Let's get you connected</Text>
-
-                
-            
+                            </LinearGradient>
+                            </LinearGradient>
+                            </View>
+                                    <Text style= {styles.businessHSsubHeaderText}> Let's get you connected</Text>
                 <View style={{ flex: .23, flexDirection:'row', }}>
                     
                     <ScrollView horizontal={true} >
                         <TouchableOpacity>
                             <LinearGradient
-                                style={{
-                                    height: 80,
-                                    width: 200,
-                                    borderRadius: 50,
-                                    alignItems:'center',
-                                    marginTop: 13,
-                                    marginLeft: 10
-                                    
-                                
-                                }}
+                                style={styles.linearbackgrounBbuttons}
                                 colors={['#F8C471','#FF8900' ]}>
-                            
                                 <LinearGradient
-                                style={{
-                                    height: 75,
-                                    width: 195,
-                                    borderRadius: 50,
-                                    justifyContent:'center',
-                                    alignItems:'center',
-                                    
-                                
-                                }}
+                                style={styles.linearforgroundButtons}
                                 colors={['#F8C471','#F5B041' ]}>
-                                    <Text style={{
-                                                    fontSize: 25,
-                                                    
-                                                    fontWeight: "900",
-                                                    color: '#ffffff'}}> 5 New Matches 
+                                    <Text style={styles.businessHSwidgetstext}> 5 New Matches 
                                     </Text>
                                 </LinearGradient>
                             </LinearGradient>
@@ -184,34 +125,12 @@ const BusinessHomeScreenTest = () => {
                         
                         <TouchableOpacity>
                             <LinearGradient
-                                style={{
-                                    height: 80,
-                                    width: 200,
-                                    borderRadius: 50,
-                                    marginTop: 13,
-                                    marginLeft: 10
-                                    
-                                
-                                }}
+                                style={styles.linearbackgrounBbuttons}
                                 colors={['#F8C471','#FF8900']}>
-
                                 <LinearGradient
-                                style={{
-                                    height: 75,
-                                    width: 195,
-                                    borderRadius: 50,
-                                    backgroundColor: "grey",
-                                    justifyContent:'center',
-                                    alignItems:'center',
-                                    
-                                
-                                }}
+                                style={styles.linearforgroundButtons}
                                 colors={['#F8C471','#F5B041']}>
-                                    <Text style={{
-                                                    fontSize: 25,
-                                                    
-                                                    fontWeight: "900",
-                                                    color: '#ffffff'}}> 50 Total Matches
+                                    <Text style={styles.businessHSwidgetstext}> 50 Total Matches
                                     </Text>
                                 </LinearGradient>
                             </LinearGradient>
@@ -227,57 +146,25 @@ const BusinessHomeScreenTest = () => {
                             fontWeight: "900",
                             fontSize: 20,
                             color: '#ffffff',                            
-                            justifyContent: "center",}}>Tips</Text>
+                            }}>Tips</Text>
                 </View>
                     <View style={{flex:.5,flexDirection:'row'}}>
                         
                         <ScrollView horizontal={true}>
-                            <TouchableOpacity style ={{
-                             height:145,
-                             width:250,
-                             borderRadius:60,
-                             marginRight: 10,
-                             marginTop: 15,
-                             alignItems: 'center',
-                             bottom: 5,
-                             backgroundColor:'#F39C12',}}>
+                            <TouchableOpacity 
+                            style={styles.addkeywordsTouchable}
+                             onPress={BusinessAddKeyWordsScreen}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
-                                style={{
-                                    height:140,
-                                    width:245,
-                                    justifyContent:'center',
-                                    borderRadius:60,}}>
-                                <Text numberOfLines={3} style={{
-                                fontSize:25,
-                                fontWeight:'900',
-                                color:'white',
-                                textAlign:'center',
-                                alignSelf:'center',
-                                fontStyle:'italic'
-                                }}>Add Keywords</Text>
+                                style={styles.addkeywordsTouchableForground}>
+                                <Text style={styles.addKeywordsTextB}>Add Keywords</Text>
                             </LinearGradient>
                             </TouchableOpacity>
-                            <TouchableOpacity style ={{
-                             height:170,
-                             width:155,
-                             borderRadius:20,
-                             marginRight: 10,
-                             alignItems: 'center',
-                             backgroundColor:'#F39C12',}}>
+                            <TouchableOpacity style ={styles.BusinessTipsBackground}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
-                                style={{
-                                height:165,
-                                width:150,
-                                borderRadius:20,
-                                justifyContent:'center',
-                                }}>
-                                    <Text style={{
-                                fontSize:16,
-                                fontWeight:'800',
-                                color:'white',
-                                fontStyle:'italic'}}>Tips descirption to businesses either motivational or factual</Text>
+                                style={styles.BusinessTipsForground}>
+                                    <Text style={styles.tipsTextB}>Tips descirption to businesses either motivational or factual</Text>
                             </LinearGradient>
                             </TouchableOpacity>
                         </ScrollView>
@@ -290,3 +177,4 @@ const BusinessHomeScreenTest = () => {
 };
 
 export default BusinessHomeScreenTest;
+
