@@ -27,20 +27,19 @@ const UserRegistrationScreen = () => {
         colors={['#FDFEFE','#626567']}>
         <View 
            style ={{
-                 height: '40%',
-                 width: '100%',
+                 height: '45%',
+                 width: '87%',
                  backgroundColor:'transparent',
-                 marginTop:'5%',
                  alignItems:'center',
                  
             }}>
         <Image 
-            style = {{ width: 150, height: 320}}
+            style = {{ width: "50%", height: '103%'}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
         </View>
         <View style={{height:'5%',
                  width: '100%',
-                 backgroundColor:'red',
+                 backgroundColor:'transparent',
                  alignItems:'center', 
                  alignItems: 'center', 
                  marginTop: '20%',
@@ -48,37 +47,36 @@ const UserRegistrationScreen = () => {
             <RegistrationFills placeholder = "Email"/>
             
         </View>
-        <View style={{height:'5%',
+        <View style={{height:'5.5%',
                  width: '100%',
-                 backgroundColor:'blue',
+                 backgroundColor:'transparent',
                  alignItems:'center', 
                  alignItems: 'center', 
                  marginTop: '5%',
                  }}>
-        <PasswordFills placeholder = "Password"/>
+            <PasswordFills placeholder = "Password"/>
+            <View style={{position:'absolute',  right:'20%',marginTop:'1.5%'}}>
+                <EyeButton/>
+            </View>
         </View>
             
-            <View style={{position:'absolute', marginTop: 73, right:17,}}>
-            <EyeButton/>
-            </View>
             <View style ={{
-                 height:'5%',
+                 height:'5.5%',
                  width: '100%',
-                 backgroundColor:'yellow',
+                 backgroundColor:'transparent',
                  alignItems:'center',
                  marginTop: '5%',
                  
                  }}>
             <PasswordFills placeholder = "Confirm Password"/>
-            
-            </View>
-            <View style={{position:'absolute', marginTop: '10%', right:17,}}>
+            <View style={{position:'absolute',  right:'20%',marginTop:'1.5%'}}>
                 <EyeButton/>
             </View>
+            </View>
             <View style ={{
-                 height:'10%',
+                 height:'15%',
                  width: '100%',
-                 backgroundColor:'red',
+                 backgroundColor:'transparent',
                  alignItems:'center',
                  marginTop: '5%'
                  }}>

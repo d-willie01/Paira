@@ -63,7 +63,7 @@ export const RegistrationFills = ({placeholder}) =>{
     return(
         <LinearGradient
                     style={{
-                        height: 45,
+                        height: '100%',
                         width: 290,
                         borderRadius: 75,
                         alignItems:'center',
@@ -127,11 +127,15 @@ export const EyeButton = ({}) => {
 
 export const SendRegisterButton = ({text}) =>{
     return(
-        <TouchableOpacity  >
+        <TouchableOpacity style={{
+            height: '60%',
+            width: '50%',
+            borderRadius:'40%',
+        }}>
                 <LinearGradient
                     style={{
-                        height: '75%',
-                        width: '100%',
+                        height: '60%',
+                        width: '110%',
                         borderRadius:'40%',
                         bottom: 5
                     }}
