@@ -1,50 +1,84 @@
 import { ObjectId } from 'mongodb';
-import { CardModel } from '../models/Card.model';
-import { Company, CompanyModel, Industry } from '../models/Company.model';
+import { Card, CardModel } from '../models/Card.model';
+import { CompanyModel, Industry } from '../models/Company.model';
 import { CreateCardRequestBody } from '../routes/cards/CreateCard.route';
+import { UpdateCardRequestBody } from '../routes/cards/UpdateCard.route';
 
-export const createCard = async (request: CreateCardRequestBody) => {
+export const createCard = async (request: CreateCardRequestBody): Promise<Card> => {
     const { title, description, company, createdBy, isActive } = request;
-    try {
-        const newCard = await CardModel.create({
-            title,
-            description,
-            company,
-            createdBy,
-            isActive
-        });
-        return newCard;
-    } catch (err) {
-        console.error(err)
-    }
+    const newCard = await CardModel.create({
+        title,
+        description,
+        company,
+        createdBy,
+        isActive
+    });
+    return newCard;
 };
 
-export const getCardsByCompany = async (company: ObjectId | string) => {
-    try {
-        const companyCards = await CardModel.find({ company })
-        return companyCards;
-    } catch (err) {
-        console.error(err)
-    }
+export const getActiveCardByCompanyId = async (companyId: ObjectId | string): Promise<Card> => {
+    const card = await CardModel.findOne({ company: companyId, isActive: true })
+    return card;
 };
 
-export const getCardsByQuery = async (searchParams: { industry: Industry; cardKeys?: string[] }) => {
-    try {
 
+export const getCardById = async (cardId: ObjectId | string): Promise<Card> => {
+    const card = await CardModel.findOne({ _id: cardId })
+    return card;
+};
+
+
+export const getCardsByCompany = async (company: ObjectId | string): Promise<Card[]> => {
+    const companyCards = await CardModel.find({ company })
+    return companyCards;
+};
+
+export const getCardsByQuery = async (searchParams: { industry: Industry; coordinates: number[]; radius?: number; cardKeys?: string[]; }) => {
+    try {
         let filter = {};
         filter["industry"] = searchParams.industry;
+        filter["card.isActive"] = true;
         if (searchParams.cardKeys) {
             filter["cardKeys"] = searchParams.cardKeys;
         }
 
         const companies = await CompanyModel.aggregate()
+            .near({ // $geoNear https://docs.mongodb.com/manual/reference/operator/aggregation/geoNear/
+                near: { type: "Point", coordinates: searchParams.coordinates }, // Point rather than a Polygon. Think of this as the project "pin"
+                distanceField: 'distance', // company's distance from the project (in meters). adds a "distance" field to the object returned by this pipeline stage.
+                spherical: true, // because the earth is a sphere
+                uniqueDocs: true // no duplicates allowed
+            })
+            .project({ // for more info on $project operator visit https://docs.mongodb.com/manual/reference/operator/aggregation/project/
+                _id: 1,
+                name: 1,
+                bio: 1,
+                founded: 1,
+                cardKeys: 1,
+                industry: 1,
+                distance: { $divide: ["$distance", 1609.344] }, // convert meters to miles
+            })
+            .lookup({
+                from: "cards", // look in users collection
+                localField: "_id", // join against primaryUser
+                foreignField: "company", // match against primaryUser._id in users collection
+                as: "card" // save as property "primaryUser"
+            })
+            .unwind("$card")
+            .sort({ "distance": 1 })
             .match(filter)
-            .group({ _id: "$_id" })
+            .match({ distance: { '$lte': searchParams.radius ?? 50 } })
             .exec();
 
-        const cards = await CardModel.find({ company: companies, isActive: true }).exec();
-        return cards;
+        return companies;
     } catch (err) {
         console.error(err)
     }
+};
+
+export const updateCard = async (_id: string | ObjectId, updates: UpdateCardRequestBody): Promise<Card> => {
+    const updatedCard = await CardModel.findOneAndUpdate({ _id },
+        { $set: updates },
+        { new: true });
+    return updatedCard;
 };

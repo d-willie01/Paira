@@ -1,6 +1,6 @@
 import { isDocument } from "@typegoose/typegoose";
 import { Company, Industry } from "../models/Company.model";
-import { State } from "../utils/location.util";
+import { Location, State } from "../utils/location.util";
 import { UserResponse } from "./user.transformer";
 
 export interface CompanyResponse {
@@ -16,10 +16,7 @@ export interface CompanyResponse {
         state: string;
         zipCode: string;
     }
-    coordinates: {
-        lat: string;
-        long: string;
-    }
+    location: Location;
     createdBy: UserResponse | string;
     createdAt: Date;
     updatedAt: Date;
@@ -38,17 +35,14 @@ export const transformCompany = (company: Company): CompanyResponse => ({
         state: State[company.address.state],
         zipCode: company.address.zipCode
     },
-    coordinates: {
-        lat: company.coordinates.lat,
-        long: company.coordinates.long
-    },
+    location: company.location,
     createdBy: isDocument(company.createdBy) ? {
         _id: company.createdBy._id.toString(),
         firstName: company.createdBy.firstName,
         lastName: company.createdBy.lastName,
         createdAt: company.createdBy.createdAt,
         updatedAt: company.createdBy.updatedAt
-    } : company.createdBy!.toString(),
+    } : company.createdBy,
     createdAt: company.createdAt,
     updatedAt: company.updatedAt
 

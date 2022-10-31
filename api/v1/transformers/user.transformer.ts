@@ -29,7 +29,7 @@ export const transformSelf = (user: User): UserResponse => ({
     firstName: user.firstName,
     lastName: user.lastName,
     email: user.email,
-    company: isDocument(user.company) ? user.company : user.company?.toString(),
+    company: isDocument(user.company) ? user.company : user.company,
     role: typeof user.role !== 'undefined' ? Role[user.role] : undefined,
     createdAt: user.createdAt,
     updatedAt: user.updatedAt

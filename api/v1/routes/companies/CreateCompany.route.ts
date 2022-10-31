@@ -4,7 +4,7 @@ import * as UserService from "../../services/User.service";
 import Joi from "joi";
 import jwt from 'jsonwebtoken';
 import { Role, User } from "../../models/User.model";
-import { Coordinates, getCoordinatesByAddress, State } from "../../utils/location.util";
+import { getCoordinatesByAddress, Location, State } from "../../utils/location.util";
 import { transformCompany } from "../../transformers/company.transformer";
 import j2s from 'joi-to-swagger';
 import { Industry } from "../../models/Company.model";
@@ -17,7 +17,7 @@ export interface CreateCompanyRequestBody {
     city: string;
     state: string;
     zipCode: string;
-    coordinates: Coordinates;
+    location: Location
     createdBy: User;
     bio?: string;
     founded?: string;
@@ -91,7 +91,10 @@ export default async function (request: CreateCompanyRequest, response: Response
             city,
             state: state.toUpperCase(),
             zipCode,
-            coordinates,
+            location: {
+                type: "Point",
+                coordinates
+            },
             createdBy: companyCreator,
             bio,
             founded

@@ -4,27 +4,27 @@ import * as CardService from "../../services/Card.service";
 import Joi from "joi";
 import jwt from 'jsonwebtoken';
 import j2s from 'joi-to-swagger';
-import { Company } from "../../models/Company.model";
 import { transformCard } from "../../transformers/card.transformer";
-import { User } from "../../models/User.model";
-import { ObjectId } from "mongodb";
+import { Card } from "../../models/Card.model";
 
-export interface CreateCardRequestBody {
-    title: string;
-    company: Company | ObjectId;
-    createdBy: User | ObjectId;
-    isActive: boolean;
+export interface UpdateCardRequestBody {
+    title?: string;
+    isActive?: boolean;
     description?: string;
 }
 
 export interface CreateCardRequest extends Request {
     auth?: jwt.JwtPayload,
-    body: CreateCardRequestBody;
+    body: UpdateCardRequestBody;
+    params: {
+        cardId: string;
+    };
 }
 
 const schema = Joi.object().keys({
-    title: Joi.string().required(),
-    description: Joi.string().optional()
+    title: Joi.string().optional(),
+    description: Joi.string().optional(),
+    isActive: Joi.boolean().optional()
 });
 
 export default async function (request: CreateCardRequest, response: Response): Promise<Response> {
@@ -34,46 +34,52 @@ export default async function (request: CreateCardRequest, response: Response): 
             return response.status(400).json({ error: validation.error });
         };
 
-        const cardCreator = await UserService.getUserByAuthProviderId(request.auth!.sub!);
-        if (!cardCreator) {
+        const card: Card = await CardService.getCardById(request.params.cardId);
+
+        const user = await UserService.getUserByAuthProviderId(request.auth!.sub!);
+        if (!user) {
             return response.status(404).json({ error: "user not found" });
         };
 
-        if (!cardCreator.company) {
+        if (!user.company) {
             return response.status(404).json({ error: "company not found" })
         }
 
-        // checks if user has contributor or greater access
-        if (cardCreator.role === undefined || cardCreator.role > 1) {
+        if (user.company.toString() !== card.company.toString()) {
             return response.status(403).json({ error: "you do not have sufficient privileges to create a card" })
         }
 
-        const { title, description } = request.body;
+        // checks if user has contributor or greater access
+        if (user.role === undefined || user.role > 1) {
+            return response.status(403).json({ error: "you do not have sufficient privileges to create a card" })
+        }
 
-        const allCompanyCards = await CardService.getCardsByCompany(cardCreator.company._id);
-        const isFirstCard = allCompanyCards?.length === 0 ? true : false;
+        const { title, description, isActive } = request.body;
 
-        const newCard = await CardService.createCard({
-            title,
-            description,
-            company: cardCreator.company._id,
-            isActive: isFirstCard,
-            createdBy: cardCreator._id
+        let activeCard = new Card();
+        if (request.body.isActive) {
+            activeCard = await CardService.getActiveCardByCompanyId(card.company)
+        }
+
+        const updatedCard = await CardService.updateCard(card._id, request.body)
+
+        await CardService.updateCard(activeCard._id, {
+            isActive: false
         })
 
-        const newCardResponse = transformCard(newCard!)
+        const updatedCardResponse = transformCard(updatedCard!)
 
-        return response.status(201).json(newCardResponse)
+        return response.status(200).json(updatedCardResponse)
 
     } catch (err) {
         return response.status(500).json({ error: err });
     }
 }
 
-export const swCreateCardRouter = {
-    "/cards": {
-        "post": {
-            "summary": "create a card",
+export const swUpdateCardRoute = {
+    "/cards/{cardId}": {
+        "patch": {
+            "summary": "update a card",
             "tags": ["/cards"],
             "requestBody": {
                 "content": {
@@ -85,7 +91,7 @@ export const swCreateCardRouter = {
                 }
             },
             "responses": {
-                "201": {
+                "200": {
                     "description": "success"
                 },
                 "400": {

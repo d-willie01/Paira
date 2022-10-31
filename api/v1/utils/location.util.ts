@@ -28,12 +28,12 @@ export class Address {
     public zipCode!: string;
 }
 
-export class Coordinates {
-    @prop({ required: true })
-    public lat!: string;
+export class Location {
+    @prop({ required: true, default: "Point" })
+    public type!: "Point"
 
-    @prop({ required: false })
-    public long!: string;
+    @prop({ required: true })
+    public coordinates!: number[];
 }
 
 export const getAddressString = (address: Address): string => {
@@ -46,7 +46,7 @@ export const getAddressString = (address: Address): string => {
     return addressString.trim();
 }
 
-export const getCoordinatesByAddress = async (address: Address): Promise<Coordinates> => {
+export const getCoordinatesByAddress = async (address: Address): Promise<number[]> => {
     const addressString = getAddressString(address);
     const mapbox = getMapboxClient();
     const geocodeRequestBody: GeocodeRequest = {
@@ -57,11 +57,7 @@ export const getCoordinatesByAddress = async (address: Address): Promise<Coordin
     }
     try {
         const mapiResponse = await mapbox.forwardGeocode(geocodeRequestBody).send().then(res => res.body)
-        const coordinates = mapiResponse.features[0].center;
-        return {
-            lat: coordinates[1].toString(),
-            long: coordinates[0].toString()
-        }
+        return mapiResponse.features[0].center;
     } catch (err) {
         throw new Error(`error fetching coordinates from address ${addressString}`)
     }

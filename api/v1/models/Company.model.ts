@@ -1,6 +1,6 @@
 import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref, index } from '@typegoose/typegoose';
 import autopopulate from 'mongoose-autopopulate';
-import { Address, Coordinates } from '../utils/location.util';
+import { Address, Location } from '../utils/location.util';
 import { User } from './User.model';
 
 export enum Industry {
@@ -25,9 +25,6 @@ export class Company {
   @prop({ required: false })
   public cardKeys?: string[];
 
-  @prop({ required: true })
-  public coordinates!: Coordinates;
-
   @prop({ required: true, autopopulate: false, ref: 'User' })
   public createdBy!: Ref<User>;
 
@@ -36,6 +33,9 @@ export class Company {
 
   @prop({ required: true })
   public industry!: Industry;
+
+  @prop({ required: true })
+  public location!: Location;
 
   @prop({ required: true })
   public name!: string;

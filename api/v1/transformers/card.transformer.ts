@@ -16,7 +16,7 @@ export interface CardResponse {
 
 export const transformCard = (card: Card): CardResponse => ({
     _id: card._id.toString(),
-    company: isDocument(card.company) ? transformCompany(card.company) : card.company!.toString(),
+    company: isDocument(card.company) ? transformCompany(card.company) : card.company,
     createdBy: card.createdBy!.toString(),
     createdAt: card.createdAt,
     description: card.description,

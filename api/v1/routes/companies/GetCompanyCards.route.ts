@@ -1,13 +1,8 @@
 import { Request, Response } from "express";
 import * as UserService from "../../services/User.service";
 import * as CardService from "../../services/Card.service";
-import Joi from "joi";
 import jwt from 'jsonwebtoken';
-import j2s from 'joi-to-swagger';
-import { Company } from "../../models/Company.model";
 import { transformCard } from "../../transformers/card.transformer";
-import { Role, User } from "../../models/User.model";
-import { ObjectId } from "mongodb";
 
 export interface GetCompanyCardsRequest extends Request {
     params: {
