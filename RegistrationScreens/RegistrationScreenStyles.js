@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar, Platform } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 const RegistrationStyles = StyleSheet.create({
 
@@ -30,9 +32,18 @@ const RegistrationStyles = StyleSheet.create({
         fontWeight:'900', 
         color: 'white', 
         fontSize: 20, 
-        marginTop: 320, 
-        marginBottom: 20, 
         fontStyle: "italic",
+    },
+    textView: {
+        height: heightPercentageToDP('10%'),
+        width: widthPercentageToDP('100%'),
+        alignItems: 'center', 
+        justifyContent:'center'
+    },
+    topExtraSpaceView:{
+        height: heightPercentageToDP('30%'),
+        width: widthPercentageToDP('100%'),
+        alignItems: 'center'
     },
 
 });

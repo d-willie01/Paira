@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import {NavigationContainer} from '@react-navigation/native';
-import UTabNav from './Navigation/UTabNav';
-import BTabNav from './BNavigation/BTabNav';
 import OnBoardStack from "./OnboardProcess/OnBoardStack"
 import Card from "./components/CardPost/Card";
 import StateProvider from "./StateManagement/StateProvider";
@@ -13,9 +11,7 @@ import { SafeAreaView } from "react-native";
 import RestaurantData from "./assets/Data/RestaurantData";
 import BUserHomeScreen from "./BScreens/BHomeScreen/BUserHomeScreen";
 import UUserHomeScreen from "./Screens/UScreens/UCreateScreens/UUserHomeScreen";
-import BCreateScreen from "./BScreens/BCreateScreen/BCreateScreen";
-import RegistrationScreen from "./RegistrationScreens/RegistrationScreen"
-
+import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
 
 
 
@@ -41,7 +37,7 @@ export default function App() {
     
 
   
-    )
+    );
   
   /*
 

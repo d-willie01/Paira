@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {Text, TouchableOpacity, View, ScrollView} from 'react-native'
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
@@ -13,7 +13,15 @@ const CategoryOneScreen = () => {
     const MatchCategoryOne = () =>{
            
         UMatchnavigation.navigate("MatchCategoryOneScreen")
+    };
+    const[selectedItems, setSelectedItems ]= useState([]);
+
+    const handleOnLongPress = (KeyWordButton) =>{
+        console.log(selectedItems)
+        setSelectedItems([...selectedItems, KeyWordButton])
+
     }
+    
     
     return(
 
@@ -41,14 +49,13 @@ const CategoryOneScreen = () => {
             
             justifyContent:"space-between",
             
+            }}>
+
+           <KeyWordButton text="club" onLongPress={() => handleOnLongPress("Club")}/>
             
-            
-        }}>
-           <KeyWordButton text="club"/>
-           
-           <KeyWordButton text="alcohol"/>
+           <KeyWordButton text="alcohol" onLongPress={() => handleOnLongPress("Alcohol")}/>
     
-           <KeyWordButton text="kids"/>
+           <KeyWordButton text="kids" onLongPress={() => handleOnLongPress("Kids")}/>
     
            <KeyWordButton text ="animals"/>
     
