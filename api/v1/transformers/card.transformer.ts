@@ -2,6 +2,9 @@ import { isDocument } from "@typegoose/typegoose";
 import { Card } from "../models/Card.model";
 import { CompanyResponse, transformCompany } from "./company.transformer";
 import { UserResponse } from "./user.transformer";
+import { ObjectId } from 'mongodb';
+import { GetCardsAggregateResponse } from "../services/Card.service";
+import { Industry } from "../models/Company.model";
 
 export interface CardResponse {
     _id: string;
@@ -24,3 +27,52 @@ export const transformCard = (card: Card): CardResponse => ({
     title: card.title,
     updatedAt: card.updatedAt
 })
+
+export interface GetCardsByQueryResponse {
+    _id: string;
+    title: string;
+    description?: string;
+    isActive: boolean;
+    createdBy: string;
+    createdAt: Date;
+    updatedAt: Date;
+    company: {
+        _id: string;
+        name: string;
+        founded: string;
+        bio: string;
+        industry: string;
+        cardKeys: string[];
+        distance: number;
+        coordinates: {
+            lat: number;
+            long: number;
+        }
+    } | string;
+}
+export const transformCardSearchResults = (searchResult: GetCardsAggregateResponse): GetCardsByQueryResponse => {
+    const { card } = searchResult;
+
+    return {
+        _id: card._id.toString(),
+        title: card.title,
+        description: card.description,
+        isActive: card.isActive,
+        createdBy: card.createdBy!.toString(),
+        createdAt: card.createdAt,
+        updatedAt: card.updatedAt,
+        company: {
+            _id: searchResult._id.toString(),
+            name: searchResult.name,
+            founded: searchResult.founded ?? "",
+            bio: searchResult.bio ?? "",
+            industry: Industry[searchResult.industry],
+            cardKeys: searchResult.cardKeys,
+            distance: searchResult.distance,
+            coordinates: {
+                lat: searchResult.location.coordinates[1],
+                long: searchResult.location.coordinates[0]
+            }
+        }
+    }
+}
