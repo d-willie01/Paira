@@ -7,18 +7,17 @@ const startScreenStyle = StyleSheet.create({
     backgroundofButton:{
 
         
-            height: 60,
-            width: 250,
-            borderRadius: 75,
+            height: "55%",
+            width: '100%',
+            borderRadius: '80%',
             alignItems:'center',
-            marginBottom: 20,
-            marginLeft: 10,
+            marginBottom: '5%',
         
     },
     foreGroundButton:{
-        height: 55,
-        width: 300,
-        borderRadius: 75,
+        height: "95%",
+        width: '100%',
+        borderRadius: '80%',
         justifyContent:'center',
         alignItems:'center',
         },

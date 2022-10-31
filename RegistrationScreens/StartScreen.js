@@ -43,22 +43,41 @@ const StartScreen = () => {
         <View>
             <PressButton/>
         </View>
-        <View style={{backgroundColor: "transparent"}}>
+        <View style ={{
+                 height: '35%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 alignItems:'center',
+                 
+            }}>
+        <View style={{
+            height: '100%',
+            width: '70%',
+            backgroundColor: "red",
+            alignItems:'center'}}>
         <Image 
-            style = {{ width: 150, height: 320}}
+            style = {{ width: '50%', height: '100%'}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
+        </View>
         </View>
         <View 
             style={{
-            height: '17%',
+            height: '15%',
             width: '100%' , 
             alignItems: 'center', 
-            marginTop: 110, 
+            marginTop: "20%", 
             backgroundColor:'transparent',}}>
-            <TouchableOpacity title ="Login" onPress={LoginScreen} style={{marginTop: 5,}}>
+            <TouchableOpacity title ="Login" onPress={LoginScreen} 
+                style={{
+                    height: '60%',
+                    width: '55%' , 
+                    marginTop: '1%',}}>
                 <LoginButton text ='Login'/>
             </TouchableOpacity>
-                <TouchableOpacity title = "register" onPress={UserRegister1}>
+                <TouchableOpacity title = "register" onPress={UserRegister1}  
+                style={{
+                    height: '60%',
+                    width: '55%' ,}}>
                 <LoginButton text ='Register'/>
             </TouchableOpacity>
         </View>
