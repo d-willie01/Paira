@@ -36,13 +36,13 @@ const UserButtonScore = ({text}) => {
                         fontSize:37,
                         fontWeight:"900",
                         color:'white',
-                        textAlign:'center',
+                        marginLeft: 40,
                         fontStyle:'italic',
-                        marginTop: 15,
+                        marginTop: 13,
                         
                         }}>{text}</Text>
                         
-                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 20,}}>
+                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 15,}}>
                         <MaterialCommunityIcons name="crown" size={35} color="black" />
                         </View>
 

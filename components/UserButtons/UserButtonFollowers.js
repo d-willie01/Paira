@@ -38,12 +38,12 @@ const UserButtonFollowers = ({text}) => {
                         fontSize:37,
                         fontWeight:"900",
                         color:'white',
-                        marginTop: 15,
-                        textAlign:'center',
+                        marginTop: 13,
+                        marginLeft: 40,
                         fontStyle:'italic',
                         
                         }}>{text}</Text>
-                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 20,}}>
+                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 17,}}>
                         <Octicons  name="people" size={35} color="black" />
                         </View>
 
