@@ -8,7 +8,7 @@ import { Feather } from '@expo/vector-icons';
 
 
 
-export const RegistrationFills = ({text}) =>{
+export const RegistrationFills = ({placeholder}) =>{
     
     
     return(
@@ -43,7 +43,7 @@ export const RegistrationFills = ({text}) =>{
                                             borderRadius: 75,
                                             fontWeight: "900",
                                             color: '#ffffff'}}
-                                            placeholder= {text}>
+                                            placeholder= {placeholder}>
                             </TextInput>
                             </View>
                         </LinearGradient>
@@ -56,7 +56,8 @@ export const RegistrationFills = ({text}) =>{
 
 };
 
- export const PasswordFills = ({text}) => {
+ export const PasswordFills = ({placeholder}) => {
+    const [text, onChangeText] = useState('');
     const [isSecureEntry, setIsSecureEntry] = useState(true);
 
     return(
@@ -90,7 +91,7 @@ export const RegistrationFills = ({text}) =>{
                                             borderRadius: 75,
                                             fontWeight: "900",
                                             color: '#ffffff'}}
-                                            placeholder = {text}
+                                            placeholder = {placeholder}
                                             secureTextEntry={isSecureEntry}
                                             onChangeText={(value) => {
                                                 onChangeText({name: 'password', value});
@@ -106,6 +107,7 @@ export const RegistrationFills = ({text}) =>{
 };
 
 export const EyeButton = ({text}) => {
+    
     const [isSecureEntry, setIsSecureEntry] = useState(true);
 
     return(

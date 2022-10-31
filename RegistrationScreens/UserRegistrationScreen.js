@@ -27,13 +27,13 @@ const UserRegistrationScreen = () => {
             style = {{ width: 150, height: 320}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
         <View style={{alignItems: 'center', marginTop: 150}}>
-            <RegistrationFills text = "Email"/>
-            <PasswordFills text = "Password"/>
+            <RegistrationFills placeholder = "Email"/>
+            <PasswordFills placeholder = "Password"/>
             
             <View style={{position:'absolute', marginTop: 73, right:17,}}>
             <EyeButton/>
             </View>
-            <PasswordFills text = "Confirm Password"/>
+            <PasswordFills placeholder = "Confirm Password"/>
             <View style={{position:'absolute', marginTop: 140, right:17,}}>
                 <EyeButton/>
             </View>
