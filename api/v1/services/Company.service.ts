@@ -42,16 +42,6 @@ export const createCompany = async (request: CreateCompanyRequestBody): Promise<
     return newCompany;
 };
 
-export const getCompanies = async (filters: Partial<Company>): Promise<Company[]> => {
-    let searchParams = {};
-    if (filters.cardKeys) {
-        searchParams["cardKeys"] = { $all: filters.cardKeys };
-    }
-
-    const companies = await CompanyModel.find(searchParams);
-    return companies;
-};
-
 export const getCompanyByCompanyId = async (companyId: string | mongoose.Types.ObjectId): Promise<Company> => {
     const company = await CompanyModel.findOne({ _id: companyId });
     if (!company) throw new Error(`Error getting company ${companyId}`);

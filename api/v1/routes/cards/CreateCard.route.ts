@@ -13,6 +13,7 @@ export interface CreateCardRequestBody {
     title: string;
     company: Company | ObjectId;
     createdBy: User | ObjectId;
+    isActive: boolean;
     description?: string;
 }
 
@@ -49,10 +50,14 @@ export default async function (request: CreateCardRequest, response: Response): 
 
         const { title, description } = request.body;
 
+        const allCompanyCards = await CardService.getCardsByCompany(cardCreator.company._id);
+        const isFirstCard = allCompanyCards?.length === 0 ? true : false;
+
         const newCard = await CardService.createCard({
             title,
             description,
             company: cardCreator.company._id,
+            isActive: isFirstCard,
             createdBy: cardCreator._id
         })
 

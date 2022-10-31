@@ -9,14 +9,14 @@ import { transformCard } from "../../transformers/card.transformer";
 import { Role, User } from "../../models/User.model";
 import { ObjectId } from "mongodb";
 
-export interface GetCardsRequest extends Request {
+export interface GetCompanyCardsRequest extends Request {
     params: {
         companyId: string;
     };
     auth?: jwt.JwtPayload,
 }
 
-export default async function (request: GetCardsRequest, response: Response): Promise<Response> {
+export default async function (request: GetCompanyCardsRequest, response: Response): Promise<Response> {
     try {
         const requester = await UserService.getUserByAuthProviderId(request.auth!.sub!);
         if (!requester) {
@@ -47,18 +47,10 @@ export default async function (request: GetCardsRequest, response: Response): Pr
 }
 
 export const swGetCompanyCardsRouter = {
-    "/companies/:companyId/cards": {
+    "/companies/{companyId}/cards": {
         "get": {
             "summary": "get all company cards",
             "tags": ["/companies"],
-            "requestBody": {
-                "content": {
-                    "application/json": {
-                        "schema": {
-                        }
-                    }
-                }
-            },
             "responses": {
                 "200": {
                     "description": "success"

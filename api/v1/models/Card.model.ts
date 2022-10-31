@@ -16,6 +16,9 @@ export class Card {
   @prop({ required: true, autopopulate: true, maxdepth: 1, ref: 'Company' })
   public company!: Ref<Company>;
 
+  @prop({ required: true })
+  public isActive!: boolean;
+
   @prop({ required: true, autopopulate: false, ref: 'User' })
   public createdBy!: Ref<User>;
 

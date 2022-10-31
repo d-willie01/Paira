@@ -5,20 +5,22 @@ import { UserResponse } from "./user.transformer";
 
 export interface CardResponse {
     _id: string;
-    title: string;
-    description?: string;
     company: CompanyResponse | string;
     createdBy?: UserResponse | string;
     createdAt?: Date;
+    description?: string;
+    isActive: boolean;
+    title: string;
     updatedAt?: Date
 }
 
 export const transformCard = (card: Card): CardResponse => ({
     _id: card._id.toString(),
-    title: card.title,
-    description: card.description,
     company: isDocument(card.company) ? transformCompany(card.company) : card.company!.toString(),
     createdBy: card.createdBy!.toString(),
     createdAt: card.createdAt,
+    description: card.description,
+    isActive: card.isActive,
+    title: card.title,
     updatedAt: card.updatedAt
 })
