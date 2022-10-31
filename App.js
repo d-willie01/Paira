@@ -31,9 +31,7 @@ export default function App() {
     <StateProvider>
       <AppNavigator/>
     </StateProvider>
-    // <NavigationContainer>
-    //   <UUserHomeScreen/>
-    // </NavigationContainer>
+    
     
 
   
