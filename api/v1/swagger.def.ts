@@ -1,6 +1,7 @@
 import { swSignInRouter } from "./routes/auth/SignIn.route";
 import { swSignUpRouter } from "./routes/auth/SignUp.route";
 import { swCreateCardRouter } from "./routes/cards/CreateCard.route";
+import { swGetCompanyCardsRouter } from "./routes/companies/GetCompanyCards.route";
 import { swCreateCompanyRouter } from "./routes/companies/CreateCompany.route";
 import { swGetSelfRouter } from "./routes/users/GetSelf.route";
 
@@ -22,7 +23,8 @@ const swaggerOptions = {
         ...swCreateCompanyRouter,
         ...swSignInRouter,
         ...swGetSelfRouter,
-        ...swCreateCardRouter
+        ...swCreateCardRouter,
+        ...swGetCompanyCardsRouter
     }
 }
 

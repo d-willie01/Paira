@@ -1,8 +1,7 @@
 import { isDocument } from "@typegoose/typegoose";
 import { Card } from "../models/Card.model";
-import { User } from "../models/User.model";
 import { CompanyResponse, transformCompany } from "./company.transformer";
-import { transformUser, UserResponse } from "./user.transformer";
+import { UserResponse } from "./user.transformer";
 
 export interface CardResponse {
     _id: string;
