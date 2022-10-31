@@ -127,7 +127,7 @@ const UUserHomeScreen = () => {
                 justifyContent: 'center'
 
                 
-            // Business Nametag   
+            // User Nametag   
             }}>
               <TipsButton/>
             </View>
