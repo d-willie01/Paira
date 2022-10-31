@@ -13,7 +13,7 @@ export interface CreateCompanyRequestBody {
     name: string;
     industry: string;
     street_1: string;
-    street_2?: string;
+    street_2: string;
     city: string;
     state: string;
     zipCode: string;
@@ -32,7 +32,7 @@ const schema = Joi.object().keys({
     name: Joi.string().required(),
     industry: Joi.string().required(),
     street_1: Joi.string().required(),
-    street_2: Joi.string().optional(),
+    street_2: Joi.string().required().allow(""),
     city: Joi.string().required(),
     state: Joi.string().required(),
     zipCode: Joi.string().required(),
@@ -52,6 +52,7 @@ export default async function (request: CreateCompanyRequest, response: Response
         const companyAlreadyExists = await CompanyService.getCompanyByNameAndAddress({
             name,
             street_1,
+            street_2,
             city,
             state: state.toUpperCase(),
             zipCode
