@@ -19,10 +19,10 @@ export class Card {
   @prop({ required: true })
   public isActive!: boolean;
 
-  @prop({ required: false, autopopulate: false, ref: 'User' })
+  @prop({ required: false, autopopulate: false, maxdepth: 1, ref: 'User' })
   public likes?: Ref<User>[];
 
-  @prop({ required: true, autopopulate: false, ref: 'User' })
+  @prop({ required: true, autopopulate: false, maxdepth: 1, ref: 'User' })
   public createdBy!: Ref<User>;
 
   @prop({ required: true, default: Date.now })
