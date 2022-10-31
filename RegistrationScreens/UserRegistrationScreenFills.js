@@ -106,7 +106,7 @@ export const RegistrationFills = ({placeholder}) =>{
 
 };
 
-export const EyeButton = ({text}) => {
+export const EyeButton = ({}) => {
     
     const [isSecureEntry, setIsSecureEntry] = useState(true);
 
@@ -130,21 +130,18 @@ export const SendRegisterButton = ({text}) =>{
         <TouchableOpacity  >
                 <LinearGradient
                     style={{
-                        height: 45,
-                        width: 250,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
+                        height: '75%',
+                        width: '100%',
+                        borderRadius:'40%',
                         bottom: 5
                     }}
                     colors={['#F8C471','#FF8900' ]}>
                         
                     <LinearGradient
                         style={{
-                            height: 40,
-                            width: 245,
-                            borderRadius: 75,
+                            height: '100%',
+                            width: '100%',
+                            borderRadius:'100%',
                             alignItems:'center',
                             }}
                         colors={['#F8C471','#F5B041' ]}>
