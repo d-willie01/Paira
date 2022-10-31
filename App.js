@@ -28,12 +28,12 @@ export default function App() {
   
   return (
     
-    // <StateProvider>
-    //   <AppNavigator/>
-    // </StateProvider>
-    <NavigationContainer>
-      <UUserHomeScreen/>
-    </NavigationContainer>
+    <StateProvider>
+      <AppNavigator/>
+    </StateProvider>
+    // <NavigationContainer>
+    //   <UUserHomeScreen/>
+    // </NavigationContainer>
     
 
   
