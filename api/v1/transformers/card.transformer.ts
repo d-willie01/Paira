@@ -2,9 +2,9 @@ import { isDocument } from "@typegoose/typegoose";
 import { Card } from "../models/Card.model";
 import { CompanyResponse, transformCompany } from "./company.transformer";
 import { UserResponse } from "./user.transformer";
-import { ObjectId } from 'mongodb';
 import { GetCardsAggregateResponse } from "../services/Card.service";
 import { Industry } from "../models/Company.model";
+import { User } from "../models/User.model";
 
 export interface CardResponse {
     _id: string;
@@ -14,6 +14,7 @@ export interface CardResponse {
     description?: string;
     isActive: boolean;
     title: string;
+    likes: User[];
     updatedAt?: Date
 }
 
@@ -25,6 +26,7 @@ export const transformCard = (card: Card): CardResponse => ({
     description: card.description,
     isActive: card.isActive,
     title: card.title,
+    likes: card.likes ?? [],
     updatedAt: card.updatedAt
 })
 
@@ -33,6 +35,7 @@ export interface GetCardsByQueryResponse {
     title: string;
     description?: string;
     isActive: boolean;
+    likes: User[];
     createdBy: string;
     createdAt: Date;
     updatedAt: Date;
@@ -58,6 +61,7 @@ export const transformCardSearchResults = (searchResult: GetCardsAggregateRespon
         title: card.title,
         description: card.description,
         isActive: card.isActive,
+        likes: card.likes ?? [],
         createdBy: card.createdBy!.toString(),
         createdAt: card.createdAt,
         updatedAt: card.updatedAt,

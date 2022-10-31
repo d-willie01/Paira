@@ -91,6 +91,28 @@ export const getCardsByQuery = async (searchParams: { industry: Industry; coordi
     return companies;
 };
 
+export const likeCard = async (cardId: string | ObjectId, userId: string | ObjectId): Promise<Card> => {
+    const alreadyLiked = await CardModel.findOne({ _id: cardId, likes: { $in: new ObjectId(userId) } })
+    if (!alreadyLiked) {
+        const updatedCard = await CardModel.findOneAndUpdate({ _id: cardId },
+            {
+                $push: { likes: new ObjectId(userId) }
+            },
+            { new: true });
+        return updatedCard;
+    }
+    return alreadyLiked
+};
+
+export const unlikeCard = async (cardId: string | ObjectId, userId: string | ObjectId): Promise<Card> => {
+    const updatedCard = await CardModel.findOneAndUpdate({ _id: cardId },
+        {
+            $pull: { likes: new ObjectId(userId) }
+        },
+        { new: true });
+    return updatedCard;
+};
+
 export const updateCard = async (_id: string | ObjectId, updates: UpdateCardRequestBody): Promise<Card> => {
     const updatedCard = await CardModel.findOneAndUpdate({ _id },
         { $set: updates },
