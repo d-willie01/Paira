@@ -54,7 +54,7 @@ const StartScreen = () => {
             width: '100%' , 
             alignItems: 'center', 
             marginTop: 110, 
-            backgroundColor:'red',}}>
+            backgroundColor:'transparent',}}>
             <TouchableOpacity title ="Login" onPress={LoginScreen} style={{marginTop: 5,}}>
                 <LoginButton text ='Login'/>
             </TouchableOpacity>
