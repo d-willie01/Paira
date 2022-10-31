@@ -6,15 +6,17 @@ import { State } from '../utils/location.util';
 export interface ExistingCompanySearchParams {
     name: string;
     street_1: string;
+    street_2: string;
     city: string;
     state: string;
     zipCode: string;
 }
 export const getCompanyByNameAndAddress = async (request: ExistingCompanySearchParams) => {
-    const { name, street_1, city, state, zipCode } = request;
+    const { name, street_1, street_2, city, state, zipCode } = request;
     const existingCompany = await CompanyModel.findOne({
         name,
         "address.street_1": street_1,
+        "address.street_2": street_2,
         "address.city": city,
         "address.state": State[state],
         "address.zipCode": zipCode
