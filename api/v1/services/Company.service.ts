@@ -1,7 +1,7 @@
 import { mongoose } from '@typegoose/typegoose';
 import { CompanyModel, Company, Industry } from '../models/Company.model';
 import { CreateCompanyRequestBody } from '../routes/companies/CreateCompany.route';
-import { State } from '../utils/location.util';
+import { Location, State } from '../utils/location.util';
 
 export interface ExistingCompanySearchParams {
     name: string;
@@ -20,7 +20,7 @@ export const getCompanyByNameAndAddress = async (request: ExistingCompanySearchP
         "address.city": city,
         "address.state": State[state],
         "address.zipCode": zipCode
-    });
+    }).collation({ locale: 'en', strength: 1 });
     return existingCompany
 }
 
@@ -50,8 +50,41 @@ export const getCompanyByCompanyId = async (companyId: string | mongoose.Types.O
     return company;
 };
 
-export const updateCompanyCardKeys = async (_id: string | mongoose.Types.ObjectId, cardKeys: string[]): Promise<Company> => {
-    const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, { $set: { cardKeys } }, { new: true });
-    if (!updatedCompany) throw new Error(`Error updating company ${_id}`);
+export interface UpdateCompanyPayload {
+    bio?: string;
+    founded?: string;
+    industry?: Industry;
+    name?: string;
+}
+export const updateCompany = async (_id: string | mongoose.Types.ObjectId, updates: UpdateCompanyPayload): Promise<Company> => {
+    const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, { $set: updates }, { new: true });
     return updatedCompany;
 };
+
+export interface UpdateCompanyAddressPayload {
+    street_1: string;
+    street_2: string;
+    city: string;
+    state: State;
+    zipCode: string;
+    location: Location
+}
+export const updateCompanyAddress = async (_id: string | mongoose.Types.ObjectId, updates: UpdateCompanyAddressPayload): Promise<Company> => {
+    const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, {
+        $set: {
+            "address.street_1": updates.street_1,
+            "address.street_2": updates.street_2,
+            "address.city": updates.city,
+            "address.state": updates.state,
+            "address.zipCode": updates.zipCode,
+            location: updates.location
+        }
+    }, { new: true });
+    return updatedCompany;
+};
+
+export const updateCompanyCardKeys = async (_id: string | mongoose.Types.ObjectId, cardKeys: string[]): Promise<Company> => {
+    const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, { $set: { cardKeys } }, { new: true });
+    return updatedCompany;
+};
+

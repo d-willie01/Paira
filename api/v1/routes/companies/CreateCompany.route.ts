@@ -32,10 +32,10 @@ const schema = Joi.object().keys({
     name: Joi.string().required(),
     industry: Joi.string().required(),
     street_1: Joi.string().required(),
-    street_2: Joi.string().required().allow(""),
+    street_2: Joi.string().optional().allow(""),
     city: Joi.string().required(),
-    state: Joi.string().required(),
-    zipCode: Joi.string().required(),
+    state: Joi.string().min(2).max(2).required(),
+    zipCode: Joi.string().min(5).max(5).required(),
     bio: Joi.string().optional(),
     founded: Joi.string().optional()
 });
@@ -59,7 +59,7 @@ export default async function (request: CreateCompanyRequest, response: Response
         });
 
         if (companyAlreadyExists) {
-            return response.status(409).json({ error: `company ${name} already exists at ${street_1} ${city}, ${state} ${zipCode}` })
+            return response.status(409).json({ error: `company ${name} already exists at ${street_1} ${street_2} ${city}, ${state} ${zipCode}` })
         }
 
         const companyCreator = await UserService.getUserByAuthProviderId(request.auth!.sub!);

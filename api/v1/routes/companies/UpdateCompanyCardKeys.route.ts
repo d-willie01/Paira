@@ -9,6 +9,9 @@ import { validateCardKeys } from "../../utils/cardKeys.util";
 
 export interface UpdateCompanyCardKeysRequest extends Request {
     body: string[];
+    params: {
+        companyId: string;
+    }
     auth?: jwt.JwtPayload,
 }
 
@@ -34,12 +37,12 @@ export default async function (request: UpdateCompanyCardKeysRequest, response: 
 
         // checks if user belongs to company
         if (requester.company?._id.toString() !== request.params.companyId) {
-            return response.status(403).json({ error: "you do not have sufficient privileges to view this company's cards" })
+            return response.status(403).json({ error: "you do not have sufficient privileges to update this company" })
         }
 
         // checks if user has contributor or greater access
         if (requester.role === undefined || requester.role > 1) {
-            return response.status(403).json({ error: "you do not have sufficient privileges to view this company's cards" })
+            return response.status(403).json({ error: "you do not have sufficient privileges to update this company" })
         }
 
         const company = await CompanyService.getCompanyByCompanyId(request.params.companyId);
@@ -71,7 +74,7 @@ export const swUpdateCompanyCardKeys = {
                 }
             },
             "responses": {
-                "201": {
+                "200": {
                     "description": "success"
                 },
                 "400": {

@@ -7,6 +7,8 @@ import { swGetSelfRouter } from "./routes/users/GetSelf.route";
 import { swGetCardsRouter } from "./routes/cards/GetCards.route";
 import { swUpdateCompanyCardKeys } from "./routes/companies/UpdateCompanyCardKeys.route";
 import { swUpdateCardRoute } from "./routes/cards/UpdateCard.route";
+import { swUpdateCompanyAddress } from "./routes/companies/UpdateCompanyAddress.route";
+import { swUpdateCompany } from "./routes/companies/UpdateCompany.route";
 
 const swaggerOptions = {
     openapi: '3.0.0',
@@ -29,8 +31,10 @@ const swaggerOptions = {
         ...swCreateCardRouter,
         ...swGetCompanyCardsRouter,
         ...swGetCardsRouter,
+        ...swUpdateCompany,
         ...swUpdateCompanyCardKeys,
-        ...swUpdateCardRoute
+        ...swUpdateCardRoute,
+        ...swUpdateCompanyAddress
     }
 }
 

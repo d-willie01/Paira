@@ -6,18 +6,19 @@ import jwt from 'jsonwebtoken';
 import j2s from 'joi-to-swagger';
 import { NotFoundError } from "../../utils/errors.util";
 import { Industry } from "../../models/Company.model";
-import { State } from "../../utils/location.util";
+import { getCoordinatesByAddress, State } from "../../utils/location.util";
 import { transformCompany } from "../../transformers/company.transformer";
 
-export interface UpdateCompanyRequestBody {
-    bio?: string;
-    founded?: string;
-    industry?: string;
-    name?: string;
+export interface UpdateCompanyAddressRequestBody {
+    street_1: string;
+    street_2: string;
+    city: string;
+    state: string;
+    zipCode: string;
 }
 
-export interface UpdateCompanyRequest extends Request {
-    body: UpdateCompanyRequestBody;
+export interface UpdateCompanyAddressRequest extends Request {
+    body: UpdateCompanyAddressRequestBody;
     params: {
         companyId: string;
     }
@@ -25,16 +26,16 @@ export interface UpdateCompanyRequest extends Request {
 }
 
 const schema = Joi.object().keys({
-    bio: Joi.string().optional(),
-    founded: Joi.string().optional(),
-    industry: Joi.string().optional(),
-    name: Joi.string().optional()
+    street_1: Joi.string().required(),
+    street_2: Joi.string().optional().allow(""),
+    city: Joi.string().required(),
+    state: Joi.string().min(2).max(2).required(),
+    zipCode: Joi.string().min(5).max(5).required(),
 });
 
-export default async function (request: UpdateCompanyRequest, response: Response): Promise<Response> {
+export default async function (request: UpdateCompanyAddressRequest, response: Response): Promise<Response> {
     try {
         const validation = schema.validate(request.body);
-
         if (validation.error) {
             return response.status(400).json({ error: validation.error });
         }
@@ -59,50 +60,59 @@ export default async function (request: UpdateCompanyRequest, response: Response
             throw new NotFoundError(`company--${request.params.companyId}--not found`)
         }
 
-        const { bio, founded, industry, name } = request.body;
+        const { street_1, street_2, city, state, zipCode } = request.body;;
+        const companyAlreadyExists = await CompanyService.getCompanyByNameAndAddress({
+            name: company.name,
+            street_1,
+            street_2: street_2 ?? "",
+            city,
+            state: state.toUpperCase(),
+            zipCode
+        });
+        if (companyAlreadyExists) {
+            return response.status(409).json({ error: `company ${company.name} already exists at ${street_1} ${street_2} ${city}, ${state} ${zipCode}` })
+        }
 
-        if (industry) {
-            if (!Industry[industry.toLowerCase()]) {
-                return response.status(400).json({ error: `please provide a valid industry` });
+        if (!State[state.toUpperCase()]) {
+            return response.status(400).json({ error: `please provide a valid two digit state code` });
+        }
+
+        const coordinates = await getCoordinatesByAddress({
+            street_1,
+            street_2,
+            city,
+            state: State[state.toUpperCase()],
+            zipCode
+        })
+
+        const updates: CompanyService.UpdateCompanyAddressPayload = {
+            street_1,
+            street_2,
+            city,
+            state: State[state.toUpperCase()],
+            zipCode,
+            location: {
+                type: "Point",
+                coordinates
             }
         }
 
-        if (name) {
-            const { street_1, street_2, city, state, zipCode } = company.address;
-            const companyAlreadyExists = await CompanyService.getCompanyByNameAndAddress({
-                name,
-                street_1,
-                street_2: street_2 ?? "",
-                city,
-                state: State[state].toUpperCase(),
-                zipCode
-            });
-            if (companyAlreadyExists) {
-                return response.status(409).json({ error: `company ${name} already exists at ${street_1} ${street_2} ${city}, ${state} ${zipCode}` })
-            }
-        }
-
-        let updates: CompanyService.UpdateCompanyPayload = {}
-        if (bio) updates.bio = bio;
-        if (founded) updates.founded = founded;
-        if (industry) updates.industry = Industry[industry];
-        if (name) updates.name = name;
-
-        const updatedCompany = await CompanyService.updateCompany(request.params.companyId, updates);
+        const updatedCompany = await CompanyService.updateCompanyAddress(request.params.companyId, updates);
 
         const companyResponse = transformCompany(updatedCompany);
 
         return response.status(200).json(companyResponse);
     }
     catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }
 
-export const swUpdateCompany = {
-    "/companies/{companyId}": {
+export const swUpdateCompanyAddress = {
+    "/companies/{companyId}/address": {
         "patch": {
-            "summary": "update your company",
+            "summary": "update your company's Address",
             "tags": ["/companies"],
             "requestBody": {
                 "content": {
