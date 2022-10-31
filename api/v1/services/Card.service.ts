@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb';
 import { CardModel } from '../models/Card.model';
-import { Industry } from '../models/Company.model';
+import { Company, CompanyModel, Industry } from '../models/Company.model';
 import { CreateCardRequestBody } from '../routes/cards/CreateCard.route';
 
 export const createCard = async (request: CreateCardRequestBody) => {
@@ -30,14 +30,20 @@ export const getCardsByCompany = async (company: ObjectId | string) => {
 
 export const getCardsByQuery = async (searchParams: { industry: Industry; cardKeys?: string[] }) => {
     try {
-        let filter = {};
-        if (searchParams.cardKeys) {
-            filter["company.cardKeys"] = { $all: searchParams.cardKeys };
-        }
-        filter["company.industry"] = searchParams.industry;
 
-        const companyCards = await CardModel.find(searchParams);
-        return companyCards;
+        let filter = {};
+        filter["industry"] = searchParams.industry;
+        if (searchParams.cardKeys) {
+            filter["cardKeys"] = searchParams.cardKeys;
+        }
+
+        const companies = await CompanyModel.aggregate()
+            .match(filter)
+            .group({ _id: "$_id" })
+            .exec();
+
+        const cards = await CardModel.find({ company: companies, isActive: true }).exec();
+        return cards;
     } catch (err) {
         console.error(err)
     }

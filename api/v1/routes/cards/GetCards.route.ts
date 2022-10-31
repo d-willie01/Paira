@@ -3,7 +3,6 @@ import * as CardService from "../../services/Card.service";
 import jwt from 'jsonwebtoken';
 import { Company, Industry } from "../../models/Company.model";
 import { transformCard } from "../../transformers/card.transformer";
-import Joi from "joi";
 
 export interface GetCardsRequest extends Request {
     query: qs.ParsedQs;
@@ -16,6 +15,8 @@ export default async function (request: GetCardsRequest, response: Response): Pr
         searchParameters.cardKeys = request.query.cardKeys as string[];
         searchParameters.industry = Industry[request.query.industry as string];
 
+        console.log(searchParameters)
+
         const companyCards = await CardService.getCardsByQuery(searchParameters)
         if (!companyCards) {
             return response.status(200).json([]);
@@ -23,7 +24,6 @@ export default async function (request: GetCardsRequest, response: Response): Pr
 
         const cardsResponse = companyCards.map(card => transformCard(card))
         return response.status(200).json(cardsResponse)
-
     } catch (err) {
         return response.status(500).json({ error: err });
     }
