@@ -34,7 +34,7 @@ const BusinessButton2 = ({text}) => {
                      bottom:5,
                      }}>
                         
-                        <FontAwesome5 name="seedling" size={'30%'} color="white" style={{
+                        <FontAwesome5 name="seedling" size={'30%'} color="#57D760" style={{
                             alignSelf:'center',
                             marginTop:'5%'
                         }} />

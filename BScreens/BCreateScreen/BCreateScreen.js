@@ -5,6 +5,8 @@ import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import BackgroundColor from "../../components/Theme/BackgroundColor"
 import BusinessCardPic from "../../components/BusinessCardPic/BusinessCardPic";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 const BCreateScreen = () => {
     
@@ -43,165 +45,185 @@ const BCreateScreen = () => {
 
      return(
         
-        <BackgroundColor>
+<BackgroundColor>
         
-        <View style ={{flex:1}}>
+    <SafeAreaView 
+    style={{
+     height: heightPercentageToDP('100%'),
+     width: widthPercentageToDP('100%') }}>
+        
 
-            <View style ={{
-                height: 50, 
+        <View  // Top Words View
+        
+            style ={{
+                backgroundColor:'transparent',
+                height:'10%',
+                width:'80%',
                 justifyContent:"center",
-                
                 alignItems:"center",
-                margin:5}}
+                alignSelf:'center',
+                }}
                 >
-                <Text style ={styles.text}>Edit Your Card</Text>
-                
-            </View>
+                <Text // Top Words Text
 
-            <View style={{
-                height:200, 
-                width: 350, 
+                numberOfLines={3} 
+                style ={{
+                    fontSize:'20%',
+                    fontStyle:'italic',
+                    fontWeight:'800',
+                    textAlign:'center',
+                    color:'white',
+                    
+                    }}>Edit your card, this is what local users will be seeing!</Text>
                 
+        </View> 
+
+            <View //View for Add BPics Button
+                style={{
+                backgroundColor:'transparent',
+                height:'40%', 
+                width: '100%', 
                 alignSelf:"center",
-                margin: 10,
                 alignItems:"center",
                 justifyContent:"center",
-                borderRadius: 35}}>
+                }}>
 
                 <BusinessCardPic/>
-                    
-
-
-
-
             </View>
 
 
-            <View style ={{
-                height: 335,
-                
-                width: 350,
+    <View // View for Business Information
+            style ={{
+                height: '40%',
+                width: '75%',
                 alignSelf:"center",
+                backgroundColor:'transparent'
                 
-            }}>
+                }}>
 
 
-            <View style={{
-                margin: 5,
-                height:75,
+        <View style={{
+                
+                height:'25%',
+                backgroundColor:'transparent'
                
             }}>
-                <Text>Title:</Text>
-                <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
-                    borderRadius: 10,
-                    margin: 5
-                }}/>
-                
-
-            </View>
-
-
-
-
-            <View style={{
-                margin: 5,
-                height:75,
-                
-
-            }}>
-                <Text>Founded:</Text>
-                <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
-                    borderRadius: 10,
-                    margin: 5
-                }}/>
-                
-
-            </View>
-
-
-
-
-
-
-            <View style={{
-                margin: 5,
-                height:75,
-                
-
-            }}>
-                <Text>Bio:</Text>
-                <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
-                    borderRadius: 10,
-                    margin: 5
-                }}/>
-
-
-                
-                
-
-            </View>
-
-
-
-
-
-            <View style={{
-                margin: 5,
-                height:75,
-                
-
-            }}>
-                <Text>Address:</Text>
-                <TextInput style ={{
-                    height:25,
+                <Text style={{
+                    fontSize:'15%',
+                    fontWeight:'800',
+                    color:'white',
+                    alignSelf:'flex-start',
+                    fontStyle:'italic',
                     
-                    width: 200,
-                    borderRadius: 10,
-                    borderWidth:1,
-                    margin: 5
+
+                 }}>Title:</Text>
+                
+                <TextInput style ={{
+                    borderColor:'white',
+                    height:'30%',
+                    width: '100%',
+                    borderWidth:'3%',
+                    borderRadius: '10%%',
                 }}/>
                 
+        </View>
+        
+        <View style={{
+                
+                height:'25%',
+                backgroundColor:'transparent'
+               
+            }}>
+                <Text style={{
+                    fontSize:'15%',
+                    fontWeight:'800',
+                    color:'white',
+                    alignSelf:'flex-start',
+                    fontStyle:'italic',
+                    
 
-            </View>
-
-
-
-
-
-
-            </View>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                 }}>Founded:</Text>
+                
+                <TextInput style ={{
+                    borderColor:'white',
+                    height:'30%',
+                    width: '100%',
+                    borderWidth:'3%',
+                    borderRadius: '10%',
+                }}/>
+                
         </View>
 
-        </BackgroundColor>
+
+        <View style={{
+                
+                height:'25%',
+                backgroundColor:'transparent'
+               
+            }}>
+                <Text style={{
+                    fontSize:'15%',
+                    fontWeight:'800',
+                    color:'white',
+                    alignSelf:'flex-start',
+                    fontStyle:'italic',
+                    
+                    
+                    
+
+                 }}>Slogan:</Text>
+                
+                <TextInput style ={{
+                    borderColor:'white',
+                    height:'30%',
+                    width: '100%',
+                    borderWidth:'3%',
+                    borderRadius: '10%',
+                }}/>
+                
+        </View>
+
+
+
+
+
+        <View style={{
+                
+                height:'25%',
+                backgroundColor:'transparent'
+               
+            }}>
+                <Text style={{
+                    fontSize:'15%',
+                    fontWeight:'800',
+                    color:'white',
+                    alignSelf:'flex-start',
+                    fontStyle:'italic',
+                    
+
+                 }}>Address:</Text>
+                
+                <TextInput style ={{
+                    borderColor:'white',
+                    height:'30%',
+                    width: '100%',
+                    borderWidth:'3%',
+                    borderRadius: '10%',
+                }}/>
+                
+        </View>
+
+
+
+
+
+
+            </View>
+
+
+     </SafeAreaView>
+
+</BackgroundColor>
     );
 };
 

@@ -40,32 +40,39 @@ const BUserHomeScreen = () => {
     
     return(
  <BackgroundColor>
+   
    <SafeAreaView 
    style={{
     height: heightPercentageToDP('100%'),
     width: widthPercentageToDP('100%') }}>
 
 
-            
-            <View style ={{
+
+
+       
+
+           <View 
+           style ={{
                  height: '25%',
                  width: '100%',
                  backgroundColor:'transparent',
                  marginTop:'5%'
                  
-                
-                
             }}>
-                
+            
                 <BusinessProfilePic/>
 
-                <View style ={{
+            <View // View for Lil Buttons
+                
+                style ={{
                  position:'absolute',
-                 height:'70%',
-                 width: '10%',
-                 backgroundColor:'transparent',
+                 height:'75%',
+                 width: '1%',
+                 opacity:'100%',
+                 backgroundColor:'#575757',
+                 borderRadius:'100%',
                  alignItems:'center',
-                 justifyContent:'space-between',
+                 justifyContent:'space-evenly',
                  marginLeft:'78%',
                  marginTop:'5%',
                  
@@ -113,7 +120,7 @@ const BUserHomeScreen = () => {
                                     width:'100%',
                                     justifyContent:'center',
                                     bottom:5,
-                                    borderRadius:'20%',}}>
+                                    borderRadius:'25%',}}>
                                     <Text numberOfLines={2} style={{
                                         fontSize:22,
                                         fontWeight:'900',
@@ -128,7 +135,7 @@ const BUserHomeScreen = () => {
                                         color:'white',
                                         textAlign:'center',
                                         alignSelf:'center',
-                                        fontStyle:'italic'
+                                        fontStyle:'italic',
                                         }}>Phoenix, AZ </Text>
                 </LinearGradient>
 
@@ -153,6 +160,8 @@ const BUserHomeScreen = () => {
   
 
             </View>
+
+    
 
             <View style = {{
                 height: heightPercentageToDP('20%'),
@@ -188,7 +197,7 @@ const BUserHomeScreen = () => {
             </View>
 
             
-
+       
 
     </SafeAreaView>
 

@@ -11,22 +11,36 @@ const BusinessCardPic = ({text}) =>{
     
     return (
             <TouchableOpacity style = {{
+                    width:'75%',
+                    height:'90%',
+                    justifyContent:'center'
+                    
+                }}
+                onPress={()=> console.log('yeee')}>
                 
-                
-                
-            }}>
-                <View
-      //Button Style
-                     style={styles.interestbuttonParent}>
-                    <LinearGradient
-                        colors={['#F5B041','#F8C471']}
-                        style={styles.interestbuttongrad}>
+                 <View
+                     style={{
+                     height:'100%',
+                     width:'100%',
+                     borderRadius:'40%',
+                     backgroundColor:'#F39C12',}}>
 
+                    <LinearGradient
+                         colors={['#F8C471','#F5B041']}
+                         style={{
+                         height:'100%',
+                         width:'100%',
+                         borderRadius:'40%',
+                         bottom:5,}}>
                     <View style={{
-                        alignSelf:"flex-end",
-                        top: 50
+                        position:'absolute',
+                        alignSelf:'flex-end',
+                        marginTop:'80%',
+                        marginLeft:'80%',
+                        
+                        
                     }}>
-                    <EvilIcons name="plus" size={50} color="#ffffff" />
+                    <EvilIcons name="plus" size={'35%'} color="black" />
                     </View>
 
             

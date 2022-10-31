@@ -31,9 +31,11 @@ const BusinessButton = ({text}) => {
                      borderRadius:'40%',
                      bottom:5,}}>
                         
-                        <FontAwesome name="heart" size={'30%'} color="white" style={{
+                        <FontAwesome name="heart" size={'30%'} color="#2EBFFF" style={{
                             alignSelf:'center',
-                            marginTop:'5%'
+                            marginTop:'5%',
+                            opacity:'100%'
+
 
                         }} />
                         <Text
