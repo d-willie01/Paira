@@ -5,20 +5,26 @@ import Joi from "joi";
 import jwt from 'jsonwebtoken';
 import j2s from 'joi-to-swagger';
 import { NotFoundError } from "../../utils/errors.util";
+import { validateCardKeys } from "../../utils/cardKeys.util";
 
 export interface UpdateCompanyCardKeysRequest extends Request {
     body: string[];
     auth?: jwt.JwtPayload,
 }
 
-const schema = Joi.array().items(Joi.string()).required();
+const schema = Joi.array().items(Joi.string()).max(10).required();
 
 export default async function (request: UpdateCompanyCardKeysRequest, response: Response): Promise<Response> {
     try {
-        const validation = schema.validate(request.body);
+        const schemaValidation = schema.validate(request.body);
 
-        if (validation.error) {
-            return response.status(400).json({ error: validation.error });
+        if (schemaValidation.error) {
+            return response.status(400).json({ error: schemaValidation.error });
+        }
+
+        const cardKeysValidation = validateCardKeys(request.body);
+        if (cardKeysValidation.error) {
+            return response.status(400).json({ error: cardKeysValidation.error });
         }
 
         const requester = await UserService.getUserByAuthProviderId(request.auth!.sub!);
