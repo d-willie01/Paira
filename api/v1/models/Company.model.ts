@@ -1,4 +1,4 @@
-import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref, index } from '@typegoose/typegoose';
+import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref, index, Severity, mongoose } from '@typegoose/typegoose';
 import autopopulate from 'mongoose-autopopulate';
 import { Address, Location } from '../utils/location.util';
 import { User } from './User.model';
@@ -12,7 +12,7 @@ export enum Industry {
 }
 
 export interface Company extends defaultClasses.Base { }
-@modelOptions({ schemaOptions: { timestamps: true, strict: "throw", collection: "companies" }, options: { allowMixed: 0 } })
+@modelOptions({ schemaOptions: { timestamps: true, strict: "throw", collection: "companies" }, options: { allowMixed: Severity.ALLOW } })
 @index({ location: '2dsphere' })
 @plugin(autopopulate)
 export class Company {
@@ -34,7 +34,7 @@ export class Company {
   @prop({ required: true })
   public industry!: Industry;
 
-  @prop({ required: true })
+  @prop({ required: true, allowMixed: Severity.ALLOW, type: () => mongoose.Schema.Types.Mixed })
   public location!: Location;
 
   @prop({ required: true })
