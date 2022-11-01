@@ -5,6 +5,10 @@ import { useNavigation } from "@react-navigation/native";
 import PressTest from "../components/PressTest/PressTest";
 import KeyWordButton from "../components/KeyWordButton/KeyWordButton";
 import BackgroundColor from "../components/Theme/BackgroundColor";
+import BackButton from "../components/BackButton/BackButton";
+import { SafeAreaView } from "react-native";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 const CategoryOneScreen = () => {
     
@@ -27,27 +31,42 @@ const CategoryOneScreen = () => {
 
 <BackgroundColor>
 
-        <View style={{
-            flex: 1, 
-            backgroundColor: "transparent"
-            }}>
+<SafeAreaView 
+   style={{
+    height: heightPercentageToDP('100%'),
+    width: widthPercentageToDP('100%') }}>
     
     
+    <View style={{
+        height:'80%',
+        width:'100%',
+        backgroundColor:'red',
+        paddingRight:'1%',
 
+}}
     
     
-    <View >
+    >
         <ScrollView horizontal ={true} showsHorizontalScrollIndicator ={false}
         
         style ={{
-            marginTop: 150,
+            flexDirection:"row",
+            backgroundColor:'black',
+            height:'100%',
+        
             
-            flexDirection:"row"
+            
     
         }}>
             <View style ={{
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
             
-            justifyContent:"space-between",
+            
+            
+
             
             }}>
 
@@ -64,7 +83,10 @@ const CategoryOneScreen = () => {
     
         <View style ={{
             
-            justifyContent:"space-between",
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
             
             
             
@@ -80,7 +102,10 @@ const CategoryOneScreen = () => {
         </View>
         <View style ={{
             
-            justifyContent:"space-between",
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
             
             
             
@@ -96,7 +121,10 @@ const CategoryOneScreen = () => {
         </View>
         <View style ={{
             
-            justifyContent:"space-between",
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
             
             
             
@@ -112,7 +140,10 @@ const CategoryOneScreen = () => {
         </View>
         <View style ={{
             
-            justifyContent:"space-between",
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
             
             
             
@@ -128,7 +159,11 @@ const CategoryOneScreen = () => {
         </View>
         <View style ={{
             
-            justifyContent:"space-between",
+            height:'100%',
+            backgroundColor:'white',
+            justifyContent:'space-evenly',
+            paddingLeft:'1%',
+    
             
             
             
@@ -143,6 +178,7 @@ const CategoryOneScreen = () => {
     
 
         </View>
+        
     
         </ScrollView>
     
@@ -170,9 +206,9 @@ const CategoryOneScreen = () => {
            }}>
             <MatchNowButton onPress={MatchCategoryOne}/>
             </View>
-            </View>
+            
 
-        
+ </SafeAreaView>
 </BackgroundColor>
 
 

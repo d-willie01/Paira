@@ -5,18 +5,19 @@ import { StyleSheet,Text, View, Image,TouchableOpacity, SafeAreaView, StatusBar,
 const styles = StyleSheet.create({
  
     MatchCategoryParent:{
-        height:110,
-        width:123,
+        height:"50%",
+        width:"100%",
         borderRadius:75,
         backgroundColor:'transparent',
-        margin: 10
+        margin:20,
+        alignSelf:'center',
+        
     },
     
     MatchCategorygrad:{
         bottom:4, 
-        marginLeft:-2,
-        height:80,
-        width:125,
+        height:"50%",
+        width:"100%",
         borderRadius:75,  
         justifyContent:'center',
 

@@ -18,7 +18,7 @@ const KeyWordButton = ({text, onLongPress}) => {
                  colors={['#777777','#878787']}
                  style={styles.MatchCategorygrad}>
                     <Text numberOfLines={1} style={{
-                    fontSize:17,
+                    fontSize:'17%',
                     fontWeight:'900',
                     color:'white',
                     textAlign:'center',

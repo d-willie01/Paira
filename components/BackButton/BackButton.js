@@ -2,17 +2,16 @@ import React from "react";
 import { TouchableOpacity, View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import styles from "./BusinessButtonStyles";
 import { FontAwesome } from '@expo/vector-icons';
 
-const BusinessButton = ({text}) => {
+const BackButton = ({text}) => {
     return(
       
         <TouchableOpacity 
 
             style={{
-                width:'45%',
-                height:'70%',
+                width:'5%',
+                height:'5%',
                 alignContent:'center'
             }}
             onPress={()=> console.log('yeee')}>
@@ -31,7 +30,7 @@ const BusinessButton = ({text}) => {
                      borderRadius:'40%',
                      bottom:5,}}>
                         
-                        <FontAwesome name="heart" size={'30%'} color="#2EBFFF" style={{
+                        <MaterialCommunityIcons name="arrow-left" size={'30%'} color="#2EBFFF" style={{
                             alignSelf:'center',
                             marginTop:'5%',
                             opacity:'100%'}} />
@@ -73,4 +72,4 @@ const BusinessButton = ({text}) => {
  
     )
 }
-export default BusinessButton;
+export default BackButton;

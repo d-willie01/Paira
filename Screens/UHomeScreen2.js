@@ -52,46 +52,53 @@ const UHomeScreen2 = () => {
    width: widthPercentageToDP('100%') }}>
 
 
-             <View style ={{
-                height: '25%',
-                width: '100%',
-                marginLeft: '25%',
-                backgroundColor:'transparent',
-                marginTop:'5%',
-                
-               
-               
-                }}>
-               <UserProfilePic />
-               </View>
+      <View 
+           style ={{
+                 height: '25%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 marginTop:'4%',
+                 
+            }}>
+            
+                <UserProfilePic/>
 
-               <View style ={{
-                position:'absolute',
-                height:'15%',
-                width: '10%',
-                backgroundColor:'transparent',
-                alignItems:'center',
-                justifyContent:'space-between',
-                marginLeft:'78%',
-                marginTop:'20%',
+            <View // View for Lil Buttons
+                
+                style ={{
+                 position:'absolute',
+                 height:'75%',
+                 width: '1%',
+                 opacity:'100%',
+                 backgroundColor:'#575757',
+                 borderRadius:'100%',
+                 alignItems:'center',
+                 justifyContent:'space-evenly',
+                 marginLeft:'78%',
+                 marginTop:'5%',
+                 
+                 
+                 
+                
+            }}>
+            
+            <AntDesign name="setting" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
+
+            </View>
                 
                 
-                
-               
-           }}>
+        </View>
            
-           <AntDesign name="setting" size={'30%'} color="white"/>
-           <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
-           <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
-
-           </View>
            <View style ={{
                height: heightPercentageToDP('10%'),
                width: widthPercentageToDP('100%'),
                flexDirection:"row",
                alignItems:"center",
                backgroundColor:'transparent',
-               justifyContent: 'center'
+               justifyContent: 'center',
+               marginTop:'-4%'
 
                
            // User Nametag   
@@ -121,25 +128,33 @@ const UHomeScreen2 = () => {
            <UserButtonFollowers text = '240' />  
            <UserButtonScore text='400'/>
            </View>
+           
+           
            <View style ={{
                height: heightPercentageToDP('10%'),
                width: widthPercentageToDP('100%'),
                flexDirection:"row",
-               alignItems:"center",
                backgroundColor:'transparent',
-               justifyContent: 'center'
+               justifyContent: 'center',
+               alignItems:'center',
+               marginTop:'1%',
+               
+               
+               
 
                
            // Business Nametag   
            }}>
+             
              <TipsButton/>
            </View>
+           
            <View style ={{
-               height: heightPercentageToDP('7%'),
+               height: heightPercentageToDP('3%'),
                width: widthPercentageToDP('100%'),
-               alignItems:"left",
                backgroundColor:'transparent',
-               justifyContent: 'space-evenly'
+               
+               
 
                
 // My collection text
@@ -147,32 +162,31 @@ const UHomeScreen2 = () => {
            <Text 
      // My collection Text 
          style= {{
-
-           marginTop:0,
-           marginLeft:35,
+           fontStyle:'italic',
+           alignSelf:'center',
            fontWeight:'900',
-           fontSize:25,
+           fontSize:'19%',
            color:'white',
-           
          
          }}>
            
-           My collection
+           My collections
          </Text>
-
+         
 
            </View>
            <View style ={{
                height: heightPercentageToDP('25%'),
                width: widthPercentageToDP('100%'),
-               alignItems:"left",
+               alignItems:'center',
                backgroundColor:'transparent',
-               justifyContent: 'space-evenly'
+               justifyContent: 'space-evenly',
+               marginTop:'-1%', 
 
                
 // My collection text
            }}>
-           <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={true} style={{
+           <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={false} style={{
            
             }}>
            <CollectionsButton2/>

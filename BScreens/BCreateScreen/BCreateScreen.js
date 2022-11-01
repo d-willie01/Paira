@@ -183,10 +183,6 @@ const BCreateScreen = () => {
                 
         </View>
 
-
-
-
-
         <View style={{
                 
                 height:'25%',
@@ -213,16 +209,9 @@ const BCreateScreen = () => {
                 
         </View>
 
-
-
-
-
-
-            </View>
-
-
-     </SafeAreaView>
-
+     </View>
+     
+    </SafeAreaView>
 </BackgroundColor>
     );
 };

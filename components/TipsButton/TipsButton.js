@@ -2,68 +2,76 @@ import React from "react";
 import { TouchableOpacity, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "./TipsButtonStyles";
-import { Entypo } from '@expo/vector-icons'; 
+import { Entypo, Octicons } from '@expo/vector-icons'; 
 
 
 const TipsButton = ({text}) =>{
     
     return (
-            <TouchableOpacity style = {{
-                
-                
-                
-            }}>
-                <View
-      //Button Style
-                     style={styles.interestbuttonParent}>
-                    <LinearGradient
-                        colors={['#F5B041','#F8C471']}
-                        style={styles.interestbuttongrad}>
-                     <Entypo 
-                        name="light-bulb" 
-                        size={14} 
-                        color="grey" 
-                        style={{
-                        position:'absolute',
-                        marginTop:3,
-                        marginLeft:139, }} 
-             />   
-                    <Text numberOfLines={3} style={{
-                        fontSize:13.5,
-                        fontWeight:'800',
-                        color:'grey',
-                        fontStyle:'italic',
-                        marginTop:2,
-                        
-                        alignSelf:"center", 
-                        textDecorationLine:'underline'
-                        
+        <TouchableOpacity 
 
-                        
-                        }}>Tip of the Day
-                    </Text>
-                        
-                    <Text numberOfLines={3} style={{
-                        fontSize:14,
-                        fontWeight:'800',
-                        color:'white',
-                        fontStyle:'italic',
-                        textAlign:'center',
-                        
-                        }}>{text}
-                    </Text>
-
+        style={{
+            width:'80%',
+            height:'80%',
+            alignContent:'center',
+            marginTop:'1%'
             
-                        
-                   </LinearGradient>
+        }}
+        onPress={()=> console.log('yeee')}>
+            <View
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 backgroundColor:'#F39C12',}}>
 
-                   
-            
-                </View>
+                <LinearGradient
+                 colors={['#F8C471','#F5B041']}
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 bottom:5,}}>
+                    
+                    <Octicons name="light-bulb" size={'10%'} color="grey" style={{
+                        alignSelf:'center',
+                        marginTop:'1%'
+                        }} />
+                    
+                    <Text
+                    numberOfLines={1}
+                    style={{
+                    fontSize:'10%',
+                    fontWeight:"900",
+                    color:'grey',
+                    textAlign:'center',
+                    fontStyle:'italic',
+                    alignSelf:'center',
+                    textDecorationLine:'underline'
+                    
+                    }}>{'Tips of the Day'}</Text>
 
+                    <Text
+                    numberOfLines={2}
+                    style={{
+                    fontSize:'15%',
+                    fontWeight:"800",
+                    color:'white',
+                    textAlign:'center',
+                    fontStyle:'italic',
+                    alignSelf:'auto',
+                    marginTop:'1%'
 
-
-            </TouchableOpacity>
+                    
+                    
+                    
+                    }}>{'Getting matched with local organizations can earn you crowns!'}</Text>
+                    
+                    
+                    
+                </LinearGradient>
+            </View>
+        </TouchableOpacity>
     )
 }
 

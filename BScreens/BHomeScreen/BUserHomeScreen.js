@@ -56,7 +56,7 @@ const BUserHomeScreen = () => {
                  height: '25%',
                  width: '100%',
                  backgroundColor:'transparent',
-                 marginTop:'5%'
+                 marginTop:'5%',
                  
             }}>
             
@@ -130,7 +130,7 @@ const BUserHomeScreen = () => {
                                         fontStyle:'italic'
                                         }}>Suns Event Co.</Text>
                                         <Text numberOfLines={2} style={{
-                                        fontSize:10,
+                                        fontSize:'10%',
                                         fontWeight:'900',
                                         color:'white',
                                         textAlign:'center',

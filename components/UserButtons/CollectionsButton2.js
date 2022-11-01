@@ -5,7 +5,17 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 const CollectionsButton2 = ({text, source}) =>{
     return(
-<TouchableOpacity style={{ height: 210, width: 150, marginLeft: 20, borderWidth: 0.5, borderColor: 'white', marginTop: 10, borderRadius: 25}}>        
+    
+    <TouchableOpacity 
+     style={{ 
+        height: '95%', 
+        width: 150, 
+        marginLeft: 20, 
+        borderWidth: 0.5, 
+        borderColor: 'white', 
+        marginTop: 10, 
+        borderRadius: '50%'}}>        
+            
             <Image source={source}
                 style={{ flex: 1, width: null, height: null, resizeMode: 'cover', borderRadius:25  }}
             />

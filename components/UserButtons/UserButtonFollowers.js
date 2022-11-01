@@ -13,47 +13,71 @@ const UserButtonFollowers = ({text}) => {
       
         <TouchableOpacity 
 
-            style={{
-                width:'40%',
-                height:'65%'
-            }}
-            onPress={()=> console.log('yeee')}>
-                <View
-                     style={{
-                     height:'100%',
-                     width:'100%',
-                     borderRadius:'40%',
-                     backgroundColor:'#F39C12',}}>
+        style={{
+            width:'40%',
+            height:'100%',
+            alignContent:'center',
+            justifyContent:'space-evenly'
+            
+        }}
+        onPress={()=> console.log('yeee')}>
+            <View
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 backgroundColor:'#F39C12',}}>
 
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={{
-                     height:'100%',
-                     width:'100%',
-                     borderRadius:'40%',
-                     bottom:5,}}>
-                        
-                        <Text
-                        style={{
-                        fontSize:37,
-                        fontWeight:"900",
-                        color:'white',
-                        marginTop: 13,
-                        marginLeft: 40,
-                        fontStyle:'italic',
-                        
-                        }}>{text}</Text>
-                        <View style={{ position: 'absolute', marginLeft: 130, marginTop: 17,}}>
-                        <Octicons  name="people" size={35} color="black" />
-                        </View>
+                <LinearGradient
+                 colors={['#F8C471','#F5B041']}
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 bottom:'5%',
+                 justifyContent:'space-evenly',
+                 
+                 }}>
+                    
+                    <Octicons name="people" size={'30%'} color="#575757" style={{
+                        alignSelf:'center',
+                        }} />
+                    
+                    <Text
+                    numberOfLines={1}
+                    style={{
+                    fontSize:'35%',
+                    fontWeight:"900",
+                    color:'white',
+                    textAlign:'center',
+                    fontStyle:'italic',
+                    alignSelf:'center',
+                    
+                    }}>{'75'}</Text>
 
-              
+                    <Text
+                    numberOfLines={1}
+                    style={{
+                    fontSize:'17%',
+                    fontWeight:"800",
+                    color:'white',
+                    textAlign:'center',
+                    fontStyle:'italic',
+                    alignSelf:'auto'
+                    
+                    
+                    
+                    }}>{'Friends'}</Text>
+                    
+                    
+
+          
 
 
 
-                    </LinearGradient>
-                </View>
-            </TouchableOpacity>
+                </LinearGradient>
+            </View>
+        </TouchableOpacity>
  
     )
 }
