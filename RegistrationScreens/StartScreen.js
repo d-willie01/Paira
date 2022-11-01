@@ -53,7 +53,7 @@ const StartScreen = () => {
         <View style={{
             height: '100%',
             width: '70%',
-            backgroundColor: "red",
+            backgroundColor: "transparent",
             alignItems:'center'}}>
         <Image 
             style = {{ width: '50%', height: '100%'}}

@@ -11,6 +11,14 @@ const styles = StyleSheet.create({
         backgroundColor:'transparent',
         margin: 10
     },
+    MatchCategoryParent2:{
+        height:110,
+        overflow: 'hidden',
+        width:123,
+        borderRadius:75,
+        backgroundColor:'transparent',
+        margin: 10
+    },
     
     MatchCategorygrad:{
         bottom:4, 

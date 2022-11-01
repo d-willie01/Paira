@@ -4,18 +4,19 @@ import { Text, TouchableOpacity, View} from 'react-native'
 import styles from "./KeyWordButtonStyles";
 
 
-const KeyWordButton = ({text, onLongPress}) => {
+const KeyWordButton = ({text, selected, onLongPress, color}) => {
 
     return(
 
-        <View >
+        <View style={{overflow: 'hidden'}}>
         <TouchableOpacity 
         // onLongPress ={() => console.log(text)}
         onLongPress = {onLongPress}
         //onPress={onPress} 
         style={styles.MatchCategoryParent}>
+            <View style ={{padding : '7.5%'}}>
         <LinearGradient
-                 colors={['#777777','#878787']}
+                 colors={[color,color]}
                  style={styles.MatchCategorygrad}>
                     <Text numberOfLines={1} style={{
                     fontSize:17,
@@ -25,7 +26,19 @@ const KeyWordButton = ({text, onLongPress}) => {
                     alignSelf:'center',
                     fontStyle:'italic'
                     }}>{text}</Text>
+                
                </LinearGradient>
+               </View>
+               {selected &&<View 
+               style={{
+                    position: 'absolute',
+                    width: "100%",
+                    height:"79%",
+                    borderRadius: '60%',
+                    backgroundColor:'rgba(0,0,0,0.4)',
+                    alignItems: 'center',
+                    top: '3%',
+                    left:'7%',}}/>}
         </TouchableOpacity>
     </View>
     )
@@ -33,3 +46,20 @@ const KeyWordButton = ({text, onLongPress}) => {
 }
 
 export default KeyWordButton;
+
+/*
+{selected &&
+<View style={{
+    position: 'absolute',
+    width: "100%",
+    height:"100%",
+    backgroundColor:'rgba(0,0,0,0.4)',
+    top: 0,
+    left:0,
+
+}}/>}
+const getSelected = () => {
+    selectedItems.includes( )
+}
+*/
+
