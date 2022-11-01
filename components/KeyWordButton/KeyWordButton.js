@@ -4,7 +4,7 @@ import { Text, TouchableOpacity, View} from 'react-native'
 import styles from "./KeyWordButtonStyles";
 
 
-const KeyWordButton = ({text, selected, onLongPress, color}) => {
+const KeyWordButton = ({text, selected, onPress, onLongPress, color}) => {
 
     return(
 
@@ -12,7 +12,7 @@ const KeyWordButton = ({text, selected, onLongPress, color}) => {
         <TouchableOpacity 
         // onLongPress ={() => console.log(text)}
         onLongPress = {onLongPress}
-        //onPress={onPress} 
+        onPress={onPress} 
         style={styles.MatchCategoryParent}>
             <View style ={{padding : '7.5%'}}>
         <LinearGradient

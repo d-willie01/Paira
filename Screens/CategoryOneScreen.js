@@ -178,4 +178,8 @@ export default CategoryOneScreen;
                 color={isActive ? "#777777" : "#FF9100"}
                 onLongPress={handleClick}
               />
+<TouchableOpacity
+              color={isActive ? "#777777" : "#FF9100"}
+              
+              onPress={() => handleOnLongPress("Club")}>
 */
