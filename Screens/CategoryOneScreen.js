@@ -14,17 +14,16 @@ const CategoryOneScreen = () => {
   const MatchCategoryOne = () => {
     UMatchnavigation.navigate("MatchCategoryOneScreen");
   };
-/*
+
   const [selectedItems, setSelectedItems] = useState([]);
+    
 
   const handleOnLongPress = (keywords) => {
     setSelectedItems([...selectedItems, keywords]);
-    data.push(selectedItems);
-  };  
-   console.log(selectedItems);
-   */
+  };
+  console.log(selectedItems);
   //const getSelected = (keywords) => { selectedItems.includes(keywords.id)}
-
+    
 
   
   
