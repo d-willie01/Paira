@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {Text, View, Image, SafeAreaView, TouchableOpacity, Platform,} from 'react-native'
-import { LinearGradient } from "expo-linear-gradient";
-import styles from "../Styles/styles";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import CollectionButton from "../components/CollectionsButton";
 import { ScrollView } from "react-native"
 import { Entypo } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import axios from "axios";
 import * as ImagePicker from "expo-image-picker";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -22,9 +22,55 @@ import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2
 
 
 
+
+
 const UHomeScreen2 = () => {
   
   const [image, setImage] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
+
+
+
+
+   
+
+    useEffect( async() =>{
+        
+
+    
+        
+        try{
+        
+                const userToken = await AsyncStorage.getItem("userToken");
+                const config = {
+                  headers: {
+                    "Authorization" : `Bearer ${userToken}`
+                  }
+                }
+        
+              const response = await axios.get('http://localhost:8080/users/self',config)
+              if (response.status == 200){
+    
+                setUserInfo(JSON.stringify(response.data));
+                console.log(userInfo);
+    
+              }
+              
+              }
+              
+              
+              catch (e) {
+              
+              console.log(e)
+        
+    
+        }
+    
+    
+      
+    },[])
+  
+   
   
 
 
@@ -83,6 +129,9 @@ const UHomeScreen2 = () => {
          </View>
 
 
+        
+
+
 
 
              <View style={{
@@ -90,7 +139,7 @@ const UHomeScreen2 = () => {
               marginTop:315,
               marginLeft: 125,
              }}>
-              <NameTagButton text ="Andre"/>
+              <NameTagButton text = "darius"/>
              </View>
              
              <View style={{

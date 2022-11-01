@@ -7,9 +7,9 @@ const StateProvider = ({children}) => {
     
     
 const [UState, setUState] = useState(null);
-const [step1, setStep1] = useState(null);
+const [userToken, setUserToken] = useState(null);
 
-const BusinessState = () =>{
+    const BusinessState = () =>{
         
         setUState(true);
         console.log(UState);
@@ -27,7 +27,7 @@ const BusinessState = () =>{
     
     
     return (
-        <StateContext.Provider value ={{BusinessState, UserState, UState, step1}} >
+        <StateContext.Provider value ={{BusinessState, UserState, UState, userToken, setUserToken}} >
             {children}
         </StateContext.Provider>
     )

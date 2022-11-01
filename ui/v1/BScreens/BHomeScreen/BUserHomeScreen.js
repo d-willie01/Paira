@@ -1,15 +1,59 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Text, TouchableOpacity, View, Image} from 'react-native'
 import BackgroundColor from "../../components/Theme/BackgroundColor";
 import * as ImagePicker from "expo-image-picker";
 import BusinessProfilePic from "../../components/BusinessProfilePic/BusinessProfilePic";
 import BusinessButton from "../../components/BusinessButtons/BusinessButton";
 import { LinearGradient } from "expo-linear-gradient";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BUserHomeScreen = () => {
-    
-     
+
     const [image, setImage] = useState(null);
+    const [user, setUser] = useState(null);
+    const [company, setCompany] = useState(null);
+    
+    useEffect(() =>{
+
+        getData();
+
+
+
+
+    },[])
+
+    useEffect(() =>{
+
+        console.log(user, company);
+
+
+
+    },[user,company])
+    
+    
+    const getData = async () => {
+        
+        try {
+            const userToken = await AsyncStorage.getItem('userToken');
+            console.log(userToken); 
+          const userString = await AsyncStorage.getItem('user');
+          console.log(userString);
+          const jsonUser = JSON.parse(userString);
+          setUser(jsonUser);
+          const jsonCompany = JSON.parse(jsonUser.company)
+          console.log(jsonCompany);
+          setCompany(jsonCompany);
+          
+        } catch(e) {
+          // error reading value
+        }
+      }
+
+
+
+      
+
+
     
     
    const PickProfilePic = async () =>{
