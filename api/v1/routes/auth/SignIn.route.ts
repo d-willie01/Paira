@@ -43,6 +43,7 @@ export default async function (request: SigninRequest, response: Response): Prom
         return response.status(200).json({ token: loginResponse.id_token });
     }
     catch (err) {
+        console.error(err);
         if (err instanceof InvalidCredentialsError) {
             return response.status(400).json({ error: err.message });
         } else if (err instanceof TooManyAttemptsError) {

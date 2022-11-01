@@ -12,6 +12,12 @@ export interface GetCardsRequest extends Request {
 
 export default async function (request: GetCardsRequest, response: Response): Promise<Response> {
     try {
+        if (!request.query.industry) {
+            return response.status(400).json({ error: "you must include an industry in your search" })
+        }
+        if (!request.query.lat || !request.query.long) {
+            return response.status(400).json({ error: "you must include lat and long coordinates in your search" })
+        }
         const coordinates = [Number(request.query.long as string), Number(request.query.lat as string)];
         const searchResults = await CardService.getCardsByQuery({
             cardKeys: request.query.cardKeys as string[],
@@ -28,6 +34,7 @@ export default async function (request: GetCardsRequest, response: Response): Pr
 
         return response.status(200).json(cards)
     } catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }

@@ -13,6 +13,7 @@ export interface CardResponse {
     createdAt?: Date;
     description?: string;
     isActive: boolean;
+    images: string[];
     title: string;
     likes: User[];
     updatedAt?: Date
@@ -25,6 +26,7 @@ export const transformCard = (card: Card): CardResponse => ({
     createdAt: card.createdAt,
     description: card.description,
     isActive: card.isActive,
+    images: card.images ?? [],
     title: card.title,
     likes: card.likes ?? [],
     updatedAt: card.updatedAt
@@ -35,6 +37,7 @@ export interface GetCardsByQueryResponse {
     title: string;
     description?: string;
     isActive: boolean;
+    images: string[];
     likes: User[];
     createdBy: string;
     createdAt: Date;
@@ -61,6 +64,7 @@ export const transformCardSearchResults = (searchResult: GetCardsAggregateRespon
         title: card.title,
         description: card.description,
         isActive: card.isActive,
+        images: card.images ?? [],
         likes: card.likes ?? [],
         createdBy: card.createdBy!.toString(),
         createdAt: card.createdAt,

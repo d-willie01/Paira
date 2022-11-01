@@ -54,8 +54,6 @@ export default async function (request: CreateCardRequest, response: Response): 
             return response.status(403).json({ error: "you do not have sufficient privileges to create a card" })
         }
 
-        const { title, description, isActive } = request.body;
-
         let activeCard = new Card();
         if (request.body.isActive) {
             activeCard = await CardService.getActiveCardByCompanyId(card.company)
@@ -72,15 +70,16 @@ export default async function (request: CreateCardRequest, response: Response): 
         return response.status(200).json(updatedCardResponse)
 
     } catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }
 
 export const swUpdateCardRoute = {
-    "/cards/{cardId}": {
+    "/companies/{companyId}/cards/{cardId}": {
         "patch": {
             "summary": "update a card",
-            "tags": ["/cards"],
+            "tags": ["/companies"],
             "requestBody": {
                 "content": {
                     "application/json": {

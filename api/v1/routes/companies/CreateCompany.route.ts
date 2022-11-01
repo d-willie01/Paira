@@ -109,6 +109,7 @@ export default async function (request: CreateCompanyRequest, response: Response
         return response.status(201).json(companyResponse);
     }
     catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }

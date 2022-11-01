@@ -20,6 +20,9 @@ export class Company {
   public address!: Address;
 
   @prop({ required: false })
+  public avatar?: string;
+
+  @prop({ required: false })
   public bio?: string;
 
   @prop({ required: false })

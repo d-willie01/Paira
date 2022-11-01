@@ -1,45 +1,46 @@
 import { Request, Response } from "express";
 import * as UserService from "../../services/User.service";
-import * as CardService from "../../services/Card.service";
-import Joi from "joi";
 import jwt from 'jsonwebtoken';
-import j2s from 'joi-to-swagger';
-import { transformCard } from "../../transformers/card.transformer";
-import { Card } from "../../models/Card.model";
 
 export interface LikeCardRequest extends Request {
     auth?: jwt.JwtPayload,
     params: {
-        cardId: string;
+        userId: string;
+        searchId: string;
     };
 }
 
 export default async function (request: LikeCardRequest, response: Response): Promise<Response> {
     try {
-        const card: Card = await CardService.getCardById(request.params.cardId);
-
         const user = await UserService.getUserByAuthProviderId(request.auth!.sub!);
         if (!user) {
             return response.status(404).json({ error: "user not found" });
         };
 
-        const updatedCard = await CardService.likeCard(card._id, user._id)
+        if (user._id.toString() !== request.params.userId) {
+            return response.status(403).json({ error: "unauthorized" });
+        };
 
-        const updatedCardResponse = transformCard(updatedCard)
+        const search = await UserService.getSavedSearch(request.params.userId, request.params.searchId);
 
-        return response.status(200).json(updatedCardResponse)
+        if (!search) {
+            return response.status(404).json({ error: "search not found" });
+        }
 
+        await UserService.deleteSearch(user._id, request.params.searchId);
+
+        return response.status(200).json(search);
     } catch (err) {
         console.error(err);
         return response.status(500).json({ error: err });
     }
 }
 
-export const swLikeCard = {
-    "/cards/{cardId}/like": {
-        "patch": {
-            "summary": "like a card",
-            "tags": ["/cards"],
+export const swDeleteSearch = {
+    "/users/{userId}/searches/{searchId}": {
+        "delete": {
+            "summary": "delete a saved search query",
+            "tags": ["/users"],
             "requestBody": {
                 "content": {
                     "application/json": {
@@ -49,11 +50,14 @@ export const swLikeCard = {
                 }
             },
             "responses": {
-                "200": {
+                "204": {
                     "description": "success"
                 },
+                "403": {
+                    "description": "unauthorized"
+                },
                 "404": {
-                    "description": "user or company not found"
+                    "description": "user not found"
                 },
                 "500": {
                     "description": "internal server error"

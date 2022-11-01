@@ -5,6 +5,7 @@ import { UserResponse } from "./user.transformer";
 
 export interface CompanyResponse {
     _id: string;
+    avatar?: string;
     name: string;
     bio?: string;
     cardKeys?: string[];
@@ -24,6 +25,7 @@ export interface CompanyResponse {
 
 export const transformCompany = (company: Company): CompanyResponse => ({
     _id: company._id.toString(),
+    avatar: company.avatar,
     name: company.name,
     bio: company.bio,
     cardKeys: company.cardKeys,

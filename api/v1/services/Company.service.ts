@@ -1,7 +1,7 @@
-import { mongoose } from '@typegoose/typegoose';
 import { CompanyModel, Company, Industry } from '../models/Company.model';
 import { CreateCompanyRequestBody } from '../routes/companies/CreateCompany.route';
 import { Location, State } from '../utils/location.util';
+import { ObjectId } from 'mongodb';
 
 export interface ExistingCompanySearchParams {
     name: string;
@@ -44,7 +44,7 @@ export const createCompany = async (request: CreateCompanyRequestBody): Promise<
     return newCompany;
 };
 
-export const getCompanyByCompanyId = async (companyId: string | mongoose.Types.ObjectId): Promise<Company> => {
+export const getCompanyByCompanyId = async (companyId: string | ObjectId): Promise<Company> => {
     const company = await CompanyModel.findOne({ _id: companyId });
     if (!company) throw new Error(`Error getting company ${companyId}`);
     return company;
@@ -56,7 +56,7 @@ export interface UpdateCompanyPayload {
     industry?: Industry;
     name?: string;
 }
-export const updateCompany = async (_id: string | mongoose.Types.ObjectId, updates: UpdateCompanyPayload): Promise<Company> => {
+export const updateCompany = async (_id: string | ObjectId, updates: UpdateCompanyPayload): Promise<Company> => {
     const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, { $set: updates }, { new: true });
     return updatedCompany;
 };
@@ -69,7 +69,7 @@ export interface UpdateCompanyAddressPayload {
     zipCode: string;
     location: Location
 }
-export const updateCompanyAddress = async (_id: string | mongoose.Types.ObjectId, updates: UpdateCompanyAddressPayload): Promise<Company> => {
+export const updateCompanyAddress = async (_id: string | ObjectId, updates: UpdateCompanyAddressPayload): Promise<Company> => {
     const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, {
         $set: {
             "address.street_1": updates.street_1,
@@ -83,8 +83,14 @@ export const updateCompanyAddress = async (_id: string | mongoose.Types.ObjectId
     return updatedCompany;
 };
 
-export const updateCompanyCardKeys = async (_id: string | mongoose.Types.ObjectId, cardKeys: string[]): Promise<Company> => {
+export const updateCompanyCardKeys = async (_id: string | ObjectId, cardKeys: string[]): Promise<Company> => {
     const updatedCompany = await CompanyModel.findOneAndUpdate({ _id }, { $set: { cardKeys } }, { new: true });
     return updatedCompany;
 };
 
+export const updateCompanyAvatar = async (companyId: string | ObjectId, image: string): Promise<Company> => {
+    const updatedUser = await CompanyModel.findOneAndUpdate({ _id: companyId }, {
+        avatar: image
+    }, { new: true });
+    return updatedUser;
+}

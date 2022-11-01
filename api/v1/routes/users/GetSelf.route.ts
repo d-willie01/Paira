@@ -15,6 +15,7 @@ export default async (request: GetSelfRequest, response: Response): Promise<Resp
         return response.status(200).json(selfResponse);
     }
     catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }
@@ -22,7 +23,7 @@ export default async (request: GetSelfRequest, response: Response): Promise<Resp
 export const swGetSelfRouter = {
     "/users/self": {
         "get": {
-            "summary": "Retrieve your user document",
+            "summary": "retrieve your user document",
             "tags": ["/users"],
             "requestBody": {
                 "content": {
@@ -33,7 +34,7 @@ export const swGetSelfRouter = {
                 }
             },
             "responses": {
-                "201": {
+                "200": {
                     "description": "success"
                 },
                 "500": {

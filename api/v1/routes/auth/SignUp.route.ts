@@ -73,6 +73,7 @@ export default async function (request: SignupRequest, response: Response): Prom
             user: userResponse
         });
     } catch (err) {
+        console.error(err);
         if (err instanceof PasswordStrengthError) {
             return response.status(400).json({ error: err.message, policy: err.policy });
         } else if (err instanceof InvalidEmailError) {

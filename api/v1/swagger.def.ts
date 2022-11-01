@@ -1,14 +1,21 @@
 import { swSignInRouter } from "./routes/auth/SignIn.route";
 import { swSignUpRouter } from "./routes/auth/SignUp.route";
-import { swCreateCardRouter } from "./routes/cards/CreateCard.route";
+import { swCreateCardRouter } from "./routes/companies/CreateCard.route";
 import { swGetCompanyCardsRouter } from "./routes/companies/GetCompanyCards.route";
 import { swCreateCompanyRouter } from "./routes/companies/CreateCompany.route";
 import { swGetSelfRouter } from "./routes/users/GetSelf.route";
 import { swGetCardsRouter } from "./routes/cards/GetCards.route";
 import { swUpdateCompanyCardKeys } from "./routes/companies/UpdateCompanyCardKeys.route";
-import { swUpdateCardRoute } from "./routes/cards/UpdateCard.route";
+import { swUpdateCardRoute } from "./routes/companies/UpdateCard.route";
 import { swUpdateCompanyAddress } from "./routes/companies/UpdateCompanyAddress.route";
 import { swUpdateCompany } from "./routes/companies/UpdateCompany.route";
+import { swUnlikeCard } from "./routes/cards/UnlikeCard.route";
+import { swLikeCard } from "./routes/cards/LikeCard.route";
+import { swSaveSearch } from "./routes/users/SaveSearch.route";
+import { swDeleteSearch } from "./routes/users/DeleteSearch.route";
+import { swUpdateUserAvatar } from "./routes/users/UpdateUserAvatar.route";
+import { swUpdateCompanyAvatar } from "./routes/companies/UpdateCompanyAvatar.route";
+import { swAddCardImages } from "./routes/companies/UploadCardImages.route";
 
 const swaggerOptions = {
     openapi: '3.0.0',
@@ -34,7 +41,14 @@ const swaggerOptions = {
         ...swUpdateCompany,
         ...swUpdateCompanyCardKeys,
         ...swUpdateCardRoute,
-        ...swUpdateCompanyAddress
+        ...swUpdateCompanyAddress,
+        ...swLikeCard,
+        ...swUnlikeCard,
+        ...swSaveSearch,
+        ...swDeleteSearch,
+        ...swUpdateUserAvatar,
+        ...swUpdateCompanyAvatar,
+        ...swAddCardImages
     }
 }
 

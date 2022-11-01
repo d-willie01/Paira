@@ -30,6 +30,7 @@ export default async function (request: UnlikeCardRequest, response: Response): 
         return response.status(200).json(updatedCardResponse)
 
     } catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }

@@ -1,34 +1,32 @@
 import { Request, Response } from "express";
-import * as CompanyService from "../../services/Company.service";
-import * as UserService from "../../services/User.service";
+import * as UserService from '../../services/User.service';
+import * as CompanyService from '../../services/Company.service';
+import jwt from 'jsonwebtoken'
 import Joi from "joi";
-import jwt from 'jsonwebtoken';
 import j2s from 'joi-to-swagger';
-import { NotFoundError } from "../../utils/errors.util";
-import { validateCardKeys } from "../../utils/cardKeys.util";
+import { transformCompany } from "../../transformers/company.transformer";
 
-export interface UpdateCompanyCardKeysRequest extends Request {
-    body: string[];
+export interface UploadCompanyAvatarRequest extends Request {
+    auth?: jwt.JwtPayload
+    body: UploadCompanyAvatarRequestBody
     params: {
         companyId: string;
     }
-    auth?: jwt.JwtPayload,
+}
+export interface UploadCompanyAvatarRequestBody {
+    image: string;
 }
 
-const schema = Joi.array().items(Joi.string()).max(10).required();
+const schema = Joi.object().keys({
+    image: Joi.string().required(),
+});
 
-export default async function (request: UpdateCompanyCardKeysRequest, response: Response): Promise<Response> {
+export default async (request: UploadCompanyAvatarRequest, response: Response): Promise<Response> => {
     try {
-        const schemaValidation = schema.validate(request.body);
-
-        if (schemaValidation.error) {
-            return response.status(400).json({ error: schemaValidation.error });
-        }
-
-        const cardKeysValidation = validateCardKeys(request.body);
-        if (cardKeysValidation.error) {
-            return response.status(400).json({ error: cardKeysValidation.error });
-        }
+        const validation = schema.validate(request.body);
+        if (validation.error) {
+            return response.status(400).json({ error: validation.error });
+        };
 
         const requester = await UserService.getUserByAuthProviderId(request.auth!.sub!);
         if (!requester) {
@@ -49,9 +47,14 @@ export default async function (request: UpdateCompanyCardKeysRequest, response: 
         if (!company) {
             return response.status(404).json({ error: "company not found" });
         }
-        const updatedCompany = await CompanyService.updateCompanyCardKeys(request.params.companyId, request.body);
 
-        return response.status(200).json(updatedCompany);
+        // TODO: upload image
+
+        const updatedCompany = await CompanyService.updateCompanyAvatar(company._id, request.body.image);
+
+        const companyResponse = transformCompany(updatedCompany)
+
+        return response.status(200).json(companyResponse);
     }
     catch (err) {
         console.error(err);
@@ -59,11 +62,10 @@ export default async function (request: UpdateCompanyCardKeysRequest, response: 
     }
 }
 
-
-export const swUpdateCompanyCardKeys = {
-    "/companies/{companyId}/cardKeys": {
+export const swUpdateCompanyAvatar = {
+    "/companies/{companyId}/avatar": {
         "patch": {
-            "summary": "update your company card keys",
+            "summary": "update company profile image",
             "tags": ["/companies"],
             "requestBody": {
                 "content": {
@@ -78,14 +80,11 @@ export const swUpdateCompanyCardKeys = {
                 "200": {
                     "description": "success"
                 },
-                "400": {
-                    "description": "bad request or invalid credentials"
-                },
                 "403": {
                     "description": "unauthorized"
                 },
                 "404": {
-                    "description": "user or company not found"
+                    "description": "user not found"
                 },
                 "500": {
                     "description": "internal server error"

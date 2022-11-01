@@ -1,10 +1,10 @@
-import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref, index } from '@typegoose/typegoose';
+import { modelOptions, prop, getModelForClass, plugin, defaultClasses, Ref, Severity, mongoose } from '@typegoose/typegoose';
 import autopopulate from 'mongoose-autopopulate';
 import { Company } from './Company.model';
 import { User } from './User.model';
 
 export interface Card extends defaultClasses.Base { }
-@modelOptions({ schemaOptions: { timestamps: true, strict: "throw", collection: "cards" } })
+@modelOptions({ schemaOptions: { timestamps: true, strict: "throw", collection: "cards" }, options: { allowMixed: Severity.ALLOW } })
 @plugin(autopopulate)
 export class Card {
   @prop({ required: true })
@@ -18,6 +18,9 @@ export class Card {
 
   @prop({ required: true })
   public isActive!: boolean;
+
+  @prop({ required: false, allowMixed: Severity.ALLOW, type: () => mongoose.Schema.Types.Mixed })
+  public images?: string[];
 
   @prop({ required: false, autopopulate: false, maxdepth: 1, ref: 'User' })
   public likes?: Ref<User>[];

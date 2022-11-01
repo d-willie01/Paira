@@ -1,8 +1,8 @@
 import { ObjectId } from 'mongodb';
 import { Card, CardModel } from '../models/Card.model';
 import { CompanyModel, Industry } from '../models/Company.model';
-import { CreateCardRequestBody } from '../routes/cards/CreateCard.route';
-import { UpdateCardRequestBody } from '../routes/cards/UpdateCard.route';
+import { CreateCardRequestBody } from '../routes/companies/CreateCard.route';
+import { UpdateCardRequestBody } from '../routes/companies/UpdateCard.route';
 import { Location } from '../utils/location.util';
 
 export const createCard = async (request: CreateCardRequestBody): Promise<Card> => {
@@ -116,6 +116,15 @@ export const unlikeCard = async (cardId: string | ObjectId, userId: string | Obj
 export const updateCard = async (_id: string | ObjectId, updates: UpdateCardRequestBody): Promise<Card> => {
     const updatedCard = await CardModel.findOneAndUpdate({ _id },
         { $set: updates },
+        { new: true });
+    return updatedCard;
+};
+
+export const addCardImages = async (_id: string | ObjectId, images: string[]): Promise<Card> => {
+    const originalCard: Card = await CardModel.findOne({ _id });
+    const cardImages = originalCard.images?.concat(images);
+    const updatedCard = await CardModel.findOneAndUpdate({ _id },
+        { images: cardImages },
         { new: true });
     return updatedCard;
 };

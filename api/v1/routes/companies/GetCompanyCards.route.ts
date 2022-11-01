@@ -37,6 +37,7 @@ export default async function (request: GetCompanyCardsRequest, response: Respon
         return response.status(200).json(cardsResponse)
 
     } catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }

@@ -64,17 +64,17 @@ export default async function (request: CreateCardRequest, response: Response): 
         const newCardResponse = transformCard(newCard!)
 
         return response.status(201).json(newCardResponse)
-
     } catch (err) {
+        console.error(err);
         return response.status(500).json({ error: err });
     }
 }
 
 export const swCreateCardRouter = {
-    "/cards": {
+    "/companies/{companyId}/cards": {
         "post": {
             "summary": "create a card",
-            "tags": ["/cards"],
+            "tags": ["/companies"],
             "requestBody": {
                 "content": {
                     "application/json": {
