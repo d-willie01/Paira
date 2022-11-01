@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+<<<<<<< HEAD
 import {Text, View, Button, Image, TouchableOpacity, TextInput} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -28,6 +29,102 @@ const UserRegistrationScreen = () => {
             source= {require('../assets/Icons/PairaLogo.png')}/>
         <View style={{alignItems: 'center', marginTop: 150}}>
             <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
+=======
+import axios from "axios";
+import {Text, View, Button, Image, TouchableOpacity, TextInput } from 'react-native'
+import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LinearGradient } from "expo-linear-gradient";
+import styles from "../Styles/styles";
+import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
+//import { StateContext } from "./StateManagement/StateProvider"; 
+
+
+
+const UserRegistrationScreen = () => {
+    const UNavigation = useNavigation();
+
+    
+    
+    
+    
+    const NextPage = () =>{
+
+        UNavigation.navigate("Registration");
+        
+
+
+    }
+    
+    const RegisterUser = async() =>{
+        
+        
+        
+        
+        try{
+            
+            const response = await axios.post('http://localhost:8080/auth/signup', {
+                    firstName,
+                    lastName,
+                    email,
+                    password,
+                    passwordConfirmation
+
+            })
+            if(response.status == 201 ) {
+                let userToken = response.data.token;
+                await AsyncStorage.setItem("userToken", userToken);
+                UNavigation.replace("Registration");
+            }
+                
+    
+                 } catch (e) {
+            
+             console.log(e)
+             
+       
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+   const [isSecureEntry, setIsSecureEntry] = useState(true);
+   const [firstName, onChangeFirstName] = useState('');
+   const [lastName, onChangeLastName] = useState('');
+   const [email, onChangeEmail] = useState('');
+   const [password, onChangePassword] = useState("");
+   const [passwordConfirmation, onChangeconfirmationPassword] = useState('');
+   
+    
+   
+   
+    return(
+    
+       
+
+       
+       <View style ={{
+            flex:1,
+            justifyContent:"center",
+            alignItems:"center"
+       }}>
+        
+        
+        <View>
+
+
+
+        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
             <LinearGradient
                     style={{
                         height: 45,
@@ -58,14 +155,48 @@ const UserRegistrationScreen = () => {
                                             borderRadius: 75,
                                             fontWeight: "900",
                                             color: '#ffffff'}}
+<<<<<<< HEAD
                                             placeholder = "Email">
+=======
+                                            placeholder = "First Name"
+                                            onChangeText={(value) => {
+                                                onChangeFirstName(value);
+                                            }}>
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
                             </TextInput>
                             </View>
                         </LinearGradient>
                 </LinearGradient>
                 </TouchableOpacity>
+<<<<<<< HEAD
                 <TouchableOpacity >
                 <LinearGradient
+=======
+
+
+
+
+
+
+
+
+        </View>
+        
+        
+        
+        
+        
+        
+        
+        
+        <View>
+
+
+
+
+        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
+            <LinearGradient
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
                     style={{
                         height: 45,
                         width: 290,
@@ -82,6 +213,7 @@ const UserRegistrationScreen = () => {
                             height: 40,
                             width: 285,
                             borderRadius: 75,
+<<<<<<< HEAD
                             
                             }}
                         colors={['#F8C471','#F5B041' ]}>
@@ -91,10 +223,22 @@ const UserRegistrationScreen = () => {
                                             width: 260,
                                             
                                             marginLeft: 20,
+=======
+                            alignItems:'center',
+                            }}
+                        colors={['#F8C471','#F5B041' ]}>
+                            <View >
+                            <TextInput style={{
+                                            fontSize: 20,
+                                            height: 55,
+                                            width: 300,
+                                            marginLeft: 50,
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
                                             marginTop: -5,
                                             borderRadius: 75,
                                             fontWeight: "900",
                                             color: '#ffffff'}}
+<<<<<<< HEAD
                                             placeholder = "Enter Password"
                                             secureTextEntry={isSecureEntry}
                                             onChangeText={(value) => {
@@ -117,6 +261,38 @@ const UserRegistrationScreen = () => {
             </View>
             <TouchableOpacity >
                 <LinearGradient
+=======
+                                            placeholder = "Last Name"
+                                            onChangeText={(value) => {
+                                                onChangeLastName(value);
+                                            }}>
+                            </TextInput>
+                            </View>
+                        </LinearGradient>
+                </LinearGradient>
+                </TouchableOpacity>
+
+
+
+
+
+
+
+
+
+
+        </View>
+
+
+        <View>
+
+
+
+
+
+        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
+            <LinearGradient
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
                     style={{
                         height: 45,
                         width: 290,
@@ -133,6 +309,7 @@ const UserRegistrationScreen = () => {
                             height: 40,
                             width: 285,
                             borderRadius: 75,
+<<<<<<< HEAD
                             
                             }}
                         colors={['#F8C471','#F5B041' ]}>
@@ -142,10 +319,22 @@ const UserRegistrationScreen = () => {
                                             width: 260,
                                             
                                             marginLeft: 20,
+=======
+                            alignItems:'center',
+                            }}
+                        colors={['#F8C471','#F5B041' ]}>
+                            <View >
+                            <TextInput style={{
+                                            fontSize: 20,
+                                            height: 55,
+                                            width: 300,
+                                            marginLeft: 50,
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc
                                             marginTop: -5,
                                             borderRadius: 75,
                                             fontWeight: "900",
                                             color: '#ffffff'}}
+<<<<<<< HEAD
                                             placeholder = "Confirm Password"
                                             secureTextEntry={isSecureEntry}
                                             onChangeText={(value) => {
@@ -209,3 +398,151 @@ const UserRegistrationScreen = () => {
 
 export default UserRegistrationScreen;
 
+=======
+                                            placeholder = "Email"
+                                            onChangeText={(value) => {
+                                                onChangeEmail(value);
+                                            }}>
+                            </TextInput>
+                            </View>
+                        </LinearGradient>
+                </LinearGradient>
+                </TouchableOpacity>
+
+
+
+
+
+
+
+
+        </View>
+
+
+       <View>
+
+
+       <TouchableOpacity>
+        <LinearGradient
+            style={{
+                height: 45,
+                width: 290,
+                borderRadius: 75,
+                alignItems:'center',
+                marginBottom: 20,
+                marginLeft: 10,
+                bottom: 5
+            }}
+            colors={['#F8C471','#FF8900' ]}>
+                
+            <LinearGradient
+                style={{
+                    height: 40,
+                    width: 285,
+                    borderRadius: 75,
+                    
+                    }}
+                colors={['#F8C471','#F5B041' ]}>
+                    <TextInput style={{
+                                    fontSize: 20,
+                                    height: 55,
+                                    width: 260,
+                                    
+                                    marginLeft: 20,
+                                    marginTop: -5,
+                                    borderRadius: 75,
+                                    fontWeight: "900",
+                                    color: '#ffffff'}}
+                                    placeholder = "Enter Password"
+                                    secureTextEntry={isSecureEntry}
+                                    onChangeText={(value) => {
+                                        onChangePassword(value);
+                                    }}
+                                    >
+                    </TextInput>
+                </LinearGradient>
+        </LinearGradient>
+    </TouchableOpacity>
+       
+
+
+         </View>
+
+
+
+        <View>
+       
+       <TouchableOpacity>
+        <LinearGradient
+            style={{
+                height: 45,
+                width: 290,
+                borderRadius: 75,
+                alignItems:'center',
+                marginBottom: 20,
+                marginLeft: 10,
+                bottom: 5
+            }}
+            colors={['#F8C471','#FF8900' ]}>
+                
+            <LinearGradient
+                style={{
+                    height: 40,
+                    width: 285,
+                    borderRadius: 75,
+                    
+                    }}
+                colors={['#F8C471','#F5B041' ]}>
+                    <TextInput style={{
+                                    fontSize: 20,
+                                    height: 55,
+                                    width: 260,
+                                    
+                                    marginLeft: 20,
+                                    marginTop: -5,
+                                    borderRadius: 75,
+                                    fontWeight: "900",
+                                    color: '#ffffff'}}
+                                    placeholder = "Confirm Password"
+                                    secureTextEntry={isSecureEntry}
+                                    onChangeText={(value) => {
+                                        onChangeconfirmationPassword(value);
+                                    }}
+                                    >
+                    </TextInput>
+                </LinearGradient>
+        </LinearGradient>
+    </TouchableOpacity>
+    
+    
+    </View>
+
+
+    <MatchNowButton onPress={RegisterUser}/>
+
+
+
+
+    <Button title= "next page" onPress={NextPage}/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </View>
+       
+    );
+};
+
+export default UserRegistrationScreen;
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc

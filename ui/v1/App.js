@@ -9,9 +9,17 @@ import UHomeScreen2 from "./Screens/UHomeScreen2";
 import BusinessHomeScreenTest from "./Screens/BusinessHomeScreenTest";
 import { SafeAreaView } from "react-native";
 import RestaurantData from "./assets/Data/RestaurantData";
+<<<<<<< HEAD:ui/v1/App.js
 import BUserHomeScreen from "./BScreens/BHomeScreen/BUserHomeScreen";
 import UUserHomeScreen from "./Screens/UScreens/UCreateScreens/UUserHomeScreen";
 import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
+=======
+import BusinessAddKeyWordsScreen from "./Screens/BusinessAddKeywordScreen";
+import StartScreen from "./RegistrationScreens/StartScreen";
+import UserRegistrationScreen from "./RegistrationScreens/UserRegistrationScreen";
+import LoginScreen from "./RegistrationScreens/LoginScreen";
+
+>>>>>>> 8cb616e06c662f738c1fc410c4d4f90c4e3de2fc:App.js
 
 
 

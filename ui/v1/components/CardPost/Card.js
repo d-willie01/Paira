@@ -21,7 +21,7 @@ const Card = (props) =>{
             <Text style= {styles.title}>{card.title}</Text>
 
              {/* Year created */ }
-             <Text style={styles.founded}>{card.founded}</Text> 
+             <Text style={styles.founded}>{card.founded}</Text>
 
 
            

@@ -1,15 +1,86 @@
-import React from "react";
-import {Text, View, TouchableOpacity, TextInput} from 'react-native';
+import React, {useContext, useState} from"react";
+import {Text, View, TouchableOpacity, TextInput, Button} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
+import {StateContext} from "../StateManagement/StateProvider";
+
+
 
 
 const LoginScreen = () => {
+    
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("")
+    const {BusinessState, UserState} = useContext(StateContext);
+    
+    
+    const LoginUser = async() =>{
+        
+        
+        
+        
+        try{
+            
+            const response = await axios.post('http://localhost:8080/auth/signin', {
+                    
+                    email,
+                    password,
+                    
+
+            })
+            if(response.status == 200 ) {
+                let userToken = response.data.token;
+                await AsyncStorage.setItem("userToken", userToken);
+
+                const userResponse = await axios.get("http://localhost:8080/users/self",{
+                    headers: {
+                      "Authorization" : `Bearer ${userToken}`
+                    }
+                  })
+                if (userResponse.status == 200){
+
+                    const jsonUser = JSON.stringify(userResponse.data);
+                    await AsyncStorage.setItem("user", jsonUser);
+                    if(userResponse.data.company){
+                        
+                        
+                        BusinessState();
+
+                    }
+                    else{
+
+                        UserState();
+
+                    }
+                    console.log(userResponse.data);
+
+                }
+
+            }
+                
+    
+                 } catch (e) {
+                        const loginError = JSON.stringify(e.response.data);
+                        console.log(e);
+                        alert(loginError);
+             
+       
+        }
+        
+    }
+    
+    
+    
+    
+    
     return(
         <View style = {{
             flex:1,
              }}>
-            <LinearGradient // background gradient view
+            <LinearGradient //background gradient view
                 style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
                 
                 colors={['#FDFEFE','#626567']}>
@@ -51,7 +122,10 @@ const LoginScreen = () => {
                                             opacity: 0.7,
                                             color: '#ffffff'}}
                                             placeholderTextColor="#E5E5E5"
-                                            placeholder = "Email/Phone Number">
+                                            placeholder = "Email/Phone Number"
+                                            onChangeText={(value) => {
+                                                setEmail(value);
+                                            }}>
                             </TextInput>
                             </View>
                         </LinearGradient>
@@ -66,7 +140,7 @@ const LoginScreen = () => {
                         alignItems:'center',
                         marginBottom: 20,
                         marginLeft: 10,
-                        bottom: 5
+                        bottom: 5 
                     }}
                     colors={['#F8C471','#FF8900' ]}>
                         
@@ -89,14 +163,19 @@ const LoginScreen = () => {
                                                 opacity: .7,
                                                 color: '#ffffff'}}
                                                 placeholderTextColor="#E5E5E5"
-                                                placeholder = "Password">
+                                                placeholder = "Password"
+                                                onChangeText={(value) => {
+                                                    setPassword(value);
+                                                }}>
                                 </TextInput>
                         </LinearGradient>
                 </LinearGradient>
             </TouchableOpacity>
         </View>
-        
+        <Button title="Login" onPress={LoginUser}/>
         </LinearGradient>
+
+
         </View>
     );
 };

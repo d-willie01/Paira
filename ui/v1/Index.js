@@ -28,7 +28,6 @@ if (UState == false) return (
     </NavigationContainer>
     )
 
-
 }
 
 export default AppNavigator;

@@ -5,8 +5,8 @@ import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import BackgroundColor from "../../components/Theme/BackgroundColor"
 import BusinessCardPic from "../../components/BusinessCardPic/BusinessCardPic";
-import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
-
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BCreateScreen = () => {
     
@@ -14,30 +14,36 @@ const BCreateScreen = () => {
 
 
 
-    const [slogan, setSlogan] = useState("");
-    const [text, setText] = useState("");
+    const [description, setDescription] = useState("");
+    const [title, setTitle] = useState("");
 
-    const SubmitCard = async() =>{
+    const createCard = async() =>{
+        
+        const userToken = await AsyncStorage.getItem("userToken");
+        const config = {
+          headers: {
+            "Authorization" : `Bearer ${userToken}`
+          }
+        }
+        
         
         try{
             
-            await fetch('https://webhook.site/6c797a03-a64e-428d-87c4-e2e0a08d7d9f', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type' : 'application/json'
-                },
-                body: JSON.stringify({
-                    name: text,
-                    slogan: 'the only place where   get crabs and smile',
-                    website: "www.crabs.com"
-                })
-                })
+            const response = await axios.post('http://localhost:8080/cards', {
+                    description,
+                    title
 
-
-        } catch (e) {
+            },config)
+            if(response.status == 201 ) {
+                alert("Upload Success!")
+                
+            }
+                
+    
+                 } catch (e) {
             
              console.log(e)
+             
        
         }
         
@@ -45,174 +51,171 @@ const BCreateScreen = () => {
 
      return(
         
-<BackgroundColor>
+        <BackgroundColor>
         
-    <SafeAreaView 
-    style={{
-     height: heightPercentageToDP('100%'),
-     width: widthPercentageToDP('100%') }}>
-        
+        <View style ={{flex:1}}>
 
-        <View  // Top Words View
-        
-            style ={{
-                backgroundColor:'transparent',
-                height:'10%',
-                width:'80%',
+            <View style ={{
+                height: 50, 
                 justifyContent:"center",
-                alignItems:"center",
-                alignSelf:'center',
-                }}
-                >
-                <Text // Top Words Text
-
-                numberOfLines={3} 
-                style ={{
-                    fontSize:'20%',
-                    fontStyle:'italic',
-                    fontWeight:'800',
-                    textAlign:'center',
-                    color:'white',
-                    
-                    }}>Edit your card, this is what local users will be seeing!</Text>
                 
-        </View> 
+                alignItems:"center",
+                margin:5}}
+                >
+                <Text style ={styles.text}>Edit Your Card</Text>
+                
+            </View>
 
-            <View //View for Add BPics Button
-                style={{
-                backgroundColor:'transparent',
-                height:'40%', 
-                width: '100%', 
+            <View style={{
+                height:200, 
+                width: 350, 
+                
                 alignSelf:"center",
+                margin: 10,
                 alignItems:"center",
                 justifyContent:"center",
-                }}>
+                borderRadius: 35}}>
 
                 <BusinessCardPic/>
+                    
+
+
+
+
             </View>
 
 
-    <View // View for Business Information
-            style ={{
-                height: '40%',
-                width: '75%',
+            <View style ={{
+                height: 335,
+                
+                width: 350,
                 alignSelf:"center",
-                backgroundColor:'transparent'
                 
-                }}>
+            }}>
 
 
-        <View style={{
-                
-                height:'25%',
-                backgroundColor:'transparent'
+            <View style={{
+                margin: 5,
+                height:75,
                
             }}>
-                <Text style={{
-                    fontSize:'15%',
-                    fontWeight:'800',
-                    color:'white',
-                    alignSelf:'flex-start',
-                    fontStyle:'italic',
-                    
-
-                 }}>Title:</Text>
-                
+                <Text>Title:</Text>
                 <TextInput style ={{
-                    borderColor:'white',
-                    height:'30%',
-                    width: '100%',
-                    borderWidth:'3%',
-                    borderRadius: '10%%',
+                    height:25,
+                    borderWidth:1,
+                    width: 200,
+                    borderRadius: 10,
+                    margin: 5
+                }}
+                onChangeText={(value) => {
+                    setTitle(value);
                 }}/>
                 
-        </View>
-        
-        <View style={{
+
+            </View>
+
+
+
+
+            <View style={{
+                margin: 5,
+                height:75,
                 
-                height:'25%',
-                backgroundColor:'transparent'
-               
+
             }}>
-                <Text style={{
-                    fontSize:'15%',
-                    fontWeight:'800',
-                    color:'white',
-                    alignSelf:'flex-start',
-                    fontStyle:'italic',
-                    
-
-                 }}>Founded:</Text>
-                
+                <Text>Founded:</Text>
                 <TextInput style ={{
-                    borderColor:'white',
-                    height:'30%',
-                    width: '100%',
-                    borderWidth:'3%',
-                    borderRadius: '10%',
+                    height:25,
+                    borderWidth:1,
+                    width: 200,
+                    borderRadius: 10,
+                    margin: 5
                 }}/>
                 
-        </View>
+
+            </View>
 
 
-        <View style={{
+
+
+
+
+            <View style={{
+                margin: 5,
+                height:75,
                 
-                height:'25%',
-                backgroundColor:'transparent'
-               
+
             }}>
-                <Text style={{
-                    fontSize:'15%',
-                    fontWeight:'800',
-                    color:'white',
-                    alignSelf:'flex-start',
-                    fontStyle:'italic',
-                    
-                    
-                    
-
-                 }}>Slogan:</Text>
-                
+                <Text>Description:</Text>
                 <TextInput style ={{
-                    borderColor:'white',
-                    height:'30%',
-                    width: '100%',
-                    borderWidth:'3%',
-                    borderRadius: '10%',
+                    height:25,
+                    borderWidth:1,
+                    width: 200,
+                    borderRadius: 10,
+                    margin: 5
+                }}
+                onChangeText={(value) => {
+                    setDescription(value);
                 }}/>
-                
-        </View>
 
-        <View style={{
+
                 
-                height:'25%',
-                backgroundColor:'transparent'
-               
+                
+
+            </View>
+
+
+
+
+
+            <View style={{
+                margin: 5,
+                height:75,
+                
+
             }}>
-                <Text style={{
-                    fontSize:'15%',
-                    fontWeight:'800',
-                    color:'white',
-                    alignSelf:'flex-start',
-                    fontStyle:'italic',
-                    
-
-                 }}>Address:</Text>
-                
+                <Text>Address:</Text>
                 <TextInput style ={{
-                    borderColor:'white',
-                    height:'30%',
-                    width: '100%',
-                    borderWidth:'3%',
-                    borderRadius: '10%',
+                    height:25,
+                    
+                    width: 200,
+                    borderRadius: 10,
+                    borderWidth:1,
+                    margin: 5
                 }}/>
                 
+
+            </View>
+
+
+
+
+
+
+            </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <MatchNowButton onPress={createCard}/>
+
+
+
+
         </View>
 
-     </View>
-     
-    </SafeAreaView>
-</BackgroundColor>
+        </BackgroundColor>
     );
 };
 
