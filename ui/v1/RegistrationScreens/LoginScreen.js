@@ -46,6 +46,7 @@ const LoginScreen = () => {
                     await AsyncStorage.setItem("user", jsonUser);
                     if(userResponse.data.company){
                         
+                        console.log(userResponse.data.company)
                         
                         BusinessState();
 

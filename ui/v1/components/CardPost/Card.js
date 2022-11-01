@@ -9,6 +9,7 @@ const Card = (props) =>{
     const card = props.card;
 
     return(
+        
         <View style ={styles.cardcontainer}>
             {/*Image up to three */}
             <Image
