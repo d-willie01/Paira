@@ -6,6 +6,7 @@ import axios from "axios";
 import BackgroundColor from "../../components/Theme/BackgroundColor";
 import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import styles from "./RegistrationScreenStyles";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -25,6 +26,13 @@ const SubmitBusinessCard = async() =>{
         
       try{
       
+      const userToken = await AsyncStorage.getItem("userToken");
+      const config = {
+        headers: {
+          "Authorization" : `Bearer ${userToken}`
+        }
+      }
+      
       const response = await axios.post('http://localhost:8080/companies', {
                   name,
                   industry,
@@ -34,25 +42,17 @@ const SubmitBusinessCard = async() =>{
                   state,
                   zipCode,
 
-           })
-           .then((result) =>{
-                  if(result.status == 201 ) {
-                      BusinessState();
-                  }
-              console.log(result);
-
-           }
-
-           )
-      
-      
+           },config)
+      if(response.status == 201 ) {
           
-          
-      
-           } catch (e) {
+        
+        BusinessState();
+        }
+      console.log(response);
+      } catch (e) {
       
        console.log(e)
-       alert(result.response.data);
+      
  
   }
   
@@ -158,6 +158,21 @@ const SubmitBusinessCard = async() =>{
                 <TextInput style ={styles.textInput2}
                 onChangeText={(value) => {
                   setStreet1(value);
+              }}/>
+                
+
+            
+        </View>
+
+        <View style={{
+                margin: 5,
+                height:75,
+               
+            }}>
+                <Text style={styles.text}>Address Line 2:</Text>
+                <TextInput style ={styles.textInput2}
+                onChangeText={(value) => {
+                  setStreet2(value);
               }}/>
                 
 

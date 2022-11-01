@@ -6,11 +6,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
+//import { StateContext } from "./StateManagement/StateProvider"; 
 
 
 
 const UserRegistrationScreen = () => {
     const UNavigation = useNavigation();
+
     
     
     
@@ -18,7 +20,7 @@ const UserRegistrationScreen = () => {
     const NextPage = () =>{
 
         UNavigation.navigate("Registration");
-
+        
 
 
     }
@@ -37,26 +39,18 @@ const UserRegistrationScreen = () => {
                     password,
                     passwordConfirmation
 
-                 })
-                 .then((result) =>{
-                        if(result.status == 201 ) {
-                            AsyncStorage.setItem("AccessToken", result.data.token);
-                            UNavigation.replace("Registration");
-                        }
-                    console.log(result);
-
-                 }
-
-                 )
-            
-            
+            })
+            if(response.status == 201 ) {
+                let userToken = response.data.token;
+                await AsyncStorage.setItem("userToken", userToken);
+                UNavigation.replace("Registration");
+            }
                 
-                
-            
+    
                  } catch (e) {
             
              console.log(e)
-             alert(result.response.data);
+             
        
         }
         

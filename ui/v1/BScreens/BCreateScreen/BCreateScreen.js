@@ -5,6 +5,8 @@ import CategoryButton from "../../components/CategoryButton/CategoryButton";
 import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import BackgroundColor from "../../components/Theme/BackgroundColor"
 import BusinessCardPic from "../../components/BusinessCardPic/BusinessCardPic";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BCreateScreen = () => {
     
@@ -12,30 +14,36 @@ const BCreateScreen = () => {
 
 
 
-    const [slogan, setSlogan] = useState("");
-    const [text, setText] = useState("");
+    const [description, setDescription] = useState("");
+    const [title, setTitle] = useState("");
 
-    const SubmitCard = async() =>{
+    const createCard = async() =>{
+        
+        const userToken = await AsyncStorage.getItem("userToken");
+        const config = {
+          headers: {
+            "Authorization" : `Bearer ${userToken}`
+          }
+        }
+        
         
         try{
             
-            await fetch('https://webhook.site/6c797a03-a64e-428d-87c4-e2e0a08d7d9f', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type' : 'application/json'
-                },
-                body: JSON.stringify({
-                    name: text,
-                    slogan: 'the only place where   get crabs and smile',
-                    website: "www.crabs.com"
-                })
-                })
+            const response = await axios.post('http://localhost:8080/cards', {
+                    description,
+                    title
 
-
-        } catch (e) {
+            },config)
+            if(response.status == 201 ) {
+                alert("Upload Success!")
+                
+            }
+                
+    
+                 } catch (e) {
             
              console.log(e)
+             
        
         }
         
@@ -98,6 +106,9 @@ const BCreateScreen = () => {
                     width: 200,
                     borderRadius: 10,
                     margin: 5
+                }}
+                onChangeText={(value) => {
+                    setTitle(value);
                 }}/>
                 
 
@@ -135,13 +146,16 @@ const BCreateScreen = () => {
                 
 
             }}>
-                <Text>Bio:</Text>
+                <Text>Description:</Text>
                 <TextInput style ={{
                     height:25,
                     borderWidth:1,
                     width: 200,
                     borderRadius: 10,
                     margin: 5
+                }}
+                onChangeText={(value) => {
+                    setDescription(value);
                 }}/>
 
 
@@ -194,7 +208,7 @@ const BCreateScreen = () => {
 
 
 
-
+                <MatchNowButton onPress={createCard}/>
 
 
 

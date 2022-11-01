@@ -5,7 +5,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import styles from "./SocialButtonStyles";
 
 
-const SocialButton2 = ({text}) => {
+const SocialButton2 = ({text, onPress}) => {
     return(
         <TouchableOpacity 
       //Profile Info
@@ -15,7 +15,7 @@ const SocialButton2 = ({text}) => {
             }}
 
         //button function
-            onPress={()=> console.log('yeee')}>
+            onPress={onPress}>
                 <View
         //Profile Info Style
                      style={styles.PairaScoreParent}>
