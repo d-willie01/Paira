@@ -18,6 +18,10 @@ export default async function (request: GetCardsRequest, response: Response): Pr
         if (!request.query.lat || !request.query.long) {
             return response.status(400).json({ error: "you must include lat and long coordinates in your search" })
         }
+        if (!Industry[request.query.industry as string]) {
+            return response.status(400).json({ error: "you must must enter a valid industry" })
+        }
+
         const coordinates = [Number(request.query.long as string), Number(request.query.lat as string)];
         const searchResults = await CardService.getCardsByQuery({
             cardKeys: request.query.cardKeys as string[],
