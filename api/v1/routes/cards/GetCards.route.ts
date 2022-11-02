@@ -23,7 +23,7 @@ export default async function (request: GetCardsRequest, response: Response): Pr
             cardKeys: request.query.cardKeys as string[],
             industry: Industry[request.query.industry as string],
             coordinates,
-            radius: Number(request.query.radius as string)
+            radius: request.query.radius ? Number(request.query.radius as string) : 50
         })
 
         if (!searchResults) {
