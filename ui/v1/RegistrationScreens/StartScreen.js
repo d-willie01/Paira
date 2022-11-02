@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {Text, View, Button, TouchableOpacity, Image} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import PressButton from "../components/PressTest/PressButton";
-
+import {Picker} from '@react-native-picker/picker';
 
 
 const StartScreen = () => {
    
+    const [industry, setIndustry] = useState();
+    
+    
     const Startnavigation = useNavigation();
 
     const UserRegister1 = () => {
@@ -30,13 +33,26 @@ const StartScreen = () => {
         <View style ={{flex: 1}}>
            
         <LinearGradient // background gradient view
-        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+        style={{flex: 1, }}
         
         colors={['#FDFEFE','#626567']}>
 
-        <View>
-            <PressButton/>
-        </View>
+        
+        <Picker
+                style ={{
+                  
+                    width:200
+                  
+                  
+                }}
+                selectedValue={industry}
+                onValueChange={(itemValue, itemIndex) =>
+                setIndustry(itemValue)}>
+                  <Picker.Item label ="Food&Dining" value = "Food & Dining"/>
+                  <Picker.Item label ="Entertainment" value = "Entertainment"/>
+                  
+                </Picker>
+        
 
         <Image 
             style = {{ width: 150, height: 320}}

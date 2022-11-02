@@ -36,13 +36,13 @@ const BUserHomeScreen = () => {
         try {
             const userToken = await AsyncStorage.getItem('userToken');
             console.log(userToken); 
-          const userString = await AsyncStorage.getItem('user');
-          console.log(userString);
-          const jsonUser = JSON.parse(userString);
-          setUser(jsonUser);
-          const jsonCompany = JSON.parse(jsonUser.company)
-          console.log(jsonCompany);
-          setCompany(jsonCompany);
+            const userString = await AsyncStorage.getItem('user');
+            console.log(userString);
+            const jsonUser = JSON.parse(userString);
+            setUser(jsonUser);
+            const jsonCompany = JSON.parse(jsonUser.company)
+            console.log(jsonCompany);
+            setCompany(jsonCompany);
           
         } catch(e) {
           // error reading value

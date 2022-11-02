@@ -11,6 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
+
 const RegistrationScreen = () => {
 
 
@@ -93,6 +94,14 @@ const SubmitBusinessCard = async() =>{
             fontWeight: "900",
             color: '#ffffff'
           }}>To complete a Business account,</Text>
+          
+          
+          
+          
+        <View style ={{borderWidth:1}}>
+          
+
+        </View>
 
         </View>
 

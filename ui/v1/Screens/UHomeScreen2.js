@@ -31,58 +31,61 @@ const UHomeScreen2 = () => {
 
 
 
+    useEffect(  () =>{
+          
+          const getUserInfo = async() =>{
 
-   
-
-    useEffect( async() =>{
-        
-
-    
-        
-        try{
-        
-                const userToken = await AsyncStorage.getItem("userToken");
-                const config = {
-                  headers: {
-                    "Authorization" : `Bearer ${userToken}`
-                  }
+            try{
+              
+              const userToken = await AsyncStorage.getItem("userToken");
+              const config = {
+                headers: {
+                  "Authorization" : `Bearer ${userToken}`
                 }
-        
-              const response = await axios.get('http://localhost:8080/users/self',config)
-              if (response.status == 200){
-    
-                setUserInfo(JSON.stringify(response.data));
-                console.log(userInfo);
-    
               }
-              
-              }
-              
-              
-              catch (e) {
-              
-              console.log(e)
-        
-    
-        }
-    
-    
-      
-    },[])
-  
-   
-  
+
+            const response = await axios.get('http://localhost:8080/users/self',config)
+            if (response.status == 200){
+
+              setUserInfo(response.data);
+              console.log(userInfo);
+
+            }
+            
+            }
+            
+            
+            catch (e) {
+            
+            console.log(e)
 
 
-  useEffect(  () =>{
-    if (Platform.OS != "web"){
-      const { status }  = ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status != "granted"){
-        console.log("Permission denied!");
       }
-      
+
+
     }
-  }, [])
+            
+            getUserInfo();
+            if (Platform.OS != "web"){
+              const { status }  = ImagePicker.requestMediaLibraryPermissionsAsync();
+              if (status != "granted"){
+                console.log("Permission denied!");
+              }
+              
+            }
+          }, [])
+
+        useEffect( () =>{
+
+          
+          
+          console.log(userInfo);
+
+
+
+
+
+        },[userInfo])
   
   const PickProfilePic = async () =>{
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -139,7 +142,7 @@ const UHomeScreen2 = () => {
               marginTop:315,
               marginLeft: 125,
              }}>
-              <NameTagButton text = "darius"/>
+              <NameTagButton text={userInfo?.firstName ?? ""}/>
              </View>
              
              <View style={{
@@ -155,7 +158,7 @@ const UHomeScreen2 = () => {
               marginTop:380,
               marginLeft: 225
             }}>
-              <SocialButton2 text="23"/>
+              <SocialButton2/>
             </View>
 
 

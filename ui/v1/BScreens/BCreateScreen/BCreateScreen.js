@@ -29,7 +29,7 @@ const BCreateScreen = () => {
         
         try{
             
-            const response = await axios.post('http://localhost:8080/cards', {
+            const response = await axios.post(`http://localhost:8080/companies/${userToken}/cards`, {
                     description,
                     title
 
@@ -43,6 +43,7 @@ const BCreateScreen = () => {
                  } catch (e) {
             
              console.log(e)
+             alert(`error creating new card: ${e.response.data}`)
              
        
         }

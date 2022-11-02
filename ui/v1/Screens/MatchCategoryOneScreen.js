@@ -1,13 +1,97 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Text, FlatList, View} from 'react-native'
 import Card from "../components/CardPost/Card";
 import RestaurantData from "../assets/Data/RestaurantData";
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../components/CardPost/CardStyles";
 import { TouchableOpacity } from "react-native";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Permissions from 'expo-permissions';
+import * as Location from 'expo-location';
 
 
 const MatchCategoryOneScreen = () => {
+    
+
+    const [cardInfo, setCardInfo] = useState();
+    
+    
+    useEffect( () =>{
+
+    
+    
+    
+    const getLocation = async() =>{
+        const {status} = await Permissions.askAsync(Permissions.Location);
+
+        if (status != "granted"){
+            console.log("Permission Denied")
+        }
+        else{
+            const userLocation = await Location.getCurrentPositionAsync();
+            console.log(userLocation);
+                }       
+
+
+             }
+             
+             
+             getLocation()
+
+        },[]);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    useEffect(  () =>{
+          
+        const getCardInfo = async() =>{
+
+          try{
+            
+            const userToken = await AsyncStorage.getItem("userToken");
+            const config = {
+              headers: {
+                "Authorization" : `Bearer ${userToken}`
+              }
+            }
+
+          const response = await axios.get(`http://localhost:8080/cards?industry=food %26 dining`,config)
+          if (response.status == 200){
+
+            setCardInfo(response.data);
+            console.log(cardInfo);
+
+          }
+          
+          }
+          
+          
+          catch (e) {
+          
+          console.log(e)
+
+
+    }
+
+
+  }
+          
+          getCardInfo();
+          
+        }, [])
+    
+    
+    
+    
+    
     return(
 
 <LinearGradient // background gradient view
@@ -51,12 +135,7 @@ const MatchCategoryOneScreen = () => {
          Here are some local food matches based on YOUR interests
 
         </Text>
-        <FlatList
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}
-        data={RestaurantData}
-        renderItem={({item}) => <Card card={item}/>}
-        />
+        
 
 
 
@@ -67,3 +146,11 @@ const MatchCategoryOneScreen = () => {
 }; 
 
 export default MatchCategoryOneScreen;
+
+
+{/* <FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        data={RestaurantData}
+        renderItem={({item}) => <Card card={item}/>}
+        /> */}
