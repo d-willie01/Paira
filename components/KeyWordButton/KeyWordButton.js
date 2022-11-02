@@ -4,19 +4,24 @@ import { Text, TouchableOpacity, View} from 'react-native'
 import styles from "./KeyWordButtonStyles";
 
 
-const KeyWordButton = ({text, selected, onPress, onLongPress, color}) => {
+const KeyWordButton = ({text, selected, onPress, onLongPress}) => {
 
     return(
 
         <View style={{overflow: 'hidden'}}>
         <TouchableOpacity 
-        // onLongPress ={() => console.log(text)}
-        onLongPress = {onLongPress}
+        //onLongPress ={() => console.log(text)}
+        onLongPress ={onLongPress}
         onPress={onPress} 
-        style={styles.MatchCategoryParent}>
-            <View style ={{padding : '7.5%'}}>
+        style={{height:110,
+            width:123,
+            borderRadius:75,
+            margin: 10,
+            backgroundColor: `${selected ? "blue" : "red"}`,}}>
+            <View>
         <LinearGradient
-                 colors={[color,color]}
+        
+                 colors={['#777777','#878787' ]}
                  style={styles.MatchCategorygrad}>
                     <Text numberOfLines={1} style={{
                     fontSize:17,
@@ -24,21 +29,12 @@ const KeyWordButton = ({text, selected, onPress, onLongPress, color}) => {
                     color:'white',
                     textAlign:'center',
                     alignSelf:'center',
-                    fontStyle:'italic'
+                    fontStyle:'italic',
+                    
                     }}>{text}</Text>
                 
                </LinearGradient>
                </View>
-               {selected &&<View 
-               style={{
-                    position: 'absolute',
-                    width: "100%",
-                    height:"79%",
-                    borderRadius: '60%',
-                    backgroundColor:'rgba(0,0,0,0.4)',
-                    alignItems: 'center',
-                    top: '3%',
-                    left:'7%',}}/>}
         </TouchableOpacity>
     </View>
     )
@@ -62,4 +58,52 @@ const getSelected = () => {
     selectedItems.includes( )
 }
 */
+/*
+{selected &&<View 
+               style={{
+                    position: 'absolute',
+                    width: "100%",
+                    height:"79%",
+                    borderRadius: '60%',
+                    backgroundColor:'rgba(0,0,0,0.4)',
+                    alignItems: 'center',
+                    top: '3%',
+                    left:'7%',}}/>}
+                    */
 
+/*
+const KeyWordButton = ({text, selected, onPress, onLongPress, color}) => {
+
+    return(
+
+        <View style={{overflow: 'hidden'}}>
+        <TouchableOpacity 
+        // onLongPress ={() => console.log(text)}
+        onLongPress = {onLongPress}
+        onPress={onPress} 
+        style={styles.MatchCategoryParent}>
+            <View>
+        <LinearGradient
+        
+                 colors={[color,color]}
+                 style={styles.MatchCategorygrad}>
+                    <Text numberOfLines={1} style={{
+                    fontSize:17,
+                    fontWeight:'900',
+                    color:'white',
+                    textAlign:'center',
+                    alignSelf:'center',
+                    fontStyle:'italic',
+                    
+                    }}>{text}</Text>
+                
+               </LinearGradient>
+               </View>
+        </TouchableOpacity>
+    </View>
+    )
+
+}
+
+export default KeyWordButton;
+*/
