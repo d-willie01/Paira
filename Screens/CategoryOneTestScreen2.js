@@ -17,27 +17,6 @@ const CategoryOneScreenTest2 = () => {
   
     const[selectedItems, setSelectedItems ]= useState([]);
 
-     
-    //const getSelected = (keywords) => { selectedItems.includes(keywords.id)}
-   // console.log(selectedItems)
-    
-    
-    /*
-      const [isActive, setIsActive] = useState(false);
-  
-    const handleClick = (KeyWord) => {
-      console.log(setIsActive)
-      // 👇️ toggle
-      setIsActive(current => !current);
-      setIsActive([...isActive, KeyWord])
-  
-      setIsActive(false)
-  
-      // 👇️ or set to true
-      // setIsActive(true);
-    };
-    */
-  
     const[disableItems, setDisableItems ]= useState([]);
     const[offButton1, setOffButton1 ]= useState(false);
     const[offButton2, setOffButton2 ]= useState(false);
@@ -58,53 +37,132 @@ const CategoryOneScreenTest2 = () => {
 
     
   
-      const handleOnLongPress1 = (KeyWordButton) =>{
-          setOffButton1(true) 
-          setOffButton2(true)
-          setOffButton3(true)
-          setOffButton4(true)
-          setOffButton5(true)
-          setOffButton6(true)
-          setOffButton7(true)
-          setOffButton8(true)
-          setOffButton9(true)
-          setOffButton10(true)
-          setOffButton11(true)
-          setOffButton12(true)
-          setOffButton13(true)
-          setOffButton14(true)
-          setOffButton15(true)
-          setOffButton16(true)
-          
+      const handleOnLongPress1 = (bOne) =>{
+          setOffButton1(true)
 
-          setDisableItems([...disableItems, KeyWordButton]);
+          setDisableItems([...disableItems, bOne]);
     
       };
+      const handleOnLongPress2 = (bTwo) =>{
+        setOffButton2(true)
+
+        setDisableItems([...disableItems, bTwo]);
+  
+    };
+    const handleOnLongPress3 = (bThree) =>{
+        setOffButton3(true)
+
+        setDisableItems([...disableItems, bThree]);
+  
+    };
+    const handleOnLongPress4 = (bFour) =>{
+        setOffButton4(true)
+
+        setDisableItems([...disableItems, bFour]);
+  
+    };
+    const handleOnLongPress5 = (bFive) =>{
+        setOffButton5(true)
+
+        setDisableItems([...disableItems, bFive]);
+  
+    };
+    const handleOnLongPress6 = (bSix) =>{
+        setOffButton6(true)
+
+        setDisableItems([...disableItems, bSix]);
+  
+    };
+    const handleOnLongPress7 = (bSeven) =>{
+        setOffButton7(true)
+
+        setDisableItems([...disableItems, bSeven]);
+  
+    };
+    const handleOnLongPress8 = (bEight) =>{
+        setOffButton8(true)
+
+        setDisableItems([...disableItems, bEight]);
+  
+    };
+    const handleOnLongPress9 = (bNine) =>{
+        setOffButton9(true)
+
+        setDisableItems([...disableItems, bNine]);
+  
+    };
+    const handleOnLongPress10 = (bTem) =>{
+        setOffButton10(true)
+
+        setDisableItems([...disableItems, bTem]);
+  
+    };
+    const handleOnLongPress11 = (bEleven) =>{
+        setOffButton11(true)
+
+        setDisableItems([...disableItems, bEleven]);
+  
+    };
+    const handleOnLongPress12 = (bTwelve) =>{
+        setOffButton12(true)
+
+        setDisableItems([...disableItems, bTwelve]);
+  
+    };
+    const handleOnLongPress13 = (bThirteen) =>{
+        setOffButton13(true)
+
+        setDisableItems([...disableItems, bOne]);
+  
+    };
+    const handleOnLongPress14 = (bFourteen) =>{
+        setOffButton14(true)
+
+        setDisableItems([...disableItems, bFourteen]);
+  
+    };
+    const handleOnLongPress15 = (bFitfteen) =>{
+        setOffButton15(true)
+
+        setDisableItems([...disableItems, bFitfteen]);
+  
+    };
+    const handleOnLongPress16 = (bSixteen) =>{
+        setOffButton16(true)
+
+        setDisableItems([...disableItems, bSixteen]);
+  
+    };
+    
       const handleReset = () => {
         setDisableItems([]);
         setOffButton1(false) 
         setOffButton2(false)
-        setOffButton3(false)
-          setOffButton4(false)
-          setOffButton5(false)
-          setOffButton6(false)
-          setOffButton7(false)
-          setOffButton8(false)
-          setOffButton9(false)
-          setOffButton10(false)
-          setOffButton11(false)
-          setOffButton12(false)
-          setOffButton13(false)
-          setOffButton14(false)
-          setOffButton15(false)
-          setOffButton16(false)
+        
       };
     console.log(disableItems)
+      
+    //const getSelected = (keywords) => { selectedItems.includes(keywords.id)}
+   // console.log(selectedItems)
     
-
     
-
-return (
+    /*
+      const [isActive, setIsActive] = useState(false);
+  
+    const handleClick = (KeyWord) => {
+      console.log(setIsActive)
+      // 👇️ toggle
+      setIsActive(current => !current);
+      setIsActive([...isActive, KeyWord])
+  
+      setIsActive(false)
+  
+      // 👇️ or set to true
+      // setIsActive(true);
+    };
+    */
+  
+    return (
       <BackgroundColor>
         <View
           style={{
@@ -135,41 +193,48 @@ return (
   
                 <Button
                   title="Alcohol"
-                  onPress={() => handleOnLongPress1("Alcohol")}
+                  onPress={() => handleOnLongPress2("Alcohol")}
                   disabled = {offButton2}
                 />
                 <Button
                   title="Kids"
-                  onPress={() => handleOnLongPress1("Kids")}
+                  onPress={() => handleOnLongPress3("Kids")}
                   disabled = {offButton3}
+
                 />
                 <Button
                   title="animals"
-                  onPress={() => handleOnLongPress1("animals")}
+                  onPress={() => handleOnLongPress4("animals")}
                   disabled = {offButton4}
+
                 />
   
               </View>
+  
               <View
                 style={{
                   justifyContent: "space-between",
                 }}
               >
                 <Button title="Movies" 
-                 onPress={() => handleOnLongPress1("Movies")}
-                 disabled = {offButton5}/>
+                 onPress={() => handleOnLongPress5("Movies")}
+                 disabled = {offButton5}
+                 />
   
                 <Button title="Music" 
-                 onPress={() => handleOnLongPress1("Music")}
-                 disabled = {offButton6}/>
+                 onPress={() => handleOnLongPress6("Music")}
+                 disabled = {offButton6}
+                 />
   
                 <Button title="Concerts" 
-                 onPress={() => handleOnLongPress1("Concerts")}
-                 disabled = {offButton7}/>
+                 onPress={() => handleOnLongPress7("Concerts")}
+                 disabled = {offButton7}
+                 />
   
                 <Button title="Cars" 
-                 onPress={() => handleOnLongPress1("Cars")}
-                 disabled = {offButton8}/>
+                 onPress={() => handleOnLongPress8("Cars")}
+                 disabled = {offButton8}
+                 />
               </View>
               <View
                 style={{
@@ -177,20 +242,24 @@ return (
                 }}
               >
                 <Button title="Adult" 
-                 onPress={() => handleOnLongPress1("Adult")}
-                 disabled = {offButton9}/>
+                 onPress={() => handleOnLongPress9("Adult")}
+                 disabled = {offButton9}
+                 />
   
                 <Button title="Women" 
-                 onPress={() => handleOnLongPress1("Women")}
-                 disabled = {offButton10}/>
+                 onPress={() => handleOnLongPress10("Women")}
+                 disabled = {offButton10}
+                 />
   
                 <Button title="Men" 
-                 onPress={() => handleOnLongPress1("Men")}
-                 disabled = {offButton11}/>
+                 onPress={() => handleOnLongPress11("Men")}
+                 disabled = {offButton11}
+                 />
   
                 <Button title="Shopping" 
-                 onPress={() => handleOnLongPress1("Shopping")}
-                 disabled = {offButton12}/>
+                 onPress={() => handleOnLongPress12("Shopping")}
+                 disabled = {offButton12}
+                 />
               </View>
               <View
                 style={{
@@ -198,20 +267,24 @@ return (
                 }}
               >
                 <Button title="Food" 
-                 onPress={() => handleOnLongPress1("Food")}
-                 disabled = {offButton13}/>
+                 onPress={() => handleOnLongPress13("Food")}
+                 disabled = {offButton13}
+                 />
   
                 <Button title="Fashion" 
-                 onPress={() => handleOnLongPress1("Fashion")}
-                 disabled = {offButton14}/>
+                 onPress={() => handleOnLongPress14("Fashion")}
+                 disabled = {offButton14}
+                 />
   
                 <Button title="Games" 
-                 onPress={() => handleOnLongPress1("Games")}
-                 disabled = {offButton15}/>
+                 onPress={() => handleOnLongPress15("Games")}
+                 disabled = {offButton15}
+                 />
   
                 <Button title="Arcade" 
-                 onPress={() => handleOnLongPress1("Arcade")}
-                 disabled = {offButton16}/>
+                 onPress={() => handleOnLongPress16("Arcade")}
+                 disabled = {offButton16}
+                 />
               </View>
               
   
