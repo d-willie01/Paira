@@ -112,7 +112,7 @@ const CategoryOneScreenTest2 = () => {
     const handleOnLongPress13 = (bThirteen) =>{
         setOffButton13(true)
 
-        setDisableItems([...disableItems, bOne]);
+        setDisableItems([...disableItems, bThirteen]);
   
     };
     const handleOnLongPress14 = (bFourteen) =>{
@@ -138,6 +138,20 @@ const CategoryOneScreenTest2 = () => {
         setDisableItems([]);
         setOffButton1(false) 
         setOffButton2(false)
+        setOffButton3(false)
+          setOffButton4(false)
+          setOffButton5(false)
+          setOffButton6(false)
+          setOffButton7(false)
+          setOffButton8(false)
+          setOffButton9(false)
+          setOffButton10(false)
+          setOffButton11(false)
+          setOffButton12(false)
+          setOffButton13(false)
+          setOffButton14(false)
+          setOffButton15(false)
+          setOffButton16(false)
         
       };
     console.log(disableItems)
@@ -185,29 +199,104 @@ const CategoryOneScreenTest2 = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Button
-                  title="Club"
-                  onPress={() => handleOnLongPress1("Club")}
-                  disabled = {offButton1}
-                />
-  
-                <Button
-                  title="Alcohol"
-                  onPress={() => handleOnLongPress2("Alcohol")}
-                  disabled = {offButton2}
-                />
-                <Button
-                  title="Kids"
-                  onPress={() => handleOnLongPress3("Kids")}
-                  disabled = {offButton3}
-
-                />
-                <Button
-                  title="animals"
-                  onPress={() => handleOnLongPress4("animals")}
-                  disabled = {offButton4}
-
-                />
+                
+                      <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton1 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress1("Club")}
+                          disabled = {offButton1}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Club
+                              </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton2 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress2("Alcohol")}
+                          disabled = {offButton2}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Alcohol
+                              </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton3 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress3("Kids")}
+                          disabled = {offButton3}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Kids
+                              </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton4 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress4("Animal")}
+                          disabled = {offButton4}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Animal
+                              </Text>
+                    </TouchableOpacity>
+                    
   
               </View>
   
@@ -216,75 +305,312 @@ const CategoryOneScreenTest2 = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <Button title="Movies" 
-                 onPress={() => handleOnLongPress5("Movies")}
-                 disabled = {offButton5}
-                 />
+                <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton5 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress5("Movies")}
+                          disabled = {offButton5}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Movies
+                              </Text>
+                    </TouchableOpacity>
   
-                <Button title="Music" 
-                 onPress={() => handleOnLongPress6("Music")}
-                 disabled = {offButton6}
-                 />
-  
-                <Button title="Concerts" 
-                 onPress={() => handleOnLongPress7("Concerts")}
-                 disabled = {offButton7}
-                 />
-  
-                <Button title="Cars" 
-                 onPress={() => handleOnLongPress8("Cars")}
-                 disabled = {offButton8}
-                 />
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton6 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress6("Concerts")}
+                          disabled = {offButton6}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Concerts
+                              </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton7 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress7("Cars")}
+                          disabled = {offButton7}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Cars
+                              </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton8 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress8("Places")}
+                          disabled = {offButton8}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Places
+                              </Text>
+                    </TouchableOpacity>
               </View>
               <View
                 style={{
                   justifyContent: "space-between",
                 }}
               >
-                <Button title="Adult" 
-                 onPress={() => handleOnLongPress9("Adult")}
-                 disabled = {offButton9}
-                 />
+                <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton9 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress9("Adult")}
+                          disabled = {offButton9}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Adult
+                              </Text>
+                    </TouchableOpacity>
+      
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton10 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress10("Women")}
+                          disabled = {offButton10}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Women
+                              </Text>
+                    </TouchableOpacity>
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton11 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress11("Men")}
+                          disabled = {offButton11}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Men
+                              </Text>
+                    </TouchableOpacity>
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton12 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress12("Shopping")}
+                          disabled = {offButton12}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Shopping
+                              </Text>
+                    </TouchableOpacity>
   
-                <Button title="Women" 
-                 onPress={() => handleOnLongPress10("Women")}
-                 disabled = {offButton10}
-                 />
-  
-                <Button title="Men" 
-                 onPress={() => handleOnLongPress11("Men")}
-                 disabled = {offButton11}
-                 />
-  
-                <Button title="Shopping" 
-                 onPress={() => handleOnLongPress12("Shopping")}
-                 disabled = {offButton12}
-                 />
               </View>
               <View
                 style={{
                   justifyContent: "space-between",
                 }}
               >
-                <Button title="Food" 
-                 onPress={() => handleOnLongPress13("Food")}
-                 disabled = {offButton13}
-                 />
+                <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton13 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress13("Food")}
+                          disabled = {offButton13}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Food
+                              </Text>
+                    </TouchableOpacity>
+              
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton14 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress14("Fashion")}
+                          disabled = {offButton14}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Fashion
+                              </Text>
+                    </TouchableOpacity>
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton15 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress15("Games")}
+                          disabled = {offButton15}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Games
+                              </Text>
+                    </TouchableOpacity>
+                 <TouchableOpacity 
+                        //onLongPress ={() => console.log(text)}
+                        style={{height:110,
+                            width:123,
+                            borderRadius:75,
+                            margin: 10,
+                            justifyContent: 'center',
+                            backgroundColor: `${offButton16 ? "#878787" : "#FF9100"}`
+                             
+                          }}
+                          onPress={() => handleOnLongPress16("Arcade")}
+                          disabled = {offButton16}
+                          > 
+                          <Text numberOfLines={1} style={{
+                              fontSize:17,
+                              fontWeight:'900',
+                              color:'white',
+                              textAlign:'center',
+                              alignSelf:'center',
+                              fontStyle:'italic',
+                              
+                              }}> Arcade
+                              </Text>
+                    </TouchableOpacity>
   
-                <Button title="Fashion" 
-                 onPress={() => handleOnLongPress14("Fashion")}
-                 disabled = {offButton14}
-                 />
-  
-                <Button title="Games" 
-                 onPress={() => handleOnLongPress15("Games")}
-                 disabled = {offButton15}
-                 />
-  
-                <Button title="Arcade" 
-                 onPress={() => handleOnLongPress16("Arcade")}
-                 disabled = {offButton16}
-                 />
+    
               </View>
               
   
@@ -296,6 +622,7 @@ const CategoryOneScreenTest2 = () => {
               position: "absolute",
               bottom: 100,
               alignSelf: "center",
+              bottom: '5%',
             }}
           >
             <MatchNowButton onPress={MatchCategoryOne} />
