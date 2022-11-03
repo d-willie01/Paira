@@ -14,6 +14,7 @@ import UUserHomeScreen from "./Screens/UScreens/UCreateScreens/UUserHomeScreen";
 import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
 import CategoryOneScreen from "./Screens/CategoryOneScreen";
 import CategoryOneScreenTest from "./Screens/CategoryOneScreenTest";
+import CategoryOneScreenTest2 from "./Screens/CategoryOneTestScreen2";
 
 
 const card1 = RestaurantData[0];
@@ -33,7 +34,7 @@ export default function App() {
     //   <AppNavigator/>
     // </StateProvider>
     <NavigationContainer>
-      <CategoryOneScreenTest/>
+      <CategoryOneScreenTest2/>
     </NavigationContainer>
    
 

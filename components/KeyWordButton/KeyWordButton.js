@@ -1,10 +1,10 @@
 import React from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Text, TouchableOpacity, View} from 'react-native'
+import { Text, TouchableOpacity, View, } from 'react-native'
 import styles from "./KeyWordButtonStyles";
 
 
-const KeyWordButton = ({text, selected, onPress, onLongPress}) => {
+const KeyWordButton = ({text, selected, onPress, onLongPress, color, disabled }) => {
 
     return(
 
@@ -12,16 +12,18 @@ const KeyWordButton = ({text, selected, onPress, onLongPress}) => {
         <TouchableOpacity 
         //onLongPress ={() => console.log(text)}
         onLongPress ={onLongPress}
-        onPress={onPress} 
         style={{height:110,
             width:123,
             borderRadius:75,
             margin: 10,
-            backgroundColor: `${selected ? "blue" : "red"}`,}}>
+            color: {color}
+            
+        }}
+        disabled = {disabled}>
             <View>
         <LinearGradient
         
-                 colors={['#777777','#878787' ]}
+                 colors={ selected ? ['#777777','#878787' ] :  ['#FF9100','#FFA42B']}
                  style={styles.MatchCategorygrad}>
                     <Text numberOfLines={1} style={{
                     fontSize:17,

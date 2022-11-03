@@ -15,11 +15,34 @@ const CategoryOneScreenTest = () => {
     UMatchnavigation.navigate("MatchCategoryOneScreen");
   };
   
-  const [selections, setSelections] = useState({});
+  /*
+  const[selectedItems, setSelectedItems1 ]= useState([]);
+
+  const [offButton, setOffButton1] = useState(false);
+    const handleOnLongPress1 = (KeyWordButton) =>{
+      // setSelectedItems(current => !current);
+        setSelectedItems1([...selectedItems, KeyWordButton]);
+        setOffButton1(true)
+  
+    };
+    const handleReset = () => {
+      setSelectedItems1([]);
+      setOffButton1(false)
+    };
+    const [offButton2, setOffButton2] = useState(false);
+    const handleOnLongPress2 = (KeyWordButton) =>{
+      // setSelectedItems(current => !current);
+        setSelectedItems([...selectedItems, KeyWordButton]);
+        setOffButton1(true)
+  
+    };
+    */
+  
+    const [selections, setSelections] = useState({});
 
   const handleClick = (e) => {
-   console.log(e) 
-   const buttonValue = e;
+   console.log(e.target.pendingProps) 
+   const buttonValue = e.pendingProps;
 
     let selectionsClone = { ...selections };
 
@@ -93,12 +116,10 @@ const CategoryOneScreenTest = () => {
 
               <KeyWordButton
                 text="alcohol"
-                onLongPress={() => handleOnLongPress("Alcohol")}
               />
 
               <KeyWordButton
                 text="kids"
-                onLongPress={() => handleOnLongPress("Kids")}
               />
 
               <KeyWordButton text="animals" />

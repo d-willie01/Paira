@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Text, TouchableOpacity, View, ScrollView } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView, Button } from "react-native";
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
 import PressTest from "../components/PressTest/PressTest";
@@ -14,17 +14,26 @@ const CategoryOneScreen = () => {
   const MatchCategoryOne = () => {
     UMatchnavigation.navigate("MatchCategoryOneScreen");
   };
+  const state ={
+    disable: false
+  }
 
-  const [selectedItems, setSelectedItems] = useState([]);
+  const[selectedItems, setSelectedItems ]= useState([]);
+  
+  
+
+
+    const handleOnLongPress1 = (KeyWordButton) =>{
+      // setSelectedItems(current => !current);
+        setSelectedItems([...selectedItems, KeyWordButton]);
+  
+    };
+    const handleReset = () => {
+      setSelectedItems([]);
+    };
     
-
-  const handleOnLongPress = (keywords) => {
-    setSelectedItems([...selectedItems, keywords]);
-  };
-  console.log(selectedItems);
   //const getSelected = (keywords) => { selectedItems.includes(keywords.id)}
-    
-
+  console.log(selectedItems)
   
   
   /*
@@ -68,8 +77,7 @@ const CategoryOneScreen = () => {
             >
               <KeyWordButton
                 text="Club"
-                color="grey"
-                onLongPress={() => handleOnLongPress("Club")}
+                onLongPress={() => handleOnLongPress1("Club")}
               />
 
               <KeyWordButton
@@ -82,7 +90,8 @@ const CategoryOneScreen = () => {
                 onLongPress={() => handleOnLongPress("Kids")}
               />
 
-              <KeyWordButton text="animals" />
+              <KeyWordButton text="animals"
+               onLongPress={() => handleOnLongPress("Animals")} />
             </View>
 
             <View
@@ -90,66 +99,54 @@ const CategoryOneScreen = () => {
                 justifyContent: "space-between",
               }}
             >
-              <KeyWordButton text="Movies" />
+              <KeyWordButton text="Movies" 
+               onLongPress={() => handleOnLongPress("Movies")}/>
 
-              <KeyWordButton text="Music" />
+              <KeyWordButton text="Music" 
+               onLongPress={() => handleOnLongPress("Music")}/>
 
-              <KeyWordButton text="Concerts" />
+              <KeyWordButton text="Concerts" 
+               onLongPress={() => handleOnLongPress("Concerts")}/>
 
-              <KeyWordButton text="Cars" />
+              <KeyWordButton text="Cars" 
+               onLongPress={() => handleOnLongPress("Cars")}/>
             </View>
             <View
               style={{
                 justifyContent: "space-between",
               }}
             >
-              <KeyWordButton text="Adult" />
+              <KeyWordButton text="Adult" 
+               onLongPress={() => handleOnLongPress("Adult")}/>
 
-              <KeyWordButton text="Women" />
+              <KeyWordButton text="Women" 
+               onLongPress={() => handleOnLongPress("Women")}/>
 
-              <KeyWordButton text="Men" />
+              <KeyWordButton text="Men" 
+               onLongPress={() => handleOnLongPress("Men")}/>
 
-              <KeyWordButton text="Shopping" />
+              <KeyWordButton text="Shopping" 
+               onLongPress={() => handleOnLongPress("Shopping")}/>
             </View>
             <View
               style={{
                 justifyContent: "space-between",
               }}
             >
-              <KeyWordButton text="Food" />
+              <KeyWordButton text="Food" 
+               onLongPress={() => handleOnLongPress("Food")}/>
 
-              <KeyWordButton text="Fashion" />
+              <KeyWordButton text="Fashion" 
+               onLongPress={() => handleOnLongPress("Fashion")}/>
 
-              <KeyWordButton text="Games" />
+              <KeyWordButton text="Games" 
+               onLongPress={() => handleOnLongPress("Games")}/>
 
-              <KeyWordButton text="Arcade" />
+              <KeyWordButton text="Arcade" 
+               onLongPress={() => handleOnLongPress("Arcade")}/>
             </View>
-            <View
-              style={{
-                justifyContent: "space-between",
-              }}
-            >
-              <KeyWordButton text="Food" />
+            
 
-              <KeyWordButton text="Fashion" />
-
-              <KeyWordButton text="Games" />
-
-              <KeyWordButton text="Arcade" />
-            </View>
-            <View
-              style={{
-                justifyContent: "space-between",
-              }}
-            >
-              <KeyWordButton text="Food" />
-
-              <KeyWordButton text="Fashion" />
-
-              <KeyWordButton text="Games" />
-
-              <KeyWordButton text="Arcade" />
-            </View>
           </ScrollView>
         </View>
 
@@ -161,6 +158,7 @@ const CategoryOneScreen = () => {
           }}
         >
           <MatchNowButton onPress={MatchCategoryOne} />
+          <Button title ='Reset' onPress={handleReset}></Button>
         </View>
       </View>
     </BackgroundColor>
@@ -175,7 +173,7 @@ export default CategoryOneScreen;
             }}>
 <KeyWordButton
                 text="club"
-                color={isActive ? "#777777" : "#FF9100"}
+                colors={isActive ? "#777777" : "#FF9100"}
                 onLongPress={handleClick}
               />
 <TouchableOpacity
