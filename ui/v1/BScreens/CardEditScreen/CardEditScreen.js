@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {Text, FlatList, View, TouchableOpacity } from 'react-native'
+import {Text, FlatList, View, TouchableOpacity, SafeAreaView } from 'react-native'
+
 import { EvilIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
+import Card from "../../components/CardPost/BCard/BCard";
+import BackgroundColor from "../../components/Theme/BackgroundColor";
+
 
 
 
@@ -11,8 +15,8 @@ const CardEditScreen = () =>{
 
     const [company, setCompany] = useState();
     const [cardInfo, setCardInfo] = useState();
-    const [user, setUser] = useState();
-    const [companyToken, setCompanyToken] = useState();
+    const [userInfo, setUserInfo] = useState();
+    const [companyID, setCompanyID] = useState("");
 
     
     
@@ -23,39 +27,45 @@ const CardEditScreen = () =>{
         
         
         
+        const getUserInfo = async() =>{
         
-        const getData = async () => {
         
-            try {
-                
-                const userToken = await AsyncStorage.getItem('userToken');
-                console.log(userToken);
-                
-                const userString = await AsyncStorage.getItem('user');
-                const jsonUser = JSON.parse(userString);
-                console.log(jsonUser);
+        
+        
+            try{
                 
                 
                 
-            
-
+                    const userToken = await AsyncStorage.getItem("userToken");
+                    const userResponse = await axios.get("http://localhost:8080/users/self",{
+                        headers: {
+                          "Authorization" : `Bearer ${userToken}`
+                        }
+                      })
+                    if (userResponse.status == 200){
+                        
+                            const result = userResponse.data.company._id;
+                            console.log(userResponse.data.company._id);
+                            setCompanyID(result);
+                            
+    
+                    }
+    
                 
-              
-            } catch(e) {
-              // error reading value
+                    
+        
+                     } catch (e) {
+                            const loginError = JSON.stringify(e.response.data);
+                            console.log(e);
+                            alert(loginError);
+                 
+           
             }
-          }
-          
-          getData();
+            
+        }
+        getUserInfo();
           
         }, [])
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -73,11 +83,13 @@ const CardEditScreen = () =>{
               }
             }
 
-          const response = await axios.get(`http://localhost:8080/companies/${userToken}/cards`,config)
+          const response = await axios.get(`http://localhost:8080/companies/${companyID}/cards`,config)
           if (response.status == 200){
-
+            console.log("success!");
             setCardInfo(response.data);
             console.log(cardInfo);
+            console.log(cardInfo.description);
+            
 
           }
           
@@ -114,44 +126,58 @@ const CardEditScreen = () =>{
 
 
 
-
-
-
     return(
 
+        <BackgroundColor>
 
 
-        <View style ={{
+        <SafeAreaView style ={{
             flex:1,
             
+}}>
+            
+            
 
-        }}>
-        
-        
-        
-        
-        
-        <View>
+
+
+            <View>
         <TouchableOpacity style={{
             alignSelf:"flex-end",
             alignItems:"center",
             justifyContent:"center",
-            margin: 10
+            
         }}onPress={NextScreen}>
-        <Text>Create Card</Text>
+        <Text style ={{fontSize:15}}>Create Card</Text>
+        
         <EvilIcons name = "plus" size={30} color ="black"/>
         </TouchableOpacity>
         </View>
+            <FlatList
+                showsHorizontalScrollIndicator={false}
+                horizontal={true}
+                data={cardInfo}
+                renderItem={({item}) => <Card card={item}/>}
+            />
+        
+        
+        
+        
+        
+        
 
+        
 
         
         
-        
-        
-        
-        
+        <View>
+
         </View>
-    
+        
+        
+        
+        
+        </SafeAreaView>
+        </BackgroundColor>
     
     )
 
@@ -160,3 +186,19 @@ const CardEditScreen = () =>{
 }
 
 export default CardEditScreen;
+
+{/* <FlatList
+        data={cardInfo}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      /> */}
+
+
+
+
+
+
+
+
+
+      //Darius Williams Breaben Bolton

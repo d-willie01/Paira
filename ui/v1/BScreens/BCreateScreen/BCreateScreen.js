@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Text, View, TouchableOpacity, SafeAreaView, TextInput} from 'react-native'
 import styles from "./BCreateScreenStyles";
 import CategoryButton from "../../components/CategoryButton/CategoryButton";
@@ -16,45 +16,102 @@ const BCreateScreen = () => {
 
     const [description, setDescription] = useState("");
     const [title, setTitle] = useState("");
+    const [userInfo, setUserInfo] = useState("");
+    const [companyId, setCompanyId] = useState("");
 
-    const createCard = async() =>{
-        
-        const userToken = await AsyncStorage.getItem("userToken");
-        const config = {
-          headers: {
-            "Authorization" : `Bearer ${userToken}`
-          }
-        }
-        
-        
-        try{
-            
-            const response = await axios.post(`http://localhost:8080/companies/${userToken}/cards`, {
-                    description,
-                    title
 
-            },config)
-            if(response.status == 201 ) {
-                alert("Upload Success!")
-                
-            }
-                
+
+    useEffect(  () =>{
     
-                 } catch (e) {
-            
-             console.log(e)
-             alert(`error creating new card: ${e.response.data}`)
-             
-       
-        }
         
+        
+        
+          
+        const getUserInfo = async() =>{
+        
+        
+        
+        
+            try{
+                
+                
+                
+                    const userToken = await AsyncStorage.getItem("userToken");
+                    const userResponse = await axios.get("http://localhost:8080/users/self",{
+                        headers: {
+                          "Authorization" : `Bearer ${userToken}`
+                        }
+                      })
+                    if (userResponse.status == 200){
+                        
+                        const result = userResponse.data.company._id;
+                        setCompanyId(result);
+                        console.log(companyId);
+                            
+    
+                    }
+    
+                
+                    
+        
+                     } catch (e) {
+                            const createCardError = JSON.stringify(e.response.data);
+                            console.log(e);
+                            alert(createCardError);
+                 
+           
+            }
+            
+        
+  
+  
+      }
+              
+              getUserInfo();
+
+            
+        
+        
+},[])
+
+
+const createCard = async() =>{
+    const userToken = await AsyncStorage.getItem("userToken");
+
+    const config = {
+      headers: {
+        "Authorization" : `Bearer ${userToken}`
+      }
+    }   
+        
+    try{
+        
+        const response = await axios.post(`http://localhost:8080/companies/${companyId}/cards`, {
+                description,
+                title
+
+        },config)
+        if(response.status == 201 ) {
+            alert("Upload Success!")
+            
+        }
+            
+
+             } catch (e) {
+        
+         console.log(e)
+         
+         
+   
     }
+    
+}
 
      return(
         
         <BackgroundColor>
         
-        <View style ={{flex:1}}>
+        <SafeAreaView style ={{flex:1}}>
 
             <View style ={{
                 height: 50, 
@@ -214,10 +271,23 @@ const BCreateScreen = () => {
 
 
 
-        </View>
+        </SafeAreaView>
 
         </BackgroundColor>
     );
 };
 
 export default BCreateScreen;
+
+
+
+
+ // const userString = await AsyncStorage.getItem('user')
+        // const userToken = await AsyncStorage.getItem("userToken");
+        // console.log(userToken);
+        // console.log(userString);
+        // const config = {
+        //   headers: {
+        //     "Authorization" : `Bearer ${userToken}`
+        //   }
+        // }

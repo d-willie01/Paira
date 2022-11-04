@@ -1,12 +1,54 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Text, View, FlatList} from 'react-native'
 import Card from "../components/CardPost/Card";
-import DATA from "../assets/Data/ArtData";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const MatchCategoryFourScreen = () => {
     
     
+    const [cardInfo, setCardInfo] = useState("");
     
+    
+    useEffect(  () =>{
+          
+        const getCardInfo = async() =>{
+
+          try{
+            
+            const userToken = await AsyncStorage.getItem("userToken");
+            const config = {
+              headers: {
+                "Authorization" : `Bearer ${userToken}`
+              }
+            }
+          
+          const response = await axios.get(`http://localhost:8080/cards?industry=non-profit&lat=33.4484&long=-112.07401`,config)
+          
+          if (response.status == 200){
+            console.log(response.data);
+            setCardInfo(response.data);
+            
+
+          }
+          
+          }
+          
+          
+          catch (e) {
+          
+          console.log(e)
+
+
+    }
+
+
+  }
+          
+          getCardInfo();
+          
+        }, [])
     
     
     return(
@@ -21,7 +63,7 @@ const MatchCategoryFourScreen = () => {
         <FlatList
         showsHorizontalScrollIndicator={false}
         horizontal={true}
-        data={DATA}
+        data={cardInfo}
         renderItem={({item}) => <Card card={item}/>}
         />
     </View>

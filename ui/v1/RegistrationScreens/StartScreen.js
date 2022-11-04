@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Text, View, Button, TouchableOpacity, Image} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
+import BackgroundColor from "../components/Theme/BackgroundColor";
 import styles from "../Styles/styles";
 import PressButton from "../components/PressTest/PressButton";
 import {Picker} from '@react-native-picker/picker';
@@ -30,32 +31,14 @@ const StartScreen = () => {
     return(
 
  
-        <View style ={{flex: 1}}>
-           
-        <LinearGradient // background gradient view
-        style={{flex: 1, }}
         
-        colors={['#FDFEFE','#626567']}>
 
-        
-        <Picker
-                style ={{
-                  
-                    width:200
-                  
-                  
-                }}
-                selectedValue={industry}
-                onValueChange={(itemValue, itemIndex) =>
-                setIndustry(itemValue)}>
-                  <Picker.Item label ="Food&Dining" value = "Food & Dining"/>
-                  <Picker.Item label ="Entertainment" value = "Entertainment"/>
-                  
-                </Picker>
+        <BackgroundColor>
+            <View style ={{alignItems:"center", justifyContent:"center"}}>
         
 
         <Image 
-            style = {{ width: 150, height: 320}}
+            style = {{ width: 150, height: 320, marginTop:50}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
         <View style={{alignItems: 'center', marginTop: 150}}>
             <TouchableOpacity title ="Login" onPress={LoginScreen}>
@@ -119,9 +102,12 @@ const StartScreen = () => {
                 </LinearGradient>
             </TouchableOpacity>
         </View>
-        </LinearGradient>
+        
+
 
         </View>
+        </BackgroundColor>
+       
         
     );
 };
