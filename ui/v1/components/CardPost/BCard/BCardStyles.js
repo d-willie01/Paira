@@ -7,20 +7,16 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     cardcontainer:{
-        margin:10,
-        
+        margin:10, 
         width:410, 
         backgroundColor:'transparent',
     
         
     }, 
     image:{
-       position:'relative',
-       marginLeft:20, 
-       width:'90%', 
-       aspectRatio: 1/1, 
-       resizeMode: "cover",
-       borderRadius: 10,
+       height: 300,
+       width:"90%",
+       borderRadius:10,
        
 
         
@@ -28,7 +24,7 @@ const styles = StyleSheet.create({
     title:{
         fontWeight: "800",
         fontSize: 34,
-        marginTop: 20,
+        marginTop: 10,
         marginLeft: 0,
         textAlign:'center',
     },
@@ -57,10 +53,9 @@ const styles = StyleSheet.create({
 
     },
     address:{
-        alignSelf:'left',
+        
         fontWeight:"600",
-        marginLeft:30,
-        marginVertical:40
+        
         
 
     },
@@ -76,7 +71,7 @@ const styles = StyleSheet.create({
     },
 
     BCardBackgroundgrad:{
-        
+        position:'absolute',
         height:700,
         width:400,
         borderRadius:20,
@@ -84,7 +79,7 @@ const styles = StyleSheet.create({
 
     },
     BCardBackgroundParent:{
-        
+        position:'absolute',
         height:700,
         width:400,
         borderRadius:20,

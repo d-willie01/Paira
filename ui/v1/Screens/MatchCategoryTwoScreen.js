@@ -1,28 +1,67 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Text, FlatList, View} from 'react-native'
 import Card from "../components/CardPost/Card";
-import DATA from "../assets/Data/EntertainmentData";
+import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const MatchCategoryTwoScreen = () => {
     
     
+    const [cardInfo, setCardInfo] = useState("");
     
     
-    
+    useEffect(  () =>{
+          
+        const getCardInfo = async() =>{
 
+          try{
+            
+            const userToken = await AsyncStorage.getItem("userToken");
+            const config = {
+              headers: {
+                "Authorization" : `Bearer ${userToken}`
+              }
+            }
+          
+          const response = await axios.get(`http://localhost:8080/cards?industry=entertainment&lat=33.4484&long=-112.0740`,config)
+          
+          if (response.status == 200){
+            console.log(response.data);
+            setCardInfo(response.data);
+            
+
+          }
+          
+          }
+          
+          
+          catch (e) {
+          
+          console.log(e)
+
+
+    }
+
+
+  }
+          
+          getCardInfo();
+          
+        }, [])
 
     
     return(
         
         <View style={{
-           bottom:60 
+           alignItems:"center",
+           justifyContent:"center"
             
         }}>
         
-        <FlatList
+    <FlatList
         showsHorizontalScrollIndicator={false}
         horizontal={true}
-        data={DATA}
+        data={cardInfo}
         renderItem={({item}) => <Card card={item}/>}
         />
     </View>

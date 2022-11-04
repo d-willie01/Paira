@@ -4,10 +4,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from "./SocialButtonStyles";
 
-const SocialButton = ({text}) => {
+const SocialButton = ({text, onPress}) => {
     return(
         <TouchableOpacity 
-            onPress={()=> console.log('yeee')}>
+            onPress={onPress}>
                 <View
                      style={styles.PairaScoreParent}>
                     <LinearGradient

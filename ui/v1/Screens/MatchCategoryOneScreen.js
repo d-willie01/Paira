@@ -9,6 +9,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
+import MatchNowButton from '../components/MatchNowButton/MatchNowButton'
 
 
 const MatchCategoryOneScreen = () => {
@@ -17,36 +18,26 @@ const MatchCategoryOneScreen = () => {
     const [cardInfo, setCardInfo] = useState();
     
     
-    useEffect( () =>{
+    
+    // useEffect( () =>{
 
     
     
     
-    const getLocation = async() =>{
-        const {status} = await Permissions.askAsync(Permissions.Location);
-
-        if (status != "granted"){
-            console.log("Permission Denied")
-        }
-        else{
-            const userLocation = await Location.getCurrentPositionAsync();
-            console.log(userLocation);
-                }       
-
-
-             }
-             
-             
-             getLocation()
-
-        },[]);
+  
     
     
     
     
     
-    
-    
+          const getCardKeys = () =>{
+            
+                    const mockCardKeys = [ "mexican", "spicy","beer", "music"];
+                    let cardKeysQueryString = "";
+                    mockCardKeys.forEach(cardKey => cardKeysQueryString += `&cardKeys=${cardKey}`)
+                    return cardKeysQueryString;
+          }
+          
     
     
     
@@ -62,12 +53,13 @@ const MatchCategoryOneScreen = () => {
                 "Authorization" : `Bearer ${userToken}`
               }
             }
-
-          const response = await axios.get(`http://localhost:8080/cards?industry=food %26 dining`,config)
+          const cardKeys = getCardKeys();
+          const response = await axios.get(`http://localhost:8080/cards?industry=food%20%26%20dining&lat=33.4484&long=-112.0740`,config)
+          
           if (response.status == 200){
-
+            console.log(response.data);
             setCardInfo(response.data);
-            console.log(cardInfo);
+            
 
           }
           
@@ -87,6 +79,9 @@ const MatchCategoryOneScreen = () => {
           getCardInfo();
           
         }, [])
+
+
+        
     
     
     
@@ -100,7 +95,7 @@ const MatchCategoryOneScreen = () => {
         <TouchableOpacity 
       //TIPS Button 
           style={{
-              marginTop:115,
+              
               marginLeft:15,
               position:'absolute',
             }}
@@ -123,7 +118,7 @@ const MatchCategoryOneScreen = () => {
        <View>
         <Text numberOfLines={3} style={{
             fontSize:15,
-            marginTop:70,
+            
             marginLeft:35,
             width:350,
             textAlign:'center',
@@ -135,7 +130,19 @@ const MatchCategoryOneScreen = () => {
          Here are some local food matches based on YOUR interests
 
         </Text>
+
+
+        <FlatList
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        data={cardInfo}
+        renderItem={({item}) => <Card card={item}/>}
+        /> 
         
+
+        <View>
+          <MatchNowButton/>
+        </View>
 
 
 
@@ -148,9 +155,21 @@ const MatchCategoryOneScreen = () => {
 export default MatchCategoryOneScreen;
 
 
-{/* <FlatList
-        showsHorizontalScrollIndicator={false}
-        horizontal={true}
-        data={RestaurantData}
-        renderItem={({item}) => <Card card={item}/>}
-        /> */}
+   // // const getLocation = async() =>{
+    // //     const {status} = await Permissions.askAsync(Permissions.LOCATION_BACKGROUND);
+
+    // //     if (status != "granted"){
+    // //         console.log("Permission Denied")
+    // //     }
+    // //     else{
+    // //         const userLocation = await Location.getCurrentPositionAsync();
+    // //         console.log(userLocation);
+    // //             }       
+
+
+    // //          }
+             
+             
+    // //          getLocation()
+
+    // //     },[]);

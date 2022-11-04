@@ -10,10 +10,9 @@ const BTab = createBottomTabNavigator();
 const BTabNav = () => {
     return(
         <BTab.Navigator
-            tabBarOptions={{
-            showLabel: false,
-            }}
             screenOptions={{
+                headerShown: false,
+                tabBarShowLabel: false,
                 tabBarStyle: { 
                     position: 'absolute',
                     bottom: 25,

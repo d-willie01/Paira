@@ -1,17 +1,13 @@
 import React, {useState, useEffect, useContext} from "react";
-import {Text, View, Image, SafeAreaView, TouchableOpacity, Platform,} from 'react-native'
+import {Text, View, Image, SafeAreaView, TouchableOpacity, Platform, FlatList,} from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import CollectionButton from "../components/CollectionsButton";
-import { ScrollView } from "react-native"
-import { Entypo } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import axios from "axios";
 import * as ImagePicker from "expo-image-picker";
 import { Feather } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
-import { AntDesign } from '@expo/vector-icons';
 import BackgroundColor from "../components/Theme/BackgroundColor";
 import TipsButton from "../components/TipsButton/TipsButton";
 import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
@@ -28,6 +24,8 @@ const UHomeScreen2 = () => {
   
   const [image, setImage] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
+
+  const UNavigation = useNavigation(); 
 
 
 
@@ -99,6 +97,18 @@ const UHomeScreen2 = () => {
       setImage(result.uri)
     }
   }
+
+      const AchievementsScreen = () =>{
+        UNavigation.navigate("AchievementsScreen");
+      }
+
+      const FriendsScreen = () =>{
+        UNavigation.navigate("FriendsScreen");
+      }
+
+
+
+
   
   return(
 
@@ -119,7 +129,7 @@ const UHomeScreen2 = () => {
           
           }}>
             
-            My collection
+            My Likes
           </Text>
          
           <View style = {{
@@ -150,7 +160,7 @@ const UHomeScreen2 = () => {
               marginLeft:50,
               position: "absolute"
              }}>
-              <SocialButton text ="245"/>
+              <SocialButton onPress={AchievementsScreen} text ="245"/>
              </View>
 
             <View style={{
@@ -158,7 +168,7 @@ const UHomeScreen2 = () => {
               marginTop:380,
               marginLeft: 225
             }}>
-              <SocialButton2/>
+              <SocialButton2 onPress={FriendsScreen}/>
             </View>
 
 
@@ -188,34 +198,9 @@ const UHomeScreen2 = () => {
               </TouchableOpacity>
 
              
-             <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={false} style={{
-              marginTop:460,
-              
-
-
-             }}> 
-              <CollectionButton/>
-              <AntDesign name="pluscircleo" size={24} color="grey" style={{
-                position:'absolute',
-                marginTop:183,
-                marginLeft:81,
-              }}/> 
-              <AntDesign name="pluscircleo" size={24} color="grey" style={{
-                position:'absolute',
-                marginTop:183,
-                marginLeft:250,
-              }}/> 
-              <AntDesign name="pluscircleo" size={24} color="grey" style={{
-                position:'absolute',
-                marginTop:183,
-                marginLeft:425,
-              }}/> 
-
-              <CollectionButton/>
-              <CollectionButton/>
-              </ScrollView>
+             <FlatList/>
             
-              </SafeAreaView>
+              
             
           
           <MaterialIcons name="collections-bookmark" size={24} color="white" 
@@ -280,7 +265,7 @@ const UHomeScreen2 = () => {
           }}>  
              
           </Text>
-
+          </SafeAreaView>
 
       </BackgroundColor>
     );

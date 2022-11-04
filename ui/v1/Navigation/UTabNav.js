@@ -35,11 +35,10 @@ const UTabNav = () => {
   return (
     
       <UTab.Navigator
-       tabBarOptions={{
-        showLabel: false,
-       }}
       screenOptions={{
         headerShown: false,
+        tabBarShowLabel: false,
+        showLabel: false,
         tabBarStyle: { 
             position: 'absolute',
             bottom: 25,
