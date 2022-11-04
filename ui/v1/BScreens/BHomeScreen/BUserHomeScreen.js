@@ -6,7 +6,6 @@ import BusinessProfilePic from "../../components/BusinessProfilePic/BusinessProf
 import BusinessButton from "../../components/BusinessButtons/BusinessButton";
 import { LinearGradient } from "expo-linear-gradient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import axios from "axios";
 
 const BUserHomeScreen = () => {
 
@@ -84,60 +83,157 @@ const BUserHomeScreen = () => {
     
     return(
         <BackgroundColor>
-          <SafeAreaView>
+          
 
 
-            <View style ={{
-                marginLeft: 100,
-                margin: 10
+<SafeAreaView 
+   style={{
+    height: heightPercentageToDP('100%'),
+    width: widthPercentageToDP('100%') }}>
+
+
+
+
+       
+
+           <View 
+           style ={{
+                 height: '25%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 marginTop:'2%',
+                 justifyContent:'center'
+                 
             }}>
+            
                 <BusinessProfilePic/>
-            </View>
 
-            <View style ={{
-                height: 200,
+            <View // View for Lil Buttons
                 
-                flexDirection:"row",
-                justifyContent:"center",
-                alignItems:"center"
-                
+                style ={{
+                 position:'absolute',
+                 height:'75%',
+                 width: '1%',
+                 opacity:'100%',
+                 backgroundColor:'#575757',
+                 borderRadius:'100%',
+                 alignItems:'center',
+                 justifyContent:'space-evenly',
+                 marginLeft:'78%',
+                 marginTop:'5%',
+                 
+                 
+                 
                 
             }}>
             
-            <BusinessButton/>
-            <BusinessButton/>
+            <AntDesign name="setting" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
+            <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
+
+            </View>
+                
+                
+            </View>
+
+            <View style ={{
+                height: heightPercentageToDP('15%'),
+                width: widthPercentageToDP('100%'),
+                flexDirection:"row",
+                alignItems:"center",
+                backgroundColor:'transparent',
+                justifyContent: 'center'
 
                 
+            // Business Nametag   
+            }}> 
+            
+            <TouchableOpacity style={{
+                height:'60%',
+                width:'60%',
+                borderRadius:'25%',
+                backgroundColor:'#F39C12',
+                justifyContent:'center',
+                }}>
+                <LinearGradient
+                                colors={['#F8C471','#F5B041']}
+                                style={{
+                                    height:'100%',
+                                    width:'100%',
+                                    justifyContent:'center',
+                                    bottom:5,
+                                    borderRadius:'25%',}}>
+                                    <Text numberOfLines={2} style={{
+                                        fontSize:22,
+                                        fontWeight:'900',
+                                        color:'white',
+                                        textAlign:'center',
+                                        alignSelf:'center',
+                                        fontStyle:'italic'
+                                        }}>Suns Event Co.</Text>
+                                        <Text numberOfLines={2} style={{
+                                        fontSize:'10%',
+                                        fontWeight:'900',
+                                        color:'white',
+                                        textAlign:'center',
+                                        alignSelf:'center',
+                                        fontStyle:'italic',
+                                        }}>Phoenix, AZ </Text>
+                </LinearGradient>
+
+            </TouchableOpacity>
+            
+            </View>
+
+            <View style ={{
+                height: heightPercentageToDP('20%'),
+                width: widthPercentageToDP('100%'),
+                flexDirection:"row",
+                alignItems:"center",
+                backgroundColor:'transparent',
+                justifyContent: 'space-evenly'
+
+                
+// Business Analytics
+            }}>
+
+            <BusinessButton/>  
+            <BusinessButton2/>
+  
 
             </View>
 
+    
+
             <View style = {{
-                alignSelf:"center"
+                height: heightPercentageToDP('20%'),
+                width: widthPercentageToDP('100%'),
+                backgroundColor:'transparent',
+                justifyContent:'center',
+                alignItems:'center',
             }}>
             <TouchableOpacity style ={{
-                             height:175,
-                             width:300,
-                             borderRadius:60,
-                             marginRight: 10,
-                             marginTop: 15,
+                             height:'70%',
+                             width:'70%',
+                             borderRadius:35,
                              alignItems: 'center',
-                             bottom: 5,
                              backgroundColor:'#F39C12',}}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
                                 style={{
-                                    height:175,
-                                    width:300,
+                                    height:'100%',
+                                    width:'100%',
                                     justifyContent:'center',
-                                    borderRadius:60,}}>
-                                <Text numberOfLines={3} style={{
-                                fontSize:25,
+                                    bottom:5,
+                                    borderRadius:35,}}>
+                                <Text numberOfLines={2} style={{
+                                fontSize:22,
                                 fontWeight:'900',
                                 color:'white',
                                 textAlign:'center',
                                 alignSelf:'center',
                                 fontStyle:'italic'
-                                }}>Add Keywords</Text>
+                                }}>Click here to add your keywords</Text>
                             </LinearGradient>
                             </TouchableOpacity>
             </View>
@@ -145,6 +241,7 @@ const BUserHomeScreen = () => {
             
 
             </SafeAreaView>
+
 
 
         </BackgroundColor>

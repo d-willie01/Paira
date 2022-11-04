@@ -13,6 +13,12 @@ import TipsButton from "../components/TipsButton/TipsButton";
 import NameTagButton from "../components/ProfileInfoButtons/NameTag/NameTagButton";
 import SocialButton from "../components/ProfileInfoButtons/Social/SocialButton";
 import SocialButton2 from "../components/ProfileInfoButtons/Social/SocialButton2";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+import UserProfilePic from "../components/UserProfilePic/UserProfilePic";
+import UserButtonFollowers from "../components/UserButtons/UserButtonFollowers";
+import UserButtonScore from "../components/UserButtons/UserButtonScore";
+
+
 
 
 
@@ -114,7 +120,7 @@ const UHomeScreen2 = () => {
 
 <BackgroundColor>
         
-        <SafeAreaView>
+    <SafeAreaView>
           
           <Text 
       // My collection Text 
@@ -129,7 +135,7 @@ const UHomeScreen2 = () => {
           
           }}>
             
-            My Likes
+            My collection
           </Text>
          
           <View style = {{
@@ -152,7 +158,7 @@ const UHomeScreen2 = () => {
               marginTop:315,
               marginLeft: 125,
              }}>
-              <NameTagButton text={userInfo?.firstName ?? ""}/>
+              <NameTagButton text = "darius"/>
              </View>
              
              <View style={{
@@ -160,7 +166,7 @@ const UHomeScreen2 = () => {
               marginLeft:50,
               position: "absolute"
              }}>
-              <SocialButton onPress={AchievementsScreen} text ="245"/>
+              <SocialButton text ="245"/>
              </View>
 
             <View style={{
@@ -168,7 +174,7 @@ const UHomeScreen2 = () => {
               marginTop:380,
               marginLeft: 225
             }}>
-              <SocialButton2 onPress={FriendsScreen}/>
+              <SocialButton2 text="23"/>
             </View>
 
 
@@ -198,9 +204,34 @@ const UHomeScreen2 = () => {
               </TouchableOpacity>
 
              
-             <FlatList/>
-            
+             <ScrollView  horizontal= {true} showsHorizontalScrollIndicator={false} style={{
+              marginTop:460,
               
+
+
+             }}> 
+              <CollectionButton/>
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:81,
+              }}/> 
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:250,
+              }}/> 
+              <AntDesign name="pluscircleo" size={24} color="grey" style={{
+                position:'absolute',
+                marginTop:183,
+                marginLeft:425,
+              }}/> 
+
+              <CollectionButton/>
+              <CollectionButton/>
+              </ScrollView>
+            
+              </SafeAreaView>
             
           
           <MaterialIcons name="collections-bookmark" size={24} color="white" 
@@ -265,9 +296,11 @@ const UHomeScreen2 = () => {
           }}>  
              
           </Text>
-          </SafeAreaView>
 
-      </BackgroundColor>
+   </BackgroundColor>
+
+
+ 
     );
     
 };
