@@ -11,6 +11,9 @@ import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons';
+import BackgroundColor from "../components/Theme/BackgroundColor";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 
 
@@ -51,217 +54,307 @@ const UserMatchScreen = () => {
    
     return(
 
-<LinearGradient // background gradient view
-        style={styles.container}
-        colors={['#B1B1B3','#CACACC',]}>
+<BackgroundColor>
        
-        <SafeAreaView style ={{flex:1}}>
-
-<ScrollView style={{
-        backgroundColor:'transparent',
-        flexDirection:'column',
-        flex: 1
-        
-}}
+       <SafeAreaView style={{
+   height: heightPercentageToDP('88%'),
+   width: widthPercentageToDP('100%') }}>
 
 
-> 
-
-        <TouchableOpacity
-//Food Button Location - Category 1
-          style={{
-              marginTop:30,
-              marginLeft:180,
-            }}
-//button function
-            onPress={CategoryOneScreen}>
-        
-                <View
+   <View 
+          style ={{
+                height: '20%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'3%',
                 
-//Button Style
-                     style={styles.MatchCategoryParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.MatchCategorygrad}>
-                        <MaterialCommunityIcons name="food-fork-drink" size={38} color="white" />
-                        <Text style = {{ color: "white", fontSize: 20, fontWeight: '900', fontStyle: "italic"}}> Food </Text>
-                   </LinearGradient>
-                </View>
-             </TouchableOpacity>
-            
-         <TouchableOpacity 
-//Entertainment Button Location - Category 2
-          style={{
-              marginTop:170,
-              marginLeft:75,
-              position:'absolute',}}
-//button function
-            onPress={CategoryTwoScreen}>
-                <View
-//Button Style
-                     style={styles.MatchCategoryParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.MatchCategorygrad}>
-                        <MaterialCommunityIcons name="party-popper" size={35} color="white" />
-                        <Text style = {{ color: "white", fontSize: 16, fontWeight: '900', fontStyle: "italic"}}> Entertainment </Text>
+           }}>
+           <Text numberOfLines={2} style={{
+               position:'absolute',
+               fontSize:'15%',
+               fontWeight:'900',
+               color:'white',
+               marginTop:'10%',
+               marginLeft:'60%',
+               width:'10%',
 
-                   </LinearGradient>
-                </View>
-        </TouchableOpacity>
-        <TouchableOpacity 
-//Activities Button Location - Category 3
-          style={{
-              marginTop:310,
-              marginLeft:175,
-              position:'absolute',}}
-//button function
-            onPress={CategoryThreeScreen}>
-                <View
-//Button Style
-                     style={styles.MatchCategoryParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.MatchCategorygrad}>
-                        <MaterialCommunityIcons name="store" size={35} color="white" />
-                        <Text style = {{ color: "white", fontSize: 18, fontWeight: '900', fontStyle: "italic"}}> Retail </Text>
+               }}>
+               Exploring local starts here.</Text>
 
-                   </LinearGradient>
-                </View>
-        </TouchableOpacity>
-       
-        <TouchableOpacity 
-//Arts and Music Button Location - Category 4
-          style={{
-              marginTop:450,
-              marginLeft:75,
-              
-              position:'absolute',}}
-//button function
-            onPress={CategoryFourScreen}>
-                <View
-//Button Style
-                     style={styles.MatchCategoryParent}
-                     >
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.MatchCategorygrad}>
-                        
-                        <View style = {{marginLeft: 6, marginBottom: 2, }}>
-
-                        <MaterialIcons name="volunteer-activism" size={30} color="white" />
-
-                        </View>
-                        <Text style = {{ color: "white", fontSize: 17, fontWeight: '900', fontStyle: "italic"}}> Non-Profit</Text>
-
-
-                   </LinearGradient>
-                </View>
-
-                
-        </TouchableOpacity>
-        
-        <TouchableOpacity 
-//Sports & Fitness Location - Category 5
-          style={{
-              marginTop:590,
-              marginLeft:175,
-              position:'absolute',}}
-//button function
-            onPress={CategoryFiveScreen}>
-                <View
-//Button Style
-                     style={styles.MatchCategoryParent}>
-                    <LinearGradient
-                     colors={['#F8C471','#F5B041']}
-                     style={styles.MatchCategorygrad}>
-                         <View style = {{marginRight: 30, marginBottom: -34}}>
-                            <MaterialCommunityIcons name="yoga" size={34} color="white" />                        
-                        </View>
-                        <View style = {{marginLeft: 40}}>
-
-                            <Ionicons name="american-football" size={26} color="white" style={{marginLeft:-13, marginTop:4}} />
-                        </View>
-                        <Text style = {{ color: "white", fontSize: 17, fontWeight: '900', fontStyle: "italic",}}> Sports & Fitness</Text>
-
-                   </LinearGradient>
-                </View>             
-        </TouchableOpacity>
-
-
-                <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:24,
-                fontWeight:'900',
-                color:'white',
-                marginTop:7,
-                marginLeft:20,
-                width:250,
-
-                }}>
-                Exploring local starts here.</Text>
+<TouchableOpacity style={{
+               height:'100%',
+               width:'43%',
+               borderRadius:'100%',
+               backgroundColor:'#F39C12',
+               justifyContent:'center',
+               marginLeft:'10%',
+               }}
                
-                <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:22,
-                fontWeight:'900',
-                color:'grey',
-                marginTop:85,
-                marginLeft:53,
-                width:300,
+               onPress={CategoryOneScreen}>
+               
+               <LinearGradient
+                               colors={['#F8C471','#F5B041']}
+                               style={{
+                                   height:'100%',
+                                   width:'100%',
+                                   borderRadius:'100%',
+                                   justifyContent:'center',
+                                   bottom:5,
+                                   }}>
 
-                }}>
-                Hungry?</Text>
+                               <MaterialCommunityIcons name="food-fork-drink" size={'45%'} color="white" style={{
+                                   alignSelf:'center'
+                               }} />
+                                   
+                                       <Text numberOfLines={2} style={{
+                                       fontSize:10,
+                                       fontWeight:'900',
+                                       color:'white',
+                                       textAlign:'center',
+                                       alignSelf:'center',
+                                       fontStyle:'italic',
+                                       }}> Food </Text>
+               </LinearGradient>
+
+           </TouchableOpacity>
+   </View>
+
+   <View 
+          style ={{
+                height: '20%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'0%',
                 
-                <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:20,
-                fontWeight:'900',
-                color:'grey',
-                marginTop:220,
-                marginLeft:260,
-                width:160,
+           }}>
+               <Text numberOfLines={2} style={{
+               position:'absolute',
+               fontSize:'15%',
+               fontWeight:'900',
+               color:'white',
+               marginTop:'15%',
+               marginLeft:'12%',
+               width:'15%',
 
-                }}>
-                Old town... again? </Text>
+               }}>
+               Get out there.</Text>
+
+<TouchableOpacity style={{
+               height:'100%',
+               width:'43%',
+               borderRadius:'100%',
+               backgroundColor:'#F39C12',
+               justifyContent:'center',
+               marginLeft:'45%',
+               }}
+               
+               onPress={CategoryTwoScreen}>
+               
+               <LinearGradient
+                               colors={['#F8C471','#F5B041']}
+                               style={{
+                                   height:'100%',
+                                   width:'100%',
+                                   borderRadius:'100%',
+                                   justifyContent:'center',
+                                   bottom:5,
+                                   }}>
+
+                               <MaterialCommunityIcons name="party-popper" size={'45%'} color="white" style={{
+                                   alignSelf:'center'
+                               }} />
+                                   
+                                       <Text numberOfLines={2} style={{
+                                       fontSize:10,
+                                       fontWeight:'900',
+                                       color:'white',
+                                       textAlign:'center',
+                                       alignSelf:'center',
+                                       fontStyle:'italic',
+                                       }}> Entertainment </Text>
+               </LinearGradient>
+
+           </TouchableOpacity>
+   </View>
+
+   <View 
+          style ={{
+                height: '20%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'0%',
                 
+           }}>
                 <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:20,
-                fontWeight:'900',
-                color:'grey',
-                marginTop:360,
-                marginLeft:40,
-                width:160,
+               position:'absolute',
+               fontSize:'15%',
+               fontWeight:'900',
+               color:'white',
+               marginTop:'15%',
+               marginLeft:'60%',
+               width:'15%',
 
-                }}>
-                Looking for adventure? </Text>
+               }}>
+               Local drip.</Text>
 
-                <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:20,
-                fontWeight:'900',
-                color:'grey',
-                marginTop:500,
-                marginLeft:260,
-                width:160,
+<TouchableOpacity style={{
+               height:'100%',
+               width:'43%',
+               borderRadius:'100%',
+               backgroundColor:'#F39C12',
+               justifyContent:'center',
+               marginLeft:'10%',
+               }}
+               
+               onPress={CategoryThreeScreen}>
+               
+               <LinearGradient
+                               colors={['#F8C471','#F5B041']}
+                               style={{
+                                   height:'100%',
+                                   width:'100%',
+                                   borderRadius:'100%',
+                                   justifyContent:'center',
+                                   bottom:5,
+                                   }}>
 
-                }}>
-                Build up your community! </Text>
-                <Text numberOfLines={2} style={{
-                position:'absolute',
-                fontSize:20,
-                fontWeight:'900',
-                color:'grey',
-                marginTop:650,
-                marginLeft:25,
-                width:160,
+                               <MaterialCommunityIcons name="store" size={'45%'} color="white" style={{
+                                   alignSelf:'center'
+                               }} />
+                                   
+                                       <Text numberOfLines={2} style={{
+                                       fontSize:10,
+                                       fontWeight:'900',
+                                       color:'white',
+                                       textAlign:'center',
+                                       alignSelf:'center',
+                                       fontStyle:'italic',
+                                       }}> Retail </Text>
+               </LinearGradient>
 
-                }}>
-                Yeah let's get right. </Text>
-</ScrollView>
-                </SafeAreaView>
-        </LinearGradient>
+           </TouchableOpacity>
+   </View>
+   
+   <View 
+          style ={{
+                height: '20%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'0%',
+                
+           }}>
+<Text numberOfLines={2} style={{
+               position:'absolute',
+               fontSize:'15%',
+               fontWeight:'900',
+               color:'white',
+               marginTop:'15%',
+               marginLeft:'12%',
+               width:'15%',
+
+               }}>
+               Build your community!</Text>
+
+<TouchableOpacity style={{
+               height:'100%',
+               width:'43%',
+               borderRadius:'100%',
+               backgroundColor:'#F39C12',
+               justifyContent:'center',
+               marginLeft:'45%',
+               }}
+               
+               onPress={CategoryFourScreen}>
+               
+               <LinearGradient
+                               colors={['#F8C471','#F5B041']}
+                               style={{
+                                   height:'100%',
+                                   width:'100%',
+                                   borderRadius:'100%',
+                                   justifyContent:'center',
+                                   bottom:5,
+                                   }}>
+
+                               <MaterialIcons name="volunteer-activism" size={'45%'} color="white" style={{
+                                   alignSelf:'center'
+                               }} />
+                                   
+                                       <Text numberOfLines={2} style={{
+                                       fontSize:10,
+                                       fontWeight:'900',
+                                       color:'white',
+                                       textAlign:'center',
+                                       alignSelf:'center',
+                                       fontStyle:'italic',
+                                       }}> Non-Profit </Text>
+               </LinearGradient>
+
+           </TouchableOpacity>
+   </View>
+          
+   <View 
+          style ={{
+                height: '20%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'0%',
+                
+           }}>
+               <Text numberOfLines={2} style={{
+               position:'absolute',
+               fontSize:'15%',
+               fontWeight:'900',
+               color:'white',
+               marginTop:'15%',
+               marginLeft:'60%',
+               width:'15%',
+
+               }}>
+               Get active.</Text>
+
+<TouchableOpacity style={{
+               height:'100%',
+               width:'43%',
+               borderRadius:'100%',
+               backgroundColor:'#F39C12',
+               justifyContent:'center',
+               marginLeft:'10%'
+               }}
+               
+               onPress={CategoryFiveScreen}>
+               
+               <LinearGradient
+                               colors={['#F8C471','#F5B041']}
+                               style={{
+                                   height:'100%',
+                                   width:'100%',
+                                   borderRadius:'100%',
+                                   justifyContent:'center',
+                                   bottom:5,
+                                   }}>
+
+                               <MaterialCommunityIcons name="yoga" size={'45%'} color="white" style={{
+                                   alignSelf:'center'
+                               }} />
+                                   
+                                       <Text numberOfLines={2} style={{
+                                       fontSize:10,
+                                       fontWeight:'900',
+                                       color:'white',
+                                       textAlign:'center',
+                                       alignSelf:'center',
+                                       fontStyle:'italic',
+                                       }}> Sports & Fitness </Text>
+               </LinearGradient>
+
+           </TouchableOpacity>
+   </View>
+               
+               
+              
+               </SafeAreaView>
+       </BackgroundColor>
     );
 };
 

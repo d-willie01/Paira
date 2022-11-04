@@ -20,7 +20,7 @@ const BTabNav = () => {
                     left: 20,
                     right: 20,
                     elevation: 0,
-                    backgroundColor: "#ffffff",
+                    backgroundColor: "transparent",
                     borderRadius: 15,
                     height: 60,
                     showLabel: false,
@@ -28,7 +28,8 @@ const BTabNav = () => {
             }}
         
         >
-            <BTab.Screen name= "Home" component={BHomeNavigationStack} options={{
+            <BTab.Screen name= "Home" component={BHomeNavigationStack} options={{ headerShown:false,
+
                 tabBarIcon : () => {
                   return (
                     <FontAwesome5 name = "home" size= {24} color = '#D7D7D7' 
@@ -39,7 +40,7 @@ const BTabNav = () => {
                 }
             }}/>
             <BTab.Screen name= "Create" component={BCreateStack} 
-                options={{
+                options={{headerShown:false,
                     tabBarIcon: () => {
                         return(
                             <Image 
