@@ -1,14 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import {Text, View, Button, TouchableOpacity, Image} from 'react-native'
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
+import BackgroundColor from "../components/Theme/BackgroundColor";
 import styles from "../Styles/styles";
 import PressButton from "../components/PressTest/PressButton";
-
+import {Picker} from '@react-native-picker/picker';
 
 
 const StartScreen = () => {
    
+    const [industry, setIndustry] = useState();
+    
+    
     const Startnavigation = useNavigation();
 
     const UserRegister1 = () => {
@@ -27,19 +31,14 @@ const StartScreen = () => {
     return(
 
  
-        <View style ={{flex: 1}}>
-           
-        <LinearGradient // background gradient view
-        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
         
-        colors={['#FDFEFE','#626567']}>
 
-        <View>
-            <PressButton/>
-        </View>
+        <BackgroundColor>
+            <View style ={{alignItems:"center", justifyContent:"center"}}>
+        
 
         <Image 
-            style = {{ width: 150, height: 320}}
+            style = {{ width: 150, height: 320, marginTop:50}}
             source= {require('../assets/Icons/PairaLogo.png')}/>
         <View style={{alignItems: 'center', marginTop: 150}}>
             <TouchableOpacity title ="Login" onPress={LoginScreen}>
@@ -103,9 +102,12 @@ const StartScreen = () => {
                 </LinearGradient>
             </TouchableOpacity>
         </View>
-        </LinearGradient>
+        
+
 
         </View>
+        </BackgroundColor>
+       
         
     );
 };

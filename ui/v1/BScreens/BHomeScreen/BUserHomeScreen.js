@@ -1,60 +1,61 @@
 import React, {useState, useEffect} from "react";
-import {Text, TouchableOpacity, View, Image} from 'react-native'
+import {Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native'
 import BackgroundColor from "../../components/Theme/BackgroundColor";
 import * as ImagePicker from "expo-image-picker";
 import BusinessProfilePic from "../../components/BusinessProfilePic/BusinessProfilePic";
 import BusinessButton from "../../components/BusinessButtons/BusinessButton";
 import { LinearGradient } from "expo-linear-gradient";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { SafeAreaView } from "react-native";
-import { FontAwesome } from '@expo/vector-icons';
-import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
-import BusinessButton2 from "../../components/BusinessButtons/BusinessButton2";
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const BUserHomeScreen = () => {
 
     const [image, setImage] = useState(null);
-    const [user, setUser] = useState(null);
+    const [userInfo, setUserInfo] = useState(null);
     const [company, setCompany] = useState(null);
     
-    useEffect(() =>{
-
-        getData();
-
-
-
-
-    },[])
-
-    useEffect(() =>{
-
-        console.log(user, company);
-
-
-
-    },[user,company])
-    
-    
-    const getData = async () => {
-        
-        try {
-            const userToken = await AsyncStorage.getItem('userToken');
-            console.log(userToken); 
-          const userString = await AsyncStorage.getItem('user');
-          console.log(userString);
-          const jsonUser = JSON.parse(userString);
-          setUser(jsonUser);
-          const jsonCompany = JSON.parse(jsonUser.company)
-          console.log(jsonCompany);
-          setCompany(jsonCompany);
+    useEffect(  () =>{
           
-        } catch(e) {
-          // error reading value
-        }
-      }
+        const getUserInfo = async() =>{
+
+          try{
+            
+            const userToken = await AsyncStorage.getItem("userToken");
+            console.log(userToken);
+            const config = {
+              headers: {
+                "Authorization" : `Bearer ${userToken}`
+              }
+            }
+
+          const response = await axios.get('http://localhost:8080/users/self',config)
+          if (response.status == 200){
+
+            setUserInfo(response.data);
+            console.log(userInfo);
+
+          }
+          
+          }
+          
+          
+          catch (e) {
+          
+          console.log(e)
+
+
+    }
+
+
+  }
+          
+          getUserInfo();
+    
+    
+    
+    
+        }, [])
+    
+    
 
 
 
@@ -82,6 +83,7 @@ const BUserHomeScreen = () => {
     
     return(
         <BackgroundColor>
+          
 
 
 <SafeAreaView 
@@ -237,11 +239,8 @@ const BUserHomeScreen = () => {
             </View>
 
             
-       
 
-    </SafeAreaView>
-
-
+            </SafeAreaView>
 
 
 

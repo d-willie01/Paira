@@ -85,7 +85,7 @@ export const getCardsByQuery = async (searchParams: { industry: Industry; coordi
         .unwind("$card")
         .sort({ "distance": 1 })
         .match(filter)
-        .match({ distance: { '$lte': searchParams.radius ?? 50 } })
+        .match({ distance: { '$lte': searchParams.radius } })
         .exec();
 
     return companies;

@@ -17,13 +17,7 @@ const UserRegistrationScreen = () => {
     
     
     
-    const NextPage = () =>{
-
-        UNavigation.navigate("Registration");
-        
-
-
-    }
+   
     
     const RegisterUser = async() =>{
         
@@ -42,14 +36,19 @@ const UserRegistrationScreen = () => {
             })
             if(response.status == 201 ) {
                 let userToken = response.data.token;
+                console.log(userToken);
                 await AsyncStorage.setItem("userToken", userToken);
+                
+                
                 UNavigation.replace("Registration");
             }
+            console.log(response);
                 
     
                  } catch (e) {
             
-             console.log(e)
+             console.log(e.response.data)
+             alert(JSON.stringify(e.response.data));
              
        
         }
@@ -368,7 +367,7 @@ const UserRegistrationScreen = () => {
 
 
 
-    <Button title= "next page" onPress={NextPage}/>
+    
 
 
 

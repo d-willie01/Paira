@@ -11,6 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
+
 const RegistrationScreen = () => {
 
 
@@ -27,31 +28,36 @@ const SubmitBusinessCard = async() =>{
       try{
       
       const userToken = await AsyncStorage.getItem("userToken");
+
       const config = {
         headers: {
           "Authorization" : `Bearer ${userToken}`
         }
       }
       
-      const response = await axios.post('http://localhost:8080/companies', {
-                  name,
-                  industry,
-                  street_1,
-                  street_2,
-                  city,
-                  state,
-                  zipCode,
+      const createCompanyRequestBody = {
+        name,
+        industry,
+        street_1,
+        street_2,
+        city,
+        state,
+        zipCode,
 
-           },config)
+ }
+      console.log(createCompanyRequestBody);
+      const response = await axios.post('http://localhost:8080/companies',createCompanyRequestBody,config)
       if(response.status == 201 ) {
-          
+        
+        console.log(response);
         
         BusinessState();
         }
       console.log(response);
       } catch (e) {
       
-       console.log(e)
+       console.log(e);
+       alert(JSON.stringify(e.response.data));
       
  
   }
@@ -93,6 +99,14 @@ const SubmitBusinessCard = async() =>{
             fontWeight: "900",
             color: '#ffffff'
           }}>To complete a Business account,</Text>
+          
+          
+          
+          
+        <View style ={{borderWidth:1}}>
+          
+
+        </View>
 
         </View>
 
