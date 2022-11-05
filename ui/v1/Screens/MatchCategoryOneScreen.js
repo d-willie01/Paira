@@ -54,7 +54,7 @@ const MatchCategoryOneScreen = () => {
                 "Authorization" : `Bearer ${userToken}`
               }
             }
-          const cardKeys = getCardKeys();
+          
           const response = await axios.get(`http://localhost:8080/cards?industry=food%20%26%20dining&lat=33.4484&long=-112.0740`,config)
           
           if (response.status == 200){
@@ -91,7 +91,7 @@ const MatchCategoryOneScreen = () => {
     return(
 
 
-<BackgroundColor>
+    <BackgroundColor>
 
         <FlatList 
         showsHorizontalScrollIndicator={false}

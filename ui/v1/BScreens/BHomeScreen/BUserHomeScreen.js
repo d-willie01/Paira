@@ -19,6 +19,7 @@ const BUserHomeScreen = () => {
     const [userInfo, setUserInfo] = useState(null);
     const [name, setName] = useState("");
 
+
     
 
 
@@ -43,7 +44,7 @@ const BUserHomeScreen = () => {
 
             setUserInfo(response.data);
             setName(response.data.firstName)
-            console.log(userInfo);
+            console.log(userInfo.company._id);
 
 
           }
@@ -95,6 +96,17 @@ const BUserHomeScreen = () => {
         }
       }
     
+
+
+
+
+      const AddKeyWordsScreen = () =>{
+
+          UNavigation.navigate("BAddKeysScreen");
+
+
+
+      }
     
 
     
@@ -247,7 +259,8 @@ const BUserHomeScreen = () => {
                              width:'70%',
                              borderRadius:35,
                              alignItems: 'center',
-                             backgroundColor:'#F39C12',}}>
+                             backgroundColor:'#F39C12',}}
+                             onPress={AddKeyWordsScreen}>
                             <LinearGradient
                                 colors={['#F8C471','#F5B041']}
                                 style={{

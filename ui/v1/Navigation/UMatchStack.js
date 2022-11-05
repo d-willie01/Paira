@@ -11,6 +11,7 @@ import CategoryTwoScreen from "../Screens/CategoryTwoScreen";
 import CategoryThreeScreen from "../Screens/CategoryThreeScreen";
 import CategoryFourScreen from "../Screens/CategoryFourScreen";
 import CategoryFiveScreen from "../Screens/CategoryFiveScreen";
+import FlagScreen from "../Screens2/FlagScreen/FlagScreen";
 
 const UMatchnav = createNativeStackNavigator();
 
@@ -29,6 +30,8 @@ const UmatchNavigationStack = () => {
                 <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryFourWords" component={CategoryFourScreen}/>
                 <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryOneWords" component={CategoryOneScreen}/>
                 <UMatchnav.Screen options={{headerTransparent: true}} name = "CategoryFiveWords" component={CategoryFiveScreen}/>
+                <UMatchnav.Screen options={{headerTransparent: true}} name = "FlagScreen" component={FlagScreen}/>
+
 
 
             </UMatchnav.Navigator>

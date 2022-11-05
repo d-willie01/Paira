@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { TouchableOpacity, SafeAreaView, Text, View, Image, Pressable} from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import styles from "./CardStyles";
+import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
 import { AntDesign } from "@expo/vector-icons";
@@ -10,11 +11,27 @@ import BackgroundColor from "../Theme/BackgroundColor";
 
 const Card = (props) =>{
 
+    const UNavigation = useNavigation();
+    
+    
+    
     const [liked, setLiked] = useState(null);
    
     
     
     const cardInfo = props.card;
+
+
+
+
+
+
+
+   const FlagScreen = () =>{
+
+    UNavigation.navigate("FlagScreen");
+
+   }
 
     return(
     <BackgroundColor>
@@ -24,7 +41,16 @@ const Card = (props) =>{
             {/*Image up to three */}
 
             
-                
+                <View>
+
+
+                <Pressable onPress={FlagScreen}>
+
+                <Entypo name="flag" size={25} color="black" />
+
+
+                </Pressable>
+                </View>
             
             
             <View style ={{
@@ -54,6 +80,7 @@ const Card = (props) =>{
         <LinearGradient
                     colors={['#898989','#ADADAD']}
                     style={{
+                    
                     height:'100%',
                     width:'100%',
                     borderRadius:'40%',
@@ -163,6 +190,10 @@ const Card = (props) =>{
                         color={liked ? "orange" : "white"}
                     />
                     </Pressable>
+
+                   
+
+                    
 
 
 
