@@ -34,7 +34,7 @@ export default function App() {
     //   <AppNavigator/>
     // </StateProvider>
     <NavigationContainer>
-      <CategoryOneScreenTest2/>
+      <CategoryOneScreenTest/>
     </NavigationContainer>
    
 

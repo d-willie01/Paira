@@ -7,12 +7,15 @@ import styles from "../components/CardPost/CardStyles";
 import { TouchableOpacity } from "react-native";
 
 
-const MatchCategoryOneScreen = () => {
+const MatchCategoryOneScreen = ({route}) => {
     return(
 
 <LinearGradient // background gradient view
       style={styles.container}
       colors={['#B1B1B3','#CACACC',]}>
+        <View>
+        <Text style = {{ fontSize: 20, color: 'white'}}> {route.paramKey.disableItems}</Text>
+        </View>
         <TouchableOpacity 
       //TIPS Button 
           style={{

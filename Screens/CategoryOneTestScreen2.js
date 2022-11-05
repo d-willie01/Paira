@@ -6,6 +6,9 @@ import PressTest from "../components/PressTest/PressTest";
 import BackgroundColor from "../components/Theme/BackgroundColor";
 import buttonReplacement from "./KeyWordButtonReplacement";
 
+const availableKeyCards = ["club", "alcohol", "kids", "animals", "adult", "women", "men", "shopping","food",
+"fashion", "games" , "arcade", "movies", "concerts", "places", "cars",
+]
 
 const CategoryOneScreenTest2 = () => {
     const UMatchnavigation = useNavigation();
@@ -13,6 +16,8 @@ const CategoryOneScreenTest2 = () => {
     const MatchCategoryOne = () => {
       UMatchnavigation.navigate("MatchCategoryOneScreen");
     };
+
+    const navigate = useNavigation();
     
   
     const[selectedItems, setSelectedItems ]= useState([]);
@@ -91,10 +96,10 @@ const CategoryOneScreenTest2 = () => {
         setDisableItems([...disableItems, bNine]);
   
     };
-    const handleOnLongPress10 = (bTem) =>{
+    const handleOnLongPress10 = (bTen) =>{
         setOffButton10(true)
 
-        setDisableItems([...disableItems, bTem]);
+        setDisableItems([...disableItems, bTen]);
   
     };
     const handleOnLongPress11 = (bEleven) =>{
@@ -139,19 +144,19 @@ const CategoryOneScreenTest2 = () => {
         setOffButton1(false) 
         setOffButton2(false)
         setOffButton3(false)
-          setOffButton4(false)
-          setOffButton5(false)
-          setOffButton6(false)
-          setOffButton7(false)
-          setOffButton8(false)
-          setOffButton9(false)
-          setOffButton10(false)
-          setOffButton11(false)
-          setOffButton12(false)
-          setOffButton13(false)
-          setOffButton14(false)
-          setOffButton15(false)
-          setOffButton16(false)
+        setOffButton4(false)
+        setOffButton5(false)
+        setOffButton6(false)
+        setOffButton7(false)
+        setOffButton8(false)
+        setOffButton9(false)
+        setOffButton10(false)
+        setOffButton11(false)
+        setOffButton12(false)
+        setOffButton13(false)
+        setOffButton14(false)
+        setOffButton15(false)
+        setOffButton16(false)
         
       };
     console.log(disableItems)
@@ -625,13 +630,25 @@ const CategoryOneScreenTest2 = () => {
               bottom: '5%',
             }}
           >
-            <MatchNowButton onPress={MatchCategoryOne} />
+            <MatchNowButton onPress= {() => UMatchnavigation.navigate ('MatchCategoryOneScreen', { paramKey: disableItems })} />
+          
             <Button title ='Reset' onPress={handleReset}></Button>
           </View>
         </View>
       </BackgroundColor>
     );
   };
+  // onPress= {() => UMatchnavigation.navigate ('MatchCategoryOneScreen', { paramKey: disableItems })}
+  /*
+  const navigate = useNavigation();
+  const (function on next page) = ([route}) => {
+    return (
+
+      <Text style = {{}}> {route.params.paramKey}</Text>
+    )
+  }])
+
+  */
   
   export default CategoryOneScreenTest2;
 

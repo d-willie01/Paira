@@ -12,6 +12,7 @@ const KeyWordButton = ({text, selected, onPress, onLongPress, color, disabled })
         <TouchableOpacity 
         //onLongPress ={() => console.log(text)}
         onLongPress ={onLongPress}
+        onPress ={onPress}
         style={{height:110,
             width:123,
             borderRadius:75,
