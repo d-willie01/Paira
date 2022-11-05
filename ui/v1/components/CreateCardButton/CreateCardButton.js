@@ -1,17 +1,23 @@
-import React from "react-native";
+import React from "react";
+import { TouchableOpacity, View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { Text, TouchableOpacity, View} from 'react-native'
-import styles from "./MatchNowButtonStyles";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+//import styles from "./BusinessButtonStyles";
+import styles from "../BusinessButtons/BusinessButtonStyles"
+import { FontAwesome } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons'; 
 
 
-const MatchNowButton = ({text, onPress}) =>{
+
+
+const CreateCardButton = ({text, onPress}) => {
     return(
-    
-        <TouchableOpacity 
+
+<TouchableOpacity 
 
         style={{
-            width:'60%',
-            height:'70%',
+            width:'50%',
+            height:'60%',
             alignContent:'center',
             justifyContent:'space-evenly'
             
@@ -41,11 +47,15 @@ const MatchNowButton = ({text, onPress}) =>{
                     textAlign:'center',
                     fontSize:'20%'
                 
-                 }}>{text}</Text>
-                 </LinearGradient>
-         </View>
+                 }}>
+                    Create Card
+                    </Text>
+                </LinearGradient>
+            
+            </View>
+
 </TouchableOpacity>
 
-    )
+)
 }
-export default MatchNowButton;
+export default CreateCardButton;

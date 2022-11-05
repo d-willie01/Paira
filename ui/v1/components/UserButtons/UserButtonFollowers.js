@@ -8,7 +8,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons'; 
 
 
-const UserButtonFollowers = ({text}) => {
+const UserButtonFollowers = ({text, onPress}) => {
     return(
       
         <TouchableOpacity 
@@ -20,7 +20,7 @@ const UserButtonFollowers = ({text}) => {
             justifyContent:'space-evenly'
             
         }}
-        onPress={()=> console.log('yeee')}>
+        onPress={onPress}>
             <View
                  style={{
                  height:'100%',
@@ -53,7 +53,7 @@ const UserButtonFollowers = ({text}) => {
                     fontStyle:'italic',
                     alignSelf:'center',
                     
-                    }}>{'75'}</Text>
+                    }}>{text}</Text>
 
                     <Text
                     numberOfLines={1}

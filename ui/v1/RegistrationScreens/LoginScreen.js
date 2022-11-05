@@ -1,11 +1,14 @@
 import React, {useContext, useState} from"react";
-import {Text, View, TouchableOpacity, TextInput, Button} from 'react-native';
+import {Text, View, TouchableOpacity, TextInput, Button, SafeAreaView} from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
 import {StateContext} from "../StateManagement/StateProvider";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+import BackgroundColor from "../components/Theme/BackgroundColor";
+import NextButton from "../components/NextButton/NextButton";
 
 
 
@@ -75,106 +78,197 @@ const LoginScreen = () => {
     
     
     return(
-        <View style = {{
-            flex:1,
-             }}>
-            <LinearGradient //background gradient view
-                style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+        <BackgroundColor>
+            <SafeAreaView style ={{
+                height: heightPercentageToDP('100%'),
+                width: widthPercentageToDP('100%'),
                 
-                colors={['#FDFEFE','#626567']}>
-            <View style={{marginBottom: 50}}>
-            <Text style={{fontWeight:'900', fontSize: 45, color: 'white'}}>Welcome Back! </Text>
-            </View>
-            <View style={{alignItems: 'center'}}>
+            }}>
+
             
-            <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
-            <LinearGradient
-                    style={{
-                        height: 45,
-                        width: 250,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                        bottom: 5
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 40,
-                            width: 245,
-                            borderRadius: 75,
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <View >
-                            <TextInput style={{
-                                            fontSize: 20,
-                                            height: 55,
-                                            width: 300,
-                                            marginLeft: 95,
-                                            marginTop: -5,
-                                            borderRadius: 75,
-                                            fontWeight: "900",
-                                            opacity: 0.7,
-                                            color: '#ffffff'}}
-                                            placeholderTextColor="#E5E5E5"
-                                            placeholder = "Email/Phone Number"
-                                            onChangeText={(value) => {
-                                                setEmail(value);
-                                            }}>
-                            </TextInput>
-                            </View>
-                        </LinearGradient>
-                </LinearGradient>
-                </TouchableOpacity>
-                <TouchableOpacity >
-                <LinearGradient
-                    style={{
-                        height: 45,
-                        width: 250,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                        bottom: 5 
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                        <LinearGradient
+            
+    <View style={{
+            height: '10%',
+            width: '100%',
+            backgroundColor:'transparent',
+            marginTop:'50%',
+            justifyContent:'center',
+            alignItems:'center',
+
+
+        }}>
+            <Text style={{
+                fontSize:'40%',
+                color:'white',
+                fontWeight:'900',
+                textAlign:'center',
+
+
+
+
+            }}>Welcome Back,
+
+            </Text>
+    </View>
+
+
+            
+        <View style={{
+            height: '10%',
+            width: '100%',
+            backgroundColor:'transparent',
+            marginTop:'5%',
+            justifyContent:'center',
+            alignItems:'center',
+
+
+        }}>
+                <TouchableOpacity 
                             style={{
-                                height: 40,
-                                width: 245,
-                                borderRadius: 75,
-                                alignItems:'center',
+                            width:'60%',
+                            height:'50%',
+                            alignContent:'center',
+                            justifyContent:'space-evenly'
+                            
+                        }}
+                        >
+                        
+                            <View
+                                style={{
+                                height:'100%',
+                                width:'100%',
+                                borderRadius:'40%',
+                                backgroundColor:'#F39C12',}}>
+
+                                <LinearGradient
+                                colors={['#F8C471','#F5B041']}
+                                style={{
+                                height:'100%',
+                                width:'100%',
+                                borderRadius:'40%',
+                                bottom:'5%',
+                                justifyContent:'space-evenly',
+                                
+                                }}><TextInput
+                                
+                                style ={{
+                                    fontStyle:'normal',
+                                    fontWeight:'600',
+                                    color:'white',
+                                    textAlign:'center',
+                                    fontSize:'20%',
+
                                 }}
-                            colors={['#F8C471','#F5B041' ]}>
-                                <TextInput style={{
-                                                fontSize: 23,
-                                                height: 55,
-                                                width: 300,
-                                                marginLeft: 95,
-                                                marginTop: -5,
-                                                borderRadius: 75,
-                                                fontWeight: "900",
-                                                opacity: .7,
-                                                color: '#ffffff'}}
-                                                placeholderTextColor="#E5E5E5"
-                                                placeholder = "Password"
-                                                onChangeText={(value) => {
-                                                    setPassword(value);
-                                                }}>
+
+                                
+                                placeholder ="Email"
+                                onChangeText={(value) => setEmail(value)}>
+                                
+
                                 </TextInput>
-                        </LinearGradient>
-                </LinearGradient>
-            </TouchableOpacity>
-        </View>
-        <Button title="Login" onPress={LoginUser}/>
-        </LinearGradient>
+                                </LinearGradient>
+    
+                            </View>
 
+                </TouchableOpacity>
 
         </View>
+
+
+
+
+        <View style={{
+              height: '10%',
+              width: '100%',
+              backgroundColor:'transparent',
+              marginTop:'5%',
+              justifyContent:'center',
+              alignItems:'center',
+
+        }}>
+
+            <TouchableOpacity 
+                            style={{
+                            width:'60%',
+                            height:'50%',
+                            alignContent:'center',
+                            justifyContent:'space-evenly'
+                            
+                        }}
+                        >
+                            <View
+                                style={{
+                                height:'100%',
+                                width:'100%',
+                                borderRadius:'40%',
+                                backgroundColor:'#F39C12',}}>
+
+                                <LinearGradient
+                                colors={['#F8C471','#F5B041']}
+                                style={{
+                                height:'100%',
+                                width:'100%',
+                                borderRadius:'40%',
+                                bottom:'5%',
+                                justifyContent:'space-evenly',
+                                
+                                }}><TextInput
+                                
+                                style ={{
+                                    fontStyle:'normal',
+                                    fontWeight:'600',
+                                    color:'white',
+                                    textAlign:'center',
+                                    fontSize:'20%',
+
+                                }}
+
+                                secureTextEntry ={true}
+                                placeholder ="Password"
+                                onChangeText={(value) => setPassword(value)}>
+                                
+
+                                </TextInput>
+                                </LinearGradient>
+    
+                            </View>
+
+                </TouchableOpacity>
+
+
+            </View>
+
+
+            <View  style={{ 
+                height: '10%',
+                width: '100%',
+                backgroundColor:'transparent',
+                marginTop:'5%',
+                justifyContent:'center',
+                alignItems:'center',
+            }}>
+
+                            
+                                <NextButton onPress={LoginUser}/>
+
+            </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </SafeAreaView>
+        </BackgroundColor>
     );
 };
 

@@ -8,13 +8,14 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     cardcontainer:{
         margin:10, 
-        width:410, 
-        backgroundColor:'transparent',
+        width:370, 
+        backgroundColor:'white',
+        
     
         
     }, 
     image:{
-       height: 300,
+       height: '100%',
        width:"90%",
        borderRadius:10,
        
@@ -22,30 +23,29 @@ const styles = StyleSheet.create({
         
     },
     title:{
-        fontWeight: "800",
-        fontSize: 34,
-        marginTop: 10,
+        fontWeight: "900",
+        fontSize: '35%',
         marginLeft: 0,
         textAlign:'center',
+        color:'white'
     },
+    
     founded:{
-        marginTop:0,
-        marginLeft:0,
-        fontSize:11,
+        fontSize:'12%',
         color: "#5b5b5b",
         textAlign:'center',
+        
     
         
 
     },
     bio:{
         textAlign:'center',
-        fontSize: 18,
+        fontSize: '15%',
         fontWeight:'600',
-        lineHeight: 20, 
-        marginTop:10,
-        width:375,
-        marginLeft:15, 
+        lineHeight: 20,
+        width:'100%',
+        
         
 
         
@@ -53,8 +53,9 @@ const styles = StyleSheet.create({
 
     },
     address:{
-        
+        textAlign:'center',
         fontWeight:"600",
+        fontSize:'12%',
         
         
 
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
         alignSelf:'center',
         color: "dodgerblue",
         textDecorationLine:'underline',
+        fontSize:'13%'
     },
     container: {
         flex:1,

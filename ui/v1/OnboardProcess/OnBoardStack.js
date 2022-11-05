@@ -15,8 +15,8 @@ const OnBoardStack = () => {
             <OnNav.Navigator initialRouteName="Start">
                 <OnNav.Screen options ={{headerShown: false}}name = "Start" component ={StartScreen}/>
                 <OnNav.Screen options = {{headerShown: false}} name = 'Registration' component={RegistrationScreen}/>
-                <OnNav.Screen name = "Login" component = {LoginScreen}/>
-                <OnNav.Screen name = "UserRegister" component = {UserRegistrationScreen}/>
+                <OnNav.Screen options = {{headerShown: false}} name = "Login" component = {LoginScreen}/>
+                <OnNav.Screen options = {{headerShown: false}} name = "UserRegister" component = {UserRegistrationScreen}/>
 
             </OnNav.Navigator>
         

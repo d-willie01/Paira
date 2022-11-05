@@ -10,38 +10,44 @@ import { EvilIcons } from '@expo/vector-icons';
 const BusinessCardPic = ({text}) =>{
     
     return (
-            <TouchableOpacity style = {{
-                
-                
-                
-            }}>
-                <View
-      //Button Style
-                     style={styles.interestbuttonParent}>
-                    <LinearGradient
-                        colors={['#F5B041','#F8C471']}
-                        style={styles.interestbuttongrad}>
+        <TouchableOpacity 
 
-                    <View style={{
-                        alignSelf:"flex-end",
-                        top: 50
-                    }}>
-                    <EvilIcons name="plus" size={50} color="#ffffff" />
-                    </View>
+        style={{
+            width:'80%',
+            height:'80%',
+            alignContent:'center',
+            justifyContent:'space-evenly'
+            
+        }}>
+        
+            <View
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 backgroundColor:'#F39C12',}}>
+
+                <LinearGradient
+                 colors={['#F8C471','#F5B041']}
+                 style={{
+                 height:'100%',
+                 width:'100%',
+                 borderRadius:'40%',
+                 bottom:'5%',
+                 justifyContent:'space-evenly',
+                 
+                 }}> 
+
+                </LinearGradient>
+            
+            </View>
+
+</TouchableOpacity>
+
 
             
-                        
-                   </LinearGradient>
-
-                   
-            
-                </View>
-
-
-
-            </TouchableOpacity>
-    )
-}
+    );
+};
 
 
 export default BusinessCardPic;

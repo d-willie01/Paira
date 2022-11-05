@@ -7,6 +7,8 @@ import BackgroundColor from "../../components/Theme/BackgroundColor";
 import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import styles from "./RegistrationScreenStyles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 
 
@@ -82,23 +84,26 @@ const SubmitBusinessCard = async() =>{
     
     
       <BackgroundColor>
-        <SafeAreaView style={{flex:1}}>
+         <SafeAreaView 
+       style={{
+        height: heightPercentageToDP('100%'),
+        width: widthPercentageToDP('100%') }}>
 
 
         <View style ={{
-          height:70,
-          
+          height:'10%',
+          width:'100%',
           alignItems:"center",
-          margin:5,
-          justifyContent:"center"
+          justifyContent:"center",
+          marginTop:'5%'
         }}>
 
           <Text style={{
-            
-            fontSize: 25,
+            fontSize: '20%',
             fontWeight: "900",
-            color: '#ffffff'
-          }}>To complete a Business account,</Text>
+            color: '#ffffff',
+            textAlign:'center',
+          }}>Complete an Organization account...</Text>
           
           
           
@@ -111,24 +116,19 @@ const SubmitBusinessCard = async() =>{
         </View>
 
 
-        <View style = {{
-          height: 400,
-          
-        }}>
-
-
-       
-       <View style ={{
-        height:85,
-        
-        flexDirection:"row"
+  <View style ={{
+        height:'10%',
+        flexDirection:"row",
+        backgroundColor:'transparent',
+        justifyContent:'center',
+        justifyContent:'space-evenly'
         
        }}>
        
        
         <View style={{
-                margin: 5,
-                height:75,
+                height:'100%',
+                backgroundColor:'transparent'
                
             }}>
                 <Text style={styles.text}>Title:</Text>
@@ -142,12 +142,9 @@ const SubmitBusinessCard = async() =>{
             
         </View>
 
-
-
-
         <View style={{
-                margin: 5,
-                height:75,
+                height:'100%',
+                backgroundColor:'transparent'
                
             }}>
                 <Text style={styles.text}>Industry:</Text>
@@ -160,12 +157,17 @@ const SubmitBusinessCard = async() =>{
             
         </View>
 
-        </View>
+  </View>
 
 
-        <View style={{
-                margin: 5,
-                height:75,
+      <View style={{
+               height:'10%',
+               width:'100%',
+               backgroundColor:'transparent',
+               alignItems:'center',
+               
+               
+               
                
             }}>
                 <Text style={styles.text}>Address:</Text>
@@ -179,8 +181,10 @@ const SubmitBusinessCard = async() =>{
         </View>
 
         <View style={{
-                margin: 5,
-                height:75,
+               height:'10%',
+               width:'100%',
+               backgroundColor:'transparent',
+               alignItems:'center',
                
             }}>
                 <Text style={styles.text}>Address Line 2:</Text>
@@ -195,15 +199,17 @@ const SubmitBusinessCard = async() =>{
 
 
         <View style= {{
-          height:100,
-          
-          flexDirection:"row"
+          height:'10%',
+          flexDirection:"row",
+          backgroundColor:'transparent',
+          justifyContent:'center',
+          justifyContent:'space-evenly'
         }}>
 
 
             <View style={{
-                margin: 5,
-                height:75,
+               height:'100%',
+               backgroundColor:'transparent'
                
             }}>
                 <Text style={styles.text}>City:</Text>
@@ -218,8 +224,8 @@ const SubmitBusinessCard = async() =>{
 
 
               <View style={{
-                margin: 5,
-                height:75,
+                height:'100%',
+                backgroundColor:'transparent'
                
             }}>
                 <Text style={styles.text}>State:</Text>
@@ -236,8 +242,8 @@ const SubmitBusinessCard = async() =>{
 
 
               <View style={{
-                margin: 5,
-                height:75,
+                height:'100%',
+                backgroundColor:'transparent'
                
             }}>
                 <Text style={styles.text}>Zip code:</Text>
@@ -268,21 +274,35 @@ const SubmitBusinessCard = async() =>{
             
             
             
-            <View style={{alignSelf:"center"}}>
+            <View style={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'10%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     }}>
             
-            <MatchNowButton text="Submit Business" onPress={SubmitBusinessCard}/>
+            <MatchNowButton text="Create Organization" onPress={SubmitBusinessCard}/>
 
             </View>
             
             
-            </View>
+            
 
 
-            <View style={{alignSelf:"center"}}>
-              <Text style ={{
-                fontSize: 35,
-                fontWeight: "900",
-                color: '#ffffff'}}>OR</Text>
+         <View style={{height:'10%',
+                width:'100%',
+                alignItems:"center",
+                justifyContent:"center"}}>
+                <Text 
+                style ={{
+                  fontSize: '30%',
+                  fontWeight: "900",
+                  color: '#ffffff',
+                  textAlign:'center',}}>
+                
+                OR </Text>
             
             
             </View>
@@ -292,15 +312,16 @@ const SubmitBusinessCard = async() =>{
 
             
                 <View style={{
-                  height: 175,
-                  
-                  alignItems:"center",
-                  justifyContent:"center"
+                   height: '10%',
+                   width: '100%',
+                   backgroundColor:'transparent',
+                   justifyContent:'center',
+                   alignItems:'center',
                   
 
                 }}>      
                 
-                <MatchNowButton text= "Submit as User" onPress={UserScreen}/>
+                <MatchNowButton text= "Create User" onPress={UserScreen}/>
 
                 </View>
               

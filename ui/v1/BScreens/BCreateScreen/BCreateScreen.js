@@ -7,6 +7,9 @@ import BackgroundColor from "../../components/Theme/BackgroundColor"
 import BusinessCardPic from "../../components/BusinessCardPic/BusinessCardPic";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import CreateCardButton from "../../components/CreateCardButton/CreateCardButton";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+
 
 const BCreateScreen = () => {
     
@@ -109,171 +112,136 @@ const createCard = async() =>{
 
      return(
         
-        <BackgroundColor>
-        
-        <SafeAreaView style ={{flex:1}}>
+<BackgroundColor>
+        <SafeAreaView 
+        style={{
+        height: heightPercentageToDP('100%'),
+        width: widthPercentageToDP('100%') }}>
 
             <View style ={{
-                height: 50, 
-                justifyContent:"center",
-                
+                height:'8%',
+                width:'70%',
                 alignItems:"center",
-                margin:5}}
-                >
-                <Text style ={styles.text}>Edit Your Card</Text>
+                justifyContent:"center",
+                backgroundColor:'transparent',
+                marginTop:'1%',
+                alignSelf:'center'
+                }}>
+
+            <Text numberOfLines={2} style={{
+                 fontSize: '20%',
+                 fontWeight: "900",
+                 color: '#ffffff',
+                 textAlign:'center',}}
+            
+            >Create a new card for your city to see! </Text>
                 
             </View>
 
-            <View style={{
-                height:200, 
-                width: 350, 
-                
-                alignSelf:"center",
-                margin: 10,
-                alignItems:"center",
-                justifyContent:"center",
-                borderRadius: 35}}>
+            
+    
+            <View 
+        //Business Profile Pic
+            style={{
+                height: '50%',
+                width: '100%',
+                backgroundColor:'transparent',
+                justifyContent:'center',
+                alignItems:'center',
+                marginTop:'-3%'
+                }}>
 
                 <BusinessCardPic/>
                     
-
-
-
-
             </View>
 
 
-            <View style ={{
-                height: 335,
-                
-                width: 350,
-                alignSelf:"center",
-                
-            }}>
-
-
-            <View style={{
-                margin: 5,
-                height:75,
+        <View style ={{
+                height:'10%',
+                width:'100%',
+                alignItems:"center",
+                justifyContent:"center",
+                backgroundColor:'transparent',
+                marginTop:'-5%'
                
             }}>
-                <Text>Title:</Text>
+                <Text style={{
+                    fontSize:'25%',
+                    fontWeight:'800',
+                    color:'white'
+                }}
+                
+                >Title:</Text>
                 <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
+                    height:'60%',
+                    borderWidth:3,
+                    width: '60%',
                     borderRadius: 10,
-                    margin: 5
+                    borderColor:'white'
                 }}
                 onChangeText={(value) => {
                     setTitle(value);
                 }}/>
                 
-
-            </View>
-
+         </View>
 
 
 
             <View style={{
-                margin: 5,
-                height:75,
+               height:'10%',
+               width:'100%',
+               alignItems:"center",
+               justifyContent:"center",
+               backgroundColor:'transparent',
+               marginTop:'8%'
                 
 
             }}>
-                <Text>Founded:</Text>
+                <Text
+                style={{
+                    fontSize:'25%',
+                    fontWeight:'800',
+                    color:'white'}}>
+                    
+                      Description: </Text>
+
                 <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
+                    height:'100%',
+                    borderWidth:3,
+                    width: '80%',
                     borderRadius: 10,
-                    margin: 5
-                }}/>
-                
-
-            </View>
-
-
-
-
-
-
-            <View style={{
-                margin: 5,
-                height:75,
-                
-
-            }}>
-                <Text>Description:</Text>
-                <TextInput style ={{
-                    height:25,
-                    borderWidth:1,
-                    width: 200,
-                    borderRadius: 10,
-                    margin: 5
+                    borderColor:'white'
                 }}
                 onChangeText={(value) => {
                     setDescription(value);
                 }}/>
-
-
-                
                 
 
             </View>
 
 
+        <View
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'5%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
 
 
+                <CreateCardButton onPress={createCard}/>
 
-            <View style={{
-                margin: 5,
-                height:75,
-                
-
-            }}>
-                <Text>Address:</Text>
-                <TextInput style ={{
-                    height:25,
-                    
-                    width: 200,
-                    borderRadius: 10,
-                    borderWidth:1,
-                    margin: 5
-                }}/>
-                
-
-            </View>
+      </View>
 
 
 
 
+    </SafeAreaView>
 
-
-            </View>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <MatchNowButton onPress={createCard}/>
-
-
-
-
-        </SafeAreaView>
-
-        </BackgroundColor>
+ </BackgroundColor>
     );
 };
 

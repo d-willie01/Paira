@@ -1,35 +1,48 @@
 import React, {useState, useEffect} from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
 
-const EditOneCardScreen = (cardId) =>{
+const EditOneCardScreen = (route, navigation) =>{
 
     
-   const [cardInfo, setCardInfo] = useState();
+   const [cardID, setCardID] = useState();
    const [companyID, setCompanyID] = useState()
 
 
-
+    
+    
 
 
     useEffect(  () =>{
-          
+      
+      const CardID = async() =>{
+        const result = await AsyncStorage.getItem("cardId");
+        console.log(result)
+        setCardID(result);
+    }
+
+        CardID();
         
         
         
         const getUserInfo = async() =>{
         
-        
+          
+
+          
+          
+
+          
         
         
             try{
                 
                 
-                
+                    
                     const userToken = await AsyncStorage.getItem("userToken");
                     const userResponse = await axios.get("http://localhost:8080/users/self",{
                         headers: {
@@ -64,10 +77,12 @@ const EditOneCardScreen = (cardId) =>{
     
     
     
-    useEffect(  () =>{
-          
+    
+        
         const getCardInfo = async() =>{
 
+          
+          
           try{
             
             const userToken = await AsyncStorage.getItem("userToken");
@@ -77,15 +92,13 @@ const EditOneCardScreen = (cardId) =>{
               }
             }
 
-          const response = await axios.get(`http://localhost:8080/companies/${companyID}/cards/${cardId}`,config)
+          const response = await axios.post(`http://localhost:8080/companies/${companyID}/cards/${cardID}`,config)
           if (response.status == 200){
             
             
-            console.log(response.data);
+            console.log(response);
             
             console.log("success!")
-            setCardInfo(response.data);
-            console.log(cardInfo.data);
             
             
 
@@ -104,10 +117,9 @@ const EditOneCardScreen = (cardId) =>{
 
   }
           
-          getCardInfo();
           
-        }, [])
-    
+          
+        
     
     
     
@@ -125,7 +137,7 @@ const EditOneCardScreen = (cardId) =>{
 
 
 
-
+        <Text>Hello World</Text>
 
 
 

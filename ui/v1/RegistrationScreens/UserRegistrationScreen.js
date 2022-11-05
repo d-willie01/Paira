@@ -6,7 +6,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from "expo-linear-gradient";
 import styles from "../Styles/styles";
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
-//import { StateContext } from "./StateManagement/StateProvider"; 
+import BackgroundColor from "../components/Theme/BackgroundColor";
+import { SafeAreaView } from "react-native";
+import UserRegistrationButton from "../components/UserRegistrationButtons/UserRegistrationButton";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+import NextButton from "../components/NextButton/NextButton";
+//import { StateContext } from "./StateManagement/StateProvider";
+
+
 
 
 
@@ -72,7 +79,11 @@ const UserRegistrationScreen = () => {
    const [password, onChangePassword] = useState("");
    const [passwordConfirmation, onChangeconfirmationPassword] = useState('');
    
-    
+    const testClick = () =>{
+        console.log(passwordConfirmation)
+    }
+
+   
    
    
     return(
@@ -80,312 +91,366 @@ const UserRegistrationScreen = () => {
        
 
        
-       <View style ={{
-            flex:1,
-            justifyContent:"center",
-            alignItems:"center"
-       }}>
+<BackgroundColor>
+        <SafeAreaView 
+       style={{
+        height: heightPercentageToDP('100%'),
+        width: widthPercentageToDP('100%') }}>
+            
+           
         
-        
-        <View>
-
-
-
-        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
-            <LinearGradient
-                    style={{
-                        height: 45,
-                        width: 290,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                        bottom: 5
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 40,
-                            width: 285,
-                            borderRadius: 75,
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <View >
-                            <TextInput style={{
-                                            fontSize: 20,
-                                            height: 55,
-                                            width: 300,
-                                            marginLeft: 50,
-                                            marginTop: -5,
-                                            borderRadius: 75,
-                                            fontWeight: "900",
-                                            color: '#ffffff'}}
-                                            placeholder = "First Name"
-                                            onChangeText={(value) => {
-                                                onChangeFirstName(value);
-                                            }}>
-                            </TextInput>
-                            </View>
-                        </LinearGradient>
-                </LinearGradient>
-                </TouchableOpacity>
-
-
-
-
-
-
-
-
-        </View>
-        
-        
-        
-        
-        
-        
-        
-        
-        <View>
-
-
-
-
-        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
-            <LinearGradient
-                    style={{
-                        height: 45,
-                        width: 290,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                        bottom: 5
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 40,
-                            width: 285,
-                            borderRadius: 75,
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <View >
-                            <TextInput style={{
-                                            fontSize: 20,
-                                            height: 55,
-                                            width: 300,
-                                            marginLeft: 50,
-                                            marginTop: -5,
-                                            borderRadius: 75,
-                                            fontWeight: "900",
-                                            color: '#ffffff'}}
-                                            placeholder = "Last Name"
-                                            onChangeText={(value) => {
-                                                onChangeLastName(value);
-                                            }}>
-                            </TextInput>
-                            </View>
-                        </LinearGradient>
-                </LinearGradient>
-                </TouchableOpacity>
-
-
-
-
-
-
-
-
-
-
-        </View>
-
-
-        <View>
-
-
-
-
-
-        <TouchableOpacity style={{alignItems:'center',justifyContent: 'center'}}>
-            <LinearGradient
-                    style={{
-                        height: 45,
-                        width: 290,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                        bottom: 5
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 40,
-                            width: 285,
-                            borderRadius: 75,
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <View >
-                            <TextInput style={{
-                                            fontSize: 20,
-                                            height: 55,
-                                            width: 300,
-                                            marginLeft: 50,
-                                            marginTop: -5,
-                                            borderRadius: 75,
-                                            fontWeight: "900",
-                                            color: '#ffffff'}}
-                                            placeholder = "Email"
-                                            onChangeText={(value) => {
-                                                onChangeEmail(value);
-                                            }}>
-                            </TextInput>
-                            </View>
-                        </LinearGradient>
-                </LinearGradient>
-                </TouchableOpacity>
-
-
-
-
-
-
-
-
-        </View>
-
-
-       <View>
-
-
-       <TouchableOpacity>
-        <LinearGradient
-            style={{
-                height: 45,
-                width: 290,
-                borderRadius: 75,
-                alignItems:'center',
-                marginBottom: 20,
-                marginLeft: 10,
-                bottom: 5
-            }}
-            colors={['#F8C471','#FF8900' ]}>
-                
-            <LinearGradient
-                style={{
-                    height: 40,
-                    width: 285,
-                    borderRadius: 75,
-                    
-                    }}
-                colors={['#F8C471','#F5B041' ]}>
-                    <TextInput style={{
-                                    fontSize: 20,
-                                    height: 55,
-                                    width: 260,
-                                    
-                                    marginLeft: 20,
-                                    marginTop: -5,
-                                    borderRadius: 75,
-                                    fontWeight: "900",
-                                    color: '#ffffff'}}
-                                    placeholder = "Enter Password"
-                                    secureTextEntry={isSecureEntry}
-                                    onChangeText={(value) => {
-                                        onChangePassword(value);
-                                    }}
-                                    >
-                    </TextInput>
-                </LinearGradient>
-        </LinearGradient>
-    </TouchableOpacity>
-       
-
-
-         </View>
-
-
-
-        <View>
-       
-       <TouchableOpacity>
-        <LinearGradient
-            style={{
-                height: 45,
-                width: 290,
-                borderRadius: 75,
-                alignItems:'center',
-                marginBottom: 20,
-                marginLeft: 10,
-                bottom: 5
-            }}
-            colors={['#F8C471','#FF8900' ]}>
-                
-            <LinearGradient
-                style={{
-                    height: 40,
-                    width: 285,
-                    borderRadius: 75,
-                    
-                    }}
-                colors={['#F8C471','#F5B041' ]}>
-                    <TextInput style={{
-                                    fontSize: 20,
-                                    height: 55,
-                                    width: 260,
-                                    
-                                    marginLeft: 20,
-                                    marginTop: -5,
-                                    borderRadius: 75,
-                                    fontWeight: "900",
-                                    color: '#ffffff'}}
-                                    placeholder = "Confirm Password"
-                                    secureTextEntry={isSecureEntry}
-                                    onChangeText={(value) => {
-                                        onChangeconfirmationPassword(value);
-                                    }}
-                                    >
-                    </TextInput>
-                </LinearGradient>
-        </LinearGradient>
-    </TouchableOpacity>
     
+    
+        <View 
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'20%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+                        
+                        <TouchableOpacity 
+
+style={{
+    width:'60%',
+    height:'50%',
+    alignContent:'center',
+    justifyContent:'space-evenly'
+    
+}}
+onPress={testClick}>
+    <View
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        backgroundColor:'#F39C12',}}>
+
+        <LinearGradient
+        colors={['#F8C471','#F5B041']}
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        bottom:'5%',
+        justifyContent:'space-evenly',
+        
+        }}><TextInput
+        
+        style ={{
+            fontStyle:'normal',
+            fontWeight:'600',
+            color:'white',
+            textAlign:'center',
+            fontSize:'20%',
+
+        }}
+       
+        placeholder ="First Name"
+        secureTextEntry ={false}
+        onChangeText={(value) => onChangeFirstName(value)}>
+        
+
+        </TextInput>
+        </LinearGradient>
     
     </View>
 
-
-    <MatchNowButton onPress={RegisterUser}/>
-
-
-
-
+</TouchableOpacity>
     
+    
+                </View>
+               
+                <View 
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'5%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+    
+    <TouchableOpacity 
 
+style={{
+    width:'60%',
+    height:'50%',
+    alignContent:'center',
+    justifyContent:'space-evenly'
+    
+}}
+onPress={testClick}>
+    <View
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        backgroundColor:'#F39C12',}}>
 
+        <LinearGradient
+        colors={['#F8C471','#F5B041']}
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        bottom:'5%',
+        justifyContent:'space-evenly',
+        
+        }}><TextInput
+        
+        style ={{
+            fontStyle:'normal',
+            fontWeight:'600',
+            color:'white',
+            textAlign:'center',
+            fontSize:'20%',
 
+        }}
 
-
-
-
-
-
-
-
-
-
-
-
-    </View>
        
-    );
-};
+        secureTextEntry ={false}
+        placeholder ="Last Name"
+        onChangeText={(value) => onChangeLastName(value)}>
+        
+
+        </TextInput>
+        </LinearGradient>
+    
+    </View>
+
+</TouchableOpacity>
+    
+                </View>
+                 
+                <View 
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'5%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+                        
+                        <TouchableOpacity 
+
+style={{
+    width:'60%',
+    height:'50%',
+    alignContent:'center',
+    justifyContent:'space-evenly'
+    
+}}
+onPress={testClick}>
+    <View
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        backgroundColor:'#F39C12',}}>
+
+        <LinearGradient
+        colors={['#F8C471','#F5B041']}
+        style={{
+        height:'100%',
+        width:'100%',
+        borderRadius:'40%',
+        bottom:'5%',
+        justifyContent:'space-evenly',
+        
+        }}><TextInput
+        
+        style ={{
+            fontStyle:'normal',
+            fontWeight:'600',
+            color:'white',
+            textAlign:'center',
+            fontSize:'20%',
+
+        }}
+
+        secureTextEntry ={false}
+        placeholder ="Email"
+        onChangeText={(value) => onChangeEmail(value)}>
+        
+
+        </TextInput>
+        </LinearGradient>
+    
+    </View>
+
+</TouchableOpacity>
+    
+    
+                </View>
+                
+                <View 
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'5%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+                        
+                        <TouchableOpacity 
+
+                                style={{
+                                    width:'60%',
+                                    height:'50%',
+                                    alignContent:'center',
+                                    justifyContent:'space-evenly'
+                                    
+                                }}
+                                onPress={testClick}>
+                                    <View
+                                        style={{
+                                        height:'100%',
+                                        width:'100%',
+                                        borderRadius:'40%',
+                                        backgroundColor:'#F39C12',}}>
+
+                                        <LinearGradient
+                                        colors={['#F8C471','#F5B041']}
+                                        style={{
+                                        height:'100%',
+                                        width:'100%',
+                                        borderRadius:'40%',
+                                        bottom:'5%',
+                                        justifyContent:'space-evenly',
+                                        
+                                        }}><TextInput
+                                        
+                                        style ={{
+                                            fontStyle:'normal',
+                                            fontWeight:'600',
+                                            color:'white',
+                                            textAlign:'center',
+                                            fontSize:'20%',
+
+                                        }}
+
+                                        secureTextEntry ={isSecureEntry}
+                                        placeholder ="Password"
+                                        onChangeText={(value) => onChangePassword(value)}>
+                                        
+
+                                        </TextInput>
+                                        </LinearGradient>
+                                    
+                                    </View>
+
+                                </TouchableOpacity>
+    
+    
+                </View>
+               
+                <View
+
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'5%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+                        
+                        <TouchableOpacity 
+
+style={{
+    width:'60%',
+    height:'50%',
+    alignContent:'center',
+    justifyContent:'space-evenly'
+    
+}}
+onPress={testClick}>
+    <View
+         style={{
+         height:'100%',
+         width:'100%',
+         borderRadius:'40%',
+         backgroundColor:'#F39C12',}}>
+
+        <LinearGradient
+         colors={['#F8C471','#F5B041']}
+         style={{
+         height:'100%',
+         width:'100%',
+         borderRadius:'40%',
+         bottom:'5%',
+         justifyContent:'space-evenly',
+         
+         }}><TextInput
+         
+         style ={{
+            fontStyle:'normal',
+            fontWeight:'600',
+            color:'white',
+            textAlign:'center',
+            fontSize:'20%',
+
+         }}
+
+         secureTextEntry ={isSecureEntry}
+        placeholder ="Confirm Password"
+        onChangeText={(value) => onChangeconfirmationPassword(value)}>
+        
+        
+
+         </TextInput>
+
+
+         
+        </LinearGradient>
+
+        
+    
+    </View>
+
+</TouchableOpacity>
+    
+    
+                </View>
+
+                <View
+
+               style ={{
+                     height: '10%',
+                     width: '100%',
+                     backgroundColor:'transparent',
+                     marginTop:'15%',
+                     justifyContent:'center',
+                     alignItems:'center',
+                     
+                }}>
+                        
+                 <NextButton onPress={RegisterUser}/>
+    
+    
+                </View>
+                    
+    
+    
+            
+    
+    
+        </SafeAreaView>
+    </BackgroundColor>
+           
+            
+        );
+    };
+
 
 export default UserRegistrationScreen;

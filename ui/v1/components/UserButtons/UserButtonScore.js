@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import styles from "../BusinessButtons/BusinessButtonStyles"
 import { FontAwesome } from '@expo/vector-icons';
 
-const UserButtonScore = ({text}) => {
+const UserButtonScore = ({text, onPress}) => {
     return(
       
         <TouchableOpacity 
@@ -17,7 +17,7 @@ const UserButtonScore = ({text}) => {
             
             
         }}
-        onPress={()=> console.log('yeee')}>
+        onPress={onPress}>
             <View
                  style={{
                  height:'100%',
@@ -51,7 +51,7 @@ const UserButtonScore = ({text}) => {
                     fontStyle:'italic',
                     alignSelf:'center',
                     
-                    }}>{'25'}</Text>
+                    }}>{text}</Text>
 
                     <Text
                     numberOfLines={1}

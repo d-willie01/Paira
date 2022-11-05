@@ -24,10 +24,18 @@ const [userToken, setUserToken] = useState(null);
     
     }
 
+    const LogoutUser = () =>{
+        setUState(null)
+    }
+
+    const LogoutBUser = () =>{
+        setUState(null)
+    }
+
     
     
     return (
-        <StateContext.Provider value ={{BusinessState, UserState, UState, userToken, setUserToken}} >
+        <StateContext.Provider value ={{BusinessState, UserState, UState, LogoutUser, LogoutBUser}} >
             {children}
         </StateContext.Provider>
     )

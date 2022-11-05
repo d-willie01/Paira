@@ -252,7 +252,10 @@ const CategoryOneScreen = () => {
                     
                     
                     
-                    <View style ={{
+                    <View 
+                        
+                        style ={{
+                        width:100,
                         position : "absolute",
                         bottom: 100, 
                         alignSelf:"center",

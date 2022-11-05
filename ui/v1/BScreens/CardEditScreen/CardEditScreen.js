@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Text, FlatList, View, TouchableOpacity, SafeAreaView } from 'react-native'
+import {Text, FlatList, View, TouchableOpacity, SafeAreaView, RefreshControl, ScrollView } from 'react-native'
 
 import { EvilIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -7,15 +7,20 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import Card from "../../components/CardPost/BCard/BCard";
 import BackgroundColor from "../../components/Theme/BackgroundColor";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
 
 
 
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
 
-const CardEditScreen = () =>{
+const CardEditScreen = (navigation) =>{
 
-    const [company, setCompany] = useState();
+    const [refreshing, setRefreshing] = useState(false);
+    
     const [cardInfo, setCardInfo] = useState();
-    const [userInfo, setUserInfo] = useState();
+   
     const [companyID, setCompanyID] = useState("");
 
     
@@ -65,7 +70,7 @@ const CardEditScreen = () =>{
         }
         getUserInfo();
           
-        }, [])
+        }, [refreshing])
     
     
     
@@ -108,7 +113,7 @@ const CardEditScreen = () =>{
           
           getCardInfo();
           
-        }, [])
+        }, [refreshing])
 
 
 
@@ -124,34 +129,63 @@ const CardEditScreen = () =>{
         UNavigation.navigate("BCardCreation");
     }
 
+    
+
+    const onRefresh = React.useCallback(() => {
+      setRefreshing(true);
+      wait(5).then(() => setRefreshing(false));
+    }, []);
+  
 
 
     return(
 
-        <BackgroundColor>
+    <BackgroundColor>
 
 
-        <SafeAreaView style ={{
-            flex:1,
+<SafeAreaView 
+       style={{
+        height: heightPercentageToDP('100%')}}>
+
+          <ScrollView style ={{flex:1}}
+
+          refreshControl={
+          
+          <RefreshControl 
+          refreshing={refreshing}
+          onRefresh ={onRefresh}
+        />
+
+          }
+          >
             
-}}>
             
             
 
-
-
-            <View>
-        <TouchableOpacity style={{
-            alignSelf:"flex-end",
-            alignItems:"center",
-            justifyContent:"center",
-            
-        }}onPress={NextScreen}>
-        <Text style ={{fontSize:15}}>Create Card</Text>
         
-        <EvilIcons name = "plus" size={30} color ="black"/>
+        <TouchableOpacity style={{
+          width:'100%',
+          height:'3%',
+          flexDirection:'row',
+            backgroundColor:'transparent',
+            alignItems:"center",
+            justifyContent:"flex-end",
+            paddingRight:2,
+            
+            
+            }}onPress={NextScreen}>
+        
+        <Text style ={{
+
+          color:'black',
+          fontSize:'13%'}}>Create a New Card</Text>
+        
+        <EvilIcons name = "plus" size={'20%'} color ="black"/>
         </TouchableOpacity>
-        </View>
+    
+
+
+        
             <FlatList
                 showsHorizontalScrollIndicator={false}
                 horizontal={true}
@@ -160,21 +194,12 @@ const CardEditScreen = () =>{
             />
         
         
-        
-        
-        
-        
-
-        
-
-        
-        
         <View>
 
         </View>
         
         
-        
+        </ScrollView>
         
         </SafeAreaView>
         </BackgroundColor>

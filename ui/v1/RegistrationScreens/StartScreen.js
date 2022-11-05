@@ -6,7 +6,9 @@ import BackgroundColor from "../components/Theme/BackgroundColor";
 import styles from "../Styles/styles";
 import PressButton from "../components/PressTest/PressButton";
 import {Picker} from '@react-native-picker/picker';
-
+import { SafeAreaView } from "react-native";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
+import LoginButton from "../components/LoginButtons/LoginButton";
 
 const StartScreen = () => {
    
@@ -31,82 +33,87 @@ const StartScreen = () => {
     return(
 
  
+<BackgroundColor>
+    <SafeAreaView 
+   style={{
+    height: heightPercentageToDP('100%'),
+    width: widthPercentageToDP('100%') }}>
         
+       
+     <View 
+           style={{
+            height: heightPercentageToDP('35%'),
+            width: widthPercentageToDP('100%'),
+                 backgroundColor:'transparent',
+                 justifyContent:'center',
+                 alignSelf:'center',
+                 marginTop:'25%',
+                 
+                 
+                 }}>
+        <View 
+           style={{
+            height: heightPercentageToDP('28%'),
+            width: widthPercentageToDP('28%'),
+                 backgroundColor:'transparent',
+                 justifyContent:'center',
+                 alignSelf:'center',
+                 
+                 }}>
 
-        <BackgroundColor>
-            <View style ={{alignItems:"center", justifyContent:"center"}}>
-        
+       
 
-        <Image 
-            style = {{ width: 150, height: 320, marginTop:50}}
-            source= {require('../assets/Icons/PairaLogo.png')}/>
-        <View style={{alignItems: 'center', marginTop: 150}}>
-            <TouchableOpacity title ="Login" onPress={LoginScreen}>
-                <LinearGradient
-                    style={{
-                        height: 60,
-                        width: 250,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 55,
-                            width: 300,
-                            borderRadius: 75,
-                            justifyContent:'center',
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <Text style={{
-                                            fontSize: 25,
-                                            
-                                            fontWeight: "900",
-                                            color: '#ffffff'}}>Login
-                            </Text>
-                        </LinearGradient>
-                </LinearGradient>
-                </TouchableOpacity>
-                <TouchableOpacity title = "register" onPress={UserRegister1}>
-                <LinearGradient
-                    style={{
-                        height: 60,
-                        width: 250,
-                        borderRadius: 75,
-                        alignItems:'center',
-                        marginBottom: 20,
-                        marginLeft: 10,
-                    }}
-                    colors={['#F8C471','#FF8900' ]}>
-                        
-                    <LinearGradient
-                        style={{
-                            height: 55,
-                            width: 300,
-                            borderRadius: 75,
-                            justifyContent:'center',
-                            alignItems:'center',
-                            }}
-                        colors={['#F8C471','#F5B041' ]}>
-                            <Text style={{
-                                            fontSize: 25,
-                                            
-                                            fontWeight: "900",
-                                            color: '#ffffff'}}>Register
-                            </Text>
-                        </LinearGradient>
-                </LinearGradient>
-            </TouchableOpacity>
+            <Image source={require("../assets/Icons/PairaLogo.png")} 
+            style={{ height: '100%',
+            width:'101.4%',
+            alignSelf:'center',
+            
+
+            }}/>
         </View>
-        
+    </View>
 
 
-        </View>
-        </BackgroundColor>
+    <View 
+           style ={{
+                 height: '10%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 marginTop:'35%',
+                 justifyContent:'center',
+                 alignItems:'center',
+                 
+            }}>
+                    
+             <LoginButton text="Login" onPress={LoginScreen}/>
+
+
+            </View>
+           
+            <View 
+           style ={{
+                 height: '10%',
+                 width: '100%',
+                 backgroundColor:'transparent',
+                 marginTop:'2%',
+                 justifyContent:'center',
+                 alignItems:'center',
+                 
+            }}>
+
+            <LoginButton text="Register"onPress={UserRegister1}/>
+
+            </View>
+             
+                
+                
+
+
+
+
+
+    </SafeAreaView>
+</BackgroundColor>
        
         
     );

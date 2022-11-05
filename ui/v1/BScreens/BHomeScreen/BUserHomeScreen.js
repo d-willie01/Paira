@@ -1,17 +1,28 @@
 import React, {useState, useEffect} from "react";
 import {Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native'
 import BackgroundColor from "../../components/Theme/BackgroundColor";
+import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import BusinessProfilePic from "../../components/BusinessProfilePic/BusinessProfilePic";
 import BusinessButton from "../../components/BusinessButtons/BusinessButton";
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, heightPercentageToDP, widthPercentageToDP} from "react-native-responsive-screen";
 import { LinearGradient } from "expo-linear-gradient";
+import { AntDesign, MaterialCommunityIcons} from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import BusinessButton2 from "../../components/BusinessButtons/BusinessButton2"
+import BSettingsScreen from "../Settings/BSettingsScreen";
+import axios from "axios";
 
 const BUserHomeScreen = () => {
-
+    const UNavigation = useNavigation();
     const [image, setImage] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
-    const [company, setCompany] = useState(null);
+    const [name, setName] = useState("");
+
+    
+
+
+
     
     useEffect(  () =>{
           
@@ -31,7 +42,9 @@ const BUserHomeScreen = () => {
           if (response.status == 200){
 
             setUserInfo(response.data);
+            setName(response.data.firstName)
             console.log(userInfo);
+
 
           }
           
@@ -54,6 +67,11 @@ const BUserHomeScreen = () => {
     
     
         }, [])
+
+
+  const goBSettingsScreen = () =>{
+    UNavigation.navigate("BSettingsScreen")
+  }
     
     
 
@@ -78,6 +96,7 @@ const BUserHomeScreen = () => {
       }
     
     
+
     
     
     
@@ -127,9 +146,20 @@ const BUserHomeScreen = () => {
                 
             }}>
             
+            <TouchableOpacity onPress={goBSettingsScreen}>
             <AntDesign name="setting" size={'30%'} color="white"/>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity>
             <MaterialCommunityIcons name="progress-pencil" size={'30%'} color="white"/>
+            </TouchableOpacity>
+
+
+
+            <TouchableOpacity>
             <MaterialCommunityIcons name="message-badge-outline" size={'27%'} color="white"/>
+            </TouchableOpacity>
 
             </View>
                 
@@ -170,7 +200,7 @@ const BUserHomeScreen = () => {
                                         textAlign:'center',
                                         alignSelf:'center',
                                         fontStyle:'italic'
-                                        }}>Suns Event Co.</Text>
+                                        }}>{name}</Text>
                                         <Text numberOfLines={2} style={{
                                         fontSize:'10%',
                                         fontWeight:'900',

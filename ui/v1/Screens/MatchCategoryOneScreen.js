@@ -10,6 +10,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
 import MatchNowButton from '../components/MatchNowButton/MatchNowButton'
+import BackgroundColor from "../components/Theme/BackgroundColor";
 
 
 const MatchCategoryOneScreen = () => {
@@ -89,66 +90,21 @@ const MatchCategoryOneScreen = () => {
     
     return(
 
-<LinearGradient // background gradient view
-      style={styles.container}
-      colors={['#B1B1B3','#CACACC',]}>
-        <TouchableOpacity 
-      //TIPS Button 
-          style={{
-              
-              marginLeft:15,
-              position:'absolute',
-            }}
 
-      //button function
-            onPress={()=> console.log('yeee')}>
-              
-                <View
-      //Button Style
-                     style={styles.BCardBackgroundParent}>
-                    <LinearGradient
-                     colors={['#CACACC','#B1B1B3']}
-                     style={styles.BCardBackgroundgrad}>
-                   </LinearGradient>
+<BackgroundColor>
 
-                
-                </View>
-             </TouchableOpacity>
-
-       <View>
-        <Text numberOfLines={3} style={{
-            fontSize:15,
-            
-            marginLeft:35,
-            width:350,
-            textAlign:'center',
-            fontWeight:'900',
-            color:'white',
-            position:'absolute',
-        }}
-        >
-         Here are some local food matches based on YOUR interests
-
-        </Text>
-
-
-        <FlatList
+        <FlatList 
         showsHorizontalScrollIndicator={false}
         horizontal={true}
         data={cardInfo}
         renderItem={({item}) => <Card card={item}/>}
         /> 
         
+        </BackgroundColor>
 
-        <View>
-          <MatchNowButton/>
-        </View>
-
+       
 
 
-       </View>
-
-</LinearGradient>
     );
 }; 
 
