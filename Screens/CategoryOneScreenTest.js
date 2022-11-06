@@ -73,13 +73,11 @@ const CategoryOneScreenTest = () => {
   setSelections(selectionsClone);
     */
   
-    const [selections, setSelections] = useState([]);
+    const [selections, setSelections] = useState({});
     const[disableItems, setDisableItems ]= useState(false);
 
-  const handleClick = (keywords) => {
-    const buttonValue = keywords;
+  const handleClick = (buttonValue) => {
 
-    setSelections([...selections, keywords]);
     let selectionsClone = { ...selections };
 
     if (selectionsClone[buttonValue]) {
@@ -164,7 +162,7 @@ const CategoryOneScreenTest = () => {
               data = {availableKeyCards}
               renderItem = {({ item }) => (
 
-                <KeyWordButton disabled = {false} onPress={() => handleClick(item.key)} text = {(item.key)}/>
+                <KeyWordButton disabled = {selections[item.key]} onPress={() => handleClick(item.key)} text = {(item.key)}/>
               )}
               
               /> 
