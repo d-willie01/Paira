@@ -13,7 +13,7 @@ import BUserHomeScreen from "./BScreens/BHomeScreen/BUserHomeScreen";
 import UUserHomeScreen from "./Screens/UScreens/UCreateScreens/UUserHomeScreen";
 import RegistrationScreen2 from "./RegistrationScreens/RegistrationScreenOption2";
 import CategoryOneScreen from "./Screens/CategoryOneScreen";
-import FoodAndDinningKeywordScreen from "./Screens/CategoryOneScreenTest";
+import FoodAndDinningKeyword from "./Screens/Keyword Categoty Screens/FoodAndDiningKeywordScreen";
 import CategoryOneScreenTest2 from "./Screens/CategoryOneTestScreen2";
 import CategoryOneWorking from "./Screens/CategoryOneScreenWORKINGFILE";
 
@@ -35,7 +35,7 @@ export default function App() {
     //   <AppNavigator/>
     // </StateProvider>
     <NavigationContainer>
-      <FoodAndDinningKeywordScreen/>
+      <FoodAndDinningKeyword/>
     </NavigationContainer>
    
 

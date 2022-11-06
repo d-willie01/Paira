@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Text, TouchableOpacity, View, ScrollView, Button, RecyclerViewBackedScrollViewComponent } from "react-native";
-import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
+import MatchNowButton from "../../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
-import PressTest from "../components/PressTest/PressTest";
-import KeyWordButton from "../components/KeyWordButton/KeyWordButton";
-import BackgroundColor from "../components/Theme/BackgroundColor";
+import PressTest from "../../components/PressTest/PressTest";
+import KeyWordButton from "../../components/KeyWordButton/KeyWordButton";
+import BackgroundColor from "../../components/Theme/BackgroundColor";
 import { FlatList } from "react-native";
 
 
@@ -19,7 +19,7 @@ const availableKeyCards = [
 ]
 
 
-const CategoryThreeScreenTest = () => {
+const NonProfitKeywords = () => {
   const UMatchnavigation = useNavigation();
 
   const MatchCategoryOne = () => {
@@ -206,4 +206,4 @@ const CategoryThreeScreenTest = () => {
   );
 };
 
-export default CategoryThreeScreenTest;
+export default NonProfitKeywords;
