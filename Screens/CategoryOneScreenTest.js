@@ -19,7 +19,7 @@ const availableKeyCards = [
 ]
 
 
-const CategoryOneScreenTest = () => {
+const FoodAndDinningKeywordScreen = () => {
   const UMatchnavigation = useNavigation();
 
   const MatchCategoryOne = () => {
@@ -206,7 +206,7 @@ const CategoryOneScreenTest = () => {
   );
 };
 
-export default CategoryOneScreenTest;
+export default FoodAndDinningKeywordScreen;
 
 /*
 <KeyWordButton

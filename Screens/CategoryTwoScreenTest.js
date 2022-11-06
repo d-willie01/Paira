@@ -19,7 +19,7 @@ const availableKeyCards = [
 ]
 
 
-const CategoryTwoScreenTest = () => {
+const EntertainmentKeywordScreen = () => {
   const UMatchnavigation = useNavigation();
 
   const MatchCategoryOne = () => {
@@ -129,4 +129,4 @@ const CategoryTwoScreenTest = () => {
   );
 };
 
-export default CategoryTwoScreenTest;
+export default EntertainmentKeywordScreen;

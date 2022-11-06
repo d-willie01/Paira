@@ -12,14 +12,14 @@ import { FlatList } from "react-native";
 
 ["Club", "alcohol", "kids", "animals"]
 const availableKeyCards = [
-    {key:"Rec" },{key:"Biking" },{key:"Running" },{key:"Vollyball" },
-    {key:"Leagues" },{key:"Fitness" },{key:"Places" },{key:"Stretching" },
-    {key:"Soccer" },{key:"Yoga" },{key:"Competitive" },{key:"Classes" },
-    {key:"Basketball" },{key:"Football" },{key:"Cricket" },{key:"Fitness" },
+    {key:"Shop" },{key:"Department" },{key:"Fashion" },{key:"Self-Care" },
+    {key:"Grocery" },{key:"Specialty" },{key:"Accessories" },{key:"DIY" },
+    {key:"Jewlery" },{key:"Thrift" },{key:"Education" },{key:"Health" },
+    {key:"Discount" },{key:"Variety" },{key:"Mall" },{key:"Hygene" },
 ]
 
 
-const FitnessKeywordScreen = () => {
+const RetialKeywordsScreen = () => {
   const UMatchnavigation = useNavigation();
 
   const MatchCategoryOne = () => {
@@ -206,4 +206,4 @@ const FitnessKeywordScreen = () => {
   );
 };
 
-export default FitnessKeywordScreen;
+export default RetialKeywordsScreen;
