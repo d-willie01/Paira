@@ -88,11 +88,19 @@ const CategoryOneScreenTest = () => {
 
     setSelections(selectionsClone);
     
+    const keyWordArray = (obj) => {
+      let kewWordArr = [];
+      for (let key in obj) {
+        if (obj[key]) {
+          kewWordArr.push(key)
+        }
+      }
+      return kewWordArr
+    }
+    const obj = selections
     
-
-
-
-   
+    const arrayFromObject = keyWordArray(obj)
+    console.log(arrayFromObject);
   };
   console.log(selections)
 
