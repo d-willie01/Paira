@@ -26,52 +26,7 @@ const NonProfitKeywords = () => {
     UMatchnavigation.navigate("MatchCategoryOneScreen");
   };
   
-  /*
-  const[selectedItems, setSelectedItems1 ]= useState([]);
-
-  const [offButton, setOffButton1] = useState(false);
-    const handleOnLongPress1 = (KeyWordButton) =>{
-      // setSelectedItems(current => !current);
-        setSelectedItems1([...selectedItems, KeyWordButton]);
-        setOffButton1(true)
   
-    };
-    const handleReset = () => {
-      setSelectedItems1([]);
-      setOffButton1(false)
-    };
-    const [offButton2, setOffButton2] = useState(false);
-    const handleOnLongPress2 = (KeyWordButton) =>{
-      // setSelectedItems(current => !current);
-        setSelectedItems([...selectedItems, KeyWordButton]);
-        setOffButton1(true)
-  
-    };
-
-    const buttonValue = e.pendingProps;
-
-    let selectionsClone = { ...selections };
-
-    if (selectionsClone[buttonValue]) {
-      selectionsClone[buttonValue] = false;
-    } else {
-      selectionsClone[buttonValue] = true;
-    }
-
-    setSelections(selectionsClone);
-
-    const buttonValue = e
-
-   let selectionsClone = {...selections};
-
-   if (selectionsClone[buttonValue]) {
-    selectionsClone[buttonValue] = false;
-   } else {
-    selectionsClone[buttonValue] = true;
-  }
-
-  setSelections(selectionsClone);
-    */
   
     const [selections, setSelections] = useState({});
     const[disableItems, setDisableItems ]= useState(false);
