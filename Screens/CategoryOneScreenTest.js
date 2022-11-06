@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Text, TouchableOpacity, View, ScrollView, Button } from "react-native";
+import { Text, TouchableOpacity, View, ScrollView, Button, RecyclerViewBackedScrollViewComponent } from "react-native";
 import MatchNowButton from "../components/MatchNowButton/MatchNowButton";
 import { useNavigation } from "@react-navigation/native";
 import PressTest from "../components/PressTest/PressTest";
@@ -12,10 +12,10 @@ import { FlatList } from "react-native";
 
 ["Club", "alcohol", "kids", "animals"]
 const availableKeyCards = [
-{key:"Club" },{key:"alcohol" },{key:"concerts" },{key:"american" },
-{key:"kids" },{key:"men" },{key:"cars" },{key:"games" },
-{key:"dogs" },{key:"art" },{key:"music" },{key:"lunch" },
-{key:"cats" },{key:"sports" },{key:"drinks" },{key:"pool" },
+{key:"Mexican" },{key:"Alcohol" },{key:"Indian" },{key:"American" },
+{key:"Fast Food" },{key:"Upscale" },{key:"Casual" },{key:"Wine" },
+{key:"Mediteranean" },{key:"Dinner" },{key:"Breakfast" },{key:"Lunch" },
+{key:"Greek" },{key:"Chinese" },{key:"Noodles" },{key:"Vegan" },
 ]
 
 
@@ -75,6 +75,7 @@ const CategoryOneScreenTest = () => {
   
     const [selections, setSelections] = useState({});
     const[disableItems, setDisableItems ]= useState(false);
+    const[arr, setArr ]= useState([]);
 
   const handleClick = (buttonValue) => {
 
@@ -97,16 +98,27 @@ const CategoryOneScreenTest = () => {
       }
       return kewWordArr
     }
-    const obj = selections
     
-    const arrayFromObject = keyWordArray(obj)
+    const arrayFromObject = keyWordArray(selectionsClone)
+    setArr(arrayFromObject)
     console.log(arrayFromObject);
+
+    
   };
+
   console.log(selections)
+  const getKeyWords = () =>{
+    const keywordQuery = "&cardKeys=" + arr.join("&cardKeys=")
+    const fullQueryMatchOne = `http://localhost:8080/cards?industry=food%20%26%20dining${keywordQuery}`
+    console.log(fullQueryMatchOne)
+    handleReset()
+  };
 
   const handleReset = () => {
     setSelections([]);
     setSelections(false);
+    setArr([])
+    
     
   };
   
@@ -170,7 +182,7 @@ const CategoryOneScreenTest = () => {
               data = {availableKeyCards}
               renderItem = {({ item }) => (
 
-                <KeyWordButton disabled = {selections[item.key]} onPress={() => handleClick(item.key)} text = {(item.key)}/>
+                <KeyWordButton  selected={selections[item.key]} disabled = {selections[item.key]} onPress={() => handleClick(item.key)} text = {(item.key)}/>
               )}
               
               /> 
@@ -186,7 +198,7 @@ const CategoryOneScreenTest = () => {
             alignSelf: "center",
           }}
         >
-          <MatchNowButton onPress={MatchCategoryOne} />
+          <MatchNowButton onPress= {()=>getKeyWords()} />
           <Button title ='Reset' onPress={handleReset}></Button>
         </View>
       </View>
