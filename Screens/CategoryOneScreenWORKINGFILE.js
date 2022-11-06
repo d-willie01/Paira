@@ -7,7 +7,7 @@ import BackgroundColor from "../components/Theme/BackgroundColor";
 import buttonReplacement from "./KeyWordButtonReplacement";
 
 
-const CategoryOneScreenTest2 = () => {
+const CategoryOneWorking = () => {
     const UMatchnavigation = useNavigation();
   
     const MatchCategoryOne = () => {
@@ -320,4 +320,4 @@ const CategoryOneScreenTest2 = () => {
     );
   };
   
-  export default CategoryOneScreenTest2;
+  export default CategoryOneWorking;

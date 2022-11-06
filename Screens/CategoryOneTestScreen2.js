@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import PressTest from "../components/PressTest/PressTest";
 import BackgroundColor from "../components/Theme/BackgroundColor";
 import buttonReplacement from "./KeyWordButtonReplacement";
+import { widthPercentageToDP } from "react-native-responsive-screen";
 
 const availableKeyCards = ["club", "alcohol", "kids", "animals", "adult", "women", "men", "shopping","food",
 "fashion", "games" , "arcade", "movies", "concerts", "places", "cars",
@@ -159,7 +160,23 @@ const CategoryOneScreenTest2 = () => {
         setOffButton16(false)
         
       };
-    console.log(disableItems)
+      
+      const getKeyWords = () =>{
+        let stringJoinTest = (disableItems)
+        const keywordQuery = ("&cardKeys=") + stringJoinTest.join("&cardKeys=")
+        const fullQueryMatchOne = (`http://localhost:8080/cards?industry=food%20%26%20dining${keywordQuery}`)
+        console.log(fullQueryMatchOne)
+        return fullQueryMatchOne
+
+/*
+        const clikckedKeywordsCopy = (disableItems);
+        // const categories = String.from(new Set(clikckedKeywordsCopy.flatMap(x => x.disableItems.split(''))))
+        const categories = clikckedKeywordsCopy.toString().join("&cardKeys=")
+
+        console.log(categories)
+*/
+}
+console.log(disableItems)
       
     //const getSelected = (keywords) => { selectedItems.includes(keywords.id)}
    // console.log(selectedItems)
@@ -630,9 +647,11 @@ const CategoryOneScreenTest2 = () => {
               bottom: '5%',
             }}
           >
-            <MatchNowButton onPress= {() => UMatchnavigation.navigate ('MatchCategoryOneScreen', { paramKey: disableItems })} />
+            <MatchNowButton onPress= {getKeyWords} />
+            <Button title ="Array Button"></Button>
           
             <Button title ='Reset' onPress={handleReset}></Button>
+
           </View>
         </View>
       </BackgroundColor>
