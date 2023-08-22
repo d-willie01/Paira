@@ -1,5 +1,5 @@
 # PAIRA
-#Paira is a mobile application build using React Native. This code repo was deposited to s professional grade repo in Azure DevOps and this is the prototype code used for development. Tech Stack used was React Native, Node.JS, MongoDB, Express, 
+#Paira is a mobile application build using React Native. This code repo was deposited to a professional grade repo in Azure DevOps and this is the prototype code used for development. Tech Stack used was React Native, Node.JS, MongoDB, Express, 
 Azure Devopd, Expo, Fastlane.
 
 <img width="938" alt="githubApple" src="https://github.com/d-willie01/Paira/assets/109937280/ed334138-a34a-47ff-9398-3036e03061e2">
